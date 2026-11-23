@@ -1,0 +1,38 @@
+# Audio
+*.wav
+*.mp3
+*.webm
+*.opus
+*.flac
+*.ogg
+# Mimi token caches and other tensor dumps
+*.npy
+*.npz
+data/tokens/
+data/audio/
+**/mimi_cache/
+# Checkpoints / weights
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.ckpt
+checkpoints/
+# Game outputs (audio lives here; text summaries are copied into results/)
+runs/
+listen/
+# Environments and secrets
+.venv/
+.env
+.env.*
+*.key
+*_key
+*.pem
+id_rsa*
+id_ed25519*
+.fish_key
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
