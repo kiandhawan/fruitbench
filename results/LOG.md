@@ -1,5 +1,24 @@
 # LOG (newest first)
 
+## 2026-11-24 — Smoke run 2 (reward v2, 20 steps, same seed/settings)
+- **Validation, step 0 -> 20** (100 val games, 12 user turns; step 0 = base Moshi, identical games to
+  smoke run 1's step 0): valid new fruit 3.2% -> **34.9%** (run 1: 24.7%); repeat
+  15.8% -> 28.5% (echo 11.6% -> 12.0%); filler 33.2% -> 9.9%;
+  silent 36.4% -> 7.1%; multi 5.5% -> 11.3% (run 1: 29.4%); non-fruit
+  5.8% -> 8.3%; overlap raw 26.4% -> 41.9%, counted by the reward
+  (0.2 s grace) 11.3% -> 9.6%; valid latency median 0.83 -> 0.05 s;
+  words per turn median 1.0 -> 1.0 (mean 5.21 -> 2.64);
+  10 s turn cap 0.66 -> 0.57 per game (29% -> 20% of games);
+  mean v2 reward -0.50 -> +0.04; Whisper fruit agreement 90.3% -> 96.3%.
+- **By turn position** (user fruit turns 1-6 vs 7-12), step 0 -> 20: valid 4.0% -> 44.3% vs
+  1.7% -> 27.0%; repeat 13.0% -> 18.5% vs 19.5% -> 40.2%;
+  overlap 27.5% -> 44.2% vs 25.7% -> 38.3%. Training games
+  have 6 user turns: in turns 7-12 Moshi runs out of new common fruits and repeats (40%).
+- Hacks: raw overlap rises but the counted overlap does not (Moshi answers within the last 0.2 s of the
+  user's line); lists and long turns are gone (median 1 word). Silence rose first (to 48% at step 7)
+  before falling to 7%. Train valid reached 59-62% at steps 17-20.
+- Time 32.8-52.1 s per step (mean 42), 45 GB peak. Samples: release `grpo-smoke2`.
+
 ## 2026-11-24 — Reward v2 (`configs/grpo_smoke2.yaml`) after the first smoke run's hacks
 Changes vs `configs/grpo_smoke.yaml` (requested by the user after smoke run 1 showed talking over the
 user, fruit lists and long turns); `fruitbench/rewards.py` implements them, older configs keep their
