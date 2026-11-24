@@ -1,6 +1,6 @@
 {
  "best_metric": "mean_reward",
- "step": 90,
- "mean_reward": 0.9661,
- "valid_rate": 0.8702
+ "step": 120,
+ "mean_reward": 1.0201,
+ "valid_rate": 0.8986
 }
