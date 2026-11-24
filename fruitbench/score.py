@@ -17,7 +17,8 @@ Classes (first match wins):
   repeat      exactly one fruit, already said earlier in the game by either side (incl. the user's
               fruit it is replying to; `echo` = it is that fruit). Moshi's text often misspells a rare
               fruit it echoes ("Lichie", "samumberry", "kolamansee"), so words of 5+ letters that
-              are not filler are also fuzzy-matched (difflib ratio >= 0.6) against the fruits already
+              are not filler are also fuzzy-matched (difflib ratio >= 0.6, and consonant skeletons
+              with the same first letter matching >= 0.75) against the fruits already
               said in the game (only those: fuzzy matching all fruits turns "speech" into "peach").
   valid       exactly one fruit, new
   non_fruit   no fruit, but Moshi names something else: "go with / I'll say / how about X" with X not
@@ -32,7 +33,7 @@ turn's clip or the next one (Moshi talking over the user).
 
 Provisional per-turn reward (for checking GRPO signal only; training will revisit it):
   valid: 1.0 - 0.2 * clip(latency, 0, 2.5)   (1.0 when instant, 0.5 at 2.5 s), -0.3 if overlap
-  multi: 0.25,  everything else: 0.0
+  multi: 0.25 if it contains at least one new fruit (else 0),  everything else: 0.0
 """
 
 from __future__ import annotations
@@ -113,6 +114,12 @@ FUZZY_RATIO = 0.6
 FUZZY_MIN_LEN = 5
 
 
+def skeleton(w: str) -> str:
+    """Consonant skeleton (c/k/q merged, y as a vowel): 'lichie'/'lychee' -> 'lch'."""
+    w = re.sub(r"[ck]+|q", "k", w)
+    return re.sub(r"[aeiouy']", "", w)
+
+
 def fuzzy_said(words: list[dict], said: list[str], skip: set[int]) -> list[dict]:
     """Misspelled mentions of fruits already said in the game (canonical names in `said`)."""
     import difflib
@@ -127,7 +134,15 @@ def fuzzy_said(words: list[dict], said: list[str], skip: set[int]) -> list[dict]
         cands = [w["norm"]]
         if i + 1 < len(words) and i + 1 not in skip:
             cands.append(w["norm"] + words[i + 1]["norm"])
-        best = max(((difflib.SequenceMatcher(None, c, f).ratio(), f) for c in cands for f in forms), default=(0, None))
+        # Spelling ratio >= 0.6, and the consonant skeletons must start alike and match >= 0.75
+        # ("benefits" vs "breadfruits" is 0.6 by spelling but bnfts/brdfrts 0.67; "speech" vs "peach"
+        # starts differently; "lichie" vs "lychee": skeletons identical).
+        def sim(c, f):
+            sc, sf = skeleton(c), skeleton(f)
+            if not sc or not sf or sc[0] != sf[0] or difflib.SequenceMatcher(None, sc, sf).ratio() < 0.75:
+                return 0.0
+            return difflib.SequenceMatcher(None, c, f).ratio()
+        best = max(((sim(c, f), f) for c in cands for f in forms), default=(0, None))
         if best[0] >= FUZZY_RATIO:
             out.append({"fruit": forms[best[1]], "t": w["t"], "i": i, "fuzzy": w["text"]})
     return out
@@ -171,11 +186,11 @@ class Reply:
         return d
 
 
-def turn_reward(cls: str, latency: float | None, overlap: bool) -> float:
+def turn_reward(cls: str, latency: float | None, overlap: bool, multi_new: bool = True) -> float:
     if cls == "valid":
         r = 1.0 - 0.2 * min(max(latency or 0.0, 0.0), 2.5)
         return round(r - (0.3 if overlap else 0.0), 4)
-    return 0.25 if cls == "multi" else 0.0
+    return 0.25 if cls == "multi" and multi_new else 0.0
 
 
 def score_game(game: dict) -> dict:
@@ -222,10 +237,11 @@ def score_game(game: dict) -> dict:
             r.cls = "filler"
         if mentions:
             r.latency = round(mentions[0]["t"] - ut["speech_end"], 3)
+        multi_new = any(f not in said for f in distinct)
         for f in distinct:
             if f not in said:
                 said.append(f)
-        r.reward = turn_reward(r.cls, r.latency, r.overlap) if scored else 0.0
+        r.reward = turn_reward(r.cls, r.latency, r.overlap, multi_new) if scored else 0.0
         replies.append(r)
     scored = [r for r in replies if r.scored]
     counts = Counter(r.cls for r in scored)

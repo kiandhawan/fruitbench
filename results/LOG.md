@@ -1,5 +1,42 @@
 # LOG (newest first)
 
+## 2026-11-24 — Step 2 revision (user feedback after checkpoint B)
+- **Turn end now listens to Moshi's audio, for every Moshi turn.** The 0.5 s text rule cut Moshi off
+  mid-sentence (text comes ~1 token per word with 0.5-0.8 s gaps inside sentences): with the
+  mid-sentence check below, 16 of 52 user lines in the old smoke games started while Moshi was
+  mid-sentence. New rule: a frame is Moshi speech when the RMS of its decoded 80 ms audio is above
+  **-45 dBFS**; the turn ends after **0.8 s** of consecutive non-speech frames once Moshi has produced
+  >= 2 speech frames after the user stopped, after 2.5 s with no speech, or at the 10 s cap.
+  Calibration (smoke audio, 2187 frames): silence floor -74 dBFS (most frames), a low-noise hump at
+  -65..-50, speech frames (within 0.3 s after a text token) median -29 dBFS, 25th pct -39; the valley is
+  at -50..-45. At -45 every loud frame had a text token within 1 s (no false speech).
+- **The user waits if Moshi resumes during the 0.3-0.8 s gap.** With only the audio rule, 9 of 52 user
+  lines still started mid-sentence: Moshi paused > 0.8 s inside a sentence and resumed during the
+  gap ("my favorite fruit, the lemon, | has high sugar content"). Now speech during the gap cancels
+  it and Moshi's turn continues (still capped at 10 s after the user's speech). Result on the re-run
+  smoke test: **1 of 52** user lines starts mid-sentence, and that is the 10 s cap (Moshi monologue;
+  the user barges in by design). Check: `scripts/timeline.py` flags a user line if Moshi's audio was
+  speech in the 0.3 s before it, or Moshi's last word before it has no end punctuation and its next
+  word follows within 1 s. Caveat: the audio decision for slot i+1 is made after step i, i.e. up to
+  80 ms of look-ahead vs a strictly causal listener; the decision only gates gap timing.
+- Moshi's audio is now always decoded (the rule needs it); `--no-audio` only skips saving WAVs. Per
+  game the JSON stores Moshi's per-frame level (`moshi_dbfs`).
+- **The simulated user says only 80 common fruits** (`COMMON_FRUITS`, hand-ranked by familiarity;
+  all already rendered, no new Fish cost), split **48 train / 12 val / 20 test** (deterministic, seed
+  0). Val needed >= 12 (one game has 12 user fruits); a first 52/8/20 split ran out in a val game. If
+  Moshi says so many pool fruits that the split's pool runs out, the user falls back to a shuffled
+  backup pool of the other 70 rendered fruits that are in no split's pool (no train/test leak). The
+  scorer still accepts any real fruit (FRUITS + EXTRA_RECOGNISED, 188 canonical names).
+- **Scorer**: the fuzzy echo matcher turned "benefits" into "breadfruit"; fuzzy matches now also need
+  consonant skeletons with the same first letter matching >= 0.75 (still catches lichie/lychee,
+  samumberry/salmonberry, kumkwat/kumquat, pomegranite/pomegranate). Provisional reward: a multi-fruit
+  reply gets 0.25 only if it contains a new fruit (base Moshi played shopkeeper: "I'll take 10
+  apricots, 4 figs, 2 blood oranges", repeating the user's fruits).
+- Smoke re-run (val, seed 1, 4 games, batch 4, 1 GPU): 56-73 s games, 22.2 s wall, 22.3 GB peak.
+  Scored turns: valid 1, repeat 2, non_fruit 2, filler 9, silent 31, multi 5 (of 50). Base Moshi is
+  even more often silent with the audio rule (it is no longer interrupted mid-reply, and often says
+  nothing after a fruit). MP3s: GitHub release `smoke-test`.
+
 ## 2026-11-24 — Step 2: streaming game loop; checkpoint B smoke test
 - **Loop** (`fruitbench/game.py`, `scripts/run_games.py`): B games in lockstep on one GPU, one 80 ms
   frame per step, one worker process per GPU. Output-frame convention from moshi-finetune

@@ -3,239 +3,101 @@
  "fruits": {
   "test": [
    "apple",
-   "atemoya",
-   "bilberry",
-   "bosc pear",
-   "boysenberry",
-   "breadfruit",
-   "camu camu",
-   "casaba melon",
-   "cherimoya",
-   "citron",
+   "blueberry",
+   "cantaloupe",
+   "clementine",
+   "crab apple",
    "durian",
-   "fig",
-   "gala apple",
-   "galia melon",
+   "granny smith",
    "grapefruit",
    "jackfruit",
-   "mango",
-   "miracle fruit",
-   "nashi pear",
-   "noni",
-   "pear",
-   "persimmon",
+   "kumquat",
+   "lemon",
+   "lingonberry",
+   "mangosteen",
+   "mulberry",
+   "orange",
+   "pawpaw",
    "pineapple",
-   "pitanga",
-   "pomelo",
-   "rambutan",
-   "starfruit",
-   "tangelo",
-   "ugni",
-   "yuzu"
+   "pomegranate",
+   "prickly pear",
+   "strawberry"
   ],
   "val": [
+   "apricot",
    "blood orange",
-   "calamansi",
+   "breadfruit",
    "cloudberry",
-   "duku",
-   "langsat",
+   "dragon fruit",
+   "fig",
    "lychee",
-   "marionberry",
-   "mirabelle",
-   "monk fruit",
-   "passion fruit",
-   "physalis",
-   "salak",
-   "salmonberry",
-   "sea buckthorn",
+   "nectarine",
+   "peach",
+   "raspberry",
+   "starfruit",
    "watermelon"
   ],
   "train": [
    "acai",
-   "acerola",
-   "ackee",
-   "apricot",
-   "aprium",
    "avocado",
-   "bael",
    "banana",
-   "baobab",
-   "barberry",
-   "bartlett pear",
-   "bergamot",
-   "black sapote",
+   "bilberry",
    "blackberry",
-   "blueberry",
-   "canistel",
-   "cantaloupe",
-   "cara cara orange",
-   "cempedak",
+   "boysenberry",
+   "cherimoya",
    "cherry",
-   "chokeberry",
-   "clementine",
    "coconut",
    "concord grape",
-   "crab apple",
    "cranberry",
-   "crenshaw melon",
-   "cupuacu",
    "currant",
    "damson",
    "date",
-   "date plum",
-   "dragon fruit",
    "elderberry",
-   "feijoa",
-   "finger lime",
-   "fuji apple",
    "goji berry",
    "gooseberry",
-   "granny smith",
    "grape",
    "greengage",
    "guava",
-   "honeyberry",
    "honeycrisp",
    "honeydew",
-   "horned melon",
    "huckleberry",
-   "jabuticaba",
-   "jostaberry",
    "jujube",
    "key lime",
    "kiwi",
-   "kiwiberry",
-   "kumquat",
-   "lemon",
    "lime",
-   "lingonberry",
-   "loganberry",
    "longan",
    "loquat",
-   "lucuma",
-   "mamey",
-   "mamoncillo",
    "mandarin",
-   "mangosteen",
-   "marula",
-   "medlar",
+   "mango",
    "meyer lemon",
-   "minneola",
-   "mulberry",
-   "nance",
+   "nashi pear",
    "navel orange",
-   "nectarine",
-   "orange",
    "papaya",
-   "pawpaw",
-   "peach",
-   "pepino",
-   "pequi",
+   "passion fruit",
+   "pear",
+   "persimmon",
    "plantain",
    "plum",
-   "pluot",
-   "pomegranate",
-   "prickly pear",
-   "pulasan",
+   "pomelo",
    "quince",
-   "raspberry",
-   "rowan",
-   "santol",
-   "sapodilla",
+   "rambutan",
    "satsuma",
-   "serviceberry",
-   "sloe",
    "soursop",
-   "strawberry",
-   "sugar apple",
-   "sweet lime",
    "tamarind",
    "tangerine",
-   "tayberry",
-   "ugli fruit",
-   "wax apple",
-   "white currant",
-   "white sapote"
+   "yuzu"
   ]
  },
  "phrasings": {
   "train": [
    {
-    "text": "Let's take turns naming fruits as fast as we can.",
-    "starter": "user"
-   },
-   {
     "text": "Let's play a game: we take turns naming fruits, as fast as possible.",
-    "starter": "user"
-   },
-   {
-    "text": "I'll start, then you. We name fruits back and forth, quickly.",
     "starter": "user"
    },
    {
     "text": "Fruit game! I say a fruit, you say a different one, as fast as you can.",
     "starter": "user"
    },
-   {
-    "text": "Here's a game: each of us names a fruit in turn, as quickly as we can.",
-    "starter": "user"
-   },
-   {
-    "text": "Let's play fruits. One fruit each, fast, and don't repeat any.",
-    "starter": "user"
-   },
-   {
-    "text": "Quick, let's trade fruit names back and forth. Me first.",
-    "starter": "user"
-   },
-   {
-    "text": "Fruit rally: I name one, you name one, and we keep it going.",
-    "starter": "user"
-   },
-   {
-    "text": "Let's go back and forth naming fruits as fast as possible. I'll begin.",
-    "starter": "user"
-   },
-   {
-    "text": "Fruit game: you go first.",
-    "starter": "moshi"
-   },
-   {
-    "text": "Let's take turns naming fruits as fast as we can. You start.",
-    "starter": "moshi"
-   },
-   {
-    "text": "Quick game: fruits, back and forth, as fast as possible. You first.",
-    "starter": "moshi"
-   },
-   {
-    "text": "Let's trade fruit names as quickly as we can. You begin.",
-    "starter": "moshi"
-   },
-   {
-    "text": "Let's see how many fruits we can name, taking turns. You're up first.",
-    "starter": "moshi"
-   },
-   {
-    "text": "Back and forth with fruits, quick as you can. Kick it off.",
-    "starter": "moshi"
-   }
-  ],
-  "val": [
-   {
-    "text": "We're going to take turns saying fruits, super fast. Ready? I'll go first.",
-    "starter": "user"
-   },
-   {
-    "text": "I want to play a game. We take turns naming fruits, really fast.",
-    "starter": "user"
-   },
-   {
-    "text": "Let's play a game where we take turns naming fruits. You go first.",
-    "starter": "moshi"
-   }
-  ],
-  "test": [
    {
     "text": "Okay, quick game. We alternate naming fruits. I'll go first.",
     "starter": "user"
@@ -249,6 +111,70 @@
     "starter": "user"
    },
    {
+    "text": "We're going to take turns saying fruits, super fast. Ready? I'll go first.",
+    "starter": "user"
+   },
+   {
+    "text": "Here's a game: each of us names a fruit in turn, as quickly as we can.",
+    "starter": "user"
+   },
+   {
+    "text": "Quick, let's trade fruit names back and forth. Me first.",
+    "starter": "user"
+   },
+   {
+    "text": "I want to play a game. We take turns naming fruits, really fast.",
+    "starter": "user"
+   },
+   {
+    "text": "Fruit game: you go first.",
+    "starter": "moshi"
+   },
+   {
+    "text": "Let's take turns naming fruits as fast as we can. You start.",
+    "starter": "moshi"
+   },
+   {
+    "text": "Let's play a game where we take turns naming fruits. You go first.",
+    "starter": "moshi"
+   },
+   {
+    "text": "Let's trade fruit names as quickly as we can. You begin.",
+    "starter": "moshi"
+   },
+   {
+    "text": "Fruit game! You say one, then me, then you. Start now.",
+    "starter": "moshi"
+   },
+   {
+    "text": "Let's see how many fruits we can name, taking turns. You're up first.",
+    "starter": "moshi"
+   }
+  ],
+  "val": [
+   {
+    "text": "Let's play fruits. One fruit each, fast, and don't repeat any.",
+    "starter": "user"
+   },
+   {
+    "text": "Fruit rally: I name one, you name one, and we keep it going.",
+    "starter": "user"
+   },
+   {
+    "text": "Speed round of fruits, no repeats. You start us off.",
+    "starter": "moshi"
+   }
+  ],
+  "test": [
+   {
+    "text": "Let's take turns naming fruits as fast as we can.",
+    "starter": "user"
+   },
+   {
+    "text": "I'll start, then you. We name fruits back and forth, quickly.",
+    "starter": "user"
+   },
+   {
     "text": "Let's do a speed round of fruits. You and me, alternating, no repeating.",
     "starter": "user"
    },
@@ -257,11 +183,15 @@
     "starter": "user"
    },
    {
+    "text": "Let's go back and forth naming fruits as fast as possible. I'll begin.",
+    "starter": "user"
+   },
+   {
     "text": "Name a fruit, then I'll name one, and we keep alternating. Go!",
     "starter": "moshi"
    },
    {
-    "text": "Speed round of fruits, no repeats. You start us off.",
+    "text": "Quick game: fruits, back and forth, as fast as possible. You first.",
     "starter": "moshi"
    },
    {
@@ -269,11 +199,82 @@
     "starter": "moshi"
    },
    {
-    "text": "Fruit game! You say one, then me, then you. Start now.",
+    "text": "Back and forth with fruits, quick as you can. Kick it off.",
     "starter": "moshi"
    }
   ]
  },
- "n_user_fruits": 150,
- "spare_recognised_only": []
+ "n_user_fruits": 80,
+ "recognised_only": [
+  "acerola",
+  "ackee",
+  "aprium",
+  "atemoya",
+  "bael",
+  "baobab",
+  "barberry",
+  "bartlett pear",
+  "bergamot",
+  "black sapote",
+  "bosc pear",
+  "calamansi",
+  "camu camu",
+  "canistel",
+  "cara cara orange",
+  "casaba melon",
+  "cempedak",
+  "chokeberry",
+  "citron",
+  "crenshaw melon",
+  "cupuacu",
+  "date plum",
+  "duku",
+  "feijoa",
+  "finger lime",
+  "fuji apple",
+  "gala apple",
+  "galia melon",
+  "honeyberry",
+  "horned melon",
+  "jabuticaba",
+  "jostaberry",
+  "kiwiberry",
+  "langsat",
+  "loganberry",
+  "lucuma",
+  "mamey",
+  "mamoncillo",
+  "marionberry",
+  "marula",
+  "medlar",
+  "minneola",
+  "mirabelle",
+  "miracle fruit",
+  "monk fruit",
+  "nance",
+  "noni",
+  "pepino",
+  "pequi",
+  "physalis",
+  "pitanga",
+  "pluot",
+  "pulasan",
+  "rowan",
+  "salak",
+  "salmonberry",
+  "santol",
+  "sapodilla",
+  "sea buckthorn",
+  "serviceberry",
+  "sloe",
+  "sugar apple",
+  "sweet lime",
+  "tangelo",
+  "tayberry",
+  "ugli fruit",
+  "ugni",
+  "wax apple",
+  "white currant",
+  "white sapote"
+ ]
 }

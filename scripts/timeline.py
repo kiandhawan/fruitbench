@@ -48,6 +48,26 @@ def timeline(game: dict) -> str:
         rows.append((ut["speech_end"], 3, f"  >>   reply to {ut['text'][:30]!r}: {r['cls'].upper()}"
                      f"{' (' + r['fruit'] + ')' if r['fruit'] else ''}{' ECHO' if r['echo'] else ''}"
                      f"{' fuzzy ' + str(r['fuzzy']) if r['fuzzy'] else ''}{lat}{', OVERLAP' if r['overlap'] else ''} [{tag}]"))
+    # Turn-taking check: at each user clip start, is Moshi mid-sentence? Flag if Moshi's audio was
+    # speech in the 0.3 s before the clip, or its last word before the clip has no end punctuation
+    # and its next word follows within 1.0 s after the clip starts (the sentence continues).
+    lv, thr = game.get("moshi_dbfs"), game.get("speech_dbfs", -45.0)
+    flags = []
+    for t in game["user_turns"]:
+        s0 = t["start"]
+        why = []
+        if lv:
+            j = int(round(s0 / 0.08))
+            if any(x > thr for x in lv[max(0, j - 4):j]):
+                why.append("Moshi audio still speech in last 0.3 s")
+        before = [w for w in words if w["t"] < s0]
+        after = [w for w in words if s0 <= w["t"] < s0 + 1.0]
+        if before and after and not before[-1]["text"].rstrip().endswith((".", "?", "!")):
+            why.append(f"sentence continues: ...{before[-1]['text']!r}@{before[-1]['t']:.2f} -> {after[0]['text']!r}@{after[0]['t']:.2f}")
+        if why:
+            flags.append(f"{s0:.2f}s: " + "; ".join(why))
+            rows.append((s0, 0.5, "  !!   user started while Moshi mid-sentence: " + "; ".join(why)))
+    game["_midsentence_flags"] = flags
     # Show each reply verdict right after that turn's Moshi turn-end line.
     ends = [e["t"] for e in game["events"] if e["event"] in ("moshi_turn_end", "game_cap")]
     fixed = []
@@ -60,7 +80,8 @@ def timeline(game: dict) -> str:
     sp = game["spec"]
     head = (f"=== {game['game_id']}  starter={game['starter']}  voice={sp['voice']}  length={game['end_time']:.1f}s\n"
             f"    instructions: {sp['phrasing']!r}\n    greeting: {sc['greeting']!r}\n"
-            f"    counts: {sc['counts']}  overlaps={sc['overlaps']}  reward={sc['total_reward']}")
+            f"    counts: {sc['counts']}  overlaps={sc['overlaps']}  reward={sc['total_reward']}\n"
+            f"    user lines started while Moshi mid-sentence: {len(flags)} of {len(game['user_turns'])}")
     return head + "\n" + "\n".join(s for _, _, s in fixed) + "\n"
 
 

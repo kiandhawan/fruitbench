@@ -1,7 +1,9 @@
 """Word lists for fruit-bench: fruits (with accepted spellings), game-instruction phrasings, and
 the filler/meta vocabulary used by the scorer.
 
-Splits (`make_splits()`, deterministic): fruits 105 train / 15 val / 30 test; phrasings: a third of
+Splits (`make_splits()`, deterministic): the simulated user only says the 80 most familiar fruits
+(COMMON_FRUITS), split 48 train / 12 val / 20 test; Moshi's replies are matched against every fruit
+in FRUITS + EXTRA_RECOGNISED. Phrasings: a third of
 each starter type held out for test, a few for val, the rest train. Run `python -m fruitbench.lists`
 to (re)write data/splits.json.
 """
@@ -72,6 +74,22 @@ BOTANICAL_EDGE = {"tomato", "olive", "pumpkin", "cucumber", "eggplant", "pepper"
 
 # The simulated user never says these (debatable as "fruit"), but they stay recognised.
 USER_EXCLUDE = BOTANICAL_EDGE | {"raisin", "prune", "sultana"}
+
+# The fruits the simulated user says: the ~80 most familiar, easy-to-recognise ones, roughly in
+# order of familiarity (hand-ranked; obscure or regional fruits are still accepted from Moshi).
+COMMON_FRUITS: list[str] = [
+    "apple", "banana", "orange", "grape", "strawberry", "blueberry", "raspberry", "blackberry", "cherry",
+    "peach", "pear", "plum", "apricot", "nectarine", "mango", "pineapple", "watermelon", "cantaloupe",
+    "honeydew", "kiwi", "papaya", "guava", "lemon", "lime", "grapefruit", "tangerine", "clementine",
+    "mandarin", "pomegranate", "fig", "date", "coconut", "avocado", "passion fruit", "dragon fruit",
+    "lychee", "persimmon", "cranberry", "gooseberry", "elderberry", "mulberry", "boysenberry",
+    "huckleberry", "currant", "quince", "kumquat", "starfruit", "jackfruit", "durian", "plantain",
+    "blood orange", "pomelo", "satsuma", "key lime", "navel orange", "rambutan", "mangosteen", "tamarind",
+    "acai", "goji berry", "prickly pear", "breadfruit", "lingonberry", "yuzu", "soursop", "cherimoya",
+    "loquat", "longan", "jujube", "nashi pear", "crab apple", "granny smith", "concord grape",
+    "meyer lemon", "cloudberry", "bilberry", "honeycrisp", "pawpaw", "damson", "greengage",
+]
+N_TEST_FRUITS, N_VAL_FRUITS = 20, 12
 
 # Phrasings of the game instructions. "user" = the user will name the first fruit after Moshi
 # responds; "moshi" = the user asks Moshi to start.
@@ -154,11 +172,12 @@ def fruit_aliases() -> dict[str, str]:
 
 def make_splits(seed: int = 0) -> dict:
     rng = random.Random(seed)
+    assert len(set(COMMON_FRUITS)) == len(COMMON_FRUITS) and all(f in FRUITS and f not in USER_EXCLUDE for f in COMMON_FRUITS)
+    pool = sorted(COMMON_FRUITS)
+    rng.shuffle(pool)
+    nt, nv = N_TEST_FRUITS, N_VAL_FRUITS
+    fruits = {"test": sorted(pool[:nt]), "val": sorted(pool[nt:nt + nv]), "train": sorted(pool[nt + nv:])}
     user_fruits = sorted(f for f in FRUITS if f not in USER_EXCLUDE)
-    rng.shuffle(user_fruits)
-    # Keep exactly 150 user-speakable fruits if the list is longer (spares stay recognised only).
-    pool = user_fruits[:150]
-    fruits = {"test": sorted(pool[:30]), "val": sorted(pool[30:45]), "train": sorted(pool[45:])}
     phr = {"train": [], "val": [], "test": []}
     for who, lst in PHRASINGS.items():
         idx = list(range(len(lst)))
@@ -168,7 +187,7 @@ def make_splits(seed: int = 0) -> dict:
         for split, sl in (("test", idx[:n_test]), ("val", idx[n_test:n_test + n_val]), ("train", idx[n_test + n_val:])):
             phr[split] += [{"text": lst[i], "starter": who} for i in sorted(sl)]
     return {"seed": seed, "fruits": fruits, "phrasings": phr,
-            "n_user_fruits": len(pool), "spare_recognised_only": sorted(user_fruits[150:])}
+            "n_user_fruits": len(pool), "recognised_only": sorted(set(user_fruits) - set(pool))}
 
 
 if __name__ == "__main__":
@@ -176,4 +195,4 @@ if __name__ == "__main__":
     SPLITS_PATH.parent.mkdir(parents=True, exist_ok=True)
     SPLITS_PATH.write_text(json.dumps(s, indent=1))
     print({k: len(v) for k, v in s["fruits"].items()}, {k: len(v) for k, v in s["phrasings"].items()},
-          "user fruits:", s["n_user_fruits"], "spare:", len(s["spare_recognised_only"]))
+          "user fruits:", s["n_user_fruits"], "recognised only:", len(s["recognised_only"]))
