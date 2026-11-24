@@ -159,12 +159,28 @@ def plural_forms(name: str) -> list[str]:
     return [" ".join(head + [p]) for p in pl]
 
 
-def fruit_aliases() -> dict[str, str]:
-    """Every accepted spelling (lower case, singular and plural) -> canonical fruit name."""
+# Scorer v3 ("common-sense fruit"): no vegetables, nuts or dried fruit count as fruits, even if they
+# are botanically fruits; a few everyday aliases are added.
+V3_NOT_FRUIT = BOTANICAL_EDGE | {"raisin", "prune", "sultana"}
+V3_EXTRA_ALIASES: dict[str, list[str]] = {
+    "cantaloupe": ["muskmelon", "musk melon"], "persimmon": ["sharon fruit", "kaki"],
+    "kiwi": ["chinese gooseberry"], "prickly pear": ["cactus fruit"], "mandarin": ["mandarine"],
+    "grape": ["red grape", "green grape", "white grape", "black grape"],
+    "apple": ["red apple", "green apple"], "starfruit": ["star apple"], "lychee": ["lichy"],
+}
+
+
+def fruit_aliases(rules: str = "v1") -> dict[str, str]:
+    """Every accepted spelling (lower case, singular and plural) -> canonical fruit name.
+    rules="v1": everything in FRUITS + EXTRA_RECOGNISED (base benchmark, smoke runs 1-2).
+    rules="v3": the same minus V3_NOT_FRUIT, plus V3_EXTRA_ALIASES."""
     out: dict[str, str] = {}
-    for table in (FRUITS, EXTRA_RECOGNISED):
+    tables = [FRUITS, EXTRA_RECOGNISED] + ([V3_EXTRA_ALIASES] if rules == "v3" else [])
+    for table in tables:
         for canon, aliases in table.items():
-            for a in [canon, *aliases]:
+            if rules == "v3" and canon in V3_NOT_FRUIT:
+                continue
+            for a in ([canon] if table is not V3_EXTRA_ALIASES else []) + list(aliases):
                 for form in (a, *plural_forms(a)):
                     out.setdefault(form.lower(), canon)
     return out

@@ -40,6 +40,7 @@ def main() -> None:
     p.add_argument("--n", type=int, default=20)
     p.add_argument("--gpu", type=int, default=0)
     p.add_argument("--out", type=Path, default=ROOT / "results" / "asr_check.json")
+    p.add_argument("--rules", default="v1", choices=["v1", "v3"])
     args = p.parse_args()
     os.environ["CUDA_VISIBLE_DEVICES"] = str(args.gpu)
     ensure_cuda_libs()
@@ -64,7 +65,7 @@ def main() -> None:
         words = [w for s in segs for w in (s.words or [])]
         pseudo = dict(g, moshi_tokens=[{"t": round(w.start, 3), "id": -1, "piece": "▁" + w.word.strip()}
                                        for w in words if w.word.strip()])
-        st, sa = score_game(g), score_game(pseudo)
+        st, sa = score_game(g, args.rules), score_game(pseudo, args.rules)
         games.append({"game": g["game_id"], "asr_text": " ".join(w.word.strip() for w in words),
                       "moshi_text": g["moshi_text"]})
         for rt, ra in zip(st["replies"], sa["replies"]):
@@ -86,8 +87,9 @@ def main() -> None:
     from fruitbench.score import find_fruits, norm_word
 
     def fr(t):
+        from fruitbench.score import ALIASES_BY_RULES
         return Counter(m["fruit"] for m in find_fruits(
-            [{"t": 0, "text": w, "norm": norm_word(w)} for w in t.split() if norm_word(w)]))
+            [{"t": 0, "text": w, "norm": norm_word(w)} for w in t.split() if norm_word(w)], ALIASES_BY_RULES[args.rules]))
     inter = tot_t = tot_a = 0
     for gg in games:
         ct, ca = fr(gg["moshi_text"]), fr(gg["asr_text"])

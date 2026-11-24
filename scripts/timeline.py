@@ -19,8 +19,8 @@ from fruitbench.score import score_game, tokens_to_words  # noqa: E402
 GROUP_GAP = 0.4
 
 
-def timeline(game: dict) -> str:
-    sc = score_game(game)
+def timeline(game: dict, rules: str = "v1") -> str:
+    sc = score_game(game, rules)
     words = tokens_to_words(game["moshi_tokens"])
     rows = []
     utt: list[dict] = []

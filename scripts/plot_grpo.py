@@ -41,7 +41,7 @@ def main():
     g = lambda rows, k: [r.get(k) for r in rows]  # noqa: E731
     fig("reward", [("mean reward per turn", [("train", s, g(tr, "mean_reward"), "-o"), ("val", vs, g(va, "mean_reward"), "s--")]),
                    ("% valid new fruit", [("train", s, g(tr, "valid_rate"), "-o"), ("val", vs, g(va, "valid_rate"), "s--")])])
-    cls = ["filler", "silent", "repeat", "echo", "multi", "non_fruit", "overlap"]
+    cls = ["sentence", "filler", "silent", "repeat", "echo", "multi", "non_fruit", "overlap"]
     fig("rates", [("train turn rates", [(c, s, g(tr, f"{c}_rate"), "-") for c in cls]),
                   ("val turn rates", [(c, vs, g(va, f"{c}_rate"), "s-") for c in cls])])
     fig("latency", [("valid-fruit latency (s)", [("train median", s, g(tr, "latency_median"), "-o"),

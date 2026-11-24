@@ -1,0 +1,99 @@
+{
+ "config": "configs/grpo_smoke3.yaml",
+ "rules": "v3",
+ "runs": {
+  "base": {
+   "games": 100,
+   "turns": 1233,
+   "mean_reward": -0.538,
+   "valid_rate": 0.0024,
+   "sentence_rate": 0.0268,
+   "repeat_rate": 0.1598,
+   "non_fruit_rate": 0.0584,
+   "filler_rate": 0.3358,
+   "silent_rate": 0.3642,
+   "multi_rate": 0.0527,
+   "echo_rate": 0.116,
+   "overlap_rate": 0.2644,
+   "counted_overlap_rate": 0.1135,
+   "latency_median": 0.0,
+   "words_per_turn_median": 1.0,
+   "words_per_turn_mean": 5.21,
+   "turn_cap_per_game": 0.66,
+   "turns_1_6": {
+    "valid": 0.0017,
+    "sentence": 0.035,
+    "repeat": 0.1317,
+    "overlap": 0.275
+   },
+   "turns_7_12": {
+    "valid": 0.0033,
+    "sentence": 0.0117,
+    "repeat": 0.1967,
+    "overlap": 0.2567
+   }
+  },
+  "smoke1_step20": {
+   "games": 100,
+   "turns": 1233,
+   "mean_reward": -0.6181,
+   "valid_rate": 0.0592,
+   "sentence_rate": 0.1768,
+   "repeat_rate": 0.2587,
+   "non_fruit_rate": 0.0519,
+   "filler_rate": 0.1541,
+   "silent_rate": 0.0227,
+   "multi_rate": 0.2766,
+   "echo_rate": 0.1687,
+   "overlap_rate": 0.5296,
+   "counted_overlap_rate": 0.2214,
+   "latency_median": 0.03,
+   "words_per_turn_median": 6.0,
+   "words_per_turn_mean": 11.62,
+   "turn_cap_per_game": 1.88,
+   "turns_1_6": {
+    "valid": 0.0833,
+    "sentence": 0.2167,
+    "repeat": 0.1967,
+    "overlap": 0.545
+   },
+   "turns_7_12": {
+    "valid": 0.0383,
+    "sentence": 0.145,
+    "repeat": 0.335,
+    "overlap": 0.495
+   }
+  },
+  "smoke2_step20": {
+   "games": 100,
+   "turns": 1233,
+   "mean_reward": -0.078,
+   "valid_rate": 0.2612,
+   "sentence_rate": 0.0762,
+   "repeat_rate": 0.2879,
+   "non_fruit_rate": 0.1006,
+   "filler_rate": 0.0998,
+   "silent_rate": 0.0706,
+   "multi_rate": 0.1038,
+   "echo_rate": 0.1217,
+   "overlap_rate": 0.4185,
+   "counted_overlap_rate": 0.0957,
+   "latency_median": 0.02,
+   "words_per_turn_median": 1.0,
+   "words_per_turn_mean": 2.64,
+   "turn_cap_per_game": 0.57,
+   "turns_1_6": {
+    "valid": 0.34,
+    "sentence": 0.0933,
+    "repeat": 0.1867,
+    "overlap": 0.4417
+   },
+   "turns_7_12": {
+    "valid": 0.1967,
+    "sentence": 0.0583,
+    "repeat": 0.405,
+    "overlap": 0.3833
+   }
+  }
+ }
+}

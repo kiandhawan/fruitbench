@@ -45,6 +45,7 @@ from fruitbench.rewards import counted_overlap, game_rewards  # noqa: E402
 from fruitbench.score import CLASSES, score_game  # noqa: E402
 
 ASR_PY = ROOT / ".venv-asr" / "bin" / "python"
+RULES = "v1"
 
 
 # ----------------------------------------------------------------------------- setup
@@ -212,6 +213,8 @@ def main() -> None:
     dist.init_process_group("nccl", device_id=torch.device(f"cuda:{local}"))
     rank, world = dist.get_rank(), dist.get_world_size()
     os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "0"
+    global RULES
+    RULES = cfg["reward"].get("scorer", "v1")  # v3: bare-fruit 'valid', 'sentence' class, common-sense fruit list
     run = cfg["run_name"]
     res_dir = ROOT / "results" / "grpo" / run
     run_dir = ROOT / "runs" / "grpo" / run
@@ -253,7 +256,7 @@ def main() -> None:
         if mine:
             results = runner.run(mine, v["seed"] * 1000 + rank)  # same specs & sampling seeds every eval
             for res in results:
-                sc = score_game(res["summary"])
+                sc = score_game(res["summary"], RULES)
                 res.pop("codes", None)
                 save_game(res, vdir)
                 (vdir / f"{res['summary']['game_id']}.score.json").write_text(json.dumps(sc, ensure_ascii=False))
@@ -289,13 +292,14 @@ def main() -> None:
             for name, lo, hi in (("turns_1_6", 1, 6), ("turns_7_12", 7, 12)):
                 ps = [(c, o) for r in rows for (i, c, o) in r["pos"] if lo <= i <= hi]
                 rec[name] = {"n": len(ps), "valid": round(sum(c == "valid" for c, _ in ps) / len(ps), 4),
+                             "sentence": round(sum(c == "sentence" for c, _ in ps) / len(ps), 4),
                              "repeat": round(sum(c == "repeat" for c, _ in ps) / len(ps), 4),
                              "overlap": round(sum(o for _, o in ps) / len(ps), 4)}
             archive_run(vdir, res_dir / f"val_step_{step:03d}")
             asr_out = res_dir / f"val_step_{step:03d}_asr.json"
             try:
                 subprocess.run([str(ASR_PY), str(ROOT / "scripts" / "asr_check.py"), str(vdir), "--n",
-                                str(v["whisper_games"]), "--gpu", str(local), "--out", str(asr_out)],
+                                str(v["whisper_games"]), "--gpu", str(local), "--out", str(asr_out), "--rules", RULES],
                                check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 a = json.loads(asr_out.read_text())
                 agree = a["fruit_mentions_game_level"]["text_mentions_heard_in_audio"]
@@ -337,7 +341,7 @@ def main() -> None:
         t0 = time.time()
         results = runner.run(specs, cfg["seed"] * 1_000_000 + step * 100 + rank)
         gen_sec = time.time() - t0
-        scores = [score_game(r["summary"]) for r in results]
+        scores = [score_game(r["summary"], RULES) for r in results]
         rewards = [game_rewards(s, cfg["reward"]) for s in scores]
         adv, gstats = group_advantages(rewards, u["adv_eps"])
         items, misaligned = [], 0

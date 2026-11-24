@@ -44,9 +44,11 @@ from dataclasses import dataclass, field
 
 from .lists import FILLER_WORDS, fruit_aliases
 
-ALIASES = fruit_aliases()
-MAX_ALIAS_WORDS = max(len(a.split()) for a in ALIASES)
-CLASSES = ["valid", "repeat", "non_fruit", "filler", "silent", "multi"]
+ALIASES = fruit_aliases("v1")
+ALIASES_BY_RULES = {"v1": ALIASES, "v3": fruit_aliases("v3")}
+MAX_ALIAS_WORDS = max(len(a.split()) for m in ALIASES_BY_RULES.values() for a in m)
+CLASSES = ["valid", "sentence", "repeat", "non_fruit", "filler", "silent", "multi"]
+ARTICLES = {"a", "an", "some"}
 
 
 def norm_word(w: str) -> str:
@@ -73,8 +75,9 @@ def tokens_to_words(tokens: list[dict]) -> list[dict]:
     return out
 
 
-def find_fruits(words: list[dict]) -> list[dict]:
+def find_fruits(words: list[dict], aliases: dict | None = None) -> list[dict]:
     """Longest-match fruit mentions: [{"fruit": canonical, "t": start time, "i": word index, "n": words}]."""
+    ALIASES = aliases if aliases is not None else ALIASES_BY_RULES["v1"]  # noqa: N806
     found, i = [], 0
     norms = [w["norm"] for w in words]
     while i < len(words):
@@ -120,9 +123,11 @@ def skeleton(w: str) -> str:
     return re.sub(r"[aeiouy']", "", w)
 
 
-def fuzzy_said(words: list[dict], said: list[str], skip: set[int]) -> list[dict]:
+def fuzzy_said(words: list[dict], said: list[str], skip: set[int], aliases: dict | None = None,
+               same_first_letter: bool = False) -> list[dict]:
     """Misspelled mentions of fruits already said in the game (canonical names in `said`)."""
     import difflib
+    ALIASES = aliases if aliases is not None else ALIASES_BY_RULES["v1"]  # noqa: N806
     forms = {}
     for a, c in ALIASES.items():
         if c in said:
@@ -138,6 +143,8 @@ def fuzzy_said(words: list[dict], said: list[str], skip: set[int]) -> list[dict]
         # ("benefits" vs "breadfruits" is 0.6 by spelling but bnfts/brdfrts 0.67; "speech" vs "peach"
         # starts differently; "lichie" vs "lychee": skeletons identical).
         def sim(c, f):
+            if same_first_letter and c[:1].replace("c", "k") != f[:1].replace("c", "k"):
+                return 0.0  # v3: "places" is not a misspelled "apples"
             sc, sf = skeleton(c), skeleton(f)
             if not sc or not sf or sc[0] != sf[0] or difflib.SequenceMatcher(None, sc, sf).ratio() < 0.75:
                 return 0.0
@@ -197,8 +204,20 @@ def turn_reward(cls: str, latency: float | None, overlap: bool, multi_new: bool 
     return 0.25 if cls == "multi" and multi_new else 0.0
 
 
-def score_game(game: dict) -> dict:
-    """game: the JSON summary written by the game loop (needs user_turns, moshi_tokens, starter, end_time)."""
+def is_bare(ws: list[dict], mentions: list[dict]) -> bool:
+    """v3 'valid' form: the whole reply is one fruit name (any number of words, plural allowed),
+    optionally preceded by a single "a" / "an" / "some"; punctuation is ignored."""
+    if len(mentions) != 1 or "fuzzy" in mentions[0]:
+        return False
+    m = mentions[0]
+    return m["i"] + m["n"] == len(ws) and m["i"] <= 1 and all(w["norm"] in ARTICLES for w in ws[:m["i"]])
+
+
+def score_game(game: dict, rules: str = "v1") -> dict:
+    """game: the JSON summary written by the game loop (needs user_turns, moshi_tokens, starter, end_time).
+    rules="v1": base benchmark rules. rules="v3": common-sense fruit list, and a reply with one new
+    fruit is "valid" only if it is the bare fruit name (see is_bare), otherwise "sentence"."""
+    aliases = ALIASES_BY_RULES[rules]
     words = tokens_to_words(game["moshi_tokens"])
     utts = utterances(words)
     turns = game["user_turns"]
@@ -218,9 +237,9 @@ def score_game(game: dict) -> dict:
         r = Reply(turn=k, kind="fruit" if is_fruit else "instructions", scored=scored, user_text=ut["text"],
                   user_fruit=ut.get("fruit"), user_end=ut["speech_end"], words=ws,
                   text=" ".join(w["text"] for w in ws))
-        mentions = find_fruits(ws)
+        mentions = find_fruits(ws, aliases)
         exact_idx = {j for m in mentions for j in range(m["i"], m["i"] + m["n"])}
-        fuzzy = fuzzy_said(ws, said, exact_idx)
+        fuzzy = fuzzy_said(ws, said, exact_idx, aliases, same_first_letter=rules == "v3")
         r.fuzzy = [f"{m['fuzzy']}->{m['fruit']}" for m in fuzzy]
         mentions = sorted(mentions + fuzzy, key=lambda m: m["i"])
         distinct = list(dict.fromkeys(m["fruit"] for m in mentions))
@@ -235,6 +254,8 @@ def score_game(game: dict) -> dict:
         elif len(distinct) == 1:
             r.fruit = distinct[0]
             r.cls = "repeat" if r.fruit in said else "valid"
+            if rules == "v3" and r.cls == "valid" and not is_bare(ws, mentions):
+                r.cls = "sentence"
             r.echo = is_fruit and r.fruit == ut["fruit"]
         elif names_non_fruit(ws):
             r.cls = "non_fruit"

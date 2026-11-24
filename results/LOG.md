@@ -1,5 +1,27 @@
 # LOG (newest first)
 
+## 2026-11-24 — Reward v3 (`configs/grpo_smoke3.yaml`): only a bare fruit counts as valid
+Requested by the user before smoke run 3. Changes vs v2:
+1. **Scorer rules v3** (`score_game(game, rules="v3")`; v1 stays the default and still reproduces all
+   200 base test games exactly): a reply with one new fruit is **valid only if it is exactly that
+   fruit name** after removing punctuation, optionally preceded by one "a"/"an"/"some"; plurals and
+   multi-word names count ("Mangoes?", "A mango!", "Dragon fruit."). Any other reply containing one
+   new fruit is the new class **sentence** ("I'll go with mango", "Um, mango", "Mango, it's sweet").
+   Order: silent, multi, repeat, valid/sentence, non_fruit, filler.
+2. **Rewards**: valid +1.0 (+0.2 if latency in [0, 1.0] s); sentence -0.1; multi_new -0.1 (was 0.0);
+   multi_no_new / filler / silent / non_fruit -0.3; repeat/echo -0.5; overlap -0.8 with 0.2 s grace;
+   valid with counted overlap capped at +0.2; long-turn -0.05/word beyond 3 (cap -0.5), all classes.
+3. **Common-sense fruit list** for v3 (`fruit_aliases("v3")`): vegetables, nuts and dried fruit no
+   longer count (tomato, olive, pumpkin, cucumber, eggplant, pepper, squash, zucchini, rhubarb, carob,
+   bitter/winter melon, all nuts, raisin, prune, sultana); added aliases (muskmelon, sharon fruit,
+   kaki, chinese gooseberry, cactus fruit, red/green/white/black grape, red/green apple, ...).
+   Also v3-only: a fuzzy (misspelled) echo must start with the same letter (c = k); the unit table
+   caught "places" being read as a misspelled "apples".
+4. **12 user turns in training games** (was 6); validation uses the same scorer and reward.
+5. Unit table (`tests/test_reward_v3.py` -> `results/reward_v3_table.md`), checked case by case.
+6. Validation rescored under v3 (`scripts/rescore_val.py` -> `results/grpo/rescore_v3.md`): bare valid
+   base 0.2%, smoke 1 step 20 5.9% (sentence 17.7%, multi 27.7%), smoke 2 step 20 26.1% (sentence 7.6%).
+
 ## 2026-11-24 — Smoke run 2 (reward v2, 20 steps, same seed/settings)
 - **Validation, step 0 -> 20** (100 val games, 12 user turns; step 0 = base Moshi, identical games to
   smoke run 1's step 0): valid new fruit 3.2% -> **34.9%** (run 1: 24.7%); repeat
