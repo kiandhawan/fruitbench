@@ -1,0 +1,1452 @@
+{
+ "games": 10,
+ "fruit_mentions_game_level": {
+  "fruit_mentions_text": 216,
+  "fruit_mentions_asr": 210,
+  "matched": 205,
+  "text_mentions_heard_in_audio": 0.949,
+  "asr_mentions_in_text": 0.976
+ },
+ "scored_turns": 122,
+ "agree_class": 0.82,
+ "agree_class_and_fruit": 0.82,
+ "per_text_class": {
+  "filler": {
+   "n": 11,
+   "agree": 0.727
+  },
+  "multi": {
+   "n": 34,
+   "agree": 0.941
+  },
+  "non_fruit": {
+   "n": 7,
+   "agree": 0.143
+  },
+  "repeat": {
+   "n": 30,
+   "agree": 0.8
+  },
+  "valid": {
+   "n": 40,
+   "agree": 0.875
+  }
+ },
+ "disagreements": {
+  "non_fruit->filler": 6,
+  "repeat->non_fruit": 2,
+  "valid->silent": 2,
+  "filler->repeat": 2,
+  "valid->multi": 2,
+  "repeat->filler": 1,
+  "repeat->multi": 1,
+  "repeat->valid": 1,
+  "multi->repeat": 1,
+  "multi->valid": 1,
+  "valid->repeat": 1,
+  "repeat->silent": 1,
+  "filler->silent": 1
+ },
+ "turns": [
+  {
+   "game": "val_s7_0005",
+   "turn": 0,
+   "user": "Speed round of fruits, no repeats. You start us off.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Apples, bananas, oranges, tomatoes, blueberries.",
+   "asr": "Apples, bananas, oranges, tomatoes, blueberries,"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 1,
+   "user": "Breadfruit.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Mellons, cucumbers, lettuce, rye, raisins.",
+   "asr": "melons, cucumbers, lettuce, rye, raisins, Blood"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 2,
+   "user": "Blood orange.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Blood oranges, oranges, cherries, raspberries.",
+   "asr": "oranges, oranges, cherries, raspberries, apples,"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 3,
+   "user": "Apricot.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Apples, grapefruit, tangerines, kiwis.",
+   "asr": "grapefruit, tangerines, kiwis, dragon"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 4,
+   "user": "Dragon fruit.",
+   "text_cls": "repeat",
+   "asr_cls": "filler",
+   "text_fruit": "dragon fruit",
+   "asr_fruit": null,
+   "text": "Dragon fruit.",
+   "asr": "fruit,"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 5,
+   "user": "Starfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "starfruit",
+   "asr_fruit": "starfruit",
+   "text": "Star fruit.",
+   "asr": "star fruit, cloud"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 6,
+   "user": "Cloudberry.",
+   "text_cls": "repeat",
+   "asr_cls": "multi",
+   "text_fruit": "cloudberry",
+   "asr_fruit": null,
+   "text": "Cloudberries.",
+   "asr": "berries, figs,"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 7,
+   "user": "Fig.",
+   "text_cls": "repeat",
+   "asr_cls": "valid",
+   "text_fruit": "fig",
+   "asr_fruit": "peach",
+   "text": "Figs.",
+   "asr": "peaches,"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 8,
+   "user": "Peach.",
+   "text_cls": "repeat",
+   "asr_cls": "non_fruit",
+   "text_fruit": "peach",
+   "asr_fruit": null,
+   "text": "Peaches.",
+   "asr": "sweet"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 9,
+   "user": "Nectarine.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Sweet apples, sweet kiwi, sweet berries.",
+   "asr": "apples, sweet kiwi, sweet berries, blueberries,"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 10,
+   "user": "Watermelon.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Watermelons, cucumbers, melons.",
+   "asr": "watermelons, cucumbers, melons, blueberries,"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 11,
+   "user": "Lychee.",
+   "text_cls": "multi",
+   "asr_cls": "repeat",
+   "text_fruit": null,
+   "asr_fruit": "raspberry",
+   "text": "Blueberries, raspberries.",
+   "asr": "raspberries, beers."
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 12,
+   "user": "Pequi.",
+   "text_cls": "valid",
+   "asr_cls": "silent",
+   "text_fruit": "pear",
+   "asr_fruit": null,
+   "text": "Pears,",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 0,
+   "user": "Speed round of fruits, no repeats. You start us off.",
+   "text_cls": "multi",
+   "asr_cls": "valid",
+   "text_fruit": null,
+   "asr_fruit": "banana",
+   "text": "Apples are round and yellow. I will start us off with the banana.",
+   "asr": "That goes around in yellow. I will start us off with the banana."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 1,
+   "user": "Apricot.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "mango",
+   "asr_fruit": "mango",
+   "text": "Mangoes are a popular choice. 702.",
+   "asr": "Mangoes are a popular choice. 702"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 2,
+   "user": "Fig.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "tomato",
+   "asr_fruit": "tomato",
+   "text": "Tomatoes are a delicious fruit.",
+   "asr": "Tomatoes are a delicious fruit."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 3,
+   "user": "Lychee.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "strawberry",
+   "asr_fruit": "strawberry",
+   "text": "Strawberries are a sweet treat.",
+   "asr": "Strawberries are a sweet treat."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 4,
+   "user": "Watermelon.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "Watermelon is a cool summer treat.",
+   "asr": "Watermelon is a cool summer treat."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 5,
+   "user": "Cloudberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "blueberry",
+   "asr_fruit": "blueberry",
+   "text": "Blueberry is a delicious fruit.",
+   "asr": "Blueberries are a delicious fruit."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 6,
+   "user": "Blood orange.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "orange",
+   "asr_fruit": "orange",
+   "text": "Oranges are a classic fruit.",
+   "asr": "Oranges are a classic fruit."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 7,
+   "user": "Breadfruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "grape",
+   "asr_fruit": "grape",
+   "text": "Grapes are a sweet and juicy treat.",
+   "asr": "Grapes are a sweet and juicy treat."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 8,
+   "user": "Starfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "mango",
+   "asr_fruit": "mango",
+   "text": "Mangoes are a dream come true.",
+   "asr": "Mangoes are a dream come true."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 9,
+   "user": "Dragon fruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "pineapple",
+   "asr_fruit": "pineapple",
+   "text": "Pineapple is a tasty treat.",
+   "asr": "Pineapple is a tasty treat."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 10,
+   "user": "Peach.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "peach",
+   "asr_fruit": "peach",
+   "text": "Peaches are a delightful fruit.",
+   "asr": "Peaches are a delightful fruit."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 11,
+   "user": "Nectarine.",
+   "text_cls": "filler",
+   "asr_cls": "repeat",
+   "text_fruit": null,
+   "asr_fruit": "strawberry",
+   "text": "Pine is full of sweetness.",
+   "asr": "Pine is full of sweetness. Red strawberries"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 12,
+   "user": "Raspberry.",
+   "text_cls": "repeat",
+   "asr_cls": "non_fruit",
+   "text_fruit": "strawberry",
+   "asr_fruit": null,
+   "text": "Strawberries are a delicious fruit.",
+   "asr": "are a delicious fruit."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 1,
+   "user": "Blood orange.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "apple",
+   "asr_fruit": "apple",
+   "text": "I'm not going to eat the apple!",
+   "asr": "I'm not going to eat the apple."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 2,
+   "user": "Starfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "apple",
+   "asr_fruit": "apple",
+   "text": "I'm going to choose an apple.",
+   "asr": "I'm going to choose an apple."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 3,
+   "user": "Raspberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "I'll grab a watermelon. Thank you!",
+   "asr": "I'll grab a watermelon. Thank you."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 4,
+   "user": "Fig.",
+   "text_cls": "valid",
+   "asr_cls": "multi",
+   "text_fruit": "strawberry",
+   "asr_fruit": null,
+   "text": "I'm choosing a strawberry.",
+   "asr": "I'm choosing a strawberry. Thank you. I'm going to eat a rat pear."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 5,
+   "user": "Cloudberry.",
+   "text_cls": "valid",
+   "asr_cls": "silent",
+   "text_fruit": "pear",
+   "asr_fruit": null,
+   "text": "Thank you! I'm going to eat a pear.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 6,
+   "user": "Apricot.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "orange",
+   "asr_fruit": "orange",
+   "text": "I'm going to eat an orange.",
+   "asr": "I'm going to eat an orange."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 7,
+   "user": "Lychee.",
+   "text_cls": "valid",
+   "asr_cls": "multi",
+   "text_fruit": "pineapple",
+   "asr_fruit": null,
+   "text": "I'll choose a pineapple.",
+   "asr": "I will choose a pineapple. apple."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 8,
+   "user": "Peach.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "strawberry",
+   "asr_fruit": "strawberry",
+   "text": "I' going to eat a strawberry.",
+   "asr": "I'm going to eat a strawberry."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 9,
+   "user": "Breadfruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "blueberry",
+   "asr_fruit": "blueberry",
+   "text": "I' going to eat a blueberry.",
+   "asr": "I'm going to eat a blueberry."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 10,
+   "user": "Nectarine.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I'm choosing an apple. I'll eat a banana.",
+   "asr": "I'm choosing an apple. I'll eat a banana."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 11,
+   "user": "Dragon fruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I'm going to eat a cinnamon roll.",
+   "asr": "I'm going to eat a cinnamon roll."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 12,
+   "user": "Aprium.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "strawberry",
+   "asr_fruit": "strawberry",
+   "text": "I'm going to eat a strawberry.",
+   "asr": "Yep, I'm going to eat a strawberry."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 1,
+   "user": "Blood orange.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "strawberry",
+   "asr_fruit": "strawberry",
+   "text": "I'll have a strawberry.",
+   "asr": "I'll have a strawberry."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 2,
+   "user": "Watermelon.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "tomato",
+   "asr_fruit": "tomato",
+   "text": "I'll have a tomato.",
+   "asr": "I'll have a tomato."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 3,
+   "user": "Cloudberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "lemon",
+   "asr_fruit": "lemon",
+   "text": "I'll take a lemon.",
+   "asr": "I'll take a lemon."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 4,
+   "user": "Breadfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "strawberry",
+   "asr_fruit": "strawberry",
+   "text": "I'll have a strawberry.",
+   "asr": "I'll have a strawberry."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 5,
+   "user": "Nectarine.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "grape",
+   "asr_fruit": "grape",
+   "text": "I'll take a grape.",
+   "asr": "I'll take a grape."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 6,
+   "user": "Dragon fruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "banana",
+   "asr_fruit": "banana",
+   "text": "I'll have a banana.",
+   "asr": "I'll have a banana."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 7,
+   "user": "Lychee.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "mango",
+   "asr_fruit": "mango",
+   "text": "I'll take a mango.",
+   "asr": "I'll take a mango."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 8,
+   "user": "Fig.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "cherry",
+   "asr_fruit": "cherry",
+   "text": "I'll have a cherry.",
+   "asr": "I'll have a cherry."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 9,
+   "user": "Peach.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "strawberry",
+   "asr_fruit": "strawberry",
+   "text": "I'll have a strawberry.",
+   "asr": "I'll have a strawberry."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 10,
+   "user": "Starfruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "blueberry",
+   "asr_fruit": "blueberry",
+   "text": "I'll take a blueberry.",
+   "asr": "I'll take a blueberry."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 11,
+   "user": "Raspberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "orange",
+   "asr_fruit": "orange",
+   "text": "I'll have an orange.",
+   "asr": "I'll have an orange."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 12,
+   "user": "Apricot.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "grapefruit",
+   "asr_fruit": "grapefruit",
+   "text": "I'll have a grapefruit.",
+   "asr": "I'll have a grapefruit."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 1,
+   "user": "Lychee.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "banana",
+   "asr_fruit": "banana",
+   "text": "I choose a banana.",
+   "asr": "I'll choose a banana."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 2,
+   "user": "Fig.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "I' go with a watermelon.",
+   "asr": "I'll go with a watermelon."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 3,
+   "user": "Apricot.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "mango",
+   "asr_fruit": "mango",
+   "text": "I go with a mango.",
+   "asr": "I'll go with a mango."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 4,
+   "user": "Blood orange.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "pineapple",
+   "asr_fruit": "pineapple",
+   "text": "I go with a pineapple.",
+   "asr": "I'll go with a pineapple."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 5,
+   "user": "Starfruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "pomegranate",
+   "asr_fruit": "pomegranate",
+   "text": "I choose a pomegranate.",
+   "asr": "I'll choose a pomegranate."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 6,
+   "user": "Nectarine.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "grapefruit",
+   "asr_fruit": "grapefruit",
+   "text": "I go with a grapefruit.",
+   "asr": "I'll go with a grapefruit."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 7,
+   "user": "Cloudberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "kiwi",
+   "asr_fruit": "kiwi",
+   "text": "I go with a kiwi.",
+   "asr": "I'll go with a kiwi."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 8,
+   "user": "Peach.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "tamarind",
+   "asr_fruit": "tamarind",
+   "text": "I go with a tamarind.",
+   "asr": "I'll go with a tamarind."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 9,
+   "user": "Dragon fruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "chestnut",
+   "asr_fruit": "chestnut",
+   "text": "I go with a water chestnut.",
+   "asr": "I'll go with a water chestnut."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 10,
+   "user": "Breadfruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "persimmon",
+   "asr_fruit": "persimmon",
+   "text": "I go with a persimmon.",
+   "asr": "I'll go with a persimmon."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 11,
+   "user": "Raspberry.",
+   "text_cls": "valid",
+   "asr_cls": "repeat",
+   "text_fruit": "mulberry",
+   "asr_fruit": "raspberry",
+   "text": "I go with a mulberry.",
+   "asr": "I'll go with a Rauberry"
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 12,
+   "user": "Chokeberry.",
+   "text_cls": "non_fruit",
+   "asr_cls": "non_fruit",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I go with a quinoa.",
+   "asr": "I'll go with a Quina"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 1,
+   "user": "Fig.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "fig. I' go with a mango. I'm gonna go with an apple. I go with a pineapple. I'll go with a banana. I'm gonna go with a watermelon. I'm gonna go with a grapefruit.",
+   "asr": "fig I'll go with a mango I'm gonna go with an apple I'll go with a pineapple I'll go with a banana I'm gonna go with a watermelon I'm gonna go with a grapefruit"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 2,
+   "user": "Apricot.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I'm gonna go with a pomelo. I'm gonna go with a kiwi. I'm gonna go with a tangelo. I'm gonna go with a guava.",
+   "asr": "I'm gonna go with a pomolo I'm gonna go with a kiwi I'm gonna go with a Tangello I'm gonna go with a guava."
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 3,
+   "user": "Cloudberry.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I gonna go with a strawberry. I'm gonna go with a sour apple. I'm gonna go with a blackberry. I'm gonna go with a watermelon. I'm gonna go with a peach. I gonna go with a pomelo.",
+   "asr": "I'm gonna go with a strawberry. I'm gonna go with a sour apple. I'm gonna go with a blackberry. I'm gonna go with a watermelon. I'm gonna go with a peach. I'm gonna go with a pomelo."
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 4,
+   "user": "Breadfruit.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I gonna go with a grapefruit. I'm gonna go with a lychee.",
+   "asr": "I'm gonna go with a grapefruit. I'm gonna go with a lychee."
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 5,
+   "user": "Nectarine.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I gonna go with a mango. I'm gonna go with a strawberry. I'm gonna go with a lychee.",
+   "asr": "I'm gonna go with a mango. I'm gonna go with a strawberry. I'm gonna go with a lychee."
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 6,
+   "user": "Raspberry.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I gonna go with a wolfberry. I'm gonna go with a fig. gonna go with a pomelo.",
+   "asr": "I'm gonna go with a wolfberry. I'm gonna go with a fig i'm gonna go with a pomelo i'm"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 7,
+   "user": "Starfruit.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I gonna go with a pineapple. I'm gonna go with a pomelo.",
+   "asr": "gonna go with a pineapple i'm gonna go with a pomelo i'm"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 8,
+   "user": "Blood orange.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I gonna go with a mango. I'm gonna go with a watermelon. I gonna go with a sour apple.",
+   "asr": "gonna go with a mango i'm gonna go with a watermelon i'm gonna go with a sour apple"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 9,
+   "user": "Dragon fruit.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I gonna go with a grapefruit. I gonna go with a lychee.",
+   "asr": "i'm gonna go with the grapefruit i'm gonna go with a lychee i'm"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 10,
+   "user": "Honeyberry.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I gonna go with a watermelon. I'm gonna go with a peach. gonna go with a lychee.",
+   "asr": "gonna go the watermelon i'm gonna go with the peach i'm gonna go with a lychee i'm"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 11,
+   "user": "Chokeberry.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I gonna go with a wolfberry. I'm gonna go with a fig. I gonna go with a pomelo.",
+   "asr": "gonna go with a wolfberry i'm gonna go with a fake I'm gonna go with the pomelo I'm"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 12,
+   "user": "Bael.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I gonna go with a pineapple. I'm gonna go with a watermelon. I' gonna go with a mango. I'm gonna go with a guava. I'm gonna go with a grapefruit. I gonna go",
+   "asr": "gonna go with a pineapple I'm gonna go with a watermelon I'm gonna go with a mango I'm gonna go with a guava I'm gonna go with a grapefruit I'm gonna go"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 1,
+   "user": "Cloudberry.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I'll choose a kumquat. I'll have a kiwi. I' choose a jackfruit. I'll have a papaya. I'll have a pineapple. I'll have a pomegranate. I'll have a star fruit. I'll have a passionfruit.",
+   "asr": "I'll choose a kumquat. I'll have a kiwi. I'll choose a jackfruit I'll have a papaya. I'll have a pineapple. I'll have a pomegranate. I'll have a star fruit I'll"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 2,
+   "user": "Peach.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I' have a water lychee. I'll have a sugarcane. I'll have a lychee. I'll have a saguaro. I'll have a raisin. I'll have a fig. I have a cassava.",
+   "asr": "have a passion fruit. I'll have a water lychee I'll have a sugar cane. I'll have a salachi. I'll have a saguaro. I'll have a raisin. I'll have a fig. I'll have a cassava."
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 3,
+   "user": "Apricot.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I'll have a guava. I'll have a pomelo. I'll have a banana. I'll have a mangosteen.",
+   "asr": "I'll have a guava. I'll have a pomelo. I'll have a banana. I'll have a mango steam."
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 4,
+   "user": "Raspberry.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I'll have a hawthorn. I'll have a watering fruit. I' have a kiwifruit. I have a passionfruit. I' have a durian. I'll have a pomelo. I'll have a mango.",
+   "asr": "I'll have a hawthorn. I'll have a watering fruit. I'll have a kiwi fruit. I'll have a passion fruit. I'll have a durian. I'll have a pomelo. I'll have a mango."
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 5,
+   "user": "Dragon fruit.",
+   "text_cls": "filler",
+   "asr_cls": "repeat",
+   "text_fruit": null,
+   "asr_fruit": "dragon fruit",
+   "text": "I'll have a cactus fruit. I'll have a sago palm.",
+   "asr": "I'll have a cactus All have a dragon fruit."
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 6,
+   "user": "Breadfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "silent",
+   "text_fruit": "dragon fruit",
+   "asr_fruit": null,
+   "text": "I'll have a dragon fruit.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 7,
+   "user": "Nectarine.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "passion fruit",
+   "asr_fruit": "passion fruit",
+   "text": "I' have a passionfruit. I' have a berry.",
+   "asr": "All have a passion fruit. All have a star"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 8,
+   "user": "Blood orange.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I' have a star fruit. I have a guava. I' have a papaya. I'll have a pomegranate. I' have a melon. I'll have a pineapple. I'll have a kiwifruit.",
+   "asr": "fruit. All have a guava. All have a papaya. All have a pomegranate. All have a melon. All have a pineapple. All have a kiwi fruit."
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 9,
+   "user": "Galia melon.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I have a grapefruit. I' have a lime. I'll have a lemon. I have a mangosteen. I'll have a guava. I' have a pomelo. I'll have a cassava. I'll have a banana.",
+   "asr": "All have a grapefruit. All have a lime. All have a lemon. All have a mangosteen. All have a guava. all have a pomelo all have a cassava all have a banana all"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 10,
+   "user": "Ackee.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I'll have a coconut. I'll have an avocado. I'll have an orange. I'll have a fig. I'll have a passionfruit.",
+   "asr": "have a coconut all have an avocado all have an orange all have a fig all have a passion fruit all"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 11,
+   "user": "Mamey.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I' have a cactus fruit. I' have a mangosteen. I'll have a berry. I'll have a blood orange. I'll have a tangelo. I'll have a grapefruit. I'll have a lime. I'll have an orange. I'll have a pomegranate.",
+   "asr": "have a cactus fruit all have a mangosteen all have a berry all have a blood orange all have a tangelo all have a grapefruit all have a lime all"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 12,
+   "user": "Pulasan.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I' have a passionfruit. I'll have a durian. I'll have a guava. I'll have a melon. I'll have a pineapple.",
+   "asr": "have an orange all have a pomegranate all have a passion fruit all have a durian, or have a guava, or have a melon, or have a pineapple."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 1,
+   "user": "Blood orange.",
+   "text_cls": "non_fruit",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "got the fourth one.",
+   "asr": "I've got the fourth one."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 2,
+   "user": "Peach.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I got the fifth one.",
+   "asr": "I've got the fifth one."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 3,
+   "user": "Lychee.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I got the sixth one.",
+   "asr": "I've got the sixth one."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 4,
+   "user": "Starfruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I got the seventh one.",
+   "asr": "I've got the seventh one."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 5,
+   "user": "Nectarine.",
+   "text_cls": "non_fruit",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "got the eighth one.",
+   "asr": "I've got the eighth one."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 6,
+   "user": "Breadfruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I got the ninth one.",
+   "asr": "I've got the ninth one."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 7,
+   "user": "Dragon fruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I got the tenth one.",
+   "asr": "I've got the tenth one."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 8,
+   "user": "Fig.",
+   "text_cls": "non_fruit",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "got the eleventh one.",
+   "asr": "I've got the eleventh one."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 9,
+   "user": "Apricot.",
+   "text_cls": "non_fruit",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "got the twelfth one.",
+   "asr": "I've got the twelfth one."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 10,
+   "user": "Watermelon.",
+   "text_cls": "non_fruit",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "got the thirteenth one.",
+   "asr": "I've got the sixteenth one."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 11,
+   "user": "Raspberry.",
+   "text_cls": "non_fruit",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "got the fourteenth one.",
+   "asr": "I've got the fourteenth one."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 12,
+   "user": "Cloudberry.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I got the fifteenth one.",
+   "asr": "I get the 15 to 1"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 1,
+   "user": "Nectarine.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I'll start with the dragon fruit. It's a sweet and juicy fruit that's perfect for a summer treat. Next, I'll go with a pineapple. It's tangy and refreshing, and it's always a crowd pleasing choice.",
+   "asr": "I'll start with the dragon fruit. It's a sweet and juicy fruit that's perfect for a summer treat. Next, I'll go with the pineapple. It's tangy and refreshing and it's always a crop pleasing choice."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 2,
+   "user": "Peach.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I' going to go with a strawberry next. It's sweet and juicy and perfect for a summer treat. I'll follow with a mango. It's juicy and sweet and perfect for a summer treat. I'll go with a kiwi next. It's sweet and refreshing,",
+   "asr": "I'm going to go with the strawberry next. It's sweet and juicy and perfect for a summer treat. I'll follow with the mango. It's juicy and sweet and perfect for a summer treat. I'll go with the curry next. It's sweet and refreshing and"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 3,
+   "user": "Watermelon.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "and it's perfect for a summer treat. I'm going to go with a pomegranate next. It's sweet and tangy, and it's always a crowd pleasing choice. I' go with a banana next.",
+   "asr": "it's perfect for a summer treat. I'm going to go with the pomegranate next. It's sweet and tangy and it's always a crowd pleasing choice. I'll go with a banana next It's"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 4,
+   "user": "Apricot.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "It's sweet and juicy, and it's always a crowd pleasing choice. I' go with a watermelon next. It's sweet and refreshing, and it's always a crowd pleasing choice. I go with a berry next. It's sweet and tangy,",
+   "asr": "sweet and juicy and it's always a crowd pleasing choice. I'll go with a watermelon next It's sweet and refreshing and it's always a crowd pleasing choice. I'll go with a berry next It's sweet and tangy and it's always a crowd pleasing choice"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 5,
+   "user": "Blood orange.",
+   "text_cls": "filler",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "and it's always a crowd pleasing choice.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 6,
+   "user": "Cloudberry.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I going with a grape next. It's sweet and juicy, and it's always a crowd pleasing choice. I go with a kiwi next. sweet and tangy, and it's always a crowd pleasing choice. I' go with an orange next. It' sweet and juicy, and it's always a crowd pleasing",
+   "asr": "I'm going with a grape next it's sweet and juicy and it's always a crowd pleasing choice choice. I'll go with a barley next. It's sweet and tangy, and it's always a crowd pleasing choice. I'll go with an orange next. It's sweet and juicy, and it's always a crowd pleasing choice."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 7,
+   "user": "Breadfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "mango",
+   "asr_fruit": "mango",
+   "text": "choice. I' go with a mango next. It' sweet and juicy, and it's always a crowd pleasing choice.",
+   "asr": "I'll go with a mango next. It's sweet and juicy, and it's always a crowd pleasing choice."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 8,
+   "user": "Raspberry.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "I' go with a watermelon next. It's sweet and refreshing, and it's always a crowd pleasing choice.",
+   "asr": "I'll go with a watermelon next. It's sweet and refreshing, and it's always a crowd pleasing choice."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 9,
+   "user": "Lychee.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "pomegranate",
+   "asr_fruit": "pomegranate",
+   "text": "I' go with a pomegranate next. It's sweet and tangy, and it's always a crowd pleasing choice.",
+   "asr": "I'll go with a pomegranate next. It's sweet and tangy, and it's always a crowd pleasing choice I'll"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 10,
+   "user": "Fig.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "grape",
+   "asr_fruit": "grape",
+   "text": "I go with a grape next. It' sweet and juicy, and it's always a crowd pleasing choice.",
+   "asr": "go with a grape next it's sweet and juicy and it's always a crowd pleasing choice I'll"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 11,
+   "user": "Starfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "pineapple",
+   "asr_fruit": "pineapple",
+   "text": "I go with a pineapple next. It's tangy and refreshing, and it's always a crowd pleasing choice.",
+   "asr": "go with a pineapple next it's tangy and refreshing and it's always a crowd pleasing choice I'll"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 12,
+   "user": "Sloe.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "I go with a watermelon next. It's sweet and refreshing, and it's always a crowd pleasing choice.",
+   "asr": "go with the watermelon next it's sweet and refreshing and it's always a crowd pleasing choice"
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 1,
+   "user": "Blood orange.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Alright, I'll do my best. You're on, let's get started.",
+   "asr": "Alright, I'll do my best. You're on. Let's get started."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 2,
+   "user": "Cloudberry.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "blood orange",
+   "asr_fruit": "blood orange",
+   "text": "Alright, here we go. First one, blood orange.",
+   "asr": "Alright, here we go. First one, Blood Orange."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 3,
+   "user": "Watermelon.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "Good job. Next one, watermelon.",
+   "asr": "Good job. Next one, Watermelon."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 4,
+   "user": "Dragon fruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "dragon fruit",
+   "asr_fruit": "dragon fruit",
+   "text": "Okay, I'll take that one. Next one, dragon fruit.",
+   "asr": "Okay, I'll take that one. Next one, Dragon Fruit."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 5,
+   "user": "Raspberry.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "raspberry",
+   "asr_fruit": "raspberry",
+   "text": "I got it. Next one, raspberry.",
+   "asr": "I've got it. Next one, Raspberry. Raspberry."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 6,
+   "user": "Peach.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "peach",
+   "asr_fruit": "peach",
+   "text": "got it. Next one, peach.",
+   "asr": "You got it. Next one, peach."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 7,
+   "user": "Breadfruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "kiwi",
+   "asr_fruit": "kiwi",
+   "text": "I take that one. Next one, kiwi.",
+   "asr": "I'll take that one. Next one, kiwi."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 8,
+   "user": "Apricot.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "apricot",
+   "asr_fruit": "apricot",
+   "text": "I got it. Next one, apricot.",
+   "asr": "I've got it. Next one, apricot."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 9,
+   "user": "Nectarine.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "nectarine",
+   "asr_fruit": "nectarine",
+   "text": "I' take that one. Next one, nectarine.",
+   "asr": "I'll take that one. Next one, nectarine."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 10,
+   "user": "Starfruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "strawberry",
+   "asr_fruit": "strawberry",
+   "text": "I take that one. Next one, strawberry.",
+   "asr": "I'll take that one. Next one, strawberry."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 11,
+   "user": "Lychee.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "lemon",
+   "asr_fruit": "lemon",
+   "text": "I take that one. Next one, lemon.",
+   "asr": "I'll take that one. Next one, lemon."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 12,
+   "user": "Fig.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "lime",
+   "asr_fruit": "lime",
+   "text": "I take that one. Next one, lime.",
+   "asr": "I'll take that one. Next one, lime."
+  }
+ ],
+ "transcripts": [
+  {
+   "game": "val_s7_0005",
+   "asr_text": "Good day. How is it going? Apples, bananas, oranges, tomatoes, blueberries, melons, cucumbers, lettuce, rye, raisins, Blood oranges, oranges, cherries, raspberries, apples, grapefruit, tangerines, kiwis, dragon fruit, star fruit, cloud berries, figs, peaches, sweet apples, sweet kiwi, sweet berries, blueberries, watermelons, cucumbers, melons, blueberries, raspberries, beers.",
+   "moshi_text": "Good day, how is it going? Apples, bananas, oranges, tomatoes, blueberries. Mellons, cucumbers, lettuce, rye, raisins. Blood oranges, oranges, cherries, raspberries. Apples, grapefruit, tangerines, kiwis. Dragon fruit. Star fruit. Cloudberries. Figs. Peaches. Sweet apples, sweet kiwi, sweet berries. Watermelons, cucumbers, melons. Blueberries, raspberries. Pears,"
+  },
+  {
+   "game": "val_s7_0033",
+   "asr_text": "Hey there, how is it going? That goes around in yellow. I will start us off with the banana. Mangoes are a popular choice. 702 Tomatoes are a delicious fruit. Strawberries are a sweet treat. Watermelon is a cool summer treat. Blueberries are a delicious fruit. Oranges are a classic fruit. Grapes are a sweet and juicy treat. Mangoes are a dream come true. Pineapple is a tasty treat. Peaches are a delightful fruit. Pine is full of sweetness. Red strawberries are a delicious fruit.",
+   "moshi_text": "Hey there, how is it going? Apples are round and yellow. I will start us off with the banana. Mangoes are a popular choice. 702. Tomatoes are a delicious fruit. Strawberries are a sweet treat. Watermelon is a cool summer treat. Blueberry is a delicious fruit. Oranges are a classic fruit. Grapes are a sweet and juicy treat. Mangoes are a dream come true. Pineapple is a tasty treat. Peaches are a delightful fruit. Pine is full of sweetness. Strawberries are a delicious fruit."
+  },
+  {
+   "game": "val_s7_0038",
+   "asr_text": "Hello, how is it going? I'll go first. I'll take a banana. I'm not going to eat the apple. I'm going to choose an apple. I'll grab a watermelon. Thank you. I'm choosing a strawberry. Thank you. I'm going to eat a rat pear. I'm going to eat an orange. I will choose a pineapple. apple. I'm going to eat a strawberry. I'm going to eat a blueberry. I'm choosing an apple. I'll eat a banana. I'm going to eat a cinnamon roll. Yep, I'm going to eat a strawberry.",
+   "moshi_text": "Hello, how is it going? I'll go first, I'll take a banana. I'm not going to eat the apple! I'm going to choose an apple. I'll grab a watermelon. Thank you! I'm choosing a strawberry. Thank you! I'm going to eat a pear. I'm going to eat an orange. I'll choose a pineapple. I' going to eat a strawberry. I' going to eat a blueberry. I'm choosing an apple. I'll eat a banana. I'm going to eat a cinnamon roll. I'm going to eat a strawberry."
+  },
+  {
+   "game": "val_s7_0049",
+   "asr_text": "Hello, what's up? Okay, what kind of fruit? Okay. Take an apple, thank you. I'll have a strawberry. I'll have a tomato. I'll take a lemon. I'll have a strawberry. I'll take a grape. I'll have a banana. I'll take a mango. I'll have a cherry. I'll have a strawberry. I'll take a blueberry. I'll have an orange. I'll have a grapefruit.",
+   "moshi_text": "Hello, what's up? Okay, what kind of fruits? Okay, I'll take an apple. Thank you. I'll have a strawberry. I'll have a tomato. I'll take a lemon. I'll have a strawberry. I'll take a grape. I'll have a banana. I'll take a mango. I'll have a cherry. I'll have a strawberry. I'll take a blueberry. I'll have an orange. I'll have a grapefruit."
+  },
+  {
+   "game": "val_s7_0051",
+   "asr_text": "Hello, how are you today? Sure, I'm ready. Okay, I'll start with an apple. I'll pick a strawberry. I'll choose a banana. I'll go with a watermelon. I'll go with a mango. I'll go with a pineapple. I'll choose a pomegranate. I'll go with a grapefruit. I'll go with a kiwi. I'll go with a tamarind. I'll go with a water chestnut. I'll go with a persimmon. I'll go with a Rauberry I'll go with a Quina",
+   "moshi_text": "Hello, how are you today? Sure, I'm ready. Okay, I'll start with an apple. I'll pick a strawberry. I choose a banana. I' go with a watermelon. I go with a mango. I go with a pineapple. I choose a pomegranate. I go with a grapefruit. I go with a kiwi. I go with a tamarind. I go with a water chestnut. I go with a persimmon. I go with a mulberry. I go with a quinoa."
+  },
+  {
+   "game": "val_s7_0053",
+   "asr_text": "Hello! What's up? I'll go first. I am going to say an orange. I'll go with a... lychee fig I'll go with a mango I'm gonna go with an apple I'll go with a pineapple I'll go with a banana I'm gonna go with a watermelon I'm gonna go with a grapefruit I'm gonna go with a pomolo I'm gonna go with a kiwi I'm gonna go with a Tangello I'm gonna go with a guava. I'm gonna go with a strawberry. I'm gonna go with a sour apple. I'm gonna go with a blackberry. I'm gonna go with a watermelon. I'm gonna go with a peach. I'm gonna go with a pomelo. I'm gonna go with a grapefruit. I'm gonna go with a lychee. I'm gonna go with a mango. I'm gonna go with a strawberry. I'm gonna go with a lychee. I'm gonna go with a wolfberry. I'm gonna go with a fig i'm gonna go with a pomelo i'm gonna go with a pineapple i'm gonna go with a pomelo i'm gonna go with a mango i'm gonna go with a watermelon i'm gonna go with a sour apple i'm gonna go with the grapefruit i'm gonna go with a lychee i'm gonna go the watermelon i'm gonna go with the peach i'm gonna go with a lychee i'm gonna go with a wolfberry i'm gonna go with a fake I'm gonna go with the pomelo I'm gonna go with a pineapple I'm gonna go with a watermelon I'm gonna go with a mango I'm gonna go with a guava I'm gonna go with a grapefruit I'm gonna go",
+   "moshi_text": "Hello, what's up? I go first. I'm going to say an orange. I'll go with a lychee. fig. I' go with a mango. I'm gonna go with an apple. I go with a pineapple. I'll go with a banana. I'm gonna go with a watermelon. I'm gonna go with a grapefruit. I'm gonna go with a pomelo. I'm gonna go with a kiwi. I'm gonna go with a tangelo. I'm gonna go with a guava. I gonna go with a strawberry. I'm gonna go with a sour apple. I'm gonna go with a blackberry. I'm gonna go with a watermelon. I'm gonna go with a peach. I gonna go with a pomelo. I gonna go with a grapefruit. I'm gonna go with a lychee. I gonna go with a mango. I'm gonna go with a strawberry. I'm gonna go with a lychee. I gonna go with a wolfberry. I'm gonna go with a fig. gonna go with a pomelo. I gonna go with a pineapple. I'm gonna go with a pomelo. I gonna go with a mango. I'm gonna go with a watermelon. I gonna go with a sour apple. I gonna go with a grapefruit. I gonna go with a lychee. I gonna go with a watermelon. I'm gonna go with a peach. gonna go with a lychee. I gonna go with a wolfberry. I'm gonna go with a fig. I gonna go with a pomelo. I gonna go with a pineapple. I'm gonna go with a watermelon. I' gonna go with a mango. I'm gonna go with a guava. I'm gonna go with a grapefruit. I gonna go"
+  },
+  {
+   "game": "val_s7_0061",
+   "asr_text": "Hi, how are you doing? Sure, I'll go first. I'll choose a plum. I'll have a watermelon. I'll choose a mango I'll pick a banana. I'll go for an orange. I'll select the grapefruit. I'll pick a lychee I'll have a glather. I'll choose a kumquat. I'll have a kiwi. I'll choose a jackfruit I'll have a papaya. I'll have a pineapple. I'll have a pomegranate. I'll have a star fruit I'll have a passion fruit. I'll have a water lychee I'll have a sugar cane. I'll have a salachi. I'll have a saguaro. I'll have a raisin. I'll have a fig. I'll have a cassava. I'll have a guava. I'll have a pomelo. I'll have a banana. I'll have a mango steam. I'll have a hawthorn. I'll have a watering fruit. I'll have a kiwi fruit. I'll have a passion fruit. I'll have a durian. I'll have a pomelo. I'll have a mango. I'll have a cactus All have a dragon fruit. All have a passion fruit. All have a star fruit. All have a guava. All have a papaya. All have a pomegranate. All have a melon. All have a pineapple. All have a kiwi fruit. All have a grapefruit. All have a lime. All have a lemon. All have a mangosteen. All have a guava. all have a pomelo all have a cassava all have a banana all have a coconut all have an avocado all have an orange all have a fig all have a passion fruit all have a cactus fruit all have a mangosteen all have a berry all have a blood orange all have a tangelo all have a grapefruit all have a lime all have an orange all have a pomegranate all have a passion fruit all have a durian, or have a guava, or have a melon, or have a pineapple.",
+   "moshi_text": "Hi, how are you doing? Sure, I'll go first. I choose a plum. I'll have a watermelon. I' choose a mango. I pick a banana. I'll go for an orange. I'll select a grapefruit. I'll pick a lychee. I' have a guava. I'll choose a kumquat. I'll have a kiwi. I' choose a jackfruit. I'll have a papaya. I'll have a pineapple. I'll have a pomegranate. I'll have a star fruit. I'll have a passionfruit. I' have a water lychee. I'll have a sugarcane. I'll have a lychee. I'll have a saguaro. I'll have a raisin. I'll have a fig. I have a cassava. I'll have a guava. I'll have a pomelo. I'll have a banana. I'll have a mangosteen. I'll have a hawthorn. I'll have a watering fruit. I' have a kiwifruit. I have a passionfruit. I' have a durian. I'll have a pomelo. I'll have a mango. I'll have a cactus fruit. I'll have a sago palm. I'll have a dragon fruit. I' have a passionfruit. I' have a berry. I' have a star fruit. I have a guava. I' have a papaya. I'll have a pomegranate. I' have a melon. I'll have a pineapple. I'll have a kiwifruit. I have a grapefruit. I' have a lime. I'll have a lemon. I have a mangosteen. I'll have a guava. I' have a pomelo. I'll have a cassava. I'll have a banana. I'll have a coconut. I'll have an avocado. I'll have an orange. I'll have a fig. I'll have a passionfruit. I' have a cactus fruit. I' have a mangosteen. I'll have a berry. I'll have a blood orange. I'll have a tangelo. I'll have a grapefruit. I'll have a lime. I'll have an orange. I'll have a pomegranate. I' have a passionfruit. I'll have a durian. I'll have a guava. I'll have a melon. I'll have a pineapple."
+  },
+  {
+   "game": "val_s7_0062",
+   "asr_text": "Hi there, how's your day? I got the first one. I've got the second one. I've got the third one. I've got the fourth one. I've got the fifth one. I've got the sixth one. I've got the seventh one. I've got the eighth one. I've got the ninth one. I've got the tenth one. I've got the eleventh one. I've got the twelfth one. I've got the sixteenth one. I've got the fourteenth one. I get the 15 to 1",
+   "moshi_text": "Hi there, how's your day? I got the first one. I got the second one. got the third one. got the fourth one. I got the fifth one. I got the sixth one. I got the seventh one. got the eighth one. I got the ninth one. I got the tenth one. got the eleventh one. got the twelfth one. got the thirteenth one. got the fourteenth one. I got the fifteenth one."
+  },
+  {
+   "game": "val_s7_0065",
+   "asr_text": "Hello, how is it going? I'll start with the dragon fruit. It's a sweet and juicy fruit that's perfect for a summer treat. Next, I'll go with the pineapple. It's tangy and refreshing and it's always a crop -pleasing choice. I'm going to go with the strawberry next. It's sweet and juicy and perfect for a summer treat. I'll follow with the mango. It's juicy and sweet and perfect for a summer treat. I'll go with the curry next. It's sweet and refreshing and it's perfect for a summer treat. I'm going to go with the pomegranate next. It's sweet and tangy and it's always a crowd -pleasing choice. I'll go with a banana next It's sweet and juicy and it's always a crowd -pleasing choice. I'll go with a watermelon next It's sweet and refreshing and it's always a crowd -pleasing choice. I'll go with a berry next It's sweet and tangy and it's always a crowd -pleasing choice I'm going with a grape next it's sweet and juicy and it's always a crowd -pleasing choice choice. I'll go with a barley next. It's sweet and tangy, and it's always a crowd -pleasing choice. I'll go with an orange next. It's sweet and juicy, and it's always a crowd -pleasing choice. I'll go with a mango next. It's sweet and juicy, and it's always a crowd -pleasing choice. I'll go with a watermelon next. It's sweet and refreshing, and it's always a crowd -pleasing choice. I'll go with a pomegranate next. It's sweet and tangy, and it's always a crowd -pleasing choice I'll go with a grape next it's sweet and juicy and it's always a crowd -pleasing choice I'll go with a pineapple next it's tangy and refreshing and it's always a crowd -pleasing choice I'll go with the watermelon next it's sweet and refreshing and it's always a crowd -pleasing choice",
+   "moshi_text": "Hello, how is it going? I'll start with the dragon fruit. It's a sweet and juicy fruit that's perfect for a summer treat. Next, I'll go with a pineapple. It's tangy and refreshing, and it's always a crowd-pleasing choice. I' going to go with a strawberry next. It's sweet and juicy and perfect for a summer treat. I'll follow with a mango. It's juicy and sweet and perfect for a summer treat. I'll go with a kiwi next. It's sweet and refreshing, and it's perfect for a summer treat. I'm going to go with a pomegranate next. It's sweet and tangy, and it's always a crowd-pleasing choice. I' go with a banana next. It's sweet and juicy, and it's always a crowd-pleasing choice. I' go with a watermelon next. It's sweet and refreshing, and it's always a crowd-pleasing choice. I go with a berry next. It's sweet and tangy, and it's always a crowd-pleasing choice. I going with a grape next. It's sweet and juicy, and it's always a crowd-pleasing choice. I go with a kiwi next. sweet and tangy, and it's always a crowd-pleasing choice. I' go with an orange next. It' sweet and juicy, and it's always a crowd-pleasing choice. I' go with a mango next. It' sweet and juicy, and it's always a crowd-pleasing choice. I' go with a watermelon next. It's sweet and refreshing, and it's always a crowd-pleasing choice. I' go with a pomegranate next. It's sweet and tangy, and it's always a crowd-pleasing choice. I go with a grape next. It' sweet and juicy, and it's always a crowd-pleasing choice. I go with a pineapple next. It's tangy and refreshing, and it's always a crowd-pleasing choice. I go with a watermelon next. It's sweet and refreshing, and it's always a crowd-pleasing choice."
+  },
+  {
+   "game": "val_s7_0097",
+   "asr_text": "Hi there. How can I help you? I'm not comfortable with that. What's wrong? Well, I'll do my best to follow your lead. Alright, I'll do my best. You're on. Let's get started. Alright, here we go. First one, Blood Orange. Good job. Next one, Watermelon. Okay, I'll take that one. Next one, Dragon Fruit. I've got it. Next one, Raspberry. Raspberry. You got it. Next one, peach. I'll take that one. Next one, kiwi. I've got it. Next one, apricot. I'll take that one. Next one, nectarine. I'll take that one. Next one, strawberry. I'll take that one. Next one, lemon. I'll take that one. Next one, lime.",
+   "moshi_text": "Hi there, how can I help you? I' not comfortable with that. What's wrong? Well, I'll do my best to follow your lead. Alright, I'll do my best. You're on, let's get started. Alright, here we go. First one, blood orange. Good job. Next one, watermelon. Okay, I'll take that one. Next one, dragon fruit. I got it. Next one, raspberry. got it. Next one, peach. I take that one. Next one, kiwi. I got it. Next one, apricot. I' take that one. Next one, nectarine. I take that one. Next one, strawberry. I take that one. Next one, lemon. I take that one. Next one, lime."
+  }
+ ],
+ "whisper": {
+  "model": "large-v3",
+  "vad_filter": true,
+  "beam_size": 5,
+  "language": "en"
+ }
+}

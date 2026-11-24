@@ -70,6 +70,7 @@ class GameSpec:
     fruit_order: list[str]
     gaps: list[float]
     backup_order: list[str] = field(default_factory=list)  # used only if fruit_order runs out
+    n_user_fruits: int = N_USER_FRUITS                      # 12 for evaluation; GRPO training uses 6
 
     def to_dict(self) -> dict:
         return self.__dict__.copy()
@@ -130,18 +131,31 @@ class GameState:
 
 
 class GameRunner:
-    """Loads Moshi once on the current CUDA device and runs batches of games in lockstep."""
+    """Loads Moshi once on the current CUDA device and runs batches of games in lockstep.
 
-    def __init__(self, batch: int, decode_audio: bool = True, user_audio: str = "live"):
+    Evaluation (default): loads base Moshi itself, grad disabled, persistent streaming state of size
+    `batch` (exactly as for the base results). Training (`models=(mimi, tok, lm, lm_gen_config)`): uses
+    the given (LoRA) model, enters streaming per run with the run's batch size so the model can be
+    trained between runs, and with `record_codes=True` returns each game's token sequence aligned the
+    way `LMModel.forward` expects it (for teacher-forced log-probs)."""
+
+    def __init__(self, batch: int, decode_audio: bool = True, user_audio: str = "live",
+                 models: tuple | None = None, record_codes: bool = False):
         import torch
-        torch.set_grad_enabled(False)
         from moshi.models import LMGen, loaders
         self.torch = torch
-        info = loaders.CheckpointInfo.from_hf_repo("kyutai/moshiko-pytorch-bf16")
-        self.mimi = info.get_mimi(device="cuda")
-        self.tok = info.get_text_tokenizer()
-        self.lm = info.get_moshi(device="cuda", dtype=torch.bfloat16)
-        self.lm_gen = LMGen(self.lm, **info.lm_gen_config)
+        self.persistent = models is None
+        self.record_codes = record_codes
+        if models is None:
+            torch.set_grad_enabled(False)
+            info = loaders.CheckpointInfo.from_hf_repo("kyutai/moshiko-pytorch-bf16")
+            self.mimi = info.get_mimi(device="cuda")
+            self.tok = info.get_text_tokenizer()
+            self.lm = info.get_moshi(device="cuda", dtype=torch.bfloat16)
+            gen_cfg = info.lm_gen_config
+        else:
+            self.mimi, self.tok, self.lm, gen_cfg = models
+        self.lm_gen = LMGen(self.lm, **gen_cfg)
         self.sampling = {k: getattr(self.lm_gen, k) for k in ("use_sampling", "temp", "temp_text", "top_k", "top_k_text")}
         self.B = batch
         self.decode_audio = decode_audio
@@ -149,8 +163,9 @@ class GameRunner:
         self.user_audio = user_audio
         self.fs = int(self.mimi.sample_rate / self.mimi.frame_rate)
         assert abs(1 / self.mimi.frame_rate - FRAME_SEC) < 1e-9
-        self.mimi.streaming_forever(batch)
-        self.lm_gen.streaming_forever(batch)
+        if self.persistent:
+            self.mimi.streaming_forever(batch)
+            self.lm_gen.streaming_forever(batch)
         bank = torch.load(ROOT / "data" / "tokens" / "clips.pt")
         self.silence = bank["silence"].long().numpy()
         self.clip_tokens = {p: t.long().numpy() for p, t in bank["clips"].items()}
@@ -158,7 +173,7 @@ class GameRunner:
         self.pcm_cache: dict[str, np.ndarray] = {}
         self.pieces = {}
         # Warm-up (CUDA graphs) on silence.
-        for _ in range(6):
+        for _ in range(6 if self.persistent else 0):
             codes = self.mimi.encode(torch.zeros(batch, 1, self.fs, device="cuda"))
             out = self.lm_gen.step(codes)
             if out is not None and decode_audio:
@@ -195,7 +210,7 @@ class GameRunner:
             g.n_fruits_said += 1
             order = sp.backup_order if backup else sp.fruit_order
             skipped = [f for f in order[:order.index(fruit)] if f in said]
-            why = f"user fruit {g.n_fruits_said}/{N_USER_FRUITS}" + (" (backup pool)" if backup else "") + (
+            why = f"user fruit {g.n_fruits_said}/{sp.n_user_fruits}" + (" (backup pool)" if backup else "") + (
                 f"; skipped already-said {skipped[-3:]}" if skipped and skipped[-1] in set(g.moshi_fruits()) else "")
         start = frame * FRAME_SEC
         turn.update({"start": round(start, 3), "speech_end": round(start + row["duration"], 3),
@@ -257,7 +272,7 @@ class GameRunner:
             if reason:
                 now = round(t_end, 3)
                 g.events.append({"t": now, "event": "moshi_turn_end", "why": reason})
-                if g.n_fruits_said >= N_USER_FRUITS:
+                if g.n_fruits_said >= g.spec.n_user_fruits:
                     g.phase, g.end_time, g.end_frame = "done", now, frame + 2
                     return
                 gap = g.spec.gaps[len(g.user_turns)]
@@ -273,8 +288,17 @@ class GameRunner:
     # ---------------------------------------------------------------- batch
     def run(self, specs: list[GameSpec], seed: int) -> list[dict]:
         torch = self.torch
+        if self.persistent:
+            return self._run(specs, seed, self.B)
+        B = len(specs)
+        with torch.no_grad(), self.mimi.streaming(B), self.lm_gen.streaming(B):
+            return self._run(specs, seed, B)
+
+    def _run(self, specs: list[GameSpec], seed: int, B: int) -> list[dict]:
+        torch = self.torch
         from moshi.run_inference import seed_all
-        assert len(specs) <= self.B
+        assert len(specs) <= B
+        cols: list = []   # delayed-sequence input column LMGen read at each step, (B, 17)
         games = [GameState(spec=s) for s in specs]
         n_real = len(games)
         self.mimi.reset_streaming()
@@ -283,8 +307,8 @@ class GameRunner:
         max_frames = int(MAX_GAME_SEC / FRAME_SEC)
         moshi_audio: list[np.ndarray] = []
         fed: list = []  # user codes actually fed to Moshi, one (B, 8) tensor per frame
-        user_codes = np.zeros((self.B, 8, 1), dtype=np.int64)
-        user_pcm = np.zeros((self.B, 1, self.fs), dtype=np.float32)
+        user_codes = np.zeros((B, 8, 1), dtype=np.int64)
+        user_pcm = np.zeros((B, 1, self.fs), dtype=np.float32)
         frame = 0
         torch.cuda.synchronize()
         import time
@@ -300,13 +324,16 @@ class GameRunner:
                     # so the encoder state is reset to reapply it on the next call.
                     self.mimi.reset_streaming()
             else:
-                for b in range(self.B):
+                for b in range(B):
                     user_codes[b, :, 0] = self._input_frame(games[b], frame) if b < n_real else self.silence
                 codes = torch.from_numpy(user_codes).cuda()
             fed.append(codes[:, :, 0])
             out = self.lm_gen.step(codes)
-            tids: list[int | None] = [None] * self.B
-            dbs = [-120.0] * self.B
+            if self.record_codes:
+                st = self.lm_gen._streaming_state
+                cols.append(st.cache[:, :, (st.offset - 1) % st.cache.shape[2]].clone())
+            tids: list[int | None] = [None] * B
+            dbs = [-120.0] * B
             if out is not None:
                 tids = out[:, 0, 0].tolist()
                 # Moshi's audio is always decoded: the turn-end rule listens to it.
@@ -315,7 +342,7 @@ class GameRunner:
                 if self.decode_audio:
                     moshi_audio.append(pcm.cpu().numpy())
             elif self.decode_audio:
-                moshi_audio.append(np.zeros((self.B, self.fs), dtype=np.float32))
+                moshi_audio.append(np.zeros((B, self.fs), dtype=np.float32))
             for b in range(n_real):
                 self._after_step(games[b], frame, tids[b], dbs[b])
             frame += 1
@@ -323,6 +350,16 @@ class GameRunner:
         wall = time.perf_counter() - t0
         peak = torch.cuda.max_memory_allocated() / 1e9
         fed_np = torch.stack(fed, -1).to(torch.int16).cpu().numpy()  # (B, 8, frames)
+        aligned = None
+        if self.record_codes:
+            # D[o] = input column read at step o. LMModel.forward delays codes as D[t + 1 + d_k][k] =
+            # codes[k][t], so codes[k][t] = D[t + 1 + d_k][k] (T = steps - 1 - max_delay frames).
+            # Aligned frame t <-> game time (t + 2) * FRAME_SEC for Moshi's text (see game JSON "t").
+            D = torch.stack(cols, -1)  # (B, 17, steps)
+            delays = list(self.lm.delays)
+            T = D.shape[-1] - 1 - max(delays)
+            aligned = torch.stack([D[:, k, 1 + d:1 + d + T] for k, d in enumerate(delays)], 1)
+            aligned = aligned.to(torch.int16).cpu().numpy()
         results = []
         for b, g in enumerate(games):
             if g.end_time is None:
@@ -335,7 +372,7 @@ class GameRunner:
                 "end_time": round(g.end_time, 3), "user_turns": g.user_turns, "moshi_tokens": g.tokens,
                 "moshi_text": "".join(t["piece"] for t in g.tokens).replace("▁", " ").strip(),
                 "moshi_dbfs": g.levels, "speech_dbfs": SPEECH_DBFS,
-                "events": g.events, "batch_size": self.B, "batch_wall_sec": round(wall, 2),
+                "events": g.events, "batch_size": B, "batch_wall_sec": round(wall, 2),
                 "batch_frames": frame, "peak_mem_gb": round(peak, 2), "user_audio": self.user_audio,
             }
             audio = None
@@ -350,7 +387,10 @@ class GameRunner:
                     a = t["frame"] * self.fs
                     right[a:a + len(x)] = x[: max(0, len(right) - a)]
                 audio = np.stack([left, right])
-            results.append({"summary": summary, "audio": audio, "user_codes": fed_np[b, :, :n]})
+            res = {"summary": summary, "audio": audio, "user_codes": fed_np[b, :, :n]}
+            if aligned is not None:
+                res["codes"] = aligned[b, :, :max(0, min(aligned.shape[-1], n - 2))]
+            results.append(res)
         return results
 
 

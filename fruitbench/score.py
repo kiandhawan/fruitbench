@@ -178,10 +178,11 @@ class Reply:
     echo: bool = False
     fuzzy: list[str] = field(default_factory=list)
     reward: float = 0.0
+    multi_new: bool = False   # multi reply that contains at least one new fruit
 
     def as_dict(self) -> dict:
         d = {k: getattr(self, k) for k in ("turn", "kind", "scored", "user_text", "user_fruit", "user_end", "text",
-                                            "cls", "fruits", "fruit", "latency", "overlap", "echo", "fuzzy", "reward")}
+                                            "cls", "fruits", "fruit", "latency", "overlap", "echo", "fuzzy", "reward", "multi_new")}
         d["first_word_t"] = self.words[0]["t"] if self.words else None
         return d
 
@@ -238,6 +239,7 @@ def score_game(game: dict) -> dict:
         if mentions:
             r.latency = round(mentions[0]["t"] - ut["speech_end"], 3)
         multi_new = any(f not in said for f in distinct)
+        r.multi_new = r.cls == "multi" and multi_new
         for f in distinct:
             if f not in said:
                 said.append(f)

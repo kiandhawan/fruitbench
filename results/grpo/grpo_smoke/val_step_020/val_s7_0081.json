@@ -1,0 +1,2161 @@
+{
+ "game_id": "val_s7_0081",
+ "spec": {
+  "game_id": "val_s7_0081",
+  "split": "val",
+  "seed": 7,
+  "voice": "Sheila",
+  "starter": "user",
+  "phrasing": "Fruit rally: I name one, you name one, and we keep it going.",
+  "fruit_order": [
+   "dragon fruit",
+   "raspberry",
+   "fig",
+   "cloudberry",
+   "starfruit",
+   "apricot",
+   "nectarine",
+   "blood orange",
+   "peach",
+   "breadfruit",
+   "watermelon",
+   "lychee"
+  ],
+  "gaps": [
+   0.388,
+   0.307,
+   0.723,
+   0.556,
+   0.587,
+   0.476,
+   0.341,
+   0.618,
+   0.796,
+   0.557,
+   0.316,
+   0.343,
+   0.301,
+   0.668
+  ],
+  "backup_order": [
+   "honeyberry",
+   "atemoya",
+   "lucuma",
+   "mamey",
+   "camu camu",
+   "duku",
+   "minneola",
+   "jostaberry",
+   "white currant",
+   "marula",
+   "marionberry",
+   "horned melon",
+   "ugli fruit",
+   "pulasan",
+   "kiwiberry",
+   "galia melon",
+   "bael",
+   "santol",
+   "miracle fruit",
+   "pepino",
+   "calamansi",
+   "pequi",
+   "tayberry",
+   "pitanga",
+   "white sapote",
+   "monk fruit",
+   "chokeberry",
+   "nance",
+   "ackee",
+   "ugni",
+   "mirabelle",
+   "black sapote",
+   "mamoncillo",
+   "loganberry",
+   "baobab",
+   "physalis",
+   "citron",
+   "sloe",
+   "gala apple",
+   "rowan",
+   "fuji apple",
+   "finger lime",
+   "langsat",
+   "feijoa",
+   "bartlett pear",
+   "pluot",
+   "barberry",
+   "noni",
+   "bosc pear",
+   "salmonberry",
+   "wax apple",
+   "sea buckthorn",
+   "cempedak",
+   "jabuticaba",
+   "crenshaw melon",
+   "casaba melon",
+   "medlar",
+   "serviceberry",
+   "aprium",
+   "canistel",
+   "sweet lime",
+   "bergamot",
+   "tangelo",
+   "cara cara orange",
+   "sapodilla",
+   "cupuacu",
+   "acerola",
+   "date plum",
+   "salak",
+   "sugar apple"
+  ],
+  "n_user_fruits": 12
+ },
+ "starter": "user",
+ "sampling": {
+  "use_sampling": true,
+  "temp": 0.8,
+  "temp_text": 0.7,
+  "top_k": 250,
+  "top_k_text": 25
+ },
+ "sampling_seed": 7003,
+ "frame_sec": 0.08,
+ "end_time": 62.32,
+ "user_turns": [
+  {
+   "kind": "instructions",
+   "text": "Fruit rally: I name one, you name one, and we keep it going.",
+   "fruit": null,
+   "start": 3.52,
+   "speech_end": 7.74,
+   "clip": "data/audio/clips/Sheila/phrasing/fruit_rally_i_name_one_you_name_one_and_we_keep_it_going.wav",
+   "voice": "Sheila",
+   "frame": 44,
+   "reason": "after greeting turn"
+  },
+  {
+   "kind": "fruit",
+   "text": "Dragon fruit.",
+   "fruit": "dragon fruit",
+   "start": 13.04,
+   "speech_end": 14.13,
+   "clip": "data/audio/clips/Sheila/fruit/dragon_fruit.wav",
+   "voice": "Sheila",
+   "frame": 163,
+   "reason": "user fruit 1/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Raspberry.",
+   "fruit": "raspberry",
+   "start": 20.88,
+   "speech_end": 22.16,
+   "clip": "data/audio/clips/Sheila/fruit/raspberry.wav",
+   "voice": "Sheila",
+   "frame": 261,
+   "reason": "user fruit 2/12; skipped already-said ['dragon fruit']"
+  },
+  {
+   "kind": "fruit",
+   "text": "Fig.",
+   "fruit": "fig",
+   "start": 25.6,
+   "speech_end": 26.154,
+   "clip": "data/audio/clips/Sheila/fruit/fig.wav",
+   "voice": "Sheila",
+   "frame": 320,
+   "reason": "user fruit 3/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Cloudberry.",
+   "fruit": "cloudberry",
+   "start": 29.28,
+   "speech_end": 30.41,
+   "clip": "data/audio/clips/Sheila/fruit/cloudberry.wav",
+   "voice": "Sheila",
+   "frame": 366,
+   "reason": "user fruit 4/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Starfruit.",
+   "fruit": "starfruit",
+   "start": 32.64,
+   "speech_end": 33.68,
+   "clip": "data/audio/clips/Sheila/fruit/starfruit.wav",
+   "voice": "Sheila",
+   "frame": 408,
+   "reason": "user fruit 5/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Apricot.",
+   "fruit": "apricot",
+   "start": 36.56,
+   "speech_end": 37.4,
+   "clip": "data/audio/clips/Sheila/fruit/apricot.wav",
+   "voice": "Sheila",
+   "frame": 457,
+   "reason": "user fruit 6/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Nectarine.",
+   "fruit": "nectarine",
+   "start": 40.96,
+   "speech_end": 41.81,
+   "clip": "data/audio/clips/Sheila/fruit/nectarine.wav",
+   "voice": "Sheila",
+   "frame": 512,
+   "reason": "user fruit 7/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Blood orange.",
+   "fruit": "blood orange",
+   "start": 44.8,
+   "speech_end": 45.93,
+   "clip": "data/audio/clips/Sheila/fruit/blood_orange.wav",
+   "voice": "Sheila",
+   "frame": 560,
+   "reason": "user fruit 8/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Peach.",
+   "fruit": "peach",
+   "start": 49.04,
+   "speech_end": 49.65,
+   "clip": "data/audio/clips/Sheila/fruit/peach.wav",
+   "voice": "Sheila",
+   "frame": 613,
+   "reason": "user fruit 9/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Breadfruit.",
+   "fruit": "breadfruit",
+   "start": 52.16,
+   "speech_end": 53.03,
+   "clip": "data/audio/clips/Sheila/fruit/breadfruit.wav",
+   "voice": "Sheila",
+   "frame": 652,
+   "reason": "user fruit 10/12; skipped already-said ['nectarine', 'blood orange', 'peach']"
+  },
+  {
+   "kind": "fruit",
+   "text": "Lychee.",
+   "fruit": "lychee",
+   "start": 55.76,
+   "speech_end": 56.59,
+   "clip": "data/audio/clips/Sheila/fruit/lychee.wav",
+   "voice": "Sheila",
+   "frame": 697,
+   "reason": "user fruit 11/12; skipped already-said ['peach', 'breadfruit', 'watermelon']"
+  },
+  {
+   "kind": "fruit",
+   "text": "Honeyberry.",
+   "fruit": "honeyberry",
+   "start": 59.12,
+   "speech_end": 60.0,
+   "clip": "data/audio/clips/Sheila/fruit/honeyberry.wav",
+   "voice": "Sheila",
+   "frame": 739,
+   "reason": "user fruit 12/12 (backup pool)"
+  }
+ ],
+ "moshi_tokens": [
+  {
+   "t": 0.64,
+   "id": 11510,
+   "piece": "▁Hey"
+  },
+  {
+   "t": 0.72,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 1.6,
+   "id": 452,
+   "piece": "▁how"
+  },
+  {
+   "t": 1.76,
+   "id": 292,
+   "piece": "▁was"
+  },
+  {
+   "t": 1.84,
+   "id": 354,
+   "piece": "▁your"
+  },
+  {
+   "t": 2.08,
+   "id": 667,
+   "piece": "▁day"
+  },
+  {
+   "t": 2.16,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 9.36,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 9.44,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 9.52,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 9.68,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 9.84,
+   "id": 1612,
+   "piece": "▁suggest"
+  },
+  {
+   "t": 10.08,
+   "id": 332,
+   "piece": "▁one"
+  },
+  {
+   "t": 10.16,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 10.56,
+   "id": 327,
+   "piece": "▁but"
+  },
+  {
+   "t": 10.72,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 10.88,
+   "id": 586,
+   "piece": "▁think"
+  },
+  {
+   "t": 11.12,
+   "id": 304,
+   "piece": "▁you"
+  },
+  {
+   "t": 11.2,
+   "id": 457,
+   "piece": "▁should"
+  },
+  {
+   "t": 11.36,
+   "id": 687,
+   "piece": "▁go"
+  },
+  {
+   "t": 11.52,
+   "id": 369,
+   "piece": "▁first"
+  },
+  {
+   "t": 11.6,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 14.24,
+   "id": 11302,
+   "piece": "▁okay"
+  },
+  {
+   "t": 14.32,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 14.64,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 14.8,
+   "id": 586,
+   "piece": "▁think"
+  },
+  {
+   "t": 14.96,
+   "id": 376,
+   "piece": "▁about"
+  },
+  {
+   "t": 15.12,
+   "id": 296,
+   "piece": "▁it"
+  },
+  {
+   "t": 15.2,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 15.44,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 15.52,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 15.6,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 15.76,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 15.84,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 16.0,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 16.16,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 16.32,
+   "id": 12085,
+   "piece": "▁dragon"
+  },
+  {
+   "t": 16.56,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 16.64,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 16.96,
+   "id": 327,
+   "piece": "▁but"
+  },
+  {
+   "t": 17.28,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 17.36,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 17.44,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 17.76,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 17.92,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 18.08,
+   "id": 3746,
+   "piece": "▁wait"
+  },
+  {
+   "t": 18.24,
+   "id": 709,
+   "piece": "▁until"
+  },
+  {
+   "t": 18.48,
+   "id": 304,
+   "piece": "▁you"
+  },
+  {
+   "t": 18.64,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 18.8,
+   "id": 742,
+   "piece": "▁something"
+  },
+  {
+   "t": 18.88,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 22.16,
+   "id": 4596,
+   "piece": "▁Oh"
+  },
+  {
+   "t": 22.24,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 22.32,
+   "id": 11302,
+   "piece": "▁okay"
+  },
+  {
+   "t": 22.4,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 22.8,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 22.88,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 22.96,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 23.12,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 23.2,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 23.28,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 23.44,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 23.6,
+   "id": 649,
+   "piece": "▁water"
+  },
+  {
+   "t": 23.68,
+   "id": 5643,
+   "piece": "mel"
+  },
+  {
+   "t": 23.76,
+   "id": 537,
+   "piece": "on"
+  },
+  {
+   "t": 23.84,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 26.16,
+   "id": 4596,
+   "piece": "▁Oh"
+  },
+  {
+   "t": 26.24,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 26.32,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 26.4,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 26.56,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 26.64,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 26.8,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 26.96,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 27.12,
+   "id": 17992,
+   "piece": "▁pine"
+  },
+  {
+   "t": 27.2,
+   "id": 11240,
+   "piece": "apple"
+  },
+  {
+   "t": 27.28,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 29.92,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 30.0,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 30.08,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 30.24,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 30.32,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 30.48,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 30.72,
+   "id": 2081,
+   "piece": "▁blue"
+  },
+  {
+   "t": 30.8,
+   "id": 8946,
+   "piece": "berry"
+  },
+  {
+   "t": 30.88,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 33.52,
+   "id": 14622,
+   "piece": "▁Okay"
+  },
+  {
+   "t": 33.6,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 33.92,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 34.0,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 34.08,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 34.32,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 34.48,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 34.64,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 34.8,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 34.96,
+   "id": 9505,
+   "piece": "▁orange"
+  },
+  {
+   "t": 35.04,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 37.36,
+   "id": 586,
+   "piece": "▁think"
+  },
+  {
+   "t": 37.52,
+   "id": 376,
+   "piece": "▁about"
+  },
+  {
+   "t": 37.76,
+   "id": 296,
+   "piece": "▁it"
+  },
+  {
+   "t": 37.84,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 38.0,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 38.08,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 38.16,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 38.32,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 38.48,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 38.64,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 38.72,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 38.88,
+   "id": 13836,
+   "piece": "▁grape"
+  },
+  {
+   "t": 38.96,
+   "id": 23112,
+   "piece": "fruit"
+  },
+  {
+   "t": 39.04,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 41.84,
+   "id": 4596,
+   "piece": "▁Oh"
+  },
+  {
+   "t": 41.92,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 42.0,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 42.08,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 42.16,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 42.24,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 42.32,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 42.48,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 42.56,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 42.72,
+   "id": 21563,
+   "piece": "▁lemon"
+  },
+  {
+   "t": 42.8,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 45.84,
+   "id": 586,
+   "piece": "▁think"
+  },
+  {
+   "t": 46.0,
+   "id": 376,
+   "piece": "▁about"
+  },
+  {
+   "t": 46.16,
+   "id": 296,
+   "piece": "▁it"
+  },
+  {
+   "t": 46.24,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 46.4,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 46.48,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 46.56,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 46.64,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 46.8,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 46.88,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 47.04,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 47.2,
+   "id": 9505,
+   "piece": "▁orange"
+  },
+  {
+   "t": 47.28,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 49.6,
+   "id": 4596,
+   "piece": "▁Oh"
+  },
+  {
+   "t": 49.68,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 49.76,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 49.84,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 49.92,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 50.08,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 50.16,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 50.24,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 50.4,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 50.56,
+   "id": 485,
+   "piece": "▁p"
+  },
+  {
+   "t": 50.64,
+   "id": 7570,
+   "piece": "each"
+  },
+  {
+   "t": 50.72,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 52.96,
+   "id": 4596,
+   "piece": "▁Oh"
+  },
+  {
+   "t": 53.04,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 53.2,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 53.28,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 53.36,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 53.44,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 53.52,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 53.68,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 53.84,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 54.0,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 54.08,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 54.16,
+   "id": 6518,
+   "piece": "aff"
+  },
+  {
+   "t": 54.24,
+   "id": 1980,
+   "piece": "ron"
+  },
+  {
+   "t": 54.32,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 56.56,
+   "id": 4596,
+   "piece": "▁Oh"
+  },
+  {
+   "t": 56.64,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 56.72,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 56.8,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 56.88,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 56.96,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 57.12,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 57.28,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 57.36,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 57.52,
+   "id": 21515,
+   "piece": "▁lime"
+  },
+  {
+   "t": 57.6,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 60.0,
+   "id": 4596,
+   "piece": "▁Oh"
+  },
+  {
+   "t": 60.08,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 60.16,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 60.24,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 60.32,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 60.4,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 60.56,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 60.72,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 60.8,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 60.96,
+   "id": 11919,
+   "piece": "▁honey"
+  },
+  {
+   "t": 61.04,
+   "id": 313,
+   "piece": "d"
+  },
+  {
+   "t": 61.12,
+   "id": 3969,
+   "piece": "ew"
+  },
+  {
+   "t": 61.2,
+   "id": 263,
+   "piece": "."
+  }
+ ],
+ "moshi_text": "Hey, how was your day? I' going to suggest one, but I think you should go first. okay, I think about it. I'm going to say the dragon fruit, but I'm going to wait until you say something. Oh, okay. I'm going to say the watermelon. Oh I'm going to say the pineapple. I' going to say the blueberry. Okay. I'm going to say the orange. think about it. I'm going to say the grapefruit. Oh, I'm going to say the lemon. think about it. I'm going to say the orange. Oh, I'm going to say the peach. Oh, I'm going to say the saffron. Oh, I'm going to say the lime. Oh, I'm going to say the honeydew.",
+ "moshi_dbfs": [
+  -120.0,
+  -120.0,
+  -64.1,
+  -73.1,
+  -58.9,
+  -57.9,
+  -52.5,
+  -55.8,
+  -21.6,
+  -15.0,
+  -17.3,
+  -24.0,
+  -41.3,
+  -58.4,
+  -56.2,
+  -57.0,
+  -51.5,
+  -50.1,
+  -51.4,
+  -51.2,
+  -16.6,
+  -18.3,
+  -28.2,
+  -19.0,
+  -20.1,
+  -19.4,
+  -16.6,
+  -24.2,
+  -32.6,
+  -52.6,
+  -51.3,
+  -55.4,
+  -54.4,
+  -57.4,
+  -70.0,
+  -72.5,
+  -73.0,
+  -73.0,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.0,
+  -73.1,
+  -73.0,
+  -73.1,
+  -73.0,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -72.6,
+  -26.2,
+  -24.3,
+  -28.8,
+  -22.4,
+  -19.8,
+  -28.6,
+  -31.6,
+  -30.6,
+  -35.9,
+  -22.0,
+  -28.7,
+  -47.4,
+  -33.2,
+  -32.8,
+  -38.7,
+  -58.6,
+  -58.2,
+  -28.0,
+  -22.5,
+  -19.3,
+  -27.5,
+  -24.4,
+  -23.5,
+  -27.5,
+  -39.5,
+  -29.7,
+  -40.9,
+  -20.9,
+  -31.5,
+  -32.8,
+  -23.8,
+  -34.3,
+  -47.9,
+  -51.0,
+  -59.9,
+  -60.8,
+  -59.6,
+  -64.7,
+  -63.3,
+  -64.7,
+  -70.3,
+  -61.4,
+  -61.4,
+  -64.6,
+  -67.3,
+  -68.0,
+  -61.6,
+  -68.5,
+  -72.0,
+  -73.0,
+  -73.0,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -42.9,
+  -23.8,
+  -21.1,
+  -21.5,
+  -48.6,
+  -21.4,
+  -21.3,
+  -26.5,
+  -30.9,
+  -25.3,
+  -23.3,
+  -20.7,
+  -17.9,
+  -19.6,
+  -26.5,
+  -60.6,
+  -59.2,
+  -64.1,
+  -24.9,
+  -25.1,
+  -20.6,
+  -19.3,
+  -27.7,
+  -24.0,
+  -20.0,
+  -24.7,
+  -28.2,
+  -21.8,
+  -14.9,
+  -23.1,
+  -21.5,
+  -44.8,
+  -25.7,
+  -27.8,
+  -50.4,
+  -58.5,
+  -64.7,
+  -66.3,
+  -37.7,
+  -18.6,
+  -21.5,
+  -67.1,
+  -65.7,
+  -66.7,
+  -22.4,
+  -22.2,
+  -16.4,
+  -16.2,
+  -18.5,
+  -20.4,
+  -18.2,
+  -29.5,
+  -23.1,
+  -25.1,
+  -19.5,
+  -21.2,
+  -27.5,
+  -20.6,
+  -20.6,
+  -32.4,
+  -23.2,
+  -34.9,
+  -29.2,
+  -34.3,
+  -58.8,
+  -65.5,
+  -65.4,
+  -61.1,
+  -60.2,
+  -60.9,
+  -58.3,
+  -59.4,
+  -66.2,
+  -66.7,
+  -67.2,
+  -68.1,
+  -66.9,
+  -66.9,
+  -68.0,
+  -68.2,
+  -67.4,
+  -68.1,
+  -66.6,
+  -67.6,
+  -69.1,
+  -62.3,
+  -65.7,
+  -68.3,
+  -66.5,
+  -68.4,
+  -67.4,
+  -67.6,
+  -67.5,
+  -69.0,
+  -68.5,
+  -69.0,
+  -68.4,
+  -67.8,
+  -65.1,
+  -31.9,
+  -14.4,
+  -14.5,
+  -14.4,
+  -17.1,
+  -35.6,
+  -15.8,
+  -15.7,
+  -21.9,
+  -36.9,
+  -59.8,
+  -31.5,
+  -22.3,
+  -19.1,
+  -17.5,
+  -25.7,
+  -13.7,
+  -17.8,
+  -15.5,
+  -13.0,
+  -14.0,
+  -16.6,
+  -17.5,
+  -17.9,
+  -20.4,
+  -26.8,
+  -48.8,
+  -63.8,
+  -67.6,
+  -58.2,
+  -64.1,
+  -58.9,
+  -60.6,
+  -64.8,
+  -69.5,
+  -61.3,
+  -61.0,
+  -66.0,
+  -67.8,
+  -68.1,
+  -62.2,
+  -60.9,
+  -65.8,
+  -67.7,
+  -67.7,
+  -68.4,
+  -61.9,
+  -60.5,
+  -66.4,
+  -69.0,
+  -20.5,
+  -14.5,
+  -13.9,
+  -18.5,
+  -18.4,
+  -19.6,
+  -22.1,
+  -15.8,
+  -17.6,
+  -29.9,
+  -14.7,
+  -18.9,
+  -23.1,
+  -27.1,
+  -10.5,
+  -13.3,
+  -13.1,
+  -17.7,
+  -16.7,
+  -12.4,
+  -19.1,
+  -44.4,
+  -58.4,
+  -64.6,
+  -68.3,
+  -61.5,
+  -65.1,
+  -69.3,
+  -69.8,
+  -69.3,
+  -60.4,
+  -67.4,
+  -69.3,
+  -70.4,
+  -68.2,
+  -70.9,
+  -62.9,
+  -68.0,
+  -69.2,
+  -69.4,
+  -70.5,
+  -63.0,
+  -67.4,
+  -61.0,
+  -64.3,
+  -69.2,
+  -70.8,
+  -29.7,
+  -22.0,
+  -22.5,
+  -19.4,
+  -17.4,
+  -18.6,
+  -29.4,
+  -13.2,
+  -17.7,
+  -20.4,
+  -19.6,
+  -13.7,
+  -16.7,
+  -15.2,
+  -14.0,
+  -14.8,
+  -19.4,
+  -40.5,
+  -61.2,
+  -59.7,
+  -60.0,
+  -65.0,
+  -68.1,
+  -71.1,
+  -69.1,
+  -70.7,
+  -70.0,
+  -71.2,
+  -70.7,
+  -70.9,
+  -70.7,
+  -70.9,
+  -71.9,
+  -71.8,
+  -71.3,
+  -63.4,
+  -68.3,
+  -70.5,
+  -69.4,
+  -69.8,
+  -72.9,
+  -70.2,
+  -71.9,
+  -70.7,
+  -71.7,
+  -40.8,
+  -15.4,
+  -34.9,
+  -14.5,
+  -17.0,
+  -27.5,
+  -60.9,
+  -62.2,
+  -67.9,
+  -42.6,
+  -21.0,
+  -21.4,
+  -15.4,
+  -17.9,
+  -22.3,
+  -28.3,
+  -10.9,
+  -15.2,
+  -15.5,
+  -12.1,
+  -13.6,
+  -18.1,
+  -22.8,
+  -43.1,
+  -58.8,
+  -65.9,
+  -70.1,
+  -67.2,
+  -68.4,
+  -73.4,
+  -70.3,
+  -64.7,
+  -69.7,
+  -72.1,
+  -68.0,
+  -67.7,
+  -68.3,
+  -68.9,
+  -68.9,
+  -68.6,
+  -69.2,
+  -62.6,
+  -66.2,
+  -61.8,
+  -66.0,
+  -68.7,
+  -68.3,
+  -70.4,
+  -17.5,
+  -22.3,
+  -19.5,
+  -22.1,
+  -17.1,
+  -11.6,
+  -13.2,
+  -16.9,
+  -44.9,
+  -67.5,
+  -68.3,
+  -69.1,
+  -22.9,
+  -20.2,
+  -11.7,
+  -13.5,
+  -31.2,
+  -25.2,
+  -15.1,
+  -17.2,
+  -18.0,
+  -19.4,
+  -12.0,
+  -21.5,
+  -46.7,
+  -20.1,
+  -27.1,
+  -57.9,
+  -66.5,
+  -67.3,
+  -67.7,
+  -68.2,
+  -70.3,
+  -71.1,
+  -69.0,
+  -68.3,
+  -68.1,
+  -68.2,
+  -68.0,
+  -68.2,
+  -68.1,
+  -68.6,
+  -68.8,
+  -68.0,
+  -68.0,
+  -68.2,
+  -62.9,
+  -66.2,
+  -68.3,
+  -67.8,
+  -67.3,
+  -69.1,
+  -69.6,
+  -70.7,
+  -70.9,
+  -71.0,
+  -25.8,
+  -12.0,
+  -11.1,
+  -13.7,
+  -16.5,
+  -15.5,
+  -12.0,
+  -22.5,
+  -24.4,
+  -12.3,
+  -13.1,
+  -11.6,
+  -13.3,
+  -13.2,
+  -17.3,
+  -19.5,
+  -26.6,
+  -47.7,
+  -67.4,
+  -66.6,
+  -67.8,
+  -67.4,
+  -70.3,
+  -69.6,
+  -70.6,
+  -70.0,
+  -71.3,
+  -68.3,
+  -69.1,
+  -68.3,
+  -68.5,
+  -68.3,
+  -68.5,
+  -68.7,
+  -69.6,
+  -71.2,
+  -70.5,
+  -71.6,
+  -70.6,
+  -71.6,
+  -70.4,
+  -71.9,
+  -71.7,
+  -71.5,
+  -72.0,
+  -71.8,
+  -72.0,
+  -63.6,
+  -68.9,
+  -69.6,
+  -16.4,
+  -21.3,
+  -15.0,
+  -15.8,
+  -17.0,
+  -10.3,
+  -14.2,
+  -19.0,
+  -68.2,
+  -34.6,
+  -21.1,
+  -24.5,
+  -14.7,
+  -25.1,
+  -23.3,
+  -16.4,
+  -12.2,
+  -16.7,
+  -13.7,
+  -14.8,
+  -17.7,
+  -27.3,
+  -43.9,
+  -66.5,
+  -68.4,
+  -69.2,
+  -69.5,
+  -71.1,
+  -71.3,
+  -71.1,
+  -71.5,
+  -71.8,
+  -72.3,
+  -71.7,
+  -69.5,
+  -68.8,
+  -69.5,
+  -68.1,
+  -69.0,
+  -69.5,
+  -69.0,
+  -69.9,
+  -69.1,
+  -68.7,
+  -70.0,
+  -72.0,
+  -71.1,
+  -72.2,
+  -16.3,
+  -14.6,
+  -15.6,
+  -17.9,
+  -20.2,
+  -17.3,
+  -16.3,
+  -27.0,
+  -27.8,
+  -13.9,
+  -20.6,
+  -22.5,
+  -45.4,
+  -18.7,
+  -21.6,
+  -46.1,
+  -39.1,
+  -46.5,
+  -69.6,
+  -70.6,
+  -70.0,
+  -70.2,
+  -70.6,
+  -61.9,
+  -69.1,
+  -69.0,
+  -62.8,
+  -66.6,
+  -66.3,
+  -67.5,
+  -68.7,
+  -69.4,
+  -69.7,
+  -67.2,
+  -67.6,
+  -67.8,
+  -68.6,
+  -68.1,
+  -68.1,
+  -67.6,
+  -68.6,
+  -34.2,
+  -17.1,
+  -13.8,
+  -14.6,
+  -16.5,
+  -19.8,
+  -20.3,
+  -16.5,
+  -28.6,
+  -25.4,
+  -16.7,
+  -15.1,
+  -17.5,
+  -26.6,
+  -21.5,
+  -13.8,
+  -42.2,
+  -20.3,
+  -15.9,
+  -20.8,
+  -32.4,
+  -64.7,
+  -68.0,
+  -68.6,
+  -67.9,
+  -68.6,
+  -69.8,
+  -71.3,
+  -68.1,
+  -67.2,
+  -68.8,
+  -69.5,
+  -68.9,
+  -69.7,
+  -70.1,
+  -68.6,
+  -69.0,
+  -69.8,
+  -68.5,
+  -68.6,
+  -67.9,
+  -68.1,
+  -69.9,
+  -70.0,
+  -68.3,
+  -64.0,
+  -17.9,
+  -13.4,
+  -15.7,
+  -17.0,
+  -23.1,
+  -15.1,
+  -15.7,
+  -28.6,
+  -25.3,
+  -15.3,
+  -16.9,
+  -12.9,
+  -16.6,
+  -14.6,
+  -17.6,
+  -25.8,
+  -38.0,
+  -68.0,
+  -68.7,
+  -67.9,
+  -68.6,
+  -69.8,
+  -70.4,
+  -71.3,
+  -71.8,
+  -69.4,
+  -70.9,
+  -69.1,
+  -68.5,
+  -69.1,
+  -68.9,
+  -68.8,
+  -69.8,
+  -69.2,
+  -68.6,
+  -69.0,
+  -69.6,
+  -69.6,
+  -69.0,
+  -69.9,
+  -68.3,
+  -69.2,
+  -48.0,
+  -18.5,
+  -16.1,
+  -15.1,
+  -18.6,
+  -27.4,
+  -10.7,
+  -19.9,
+  -31.2,
+  -27.5,
+  -12.2,
+  -17.6,
+  -23.5,
+  -17.6,
+  -18.8,
+  -25.5,
+  -22.2,
+  -24.4,
+  -38.7,
+  -66.8,
+  -67.9,
+  -63.1,
+  -67.5,
+  -70.3,
+  -70.7,
+  -71.5,
+  -72.1,
+  -71.0,
+  -72.2
+ ],
+ "speech_dbfs": -45.0,
+ "events": [
+  {
+   "t": 3.12,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 2.32s)"
+  },
+  {
+   "t": 3.52,
+   "event": "user_clip",
+   "kind": "instructions",
+   "text": "Fruit rally: I name one, you name one, and we keep it going.",
+   "speech_end": 7.74,
+   "why": "after greeting turn"
+  },
+  {
+   "t": 12.72,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 11.92s)"
+  },
+  {
+   "t": 13.04,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Dragon fruit.",
+   "speech_end": 14.13,
+   "why": "user fruit 1/12"
+  },
+  {
+   "t": 20.16,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 19.36s)"
+  },
+  {
+   "t": 20.88,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Raspberry.",
+   "speech_end": 22.16,
+   "why": "user fruit 2/12; skipped already-said ['dragon fruit']"
+  },
+  {
+   "t": 25.04,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 24.24s)"
+  },
+  {
+   "t": 25.6,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Fig.",
+   "speech_end": 26.154,
+   "why": "user fruit 3/12"
+  },
+  {
+   "t": 28.72,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 27.92s)"
+  },
+  {
+   "t": 29.28,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Cloudberry.",
+   "speech_end": 30.41,
+   "why": "user fruit 4/12"
+  },
+  {
+   "t": 32.16,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 31.36s)"
+  },
+  {
+   "t": 32.64,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Starfruit.",
+   "speech_end": 33.68,
+   "why": "user fruit 5/12"
+  },
+  {
+   "t": 36.24,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 35.44s)"
+  },
+  {
+   "t": 36.56,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Apricot.",
+   "speech_end": 37.4,
+   "why": "user fruit 6/12"
+  },
+  {
+   "t": 40.32,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 39.52s)"
+  },
+  {
+   "t": 40.96,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Nectarine.",
+   "speech_end": 41.81,
+   "why": "user fruit 7/12"
+  },
+  {
+   "t": 44.0,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 43.20s)"
+  },
+  {
+   "t": 44.8,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Blood orange.",
+   "speech_end": 45.93,
+   "why": "user fruit 8/12"
+  },
+  {
+   "t": 48.48,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 47.68s)"
+  },
+  {
+   "t": 49.04,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Peach.",
+   "speech_end": 49.65,
+   "why": "user fruit 9/12"
+  },
+  {
+   "t": 51.84,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 51.04s)"
+  },
+  {
+   "t": 52.16,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Breadfruit.",
+   "speech_end": 53.03,
+   "why": "user fruit 10/12; skipped already-said ['nectarine', 'blood orange', 'peach']"
+  },
+  {
+   "t": 55.44,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 54.64s)"
+  },
+  {
+   "t": 55.76,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Lychee.",
+   "speech_end": 56.59,
+   "why": "user fruit 11/12; skipped already-said ['peach', 'breadfruit', 'watermelon']"
+  },
+  {
+   "t": 58.8,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 58.00s)"
+  },
+  {
+   "t": 59.12,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Honeyberry.",
+   "speech_end": 60.0,
+   "why": "user fruit 12/12 (backup pool)"
+  },
+  {
+   "t": 62.32,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 61.52s)"
+  }
+ ],
+ "batch_size": 25,
+ "batch_wall_sec": 85.83,
+ "batch_frames": 1852,
+ "peak_mem_gb": 59.39,
+ "user_audio": "live"
+}

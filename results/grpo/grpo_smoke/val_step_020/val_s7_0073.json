@@ -1,0 +1,4332 @@
+{
+ "game_id": "val_s7_0073",
+ "spec": {
+  "game_id": "val_s7_0073",
+  "split": "val",
+  "seed": 7,
+  "voice": "Rohan",
+  "starter": "moshi",
+  "phrasing": "Speed round of fruits, no repeats. You start us off.",
+  "fruit_order": [
+   "dragon fruit",
+   "lychee",
+   "blood orange",
+   "apricot",
+   "fig",
+   "cloudberry",
+   "raspberry",
+   "watermelon",
+   "peach",
+   "breadfruit",
+   "starfruit",
+   "nectarine"
+  ],
+  "gaps": [
+   0.672,
+   0.544,
+   0.323,
+   0.473,
+   0.407,
+   0.704,
+   0.371,
+   0.745,
+   0.405,
+   0.535,
+   0.57,
+   0.702,
+   0.307,
+   0.587
+  ],
+  "backup_order": [
+   "pluot",
+   "chokeberry",
+   "pepino",
+   "salmonberry",
+   "physalis",
+   "marionberry",
+   "nance",
+   "black sapote",
+   "mamey",
+   "sloe",
+   "sea buckthorn",
+   "santol",
+   "bergamot",
+   "white currant",
+   "noni",
+   "sugar apple",
+   "camu camu",
+   "ugli fruit",
+   "medlar",
+   "sapodilla",
+   "mamoncillo",
+   "wax apple",
+   "baobab",
+   "salak",
+   "honeyberry",
+   "sweet lime",
+   "cempedak",
+   "citron",
+   "pitanga",
+   "tangelo",
+   "feijoa",
+   "bosc pear",
+   "horned melon",
+   "ackee",
+   "atemoya",
+   "galia melon",
+   "white sapote",
+   "pulasan",
+   "canistel",
+   "finger lime",
+   "jabuticaba",
+   "casaba melon",
+   "date plum",
+   "marula",
+   "jostaberry",
+   "loganberry",
+   "kiwiberry",
+   "mirabelle",
+   "miracle fruit",
+   "langsat",
+   "crenshaw melon",
+   "rowan",
+   "bael",
+   "tayberry",
+   "barberry",
+   "fuji apple",
+   "aprium",
+   "gala apple",
+   "cara cara orange",
+   "cupuacu",
+   "minneola",
+   "lucuma",
+   "acerola",
+   "ugni",
+   "calamansi",
+   "serviceberry",
+   "duku",
+   "bartlett pear",
+   "pequi",
+   "monk fruit"
+  ],
+  "n_user_fruits": 12
+ },
+ "starter": "moshi",
+ "sampling": {
+  "use_sampling": true,
+  "temp": 0.8,
+  "temp_text": 0.7,
+  "top_k": 250,
+  "top_k_text": 25
+ },
+ "sampling_seed": 7002,
+ "frame_sec": 0.08,
+ "end_time": 118.8,
+ "user_turns": [
+  {
+   "kind": "instructions",
+   "text": "Speed round of fruits, no repeats. You start us off.",
+   "fruit": null,
+   "start": 3.44,
+   "speech_end": 6.77,
+   "clip": "data/audio/clips/Rohan/phrasing/speed_round_of_fruits_no_repeats_you_start_us_off.wav",
+   "voice": "Rohan",
+   "frame": 43,
+   "reason": "after greeting turn"
+  },
+  {
+   "kind": "fruit",
+   "text": "Dragon fruit.",
+   "fruit": "dragon fruit",
+   "start": 17.44,
+   "speech_end": 18.31,
+   "clip": "data/audio/clips/Rohan/fruit/dragon_fruit.wav",
+   "voice": "Rohan",
+   "frame": 218,
+   "reason": "user fruit 1/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Lychee.",
+   "fruit": "lychee",
+   "start": 28.72,
+   "speech_end": 29.34,
+   "clip": "data/audio/clips/Rohan/fruit/lychee.wav",
+   "voice": "Rohan",
+   "frame": 359,
+   "reason": "user fruit 2/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Blood orange.",
+   "fruit": "blood orange",
+   "start": 37.28,
+   "speech_end": 38.31,
+   "clip": "data/audio/clips/Rohan/fruit/blood_orange.wav",
+   "voice": "Rohan",
+   "frame": 466,
+   "reason": "user fruit 3/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Apricot.",
+   "fruit": "apricot",
+   "start": 45.44,
+   "speech_end": 46.1,
+   "clip": "data/audio/clips/Rohan/fruit/apricot.wav",
+   "voice": "Rohan",
+   "frame": 568,
+   "reason": "user fruit 4/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Fig.",
+   "fruit": "fig",
+   "start": 54.24,
+   "speech_end": 54.67,
+   "clip": "data/audio/clips/Rohan/fruit/fig.wav",
+   "voice": "Rohan",
+   "frame": 678,
+   "reason": "user fruit 5/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Cloudberry.",
+   "fruit": "cloudberry",
+   "start": 61.84,
+   "speech_end": 62.61,
+   "clip": "data/audio/clips/Rohan/fruit/cloudberry.wav",
+   "voice": "Rohan",
+   "frame": 773,
+   "reason": "user fruit 6/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Raspberry.",
+   "fruit": "raspberry",
+   "start": 70.32,
+   "speech_end": 71.07,
+   "clip": "data/audio/clips/Rohan/fruit/raspberry.wav",
+   "voice": "Rohan",
+   "frame": 879,
+   "reason": "user fruit 7/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Peach.",
+   "fruit": "peach",
+   "start": 78.16,
+   "speech_end": 78.65,
+   "clip": "data/audio/clips/Rohan/fruit/peach.wav",
+   "voice": "Rohan",
+   "frame": 977,
+   "reason": "user fruit 8/12; skipped already-said ['cloudberry', 'raspberry', 'watermelon']"
+  },
+  {
+   "kind": "fruit",
+   "text": "Breadfruit.",
+   "fruit": "breadfruit",
+   "start": 85.92,
+   "speech_end": 86.65,
+   "clip": "data/audio/clips/Rohan/fruit/breadfruit.wav",
+   "voice": "Rohan",
+   "frame": 1074,
+   "reason": "user fruit 9/12; skipped already-said ['raspberry', 'watermelon', 'peach']"
+  },
+  {
+   "kind": "fruit",
+   "text": "Starfruit.",
+   "fruit": "starfruit",
+   "start": 94.0,
+   "speech_end": 94.79,
+   "clip": "data/audio/clips/Rohan/fruit/starfruit.wav",
+   "voice": "Rohan",
+   "frame": 1175,
+   "reason": "user fruit 10/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Nectarine.",
+   "fruit": "nectarine",
+   "start": 102.16,
+   "speech_end": 102.93,
+   "clip": "data/audio/clips/Rohan/fruit/nectarine.wav",
+   "voice": "Rohan",
+   "frame": 1277,
+   "reason": "user fruit 11/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Pluot.",
+   "fruit": "pluot",
+   "start": 110.8,
+   "speech_end": 111.37,
+   "clip": "data/audio/clips/Rohan/fruit/pluot.wav",
+   "voice": "Rohan",
+   "frame": 1385,
+   "reason": "user fruit 12/12 (backup pool)"
+  }
+ ],
+ "moshi_tokens": [
+  {
+   "t": 0.4,
+   "id": 11725,
+   "piece": "▁Hello"
+  },
+  {
+   "t": 0.48,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 0.72,
+   "id": 452,
+   "piece": "▁how"
+  },
+  {
+   "t": 1.12,
+   "id": 298,
+   "piece": "▁are"
+  },
+  {
+   "t": 1.28,
+   "id": 304,
+   "piece": "▁you"
+  },
+  {
+   "t": 1.44,
+   "id": 1497,
+   "piece": "▁today"
+  },
+  {
+   "t": 1.52,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 5.68,
+   "id": 14622,
+   "piece": "▁Okay"
+  },
+  {
+   "t": 5.76,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 6.0,
+   "id": 1131,
+   "piece": "▁let"
+  },
+  {
+   "t": 6.08,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 6.16,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 6.32,
+   "id": 902,
+   "piece": "▁start"
+  },
+  {
+   "t": 6.4,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 6.56,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 6.72,
+   "id": 11477,
+   "piece": "▁apple"
+  },
+  {
+   "t": 6.8,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 7.6,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 7.68,
+   "id": 11477,
+   "piece": "▁apple"
+  },
+  {
+   "t": 7.92,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 8.08,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 8.24,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 8.4,
+   "id": 1584,
+   "piece": "▁popular"
+  },
+  {
+   "t": 8.72,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 8.96,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 9.12,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 9.2,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 9.28,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 9.6,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 9.92,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 10.16,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 10.24,
+   "id": 284,
+   "piece": "8"
+  },
+  {
+   "t": 10.32,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 10.4,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 10.56,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 11.04,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 11.36,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 11.6,
+   "id": 264,
+   "piece": "▁of"
+  },
+  {
+   "t": 11.76,
+   "id": 11477,
+   "piece": "▁apple"
+  },
+  {
+   "t": 11.84,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 12.08,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 12.4,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 12.72,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 12.8,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 13.76,
+   "id": 820,
+   "piece": "▁next"
+  },
+  {
+   "t": 14.0,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 14.24,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 14.4,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 14.56,
+   "id": 19642,
+   "piece": "▁banana"
+  },
+  {
+   "t": 14.64,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 15.04,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 15.44,
+   "id": 19642,
+   "piece": "▁banana"
+  },
+  {
+   "t": 15.68,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 15.92,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 16.0,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 16.24,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 16.48,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 16.88,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 17.04,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 17.12,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 17.2,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 17.52,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 17.68,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 17.92,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 18.0,
+   "id": 270,
+   "piece": "2"
+  },
+  {
+   "t": 18.08,
+   "id": 280,
+   "piece": "5"
+  },
+  {
+   "t": 18.16,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 18.32,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 19.04,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 19.36,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 19.6,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 19.92,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 20.24,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 20.32,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 21.2,
+   "id": 1017,
+   "piece": "▁third"
+  },
+  {
+   "t": 21.44,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 21.68,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 21.76,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 21.92,
+   "id": 9505,
+   "piece": "▁orange"
+  },
+  {
+   "t": 22.0,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 22.32,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 22.72,
+   "id": 9505,
+   "piece": "▁orange"
+  },
+  {
+   "t": 22.96,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 23.12,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 23.28,
+   "id": 1017,
+   "piece": "▁third"
+  },
+  {
+   "t": 23.44,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 23.68,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 24.0,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 24.32,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 24.48,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 24.56,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 24.64,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 24.88,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 25.28,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 25.44,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 25.52,
+   "id": 270,
+   "piece": "2"
+  },
+  {
+   "t": 25.6,
+   "id": 278,
+   "piece": "3"
+  },
+  {
+   "t": 25.68,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 25.84,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 26.4,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 26.72,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 26.96,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 27.28,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 27.52,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 27.6,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 29.36,
+   "id": 2761,
+   "piece": "▁fourth"
+  },
+  {
+   "t": 29.6,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 29.76,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 29.92,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 30.08,
+   "id": 649,
+   "piece": "▁water"
+  },
+  {
+   "t": 30.16,
+   "id": 5643,
+   "piece": "mel"
+  },
+  {
+   "t": 30.24,
+   "id": 537,
+   "piece": "on"
+  },
+  {
+   "t": 30.32,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 30.48,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 30.96,
+   "id": 649,
+   "piece": "▁water"
+  },
+  {
+   "t": 31.04,
+   "id": 5643,
+   "piece": "mel"
+  },
+  {
+   "t": 31.12,
+   "id": 537,
+   "piece": "on"
+  },
+  {
+   "t": 31.36,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 31.68,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 31.76,
+   "id": 2761,
+   "piece": "▁fourth"
+  },
+  {
+   "t": 32.0,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 32.24,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 32.48,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 32.8,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 32.88,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 33.04,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 33.12,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 33.36,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 33.6,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 33.84,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 33.92,
+   "id": 270,
+   "piece": "2"
+  },
+  {
+   "t": 34.0,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 34.08,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 34.16,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 34.48,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 34.8,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 35.04,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 35.28,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 35.6,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 35.68,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 37.84,
+   "id": 4755,
+   "piece": "▁fifth"
+  },
+  {
+   "t": 38.0,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 38.24,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 38.32,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 38.48,
+   "id": 21699,
+   "piece": "▁tomato"
+  },
+  {
+   "t": 38.56,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 38.88,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 39.28,
+   "id": 21699,
+   "piece": "▁tomato"
+  },
+  {
+   "t": 39.52,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 39.68,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 39.84,
+   "id": 4755,
+   "piece": "▁fifth"
+  },
+  {
+   "t": 40.0,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 40.16,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 40.48,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 40.72,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 40.8,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 40.88,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 40.96,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 41.2,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 41.52,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 41.68,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 41.76,
+   "id": 265,
+   "piece": "1"
+  },
+  {
+   "t": 41.84,
+   "id": 290,
+   "piece": "7"
+  },
+  {
+   "t": 41.92,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 42.16,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 42.72,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 43.04,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 43.28,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 43.52,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 43.76,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 43.84,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 45.92,
+   "id": 7459,
+   "piece": "▁sixth"
+  },
+  {
+   "t": 46.16,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 46.32,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 46.48,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 46.64,
+   "id": 272,
+   "piece": "▁a"
+  },
+  {
+   "t": 46.72,
+   "id": 20590,
+   "piece": "voca"
+  },
+  {
+   "t": 46.8,
+   "id": 1624,
+   "piece": "do"
+  },
+  {
+   "t": 46.88,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 47.04,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 47.52,
+   "id": 272,
+   "piece": "▁a"
+  },
+  {
+   "t": 47.6,
+   "id": 20590,
+   "piece": "voca"
+  },
+  {
+   "t": 47.68,
+   "id": 1624,
+   "piece": "do"
+  },
+  {
+   "t": 47.84,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 48.0,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 48.16,
+   "id": 7459,
+   "piece": "▁sixth"
+  },
+  {
+   "t": 48.4,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 48.64,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 48.88,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 49.12,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 49.28,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 49.36,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 49.44,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 49.68,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 49.92,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 50.16,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 50.24,
+   "id": 265,
+   "piece": "1"
+  },
+  {
+   "t": 50.32,
+   "id": 290,
+   "piece": "7"
+  },
+  {
+   "t": 50.4,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 50.64,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 51.28,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 51.52,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 51.76,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 52.0,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 52.24,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 52.32,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 54.72,
+   "id": 9679,
+   "piece": "▁seventh"
+  },
+  {
+   "t": 54.96,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 55.2,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 55.28,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 55.44,
+   "id": 13836,
+   "piece": "▁grape"
+  },
+  {
+   "t": 55.52,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 55.68,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 55.92,
+   "id": 13836,
+   "piece": "▁grape"
+  },
+  {
+   "t": 56.08,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 56.24,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 56.32,
+   "id": 9679,
+   "piece": "▁seventh"
+  },
+  {
+   "t": 56.56,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 56.8,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 57.04,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 57.28,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 57.36,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 57.52,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 57.6,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 57.76,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 58.0,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 58.24,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 58.32,
+   "id": 265,
+   "piece": "1"
+  },
+  {
+   "t": 58.4,
+   "id": 280,
+   "piece": "5"
+  },
+  {
+   "t": 58.48,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 58.64,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 59.28,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 59.52,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 59.76,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 60.0,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 60.24,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 60.32,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 62.56,
+   "id": 12830,
+   "piece": "▁eighth"
+  },
+  {
+   "t": 62.72,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 62.88,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 63.04,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 63.2,
+   "id": 19299,
+   "piece": "▁straw"
+  },
+  {
+   "t": 63.28,
+   "id": 8946,
+   "piece": "berry"
+  },
+  {
+   "t": 63.36,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 63.6,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 63.84,
+   "id": 19299,
+   "piece": "▁straw"
+  },
+  {
+   "t": 63.92,
+   "id": 8946,
+   "piece": "berry"
+  },
+  {
+   "t": 64.16,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 64.32,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 64.48,
+   "id": 12830,
+   "piece": "▁eighth"
+  },
+  {
+   "t": 64.64,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 64.88,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 65.12,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 65.36,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 65.52,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 65.6,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 65.68,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 65.92,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 66.16,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 66.32,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 66.4,
+   "id": 265,
+   "piece": "1"
+  },
+  {
+   "t": 66.48,
+   "id": 281,
+   "piece": "4"
+  },
+  {
+   "t": 66.56,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 66.8,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 67.36,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 67.6,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 67.84,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 68.08,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 68.32,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 68.4,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 70.96,
+   "id": 15614,
+   "piece": "▁ninth"
+  },
+  {
+   "t": 71.12,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 71.28,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 71.44,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 71.6,
+   "id": 1063,
+   "piece": "▁man"
+  },
+  {
+   "t": 71.68,
+   "id": 1583,
+   "piece": "go"
+  },
+  {
+   "t": 71.76,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 71.92,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 72.08,
+   "id": 1063,
+   "piece": "▁man"
+  },
+  {
+   "t": 72.16,
+   "id": 1583,
+   "piece": "go"
+  },
+  {
+   "t": 72.24,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 72.4,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 72.56,
+   "id": 15614,
+   "piece": "▁ninth"
+  },
+  {
+   "t": 72.72,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 72.96,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 73.28,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 73.44,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 73.6,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 73.68,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 73.76,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 74.0,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 74.32,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 74.48,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 74.56,
+   "id": 265,
+   "piece": "1"
+  },
+  {
+   "t": 74.64,
+   "id": 281,
+   "piece": "4"
+  },
+  {
+   "t": 74.72,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 74.96,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 75.52,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 75.76,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 76.0,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 76.24,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 76.48,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 76.56,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 78.64,
+   "id": 16590,
+   "piece": "▁tenth"
+  },
+  {
+   "t": 78.8,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 79.04,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 79.12,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 79.28,
+   "id": 485,
+   "piece": "▁p"
+  },
+  {
+   "t": 79.36,
+   "id": 7570,
+   "piece": "each"
+  },
+  {
+   "t": 79.44,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 79.52,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 79.68,
+   "id": 485,
+   "piece": "▁p"
+  },
+  {
+   "t": 79.76,
+   "id": 7570,
+   "piece": "each"
+  },
+  {
+   "t": 79.92,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 80.0,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 80.16,
+   "id": 16590,
+   "piece": "▁tenth"
+  },
+  {
+   "t": 80.32,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 80.56,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 80.8,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 81.04,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 81.2,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 81.28,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 81.36,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 81.68,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 82.0,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 82.16,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 82.24,
+   "id": 265,
+   "piece": "1"
+  },
+  {
+   "t": 82.32,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 82.4,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 82.64,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 83.12,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 83.36,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 83.68,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 83.92,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 84.16,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 84.24,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 86.56,
+   "id": 28146,
+   "piece": "▁eleventh"
+  },
+  {
+   "t": 86.8,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 86.96,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 87.12,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 87.28,
+   "id": 13836,
+   "piece": "▁grape"
+  },
+  {
+   "t": 87.36,
+   "id": 23112,
+   "piece": "fruit"
+  },
+  {
+   "t": 87.44,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 87.68,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 87.84,
+   "id": 13836,
+   "piece": "▁grape"
+  },
+  {
+   "t": 87.92,
+   "id": 23112,
+   "piece": "fruit"
+  },
+  {
+   "t": 88.16,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 88.32,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 88.4,
+   "id": 28146,
+   "piece": "▁eleventh"
+  },
+  {
+   "t": 88.72,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 88.88,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 89.2,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 89.36,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 89.6,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 89.68,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 89.76,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 90.0,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 90.24,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 90.4,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 90.48,
+   "id": 265,
+   "piece": "1"
+  },
+  {
+   "t": 90.56,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 90.64,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 90.8,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 91.2,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 91.52,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 91.76,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 92.0,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 92.24,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 92.32,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 94.72,
+   "id": 27854,
+   "piece": "▁twelfth"
+  },
+  {
+   "t": 94.96,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 95.12,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 95.2,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 95.36,
+   "id": 17992,
+   "piece": "▁pine"
+  },
+  {
+   "t": 95.44,
+   "id": 11240,
+   "piece": "apple"
+  },
+  {
+   "t": 95.52,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 95.68,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 95.84,
+   "id": 17992,
+   "piece": "▁pine"
+  },
+  {
+   "t": 95.92,
+   "id": 11240,
+   "piece": "apple"
+  },
+  {
+   "t": 96.08,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 96.32,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 96.48,
+   "id": 27854,
+   "piece": "▁twelfth"
+  },
+  {
+   "t": 96.72,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 96.88,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 97.2,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 97.44,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 97.52,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 97.6,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 97.68,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 98.0,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 98.24,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 98.4,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 98.48,
+   "id": 265,
+   "piece": "1"
+  },
+  {
+   "t": 98.56,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 98.64,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 98.8,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 99.2,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 99.52,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 99.76,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 100.0,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 100.24,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 100.32,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 102.96,
+   "id": 15150,
+   "piece": "▁thirteen"
+  },
+  {
+   "t": 103.04,
+   "id": 403,
+   "piece": "th"
+  },
+  {
+   "t": 103.36,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 103.52,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 103.68,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 103.84,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 103.92,
+   "id": 18866,
+   "piece": "tang"
+  },
+  {
+   "t": 104.0,
+   "id": 20146,
+   "piece": "erine"
+  },
+  {
+   "t": 104.08,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 104.24,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 104.48,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 104.56,
+   "id": 18866,
+   "piece": "tang"
+  },
+  {
+   "t": 104.64,
+   "id": 20146,
+   "piece": "erine"
+  },
+  {
+   "t": 104.96,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 105.04,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 105.2,
+   "id": 15150,
+   "piece": "▁thirteen"
+  },
+  {
+   "t": 105.28,
+   "id": 403,
+   "piece": "th"
+  },
+  {
+   "t": 105.6,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 105.76,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 106.08,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 106.32,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 106.4,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 106.48,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 106.56,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 106.8,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 107.12,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 107.28,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 107.36,
+   "id": 265,
+   "piece": "1"
+  },
+  {
+   "t": 107.44,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 107.52,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 107.68,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 108.16,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 108.48,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 108.72,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 108.96,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 109.2,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 109.28,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 111.36,
+   "id": 16283,
+   "piece": "▁fourteen"
+  },
+  {
+   "t": 111.44,
+   "id": 403,
+   "piece": "th"
+  },
+  {
+   "t": 111.68,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 111.84,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 112.0,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 112.16,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 112.24,
+   "id": 362,
+   "piece": "ly"
+  },
+  {
+   "t": 112.32,
+   "id": 2552,
+   "piece": "che"
+  },
+  {
+   "t": 112.4,
+   "id": 324,
+   "piece": "e"
+  },
+  {
+   "t": 112.48,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 112.56,
+   "id": 287,
+   "piece": "▁The"
+  },
+  {
+   "t": 112.96,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 113.04,
+   "id": 362,
+   "piece": "ly"
+  },
+  {
+   "t": 113.12,
+   "id": 2552,
+   "piece": "che"
+  },
+  {
+   "t": 113.2,
+   "id": 324,
+   "piece": "e"
+  },
+  {
+   "t": 113.28,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 113.36,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 113.52,
+   "id": 16283,
+   "piece": "▁fourteen"
+  },
+  {
+   "t": 113.6,
+   "id": 403,
+   "piece": "th"
+  },
+  {
+   "t": 113.92,
+   "id": 436,
+   "piece": "▁most"
+  },
+  {
+   "t": 114.08,
+   "id": 11695,
+   "piece": "▁consumed"
+  },
+  {
+   "t": 114.4,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 114.56,
+   "id": 271,
+   "piece": "▁in"
+  },
+  {
+   "t": 114.72,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 114.8,
+   "id": 671,
+   "piece": "▁world"
+  },
+  {
+   "t": 114.88,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 115.12,
+   "id": 288,
+   "piece": "▁with"
+  },
+  {
+   "t": 115.36,
+   "id": 417,
+   "piece": "▁over"
+  },
+  {
+   "t": 115.52,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 115.6,
+   "id": 265,
+   "piece": "1"
+  },
+  {
+   "t": 115.68,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 115.76,
+   "id": 268,
+   "piece": "0"
+  },
+  {
+   "t": 116.0,
+   "id": 1149,
+   "piece": "▁million"
+  },
+  {
+   "t": 116.56,
+   "id": 4130,
+   "piece": "▁metric"
+  },
+  {
+   "t": 116.88,
+   "id": 9543,
+   "piece": "▁tons"
+  },
+  {
+   "t": 117.12,
+   "id": 1296,
+   "piece": "▁produced"
+  },
+  {
+   "t": 117.36,
+   "id": 449,
+   "piece": "▁each"
+  },
+  {
+   "t": 117.52,
+   "id": 562,
+   "piece": "▁year"
+  },
+  {
+   "t": 117.6,
+   "id": 263,
+   "piece": "."
+  }
+ ],
+ "moshi_text": "Hello, how are you today? Okay, let's start with the apple. The apple is the most popular fruit in the world, with over 800 million metric tons of apples produced each year. next fruit is the banana. The banana is the most consumed fruit in the world, with over 250 million metric tons produced each year. third fruit is the orange. The orange is the third most consumed fruit in the world, with over 230 million metric tons produced each year. fourth fruit is the watermelon. The watermelon is the fourth most consumed fruit in the world, with over 200 million metric tons produced each year. fifth fruit is the tomato. The tomato is the fifth most consumed fruit in the world, with over 170 million metric tons produced each year. sixth fruit is the avocado. The avocado is the sixth most consumed fruit in the world, with over 170 million metric tons produced each year. seventh fruit is the grape. The grape is the seventh most consumed fruit in the world, with over 150 million metric tons produced each year. eighth fruit is the strawberry. The strawberry is the eighth most consumed fruit in the world, with over 140 million metric tons produced each year. ninth fruit is the mango. The mango is the ninth most consumed fruit in the world, with over 140 million metric tons produced each year. tenth fruit is the peach. The peach is the tenth most consumed fruit in the world, with over 100 million metric tons produced each year. eleventh fruit is the grapefruit. The grapefruit is the eleventh most consumed fruit in the world, with over 100 million metric tons produced each year. twelfth fruit is the pineapple. The pineapple is the twelfth most consumed fruit in the world, with over 100 million metric tons produced each year. thirteenth fruit is the tangerine. The tangerine is the thirteenth most consumed fruit in the world, with over 100 million metric tons produced each year. fourteenth fruit is the lychee. The lychee is the fourteenth most consumed fruit in the world, with over 100 million metric tons produced each year.",
+ "moshi_dbfs": [
+  -120.0,
+  -120.0,
+  -64.1,
+  -73.1,
+  -60.6,
+  -58.9,
+  -21.2,
+  -18.1,
+  -17.7,
+  -17.2,
+  -20.5,
+  -23.6,
+  -36.3,
+  -58.6,
+  -54.6,
+  -21.2,
+  -16.6,
+  -18.8,
+  -22.1,
+  -33.6,
+  -29.7,
+  -25.3,
+  -23.2,
+  -29.8,
+  -41.3,
+  -60.2,
+  -59.4,
+  -66.2,
+  -58.5,
+  -58.6,
+  -57.9,
+  -58.3,
+  -59.3,
+  -62.4,
+  -53.9,
+  -49.6,
+  -52.6,
+  -59.1,
+  -59.1,
+  -59.9,
+  -59.5,
+  -58.1,
+  -58.1,
+  -65.6,
+  -60.5,
+  -59.6,
+  -62.7,
+  -59.0,
+  -63.0,
+  -64.4,
+  -63.9,
+  -58.7,
+  -60.8,
+  -61.0,
+  -59.2,
+  -62.6,
+  -62.6,
+  -61.8,
+  -56.5,
+  -56.7,
+  -59.4,
+  -59.2,
+  -59.6,
+  -56.5,
+  -57.4,
+  -55.9,
+  -60.1,
+  -57.9,
+  -57.9,
+  -54.8,
+  -55.4,
+  -21.6,
+  -18.3,
+  -23.4,
+  -22.6,
+  -32.1,
+  -47.0,
+  -22.4,
+  -18.5,
+  -37.1,
+  -20.9,
+  -14.2,
+  -18.5,
+  -28.0,
+  -14.7,
+  -12.2,
+  -15.9,
+  -30.5,
+  -27.0,
+  -34.8,
+  -50.7,
+  -54.0,
+  -60.4,
+  -59.2,
+  -58.4,
+  -24.8,
+  -15.2,
+  -13.8,
+  -18.9,
+  -18.8,
+  -16.8,
+  -22.8,
+  -32.3,
+  -18.5,
+  -17.1,
+  -25.6,
+  -34.8,
+  -15.0,
+  -19.9,
+  -24.4,
+  -18.4,
+  -30.7,
+  -25.9,
+  -19.2,
+  -21.6,
+  -20.3,
+  -22.6,
+  -21.0,
+  -21.6,
+  -25.7,
+  -34.4,
+  -54.6,
+  -58.7,
+  -64.6,
+  -29.6,
+  -25.2,
+  -18.0,
+  -19.6,
+  -16.7,
+  -27.4,
+  -19.3,
+  -14.0,
+  -25.8,
+  -19.7,
+  -22.3,
+  -22.8,
+  -20.3,
+  -18.7,
+  -17.8,
+  -18.3,
+  -18.5,
+  -20.3,
+  -41.9,
+  -25.6,
+  -43.1,
+  -21.7,
+  -18.4,
+  -22.9,
+  -24.9,
+  -22.1,
+  -22.2,
+  -38.7,
+  -24.7,
+  -46.1,
+  -27.4,
+  -25.1,
+  -20.4,
+  -34.5,
+  -25.3,
+  -28.0,
+  -45.1,
+  -26.6,
+  -31.6,
+  -42.9,
+  -57.7,
+  -56.5,
+  -57.5,
+  -56.9,
+  -58.3,
+  -56.9,
+  -56.3,
+  -57.8,
+  -50.3,
+  -20.4,
+  -18.2,
+  -42.2,
+  -43.7,
+  -25.0,
+  -16.9,
+  -20.3,
+  -20.5,
+  -35.8,
+  -26.6,
+  -18.4,
+  -17.5,
+  -17.1,
+  -20.8,
+  -27.8,
+  -35.9,
+  -58.7,
+  -58.4,
+  -56.7,
+  -58.4,
+  -30.8,
+  -25.0,
+  -16.7,
+  -16.1,
+  -16.8,
+  -15.9,
+  -17.7,
+  -29.6,
+  -17.4,
+  -16.0,
+  -22.2,
+  -47.2,
+  -21.1,
+  -26.2,
+  -38.3,
+  -19.4,
+  -19.5,
+  -27.3,
+  -50.6,
+  -20.3,
+  -22.2,
+  -20.9,
+  -22.2,
+  -25.4,
+  -21.2,
+  -23.0,
+  -28.7,
+  -52.1,
+  -38.5,
+  -27.1,
+  -19.1,
+  -24.0,
+  -25.2,
+  -44.4,
+  -19.5,
+  -16.9,
+  -18.0,
+  -21.5,
+  -24.7,
+  -30.8,
+  -23.4,
+  -30.2,
+  -24.6,
+  -20.7,
+  -18.1,
+  -17.9,
+  -18.5,
+  -19.8,
+  -20.7,
+  -22.0,
+  -32.2,
+  -28.1,
+  -42.4,
+  -20.5,
+  -23.4,
+  -46.7,
+  -25.1,
+  -27.7,
+  -21.8,
+  -39.8,
+  -25.6,
+  -37.9,
+  -31.4,
+  -26.6,
+  -30.7,
+  -48.9,
+  -60.6,
+  -58.6,
+  -55.8,
+  -59.2,
+  -56.4,
+  -58.1,
+  -39.0,
+  -27.2,
+  -28.0,
+  -14.8,
+  -17.8,
+  -48.9,
+  -18.2,
+  -17.8,
+  -21.3,
+  -22.7,
+  -18.6,
+  -19.5,
+  -20.7,
+  -26.0,
+  -31.6,
+  -52.2,
+  -58.2,
+  -57.2,
+  -57.6,
+  -50.6,
+  -19.6,
+  -16.4,
+  -16.7,
+  -22.1,
+  -20.3,
+  -29.8,
+  -23.4,
+  -27.4,
+  -17.2,
+  -16.7,
+  -20.0,
+  -17.7,
+  -21.3,
+  -45.1,
+  -22.6,
+  -25.9,
+  -30.8,
+  -17.9,
+  -23.0,
+  -41.5,
+  -21.4,
+  -22.0,
+  -22.4,
+  -25.2,
+  -20.0,
+  -18.9,
+  -23.4,
+  -46.6,
+  -57.5,
+  -58.5,
+  -56.2,
+  -29.1,
+  -24.0,
+  -18.1,
+  -25.4,
+  -28.7,
+  -23.1,
+  -18.4,
+  -20.9,
+  -21.7,
+  -22.6,
+  -26.6,
+  -18.4,
+  -22.3,
+  -19.1,
+  -18.1,
+  -19.2,
+  -19.6,
+  -20.4,
+  -20.7,
+  -33.6,
+  -28.2,
+  -47.7,
+  -21.2,
+  -25.7,
+  -49.7,
+  -27.2,
+  -24.7,
+  -31.8,
+  -29.1,
+  -33.9,
+  -33.3,
+  -30.7,
+  -39.7,
+  -59.7,
+  -57.7,
+  -55.4,
+  -60.9,
+  -57.0,
+  -59.1,
+  -54.7,
+  -52.2,
+  -56.5,
+  -59.6,
+  -52.4,
+  -55.2,
+  -56.2,
+  -56.3,
+  -50.5,
+  -55.1,
+  -57.5,
+  -57.3,
+  -33.8,
+  -23.4,
+  -21.1,
+  -14.4,
+  -25.0,
+  -27.8,
+  -15.4,
+  -18.0,
+  -22.7,
+  -21.0,
+  -19.8,
+  -13.7,
+  -16.6,
+  -18.4,
+  -20.4,
+  -24.6,
+  -28.1,
+  -34.2,
+  -52.0,
+  -56.6,
+  -57.9,
+  -35.0,
+  -18.6,
+  -12.0,
+  -13.6,
+  -14.7,
+  -15.1,
+  -16.0,
+  -17.0,
+  -16.4,
+  -24.0,
+  -22.4,
+  -51.9,
+  -18.6,
+  -19.4,
+  -28.9,
+  -17.9,
+  -26.0,
+  -35.6,
+  -22.2,
+  -37.4,
+  -21.3,
+  -21.6,
+  -48.4,
+  -20.3,
+  -20.7,
+  -21.5,
+  -23.9,
+  -20.3,
+  -20.3,
+  -24.5,
+  -54.1,
+  -65.2,
+  -29.6,
+  -25.4,
+  -17.4,
+  -22.1,
+  -30.4,
+  -24.3,
+  -19.1,
+  -20.2,
+  -24.9,
+  -23.7,
+  -22.4,
+  -19.1,
+  -21.6,
+  -21.8,
+  -21.2,
+  -23.5,
+  -34.6,
+  -28.9,
+  -35.4,
+  -22.8,
+  -30.0,
+  -35.6,
+  -29.3,
+  -22.8,
+  -40.7,
+  -25.6,
+  -29.2,
+  -37.0,
+  -28.8,
+  -39.0,
+  -57.0,
+  -55.4,
+  -55.0,
+  -56.1,
+  -53.9,
+  -55.5,
+  -55.5,
+  -56.4,
+  -55.7,
+  -57.3,
+  -55.7,
+  -58.2,
+  -54.4,
+  -55.2,
+  -62.2,
+  -58.0,
+  -56.6,
+  -53.0,
+  -54.4,
+  -54.1,
+  -53.9,
+  -53.0,
+  -57.5,
+  -32.0,
+  -22.6,
+  -27.5,
+  -17.1,
+  -52.1,
+  -16.3,
+  -17.5,
+  -20.1,
+  -24.6,
+  -29.8,
+  -19.3,
+  -15.6,
+  -16.1,
+  -22.4,
+  -25.5,
+  -35.7,
+  -60.1,
+  -58.9,
+  -56.3,
+  -24.1,
+  -26.6,
+  -20.0,
+  -15.8,
+  -15.9,
+  -15.3,
+  -26.1,
+  -24.6,
+  -26.1,
+  -18.9,
+  -25.0,
+  -19.1,
+  -30.9,
+  -26.3,
+  -27.0,
+  -30.4,
+  -19.6,
+  -28.3,
+  -22.9,
+  -22.3,
+  -22.7,
+  -23.7,
+  -20.3,
+  -21.7,
+  -27.4,
+  -50.2,
+  -54.9,
+  -54.8,
+  -23.7,
+  -17.8,
+  -24.8,
+  -17.9,
+  -20.1,
+  -21.3,
+  -21.2,
+  -23.5,
+  -32.7,
+  -19.5,
+  -23.0,
+  -21.3,
+  -20.2,
+  -19.7,
+  -19.9,
+  -20.4,
+  -20.7,
+  -20.4,
+  -21.0,
+  -34.3,
+  -26.9,
+  -46.2,
+  -23.3,
+  -26.8,
+  -49.7,
+  -27.0,
+  -24.6,
+  -33.5,
+  -28.3,
+  -29.8,
+  -35.9,
+  -24.7,
+  -30.6,
+  -48.7,
+  -50.5,
+  -54.8,
+  -59.3,
+  -55.4,
+  -57.1,
+  -56.4,
+  -54.9,
+  -54.8,
+  -54.7,
+  -56.9,
+  -56.4,
+  -54.5,
+  -56.5,
+  -53.6,
+  -56.7,
+  -57.3,
+  -55.5,
+  -56.7,
+  -57.8,
+  -56.7,
+  -32.5,
+  -27.5,
+  -27.1,
+  -17.1,
+  -37.3,
+  -46.0,
+  -16.2,
+  -18.2,
+  -18.8,
+  -28.8,
+  -17.9,
+  -15.5,
+  -21.7,
+  -36.4,
+  -19.1,
+  -16.4,
+  -22.3,
+  -27.2,
+  -52.0,
+  -56.0,
+  -53.8,
+  -37.4,
+  -17.5,
+  -15.7,
+  -20.8,
+  -25.3,
+  -13.3,
+  -16.3,
+  -18.7,
+  -25.1,
+  -25.3,
+  -36.9,
+  -21.0,
+  -43.4,
+  -21.1,
+  -21.2,
+  -45.1,
+  -24.0,
+  -39.9,
+  -20.5,
+  -21.5,
+  -44.7,
+  -21.4,
+  -21.9,
+  -23.6,
+  -24.0,
+  -19.8,
+  -20.9,
+  -26.7,
+  -53.8,
+  -56.9,
+  -56.9,
+  -29.3,
+  -17.8,
+  -18.3,
+  -20.1,
+  -21.8,
+  -18.8,
+  -20.6,
+  -21.6,
+  -31.7,
+  -20.5,
+  -21.1,
+  -22.1,
+  -20.0,
+  -19.9,
+  -19.8,
+  -20.6,
+  -20.7,
+  -20.4,
+  -19.0,
+  -22.1,
+  -29.2,
+  -34.3,
+  -26.4,
+  -22.1,
+  -40.9,
+  -25.6,
+  -23.5,
+  -32.4,
+  -26.2,
+  -28.1,
+  -33.5,
+  -25.4,
+  -32.5,
+  -49.0,
+  -60.0,
+  -59.8,
+  -56.6,
+  -56.7,
+  -58.0,
+  -57.2,
+  -54.4,
+  -54.2,
+  -53.8,
+  -52.3,
+  -55.9,
+  -56.1,
+  -56.5,
+  -55.1,
+  -50.2,
+  -54.8,
+  -60.0,
+  -60.0,
+  -55.1,
+  -56.7,
+  -55.5,
+  -52.2,
+  -55.0,
+  -55.7,
+  -29.8,
+  -28.3,
+  -12.4,
+  -18.4,
+  -19.4,
+  -48.8,
+  -16.0,
+  -16.7,
+  -20.8,
+  -25.3,
+  -28.1,
+  -15.6,
+  -16.1,
+  -25.6,
+  -46.1,
+  -53.4,
+  -22.1,
+  -27.3,
+  -15.8,
+  -23.3,
+  -24.2,
+  -26.7,
+  -30.6,
+  -16.4,
+  -23.1,
+  -24.3,
+  -18.2,
+  -25.5,
+  -33.1,
+  -23.1,
+  -38.8,
+  -19.8,
+  -28.5,
+  -21.0,
+  -21.9,
+  -21.7,
+  -24.8,
+  -19.8,
+  -20.2,
+  -25.2,
+  -50.0,
+  -57.4,
+  -47.5,
+  -24.5,
+  -17.5,
+  -19.3,
+  -22.6,
+  -18.6,
+  -22.3,
+  -25.9,
+  -21.2,
+  -45.1,
+  -20.5,
+  -28.1,
+  -25.9,
+  -21.5,
+  -19.9,
+  -19.3,
+  -21.7,
+  -20.3,
+  -19.5,
+  -36.2,
+  -29.3,
+  -40.8,
+  -21.6,
+  -27.3,
+  -49.8,
+  -28.3,
+  -28.9,
+  -31.3,
+  -29.0,
+  -34.3,
+  -29.7,
+  -41.1,
+  -49.2,
+  -54.3,
+  -53.9,
+  -56.2,
+  -51.7,
+  -48.4,
+  -52.3,
+  -50.3,
+  -53.0,
+  -52.3,
+  -48.6,
+  -47.1,
+  -49.9,
+  -52.1,
+  -53.1,
+  -55.8,
+  -50.1,
+  -50.1,
+  -52.8,
+  -54.5,
+  -52.2,
+  -52.6,
+  -52.9,
+  -62.1,
+  -24.7,
+  -15.3,
+  -12.2,
+  -27.5,
+  -51.1,
+  -17.7,
+  -15.6,
+  -17.7,
+  -29.9,
+  -25.6,
+  -35.2,
+  -19.7,
+  -10.9,
+  -17.5,
+  -16.0,
+  -18.8,
+  -24.0,
+  -33.8,
+  -26.4,
+  -30.7,
+  -13.8,
+  -11.1,
+  -19.5,
+  -14.1,
+  -18.3,
+  -18.9,
+  -16.5,
+  -16.9,
+  -34.3,
+  -18.6,
+  -22.4,
+  -30.7,
+  -22.1,
+  -34.3,
+  -15.6,
+  -19.6,
+  -31.2,
+  -18.5,
+  -19.6,
+  -17.6,
+  -20.5,
+  -17.3,
+  -17.4,
+  -23.1,
+  -50.1,
+  -54.7,
+  -24.2,
+  -17.9,
+  -15.3,
+  -17.9,
+  -20.3,
+  -20.3,
+  -21.8,
+  -22.7,
+  -22.8,
+  -49.2,
+  -19.2,
+  -19.4,
+  -19.4,
+  -18.6,
+  -17.8,
+  -19.8,
+  -20.5,
+  -19.4,
+  -22.9,
+  -29.8,
+  -37.7,
+  -23.5,
+  -22.2,
+  -45.6,
+  -26.2,
+  -23.7,
+  -35.6,
+  -26.1,
+  -37.5,
+  -26.7,
+  -27.9,
+  -39.1,
+  -57.7,
+  -50.9,
+  -52.6,
+  -50.6,
+  -51.4,
+  -55.8,
+  -55.6,
+  -57.4,
+  -58.9,
+  -55.1,
+  -53.0,
+  -50.8,
+  -55.9,
+  -55.7,
+  -55.8,
+  -55.9,
+  -55.4,
+  -55.7,
+  -55.3,
+  -55.9,
+  -54.1,
+  -54.1,
+  -56.2,
+  -56.0,
+  -51.1,
+  -48.8,
+  -51.8,
+  -18.8,
+  -14.8,
+  -12.9,
+  -17.9,
+  -48.7,
+  -17.4,
+  -18.2,
+  -19.2,
+  -23.1,
+  -16.6,
+  -15.6,
+  -17.3,
+  -22.9,
+  -20.6,
+  -25.8,
+  -19.9,
+  -15.6,
+  -17.0,
+  -16.9,
+  -19.3,
+  -36.2,
+  -17.6,
+  -15.9,
+  -19.1,
+  -52.0,
+  -18.9,
+  -20.4,
+  -49.8,
+  -21.7,
+  -36.4,
+  -18.9,
+  -17.9,
+  -45.9,
+  -18.8,
+  -25.0,
+  -21.1,
+  -22.0,
+  -17.9,
+  -18.4,
+  -27.0,
+  -50.3,
+  -52.1,
+  -35.5,
+  -18.4,
+  -15.5,
+  -18.8,
+  -16.8,
+  -17.7,
+  -20.4,
+  -23.5,
+  -20.8,
+  -23.6,
+  -45.9,
+  -18.6,
+  -19.3,
+  -18.4,
+  -18.1,
+  -18.2,
+  -20.0,
+  -20.8,
+  -20.1,
+  -22.0,
+  -30.3,
+  -33.2,
+  -26.7,
+  -25.7,
+  -46.9,
+  -27.1,
+  -26.3,
+  -35.3,
+  -27.1,
+  -30.3,
+  -43.0,
+  -28.7,
+  -38.6,
+  -57.8,
+  -58.5,
+  -60.3,
+  -56.8,
+  -59.2,
+  -57.6,
+  -55.8,
+  -58.0,
+  -56.0,
+  -60.1,
+  -55.1,
+  -55.0,
+  -58.0,
+  -63.1,
+  -59.1,
+  -58.7,
+  -63.5,
+  -57.5,
+  -54.1,
+  -58.5,
+  -57.9,
+  -31.6,
+  -34.1,
+  -14.7,
+  -16.8,
+  -41.2,
+  -21.9,
+  -16.4,
+  -19.5,
+  -30.5,
+  -24.9,
+  -19.2,
+  -18.8,
+  -38.2,
+  -34.7,
+  -25.9,
+  -35.8,
+  -19.9,
+  -38.9,
+  -20.7,
+  -33.3,
+  -25.9,
+  -21.9,
+  -19.6,
+  -33.2,
+  -19.2,
+  -23.4,
+  -28.7,
+  -24.0,
+  -38.8,
+  -19.2,
+  -24.1,
+  -29.1,
+  -20.9,
+  -23.1,
+  -21.3,
+  -21.2,
+  -18.6,
+  -17.4,
+  -20.9,
+  -34.4,
+  -60.5,
+  -60.1,
+  -36.2,
+  -20.5,
+  -17.2,
+  -20.7,
+  -20.3,
+  -20.1,
+  -22.1,
+  -20.6,
+  -19.4,
+  -17.5,
+  -21.4,
+  -24.2,
+  -17.5,
+  -15.6,
+  -17.1,
+  -19.2,
+  -19.8,
+  -18.7,
+  -37.2,
+  -25.8,
+  -44.1,
+  -19.5,
+  -21.2,
+  -38.8,
+  -23.9,
+  -23.2,
+  -26.4,
+  -28.3,
+  -26.1,
+  -40.5,
+  -24.4,
+  -27.4,
+  -49.2,
+  -58.7,
+  -59.4,
+  -57.7,
+  -59.4,
+  -58.6,
+  -54.5,
+  -59.1,
+  -56.4,
+  -54.1,
+  -52.7,
+  -55.6,
+  -55.4,
+  -59.9,
+  -62.7,
+  -60.1,
+  -60.3,
+  -58.3,
+  -56.9,
+  -56.0,
+  -57.5,
+  -58.2,
+  -59.2,
+  -57.4,
+  -60.1,
+  -31.5,
+  -16.8,
+  -19.3,
+  -15.0,
+  -23.1,
+  -26.2,
+  -23.4,
+  -17.3,
+  -19.7,
+  -35.2,
+  -25.4,
+  -22.3,
+  -16.8,
+  -30.8,
+  -36.5,
+  -26.3,
+  -34.1,
+  -50.7,
+  -31.7,
+  -16.3,
+  -19.1,
+  -29.0,
+  -21.0,
+  -21.7,
+  -27.4,
+  -19.0,
+  -18.9,
+  -18.4,
+  -22.3,
+  -18.4,
+  -21.5,
+  -43.9,
+  -23.1,
+  -36.3,
+  -20.6,
+  -19.6,
+  -31.8,
+  -21.2,
+  -22.2,
+  -21.9,
+  -23.3,
+  -24.0,
+  -20.8,
+  -21.8,
+  -41.8,
+  -55.6,
+  -59.7,
+  -22.9,
+  -18.5,
+  -17.9,
+  -17.9,
+  -21.3,
+  -17.3,
+  -18.9,
+  -21.2,
+  -20.3,
+  -23.8,
+  -17.9,
+  -17.8,
+  -17.6,
+  -18.6,
+  -19.1,
+  -18.5,
+  -34.5,
+  -25.0,
+  -40.9,
+  -18.7,
+  -24.8,
+  -40.5,
+  -25.0,
+  -21.9,
+  -42.7,
+  -25.6,
+  -39.9,
+  -26.4,
+  -31.2,
+  -60.1,
+  -58.1,
+  -57.9,
+  -56.1,
+  -56.4,
+  -52.8,
+  -53.7,
+  -54.5,
+  -56.7,
+  -55.2,
+  -55.5,
+  -56.5,
+  -57.7,
+  -55.8,
+  -56.8,
+  -59.2,
+  -59.5,
+  -55.7,
+  -54.6,
+  -49.8,
+  -54.6,
+  -55.3,
+  -55.5,
+  -57.7,
+  -56.4,
+  -56.6,
+  -46.3,
+  -18.4,
+  -10.9,
+  -18.5,
+  -44.8,
+  -14.9,
+  -17.0,
+  -20.5,
+  -28.6,
+  -24.3,
+  -19.5,
+  -13.8,
+  -17.2,
+  -17.4,
+  -25.2,
+  -20.3,
+  -22.9,
+  -22.3,
+  -17.0,
+  -18.3,
+  -20.1,
+  -25.2,
+  -25.1,
+  -31.7,
+  -40.7,
+  -17.8,
+  -18.1,
+  -28.4,
+  -20.2,
+  -42.3,
+  -23.3,
+  -33.1,
+  -25.0,
+  -19.9,
+  -35.3,
+  -20.0,
+  -22.7,
+  -20.0,
+  -21.8,
+  -17.4,
+  -17.2,
+  -21.7,
+  -46.3,
+  -52.8,
+  -38.7,
+  -23.0,
+  -16.6,
+  -24.1,
+  -18.9,
+  -21.6,
+  -20.6,
+  -19.8,
+  -20.1,
+  -28.0,
+  -23.6,
+  -19.4,
+  -20.3,
+  -20.1,
+  -20.8,
+  -20.2,
+  -22.8,
+  -28.0,
+  -28.0,
+  -40.4,
+  -23.2,
+  -27.1,
+  -53.3,
+  -26.3,
+  -26.0,
+  -44.0,
+  -25.8,
+  -39.5,
+  -31.8,
+  -31.5,
+  -52.6,
+  -57.7,
+  -56.7,
+  -57.7,
+  -57.4,
+  -57.6,
+  -53.9,
+  -47.9,
+  -54.5,
+  -56.8,
+  -51.7,
+  -55.4,
+  -55.9,
+  -58.3,
+  -56.3,
+  -59.1,
+  -56.4,
+  -54.5,
+  -56.9,
+  -52.5,
+  -55.9,
+  -55.7,
+  -52.1,
+  -54.3,
+  -51.4,
+  -64.1,
+  -57.4,
+  -55.8,
+  -61.7,
+  -42.9,
+  -25.4,
+  -18.9,
+  -16.5,
+  -39.7,
+  -17.1,
+  -27.9,
+  -33.1,
+  -16.8,
+  -18.4,
+  -21.9,
+  -24.0,
+  -43.9,
+  -17.2,
+  -16.9,
+  -26.7,
+  -20.0,
+  -21.9,
+  -25.5,
+  -45.7,
+  -22.6,
+  -37.4,
+  -19.0,
+  -18.6,
+  -25.1,
+  -17.7,
+  -19.0,
+  -20.3,
+  -34.5,
+  -24.2,
+  -22.0,
+  -16.0,
+  -34.6,
+  -21.1,
+  -28.9,
+  -23.9,
+  -24.9,
+  -34.5,
+  -22.8,
+  -33.8,
+  -19.4,
+  -19.6,
+  -39.4,
+  -19.4,
+  -22.7,
+  -22.3,
+  -22.2,
+  -17.7,
+  -17.5,
+  -28.8,
+  -52.4,
+  -55.4,
+  -27.7,
+  -26.8,
+  -17.1,
+  -24.4,
+  -18.5,
+  -20.7,
+  -18.2,
+  -19.3,
+  -22.3,
+  -21.4,
+  -29.2,
+  -20.4,
+  -17.5,
+  -17.2,
+  -18.8,
+  -20.1,
+  -19.4,
+  -18.9,
+  -42.1,
+  -28.4,
+  -41.9,
+  -18.5,
+  -23.7,
+  -54.7,
+  -25.0,
+  -22.6,
+  -34.0,
+  -26.4,
+  -29.9,
+  -28.4,
+  -25.7,
+  -40.3,
+  -54.9,
+  -57.0,
+  -54.8,
+  -54.2,
+  -54.0,
+  -52.8,
+  -57.0,
+  -54.4,
+  -58.8,
+  -55.6,
+  -56.8,
+  -54.8,
+  -55.9,
+  -59.9,
+  -57.6,
+  -57.3,
+  -57.9,
+  -52.2,
+  -54.4,
+  -58.5,
+  -58.7,
+  -26.1,
+  -40.2,
+  -15.4,
+  -28.2,
+  -22.8,
+  -22.6,
+  -51.7,
+  -19.5,
+  -18.4,
+  -26.0,
+  -20.7,
+  -22.1,
+  -17.7,
+  -37.6,
+  -27.1,
+  -28.3,
+  -52.3,
+  -59.1,
+  -55.2,
+  -58.7,
+  -55.7,
+  -22.3,
+  -18.7,
+  -15.8,
+  -35.3,
+  -18.2,
+  -23.2,
+  -32.1,
+  -29.2,
+  -21.8,
+  -16.9,
+  -35.4,
+  -19.0,
+  -25.4,
+  -22.9,
+  -22.3,
+  -46.1,
+  -22.7,
+  -31.7,
+  -20.7,
+  -22.4,
+  -31.7,
+  -20.8,
+  -23.4,
+  -21.9,
+  -23.4,
+  -17.2,
+  -18.0,
+  -27.3,
+  -56.7,
+  -53.7,
+  -20.1,
+  -18.2,
+  -17.6,
+  -18.0,
+  -23.4,
+  -22.1,
+  -18.9,
+  -23.2,
+  -18.2,
+  -33.4,
+  -56.1,
+  -59.7,
+  -29.3,
+  -17.7,
+  -16.5,
+  -17.1,
+  -18.3,
+  -20.4,
+  -18.8,
+  -34.4,
+  -26.8,
+  -36.8,
+  -20.2,
+  -30.3,
+  -28.3,
+  -24.3,
+  -29.4,
+  -29.3,
+  -31.9,
+  -37.7,
+  -26.1,
+  -33.0,
+  -59.0,
+  -59.7,
+  -57.5,
+  -58.6,
+  -59.3,
+  -59.4,
+  -56.1,
+  -56.6,
+  -52.8,
+  -54.2
+ ],
+ "speech_dbfs": -45.0,
+ "events": [
+  {
+   "t": 2.8,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 2.00s)"
+  },
+  {
+   "t": 3.44,
+   "event": "user_clip",
+   "kind": "instructions",
+   "text": "Speed round of fruits, no repeats. You start us off.",
+   "speech_end": 6.77,
+   "why": "after greeting turn"
+  },
+  {
+   "t": 16.88,
+   "event": "moshi_turn_end",
+   "why": "turn cap 10.0s (Moshi still talking)"
+  },
+  {
+   "t": 17.44,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Dragon fruit.",
+   "speech_end": 18.31,
+   "why": "user fruit 1/12"
+  },
+  {
+   "t": 28.4,
+   "event": "moshi_turn_end",
+   "why": "turn cap 10.0s (Moshi still talking)"
+  },
+  {
+   "t": 28.72,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Lychee.",
+   "speech_end": 29.34,
+   "why": "user fruit 2/12"
+  },
+  {
+   "t": 36.8,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 36.00s)"
+  },
+  {
+   "t": 37.28,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Blood orange.",
+   "speech_end": 38.31,
+   "why": "user fruit 3/12"
+  },
+  {
+   "t": 45.04,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 44.24s)"
+  },
+  {
+   "t": 45.44,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Apricot.",
+   "speech_end": 46.1,
+   "why": "user fruit 4/12"
+  },
+  {
+   "t": 53.52,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 52.72s)"
+  },
+  {
+   "t": 54.24,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Fig.",
+   "speech_end": 54.67,
+   "why": "user fruit 5/12"
+  },
+  {
+   "t": 61.44,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 60.64s)"
+  },
+  {
+   "t": 61.84,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Cloudberry.",
+   "speech_end": 62.61,
+   "why": "user fruit 6/12"
+  },
+  {
+   "t": 69.6,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 68.80s)"
+  },
+  {
+   "t": 70.32,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Raspberry.",
+   "speech_end": 71.07,
+   "why": "user fruit 7/12"
+  },
+  {
+   "t": 77.76,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 76.96s)"
+  },
+  {
+   "t": 78.16,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Peach.",
+   "speech_end": 78.65,
+   "why": "user fruit 8/12; skipped already-said ['cloudberry', 'raspberry', 'watermelon']"
+  },
+  {
+   "t": 85.36,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 84.56s)"
+  },
+  {
+   "t": 85.92,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Breadfruit.",
+   "speech_end": 86.65,
+   "why": "user fruit 9/12; skipped already-said ['raspberry', 'watermelon', 'peach']"
+  },
+  {
+   "t": 93.44,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 92.64s)"
+  },
+  {
+   "t": 94.0,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Starfruit.",
+   "speech_end": 94.79,
+   "why": "user fruit 10/12"
+  },
+  {
+   "t": 101.44,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 100.64s)"
+  },
+  {
+   "t": 102.16,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Nectarine.",
+   "speech_end": 102.93,
+   "why": "user fruit 11/12"
+  },
+  {
+   "t": 110.48,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 109.68s)"
+  },
+  {
+   "t": 110.8,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Pluot.",
+   "speech_end": 111.37,
+   "why": "user fruit 12/12 (backup pool)"
+  },
+  {
+   "t": 118.8,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 118.00s)"
+  }
+ ],
+ "batch_size": 25,
+ "batch_wall_sec": 87.83,
+ "batch_frames": 1875,
+ "peak_mem_gb": 59.42,
+ "user_audio": "live"
+}

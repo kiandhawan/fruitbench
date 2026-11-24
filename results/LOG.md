@@ -1,5 +1,53 @@
 # LOG (newest first)
 
+## 2026-11-24 — GRPO implementation and 20-step smoke run (`configs/grpo_smoke.yaml`)
+- **Code**: `scripts/grpo_train.py` (torchrun, 4 ranks, DDP), `fruitbench/rewards.py` (per-turn reward
+  from the unchanged scorer classes + config weights), `scripts/plot_grpo.py` -> `results/plots/grpo_*.png`.
+  Game loop: `GameRunner(models=..., record_codes=True)` reuses the same loop with the training model
+  (streaming entered per run) and records the delayed-token column LMGen reads each step; aligned
+  codes `codes[k][t] = D[t+1+d_k][k]` are what `LMModel.forward` re-delays. Checks: 0 misaligned text
+  tokens vs the game JSON; sampled tokens are inside the sampler's top-k under teacher forcing (text
+  100%, audio 99.98%); the evaluation path still reproduces the saved smoke games token for token.
+- **Setup**: fresh LoRA r64 (scaling 2.0, all 337 linear layers, 194M trainable of 7.9B; B zeroed so
+  step 0 = base), fp32 master weights for the LoRA (moshi-finetune `mixed_precision.py`), bf16 compute,
+  gradient checkpointing. Per step 4 train starts x 16 games (one group per GPU), 6 user turns,
+  default sampling (no temperature change needed: 100% of groups had spread every step).
+  Advantage per turn index within the group; applied to Moshi's text + 8 audio tokens of the frames
+  from the end of user line k to the end of user line k+1; loss = mean over text tokens + mean over
+  audio tokens of [PPO-clip(0.2) + 0.04 * k3 KL to LoRA-off]. Interpretation choice: "one optimizer
+  pass per batch" = one pass over the step's 64 games split into 4 minibatches (4 AdamW steps per
+  GRPO step), so the clip is active after the first minibatch (clip fraction ~1-3%); old log-probs
+  recomputed with the rollout policy; log-probs use the sampling temperatures (text 0.7, audio 0.8).
+- **Smoke results** (20 steps; reward multi_new = +0.25 here):
+  - Train: valid new fruit 4.8% (step 1) -> 37.0% (step 20),
+    peak 54.8%; silent 35% -> 6%;
+    mean reward -0.31 -> +0.19; KL text/audio 0.037/0.030.
+  - **Validation (100 val games, 12 turns)**: valid 3.2% -> **24.7%**, mean reward
+    -0.35 -> -0.04, silent 36% -> 2%, filler
+    33% -> 14%, repeat 16% -> 25% (echo
+    12% -> 17%), multi 6% -> 29%, overlap
+    26% -> 53%; valid latency median 0.83 -> 0.41 s.
+    Whisper fruit agreement 90.3% -> 94.9% (no flag).
+  - **Hack watch** (val step 20 vs 0): talking over the user doubles (overlap 26% -> 53%; 95% of
+    overlapping replies start before the user's fruit ends); fruit lists (multi 5.5% -> 29%, median 3
+    fruits, max 11); longer turns (median 1 -> 6 words, p90 17 -> 29; 10 s turn cap 66 -> 188 hits per
+    100 games, e.g. "Sweet flavors, sugary treats, a taste of heaven."). Garbled audio: not seen
+    (Whisper agreement 95%). The multi_new 0.0 change for the full run addresses the lists; overlap
+    and long turns are not yet penalised beyond the -0.3 overlap term.
+  - Time: 35.9-57.5 s per step (mean 51; generation ~70%), peak 45 GB per GPU.
+- Training rollouts are not in git: per step `runs/grpo/<run>/rollouts/step_XXX.tar.gz` on disk; git
+  gets `metrics.jsonl` (one row per step), `val.jsonl`, validation game archives and plots. Samples:
+  release `grpo-smoke` (best/median/worst of the 64 step-20 training games).
+
+## 2026-11-24 — Reward change before the full GRPO run: multi-fruit turn with a new fruit 0.25 -> 0.0
+- `configs/grpo_full.yaml`: `reward.multi_new` = **0.0** (was +0.25 in `configs/grpo_smoke.yaml`, the
+  value the 20-step smoke run trains with; that run's saved config keeps 0.25). Requested by the user:
+  a multi-fruit turn that adds a new fruit should stay above filler/silent (-0.3) but far below a
+  single new fruit (+1.0 / +1.2), so GRPO is not pulled toward rapid fruit lists ("Blueberry, plum,
+  grape, orange, lemon, banana, tomato." got +0.25 in smoke step 1). A multi-fruit turn with no new
+  fruit stays -0.3; the overlap penalty (-0.3) still applies on top. Nothing else differs between
+  the two configs except run name and steps (200).
+
 ## 2026-11-24 — Check before GRPO: "I'll go first" turns (`scripts/go_first_check.py`)
 - In the 200 base test games, 7 Moshi turns (7 games, 0.3% of turns) contain "I'll go first" (no
   "let me start"/"me first"). Moshi said a fruit later in that turn in 2/7 (0123 "...is an apple",

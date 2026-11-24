@@ -37,3 +37,6 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .ipynb_checkpoints/
+
+# GRPO training rollouts are never committed (they live in runs/ as per-step .tar.gz)
+results/grpo/*/rollouts*
