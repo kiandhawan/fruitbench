@@ -1,5 +1,17 @@
 # LOG (newest first)
 
+## 2026-11-24 — Check before GRPO: "I'll go first" turns (`scripts/go_first_check.py`)
+- In the 200 base test games, 7 Moshi turns (7 games, 0.3% of turns) contain "I'll go first" (no
+  "let me start"/"me first"). Moshi said a fruit later in that turn in 2/7 (0123 "...is an apple",
+  0192 "oranges are round", where the user waited through 3 cancelled gaps). By the agreed
+  definition (Moshi's audio resumes within 1 s after the next user line starts) **4/7 are cut-offs**,
+  above the 10% threshold, so GRPO is on hold for the user's decision.
+- Detail: in all 4 the audio resumes 0.64-0.88 s after the user line starts, i.e. when the user's
+  0.6-0.8 s fruit clip is ending, and what Moshi says reacts to the user ("Yes, that's correct",
+  "That's correct", "Okay. I'll name the fruit", "apple."). Before each of these user lines Moshi had
+  been silent >= 0.8 s + the 0.3-0.8 s gap (1.1-1.6 s). Only 0136 ("Okay, I'll go first." then, after
+  the user's "Jackfruit", "apple.") looks like Moshi's own fruit arriving late.
+
 ## 2026-11-24 — Per-game outputs are kept in git
 - The base runs' per-game JSONs (summaries with Moshi's timed text tokens, per-turn scores; no audio,
   no .npy tokens) are in `results/base_games/{test_s1,grpo_check,timing32}` (7 + 15 + 1 MB).

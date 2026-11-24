@@ -1,0 +1,114 @@
+{
+ "turns": 7,
+ "games": 7,
+ "fruit_in_turn": 2,
+ "cut_off": 4,
+ "cut_off_without_fruit_in_turn": 3,
+ "neither": 2,
+ "rows": [
+  {
+   "game": "test_s1_0090",
+   "starter": "moshi",
+   "after_user_line": 2,
+   "phrase": "i'll go first",
+   "text": "Okay, I'll go first.",
+   "fruit_in_turn": [],
+   "cut_off": false,
+   "resume_after_sec": null,
+   "next_user_line": "Cantaloupe.",
+   "next_user_speech_end": 0.61,
+   "moshi_after": "",
+   "fruit_after": []
+  },
+  {
+   "game": "test_s1_0109",
+   "starter": "moshi",
+   "after_user_line": 0,
+   "phrase": "i'll go first",
+   "text": "Oh, okay. Okay. I'll go first. Yeah. I'll go first. What's yours?",
+   "fruit_in_turn": [],
+   "cut_off": true,
+   "resume_after_sec": 0.8,
+   "next_user_line": "Lingonberry.",
+   "next_user_speech_end": 0.82,
+   "moshi_after": "Okay. I'll name the fruit.",
+   "fruit_after": []
+  },
+  {
+   "game": "test_s1_0123",
+   "starter": "user",
+   "after_user_line": 0,
+   "phrase": "i'll go first",
+   "text": "I'll go first, the fruit you're thinking of is an apple.",
+   "fruit_in_turn": [
+    "apple"
+   ],
+   "cut_off": true,
+   "resume_after_sec": 0.88,
+   "next_user_line": "Clementine.",
+   "next_user_speech_end": 0.69,
+   "moshi_after": "Yes, that's correct.",
+   "fruit_after": []
+  },
+  {
+   "game": "test_s1_0136",
+   "starter": "user",
+   "after_user_line": 1,
+   "phrase": "i'll go first",
+   "text": "Okay, I'll go first.",
+   "fruit_in_turn": [],
+   "cut_off": true,
+   "resume_after_sec": 0.64,
+   "next_user_line": "Jackfruit.",
+   "next_user_speech_end": 0.62,
+   "moshi_after": "apple.",
+   "fruit_after": [
+    "apple"
+   ]
+  },
+  {
+   "game": "test_s1_0167",
+   "starter": "user",
+   "after_user_line": 0,
+   "phrase": "i'll go first",
+   "text": "Okay, I'll go first.",
+   "fruit_in_turn": [],
+   "cut_off": true,
+   "resume_after_sec": 0.72,
+   "next_user_line": "Blueberry.",
+   "next_user_speech_end": 0.64,
+   "moshi_after": "That' correct.",
+   "fruit_after": []
+  },
+  {
+   "game": "test_s1_0192",
+   "starter": "user",
+   "after_user_line": 2,
+   "phrase": "i'll go first",
+   "text": "I'll go first, oranges are round, sweet and sour. They can make you smile with their flavor.",
+   "fruit_in_turn": [
+    "orange"
+   ],
+   "cut_off": false,
+   "resume_after_sec": null,
+   "next_user_line": "Apple.",
+   "next_user_speech_end": 0.46,
+   "moshi_after": "",
+   "fruit_after": []
+  },
+  {
+   "game": "test_s1_0195",
+   "starter": "user",
+   "after_user_line": 0,
+   "phrase": "i'll go first",
+   "text": "Sure, I'll go first.",
+   "fruit_in_turn": [],
+   "cut_off": false,
+   "resume_after_sec": null,
+   "next_user_line": "Grapefruit.",
+   "next_user_speech_end": 0.72,
+   "moshi_after": "",
+   "fruit_after": []
+  }
+ ]
+}
