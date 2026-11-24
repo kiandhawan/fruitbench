@@ -1,0 +1,77 @@
+run_name: grpo_full
+seed: 1
+steps: 200
+model:
+  hf_repo: kyutai/moshiko-pytorch-bf16
+  lora_rank: 64
+  lora_scaling: 2.0
+  gradient_checkpointing: true
+rollout:
+  starts_per_step: 4
+  group_size: 16
+  n_user_fruits: 12
+  split: train
+  temp: null
+  temp_text: null
+  save_audio_every: 10
+reward:
+  scorer: v3
+  valid: 1.0
+  fast_bonus: 0.2
+  fast_latency_min: 0.0
+  fast_latency: 1.0
+  sentence: -0.1
+  sentence_stepping_stone: true
+  filler: -0.3
+  silent: -0.3
+  repeat: -0.5
+  non_fruit: -0.3
+  multi_new: -0.1
+  multi_no_new: -0.3
+  overlap: -1.0
+  overlap_grace: 0.16
+  valid_overlap_cap: 0.0
+  long_turn_free_words: 3
+  long_turn_per_word: -0.05
+  long_turn_cap: -0.5
+update:
+  adv_eps: 0.0001
+  adv_std_floor: 0.3
+  credit_windows: v2
+  clip: 0.2
+  minibatches: 4
+  micro_batch: 4
+  kl_beta: 0.04
+  kl_beta_text: 0.04
+  kl_beta_audio: 0.2
+  kl_audio_exact: true
+  text_weight: 1.0
+  audio_weight: 0.0
+  logprob_temperature: true
+  lr: 1.0e-05
+  weight_decay: 0.0
+  betas:
+  - 0.9
+  - 0.95
+  grad_clip: 1.0
+checkpoint_every: 10
+val:
+  every: 10
+  padded_whisper: false
+  chat: true
+  best_metric: mean_reward
+  n_games: 100
+  n_user_fruits: 12
+  seed: 7
+  whisper_games: 10
+  whisper_min_agreement: 0.9
+stop:
+  val_valid_min_at_step_20: 0.429
+  val_silent_max_at_step_30: 0.5
+  val_valid_drops_in_a_row: 2
+  audio_kl_max: 0.03
+  chat_fruit_max: 0.1
+upload:
+  release: checkpoints
+  every_validation: true
+commit_after_validation: true
