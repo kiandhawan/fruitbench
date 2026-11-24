@@ -1,0 +1,50 @@
+{
+ "note": "Fish 'Fish Official' stock voices from moshi-finetune data/splits/voices_all.json. train voices are used for train and val games; the test voice only in test games.",
+ "voices": [
+  {
+   "id": "f3a2b90078d54a65af4b95f63bc7798e",
+   "title": "Sheila",
+   "gender": "female",
+   "accent": "american",
+   "age": "young",
+   "description": "A young American English woman's voice.",
+   "split": "train"
+  },
+  {
+   "id": "705690224f264386b87fb598083ab022",
+   "title": "Megan",
+   "gender": "female",
+   "accent": "british",
+   "age": "young",
+   "description": "A London Estuary-accented English woman voice, in her late twenties. Warm, friendly, relaxed. Best suited to conversational use.",
+   "split": "train"
+  },
+  {
+   "id": "e58a6b7e06f048d0b83836d55d226b90",
+   "title": "Gareth",
+   "gender": "male",
+   "accent": "australian",
+   "age": "middle-aged",
+   "description": "An Australian-accented English man's voice, in his mid-fifties. Deep, authoritative, storytelling. A seasoned bushwalker and nature photographer from Perth. Best suited to audiobooks, documentaries and long-form narration.",
+   "split": "train"
+  },
+  {
+   "id": "2e8a3bd7fb474d80b4e7966d678fb777",
+   "title": "Rohan",
+   "gender": "male",
+   "accent": "indian",
+   "age": "young",
+   "description": "A natural, professional Indian English voice with a brisk, conversational pace. Clear and easy to follow, suited to voice assistants, customer support and everyday narration.",
+   "split": "train"
+  },
+  {
+   "id": "3fdb457debb744ca9cfe9e2ce99a2deb",
+   "title": "Cathal",
+   "gender": "male",
+   "accent": "irish",
+   "age": "middle-aged",
+   "description": "An Irish-accented English man's voice, in his mid-forties. Warm, professional, gentle. A dependable hardware store owner from Limerick. Best suited to customer support and voice assistants.",
+   "split": "test"
+  }
+ ]
+}

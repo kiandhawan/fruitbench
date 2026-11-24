@@ -23,6 +23,7 @@ runs/
 listen/
 # Environments and secrets
 .venv/
+.venv-asr/
 .env
 .env.*
 *.key
