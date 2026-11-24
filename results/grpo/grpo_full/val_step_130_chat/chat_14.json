@@ -1,0 +1,598 @@
+{
+ "game_id": "chat_14",
+ "spec": {
+  "game_id": "chat_14",
+  "split": "chat",
+  "seed": 0,
+  "voice": "Gareth",
+  "starter": "user",
+  "phrasing": "",
+  "fruit_order": [],
+  "gaps": [
+   0.653,
+   0.438,
+   0.706,
+   0.725,
+   0.748,
+   0.595
+  ],
+  "backup_order": [],
+  "n_user_fruits": 3,
+  "script": [
+   "chat14_0",
+   "chat14_1",
+   "chat14_2"
+  ]
+ },
+ "starter": "user",
+ "sampling": {
+  "use_sampling": true,
+  "temp": 0.8,
+  "temp_text": 0.7,
+  "top_k": 250,
+  "top_k_text": 25
+ },
+ "sampling_seed": 7502,
+ "frame_sec": 0.08,
+ "end_time": 21.44,
+ "user_turns": [
+  {
+   "kind": "chat",
+   "text": "I'm learning Spanish.",
+   "fruit": null,
+   "start": 3.44,
+   "speech_end": 4.75,
+   "clip": "data/audio/clips/Gareth/chat/chat14_0.wav",
+   "voice": "Gareth",
+   "frame": 43,
+   "reason": "chat line 1/3"
+  },
+  {
+   "kind": "chat",
+   "text": "What's the hardest part for English speakers?",
+   "fruit": null,
+   "start": 10.32,
+   "speech_end": 12.86,
+   "clip": "data/audio/clips/Gareth/chat/chat14_1.wav",
+   "voice": "Gareth",
+   "frame": 129,
+   "reason": "chat line 2/3"
+  },
+  {
+   "kind": "chat",
+   "text": "Can you say good morning in Spanish?",
+   "fruit": null,
+   "start": 17.76,
+   "speech_end": 19.73,
+   "clip": "data/audio/clips/Gareth/chat/chat14_2.wav",
+   "voice": "Gareth",
+   "frame": 222,
+   "reason": "chat line 3/3"
+  }
+ ],
+ "moshi_tokens": [
+  {
+   "t": 0.4,
+   "id": 11725,
+   "piece": "▁Hello"
+  },
+  {
+   "t": 0.48,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 0.72,
+   "id": 452,
+   "piece": "▁how"
+  },
+  {
+   "t": 1.12,
+   "id": 298,
+   "piece": "▁are"
+  },
+  {
+   "t": 1.28,
+   "id": 304,
+   "piece": "▁you"
+  },
+  {
+   "t": 1.44,
+   "id": 1497,
+   "piece": "▁today"
+  },
+  {
+   "t": 1.52,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 6.56,
+   "id": 881,
+   "piece": "▁great"
+  },
+  {
+   "t": 6.64,
+   "id": 430,
+   "piece": "!"
+  },
+  {
+   "t": 7.84,
+   "id": 634,
+   "piece": "▁What"
+  },
+  {
+   "t": 7.92,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 8.0,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 8.08,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 8.24,
+   "id": 1119,
+   "piece": "▁language"
+  },
+  {
+   "t": 8.32,
+   "id": 264,
+   "piece": "▁of"
+  },
+  {
+   "t": 8.64,
+   "id": 354,
+   "piece": "▁your"
+  },
+  {
+   "t": 8.8,
+   "id": 1828,
+   "piece": "▁choice"
+  },
+  {
+   "t": 8.88,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 12.96,
+   "id": 21865,
+   "piece": "▁Hmm"
+  },
+  {
+   "t": 13.04,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 13.84,
+   "id": 283,
+   "piece": "▁that"
+  },
+  {
+   "t": 13.92,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 14.0,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 14.08,
+   "id": 306,
+   "piece": "▁an"
+  },
+  {
+   "t": 14.16,
+   "id": 1966,
+   "piece": "▁interesting"
+  },
+  {
+   "t": 14.48,
+   "id": 560,
+   "piece": "▁question"
+  },
+  {
+   "t": 14.56,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 15.36,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 15.44,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 15.52,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 15.68,
+   "id": 309,
+   "piece": "▁not"
+  },
+  {
+   "t": 15.84,
+   "id": 906,
+   "piece": "▁sure"
+  },
+  {
+   "t": 15.92,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 19.84,
+   "id": 4225,
+   "piece": "▁Bu"
+  },
+  {
+   "t": 19.92,
+   "id": 542,
+   "piece": "en"
+  },
+  {
+   "t": 20.08,
+   "id": 797,
+   "piece": "▁d"
+  },
+  {
+   "t": 20.16,
+   "id": 9832,
+   "piece": "ía"
+  },
+  {
+   "t": 20.24,
+   "id": 263,
+   "piece": "."
+  }
+ ],
+ "moshi_text": "Hello, how are you today? great! What's the language of your choice? Hmm, that's an interesting question. I'm not sure. Buen día.",
+ "moshi_dbfs": [
+  -120.0,
+  -120.0,
+  -64.1,
+  -73.1,
+  -60.2,
+  -58.9,
+  -21.2,
+  -18.1,
+  -17.7,
+  -17.2,
+  -20.5,
+  -23.6,
+  -35.3,
+  -58.4,
+  -54.7,
+  -21.2,
+  -16.6,
+  -18.8,
+  -22.0,
+  -33.9,
+  -28.4,
+  -25.1,
+  -23.6,
+  -29.9,
+  -39.6,
+  -59.7,
+  -60.1,
+  -62.1,
+  -64.7,
+  -68.8,
+  -69.3,
+  -69.4,
+  -69.9,
+  -68.5,
+  -61.3,
+  -65.2,
+  -65.8,
+  -67.2,
+  -60.4,
+  -63.6,
+  -64.3,
+  -66.0,
+  -67.4,
+  -65.7,
+  -65.6,
+  -66.1,
+  -66.3,
+  -65.7,
+  -65.7,
+  -67.4,
+  -69.5,
+  -66.0,
+  -66.9,
+  -59.5,
+  -60.7,
+  -63.8,
+  -69.0,
+  -68.6,
+  -69.5,
+  -68.8,
+  -69.8,
+  -69.6,
+  -70.6,
+  -69.4,
+  -70.4,
+  -69.0,
+  -69.8,
+  -68.8,
+  -64.4,
+  -66.9,
+  -67.2,
+  -68.0,
+  -70.8,
+  -70.2,
+  -71.1,
+  -69.9,
+  -70.5,
+  -70.0,
+  -70.5,
+  -69.5,
+  -71.1,
+  -70.5,
+  -47.3,
+  -22.8,
+  -22.4,
+  -27.6,
+  -19.1,
+  -21.7,
+  -58.2,
+  -68.9,
+  -67.5,
+  -67.3,
+  -70.0,
+  -70.2,
+  -70.1,
+  -70.1,
+  -70.9,
+  -69.6,
+  -27.5,
+  -18.5,
+  -38.0,
+  -30.0,
+  -19.9,
+  -17.9,
+  -19.8,
+  -18.5,
+  -28.5,
+  -22.1,
+  -27.0,
+  -24.9,
+  -46.1,
+  -26.2,
+  -23.5,
+  -34.0,
+  -54.5,
+  -63.7,
+  -67.1,
+  -68.5,
+  -67.9,
+  -69.0,
+  -70.4,
+  -70.5,
+  -72.4,
+  -70.8,
+  -72.1,
+  -70.7,
+  -71.3,
+  -70.1,
+  -71.1,
+  -70.1,
+  -71.3,
+  -70.8,
+  -71.1,
+  -71.5,
+  -71.8,
+  -71.1,
+  -71.6,
+  -70.3,
+  -70.5,
+  -72.2,
+  -73.0,
+  -72.9,
+  -73.2,
+  -73.0,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -72.7,
+  -73.1,
+  -73.0,
+  -72.9,
+  -73.1,
+  -73.0,
+  -72.9,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.0,
+  -38.5,
+  -28.5,
+  -23.9,
+  -24.6,
+  -25.6,
+  -27.6,
+  -36.0,
+  -65.5,
+  -69.2,
+  -67.3,
+  -68.5,
+  -71.2,
+  -22.9,
+  -27.3,
+  -27.5,
+  -20.9,
+  -21.8,
+  -32.0,
+  -28.4,
+  -34.5,
+  -28.5,
+  -46.4,
+  -28.1,
+  -32.6,
+  -49.5,
+  -32.9,
+  -38.1,
+  -62.4,
+  -68.7,
+  -68.5,
+  -69.0,
+  -71.5,
+  -70.9,
+  -36.4,
+  -23.7,
+  -22.6,
+  -24.7,
+  -47.8,
+  -43.5,
+  -26.2,
+  -30.6,
+  -46.2,
+  -59.5,
+  -67.5,
+  -70.2,
+  -67.8,
+  -68.1,
+  -68.1,
+  -67.1,
+  -66.4,
+  -67.9,
+  -67.9,
+  -67.7,
+  -67.1,
+  -67.0,
+  -68.2,
+  -67.3,
+  -69.5,
+  -69.1,
+  -68.8,
+  -68.7,
+  -69.4,
+  -69.1,
+  -68.1,
+  -68.4,
+  -68.7,
+  -67.9,
+  -67.7,
+  -68.3,
+  -66.9,
+  -65.8,
+  -60.8,
+  -68.1,
+  -69.0,
+  -68.5,
+  -69.3,
+  -69.9,
+  -70.6,
+  -70.4,
+  -70.3,
+  -71.2,
+  -70.1,
+  -71.7,
+  -72.7,
+  -72.9,
+  -70.3,
+  -41.8,
+  -22.8,
+  -20.7,
+  -21.5,
+  -24.4,
+  -21.8,
+  -18.9,
+  -20.9,
+  -26.6,
+  -32.8,
+  -65.3,
+  -68.8,
+  -70.5,
+  -70.0,
+  -68.1,
+  -69.0,
+  -70.8,
+  -71.1,
+  -71.6,
+  -70.7
+ ],
+ "speech_dbfs": -45.0,
+ "events": [
+  {
+   "t": 2.8,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 2.00s)"
+  },
+  {
+   "t": 3.44,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "I'm learning Spanish.",
+   "speech_end": 4.75,
+   "why": "chat line 1/3"
+  },
+  {
+   "t": 7.84,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 7.04s)"
+  },
+  {
+   "t": 7.84,
+   "event": "gap_cancelled",
+   "why": "Moshi resumed speaking during the gap; user waits"
+  },
+  {
+   "t": 9.92,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 9.12s)"
+  },
+  {
+   "t": 10.32,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "What's the hardest part for English speakers?",
+   "speech_end": 12.86,
+   "why": "chat line 2/3"
+  },
+  {
+   "t": 17.04,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 16.24s)"
+  },
+  {
+   "t": 17.76,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "Can you say good morning in Spanish?",
+   "speech_end": 19.73,
+   "why": "chat line 3/3"
+  },
+  {
+   "t": 21.44,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 20.64s)"
+  }
+ ],
+ "batch_size": 5,
+ "batch_wall_sec": 12.81,
+ "batch_frames": 410,
+ "peak_mem_gb": 28.95,
+ "user_audio": "live"
+}

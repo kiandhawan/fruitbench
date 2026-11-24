@@ -1,0 +1,518 @@
+{
+ "game_id": "chat_11",
+ "spec": {
+  "game_id": "chat_11",
+  "split": "chat",
+  "seed": 0,
+  "voice": "Rohan",
+  "starter": "user",
+  "phrasing": "",
+  "fruit_order": [],
+  "gaps": [
+   0.598,
+   0.492,
+   0.588,
+   0.445,
+   0.395,
+   0.393
+  ],
+  "backup_order": [],
+  "n_user_fruits": 3,
+  "script": [
+   "chat11_0",
+   "chat11_1",
+   "chat11_2"
+  ]
+ },
+ "starter": "user",
+ "sampling": {
+  "use_sampling": true,
+  "temp": 0.8,
+  "temp_text": 0.7,
+  "top_k": 250,
+  "top_k_text": 25
+ },
+ "sampling_seed": 7502,
+ "frame_sec": 0.08,
+ "end_time": 17.84,
+ "user_turns": [
+  {
+   "kind": "chat",
+   "text": "I can't sleep well lately.",
+   "fruit": null,
+   "start": 3.36,
+   "speech_end": 4.8,
+   "clip": "data/audio/clips/Rohan/chat/chat11_0.wav",
+   "voice": "Rohan",
+   "frame": 42,
+   "reason": "chat line 1/3"
+  },
+  {
+   "kind": "chat",
+   "text": "I usually look at my phone in bed.",
+   "fruit": null,
+   "start": 10.88,
+   "speech_end": 12.52,
+   "clip": "data/audio/clips/Rohan/chat/chat11_1.wav",
+   "voice": "Rohan",
+   "frame": 136,
+   "reason": "chat line 2/3"
+  },
+  {
+   "kind": "chat",
+   "text": "What else could I try?",
+   "fruit": null,
+   "start": 14.24,
+   "speech_end": 15.44,
+   "clip": "data/audio/clips/Rohan/chat/chat11_2.wav",
+   "voice": "Rohan",
+   "frame": 178,
+   "reason": "chat line 3/3"
+  }
+ ],
+ "moshi_tokens": [
+  {
+   "t": 0.48,
+   "id": 2769,
+   "piece": "▁Hi"
+  },
+  {
+   "t": 0.56,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 1.12,
+   "id": 452,
+   "piece": "▁how"
+  },
+  {
+   "t": 1.36,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 1.52,
+   "id": 296,
+   "piece": "▁it"
+  },
+  {
+   "t": 1.68,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 1.76,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 6.48,
+   "id": 758,
+   "piece": "▁That"
+  },
+  {
+   "t": 6.56,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 6.64,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 6.72,
+   "id": 4680,
+   "piece": "▁odd"
+  },
+  {
+   "t": 6.8,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 7.84,
+   "id": 3553,
+   "piece": "▁Have"
+  },
+  {
+   "t": 8.0,
+   "id": 304,
+   "piece": "▁you"
+  },
+  {
+   "t": 8.16,
+   "id": 364,
+   "piece": "▁been"
+  },
+  {
+   "t": 8.32,
+   "id": 4535,
+   "piece": "▁feeling"
+  },
+  {
+   "t": 8.64,
+   "id": 23216,
+   "piece": "▁anxious"
+  },
+  {
+   "t": 9.12,
+   "id": 307,
+   "piece": "▁or"
+  },
+  {
+   "t": 9.36,
+   "id": 16341,
+   "piece": "▁stressed"
+  },
+  {
+   "t": 9.44,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 12.56,
+   "id": 758,
+   "piece": "▁That"
+  },
+  {
+   "t": 12.64,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 12.72,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 15.6,
+   "id": 376,
+   "piece": "▁about"
+  },
+  {
+   "t": 15.92,
+   "id": 294,
+   "piece": "▁as"
+  },
+  {
+   "t": 16.08,
+   "id": 1907,
+   "piece": "▁bad"
+  },
+  {
+   "t": 16.4,
+   "id": 294,
+   "piece": "▁as"
+  },
+  {
+   "t": 16.56,
+   "id": 296,
+   "piece": "▁it"
+  },
+  {
+   "t": 16.72,
+   "id": 314,
+   "piece": "▁can"
+  },
+  {
+   "t": 16.88,
+   "id": 458,
+   "piece": "▁get"
+  },
+  {
+   "t": 16.96,
+   "id": 263,
+   "piece": "."
+  }
+ ],
+ "moshi_text": "Hi, how is it going? That's odd. Have you been feeling anxious or stressed? That's about as bad as it can get.",
+ "moshi_dbfs": [
+  -120.0,
+  -120.0,
+  -64.1,
+  -62.4,
+  -58.2,
+  -57.7,
+  -19.7,
+  -15.1,
+  -18.3,
+  -31.4,
+  -44.5,
+  -57.4,
+  -55.6,
+  -56.7,
+  -56.7,
+  -20.4,
+  -17.2,
+  -20.1,
+  -21.8,
+  -41.6,
+  -18.2,
+  -18.4,
+  -23.6,
+  -28.0,
+  -35.3,
+  -51.2,
+  -50.4,
+  -54.0,
+  -57.0,
+  -54.2,
+  -57.9,
+  -65.5,
+  -72.6,
+  -72.8,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -31.1,
+  -32.2,
+  -24.0,
+  -22.2,
+  -29.6,
+  -52.3,
+  -61.9,
+  -57.2,
+  -56.1,
+  -56.8,
+  -54.8,
+  -50.5,
+  -52.6,
+  -54.1,
+  -54.0,
+  -55.8,
+  -58.8,
+  -43.6,
+  -23.3,
+  -24.1,
+  -26.9,
+  -23.1,
+  -29.1,
+  -53.6,
+  -24.4,
+  -25.1,
+  -25.4,
+  -33.6,
+  -30.7,
+  -26.5,
+  -35.6,
+  -39.6,
+  -32.2,
+  -46.4,
+  -34.4,
+  -49.3,
+  -50.1,
+  -26.3,
+  -29.3,
+  -47.2,
+  -49.6,
+  -54.5,
+  -55.9,
+  -57.1,
+  -56.9,
+  -59.0,
+  -56.1,
+  -57.1,
+  -55.0,
+  -57.1,
+  -53.6,
+  -54.3,
+  -54.9,
+  -56.3,
+  -57.2,
+  -63.5,
+  -63.6,
+  -58.5,
+  -57.7,
+  -61.1,
+  -55.9,
+  -56.7,
+  -57.5,
+  -55.9,
+  -58.0,
+  -59.9,
+  -58.8,
+  -56.0,
+  -53.7,
+  -57.9,
+  -53.5,
+  -52.8,
+  -56.6,
+  -52.7,
+  -53.1,
+  -50.9,
+  -49.8,
+  -22.6,
+  -21.9,
+  -41.7,
+  -71.1,
+  -72.3,
+  -72.6,
+  -72.9,
+  -73.0,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -66.1,
+  -23.7,
+  -44.4,
+  -26.3,
+  -20.4,
+  -25.8,
+  -34.0,
+  -38.2,
+  -26.8,
+  -29.9,
+  -38.2,
+  -34.8,
+  -51.1,
+  -37.0,
+  -50.4,
+  -33.0,
+  -31.2,
+  -33.2,
+  -41.9,
+  -57.8,
+  -62.4,
+  -54.3,
+  -54.7,
+  -53.7,
+  -54.4,
+  -55.1,
+  -57.4,
+  -55.5,
+  -50.2
+ ],
+ "speech_dbfs": -45.0,
+ "events": [
+  {
+   "t": 2.8,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 2.00s)"
+  },
+  {
+   "t": 3.36,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "I can't sleep well lately.",
+   "speech_end": 4.8,
+   "why": "chat line 1/3"
+  },
+  {
+   "t": 7.68,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 6.88s)"
+  },
+  {
+   "t": 7.84,
+   "event": "gap_cancelled",
+   "why": "Moshi resumed speaking during the gap; user waits"
+  },
+  {
+   "t": 10.4,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 9.60s)"
+  },
+  {
+   "t": 10.88,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "I usually look at my phone in bed.",
+   "speech_end": 12.52,
+   "why": "chat line 2/3"
+  },
+  {
+   "t": 13.68,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 12.88s)"
+  },
+  {
+   "t": 14.24,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "What else could I try?",
+   "speech_end": 15.44,
+   "why": "chat line 3/3"
+  },
+  {
+   "t": 17.84,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 17.04s)"
+  }
+ ],
+ "batch_size": 5,
+ "batch_wall_sec": 12.81,
+ "batch_frames": 410,
+ "peak_mem_gb": 28.95,
+ "user_audio": "live"
+}
