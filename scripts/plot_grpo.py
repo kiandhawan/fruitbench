@@ -17,6 +17,7 @@ def load(p):
 
 def main():
     d = Path(sys.argv[1])
+    drop = {int(x) for x in sys.argv[2].split(",")} if len(sys.argv) > 2 else set()  # steps left out of the KL plot
     tr, va = load(d / "metrics.jsonl"), load(d / "val.jsonl")
     out = ROOT / "results" / "plots" / d.name  # one folder per run, e.g. results/plots/grpo_smoke2/
     out.mkdir(parents=True, exist_ok=True)
@@ -47,7 +48,8 @@ def main():
     fig("latency", [("valid-fruit latency (s)", [("train median", s, g(tr, "latency_median"), "-o"),
                                                  ("train mean", s, g(tr, "latency_mean"), "-"),
                                                  ("val median", vs, g(va, "latency_median"), "s--")])])
-    fig("kl", [("KL to reference (k3, per token)", [("text", s, g(tr, "kl_text"), "-o"), ("audio", s, g(tr, "kl_audio"), "-o")]),
+    fig("kl", [("KL to reference (k3, per token)", [("text", s, [None if r["step"] in drop else r.get("kl_text") for r in tr], "-o"),
+                                                       ("audio", s, g(tr, "kl_audio"), "-o")]),
                ("clip fraction", [("text", s, g(tr, "clipfrac_text"), "-"), ("audio", s, g(tr, "clipfrac_audio"), "-")])])
     fig("spread", [("groups with nonzero spread", [("groups", s, g(tr, "groups_with_spread"), "-o"),
                                                    ("turn positions", s, g(tr, "turn_positions_with_spread"), "-")]),
