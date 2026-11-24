@@ -1,0 +1,65 @@
+=== test_s1_0041  starter=moshi  voice=Cathal  length=49.2s
+    instructions: "Name a fruit, then I'll name one, and we keep alternating. Go!"
+    greeting: 'Hey, how can I help you?'
+    counts: {'valid': 0, 'repeat': 0, 'non_fruit': 0, 'filler': 13, 'silent': 0, 'multi': 0}  overlaps=1  reward=0.0
+    user lines started while Moshi mid-sentence: 0 of 13
+MOSHI    0.56-  0.56  Hey,@0.56
+MOSHI    1.04-  1.76  how@1.04 can@1.28 I@1.44 help@1.52 you?@1.76
+  --     2.80         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 2.00s)
+USER     3.52-  7.29  "Name a fruit, then I'll name one, and we keep alternating. Go!" [after greeting turn]
+MOSHI    6.80-  7.44  name@6.80 a@6.96 fruit.@7.20 Yeah,@7.44
+MOSHI    7.92-  8.40  yeah,@7.92 yeah,@8.16 yeah.@8.40
+  --     9.68         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 8.88s)
+  >>   reply to "Name a fruit, then I'll name o": FILLER, OVERLAP [scored]
+USER    10.48- 10.99  'Kumquat.'                                                 [user fruit 1/12]
+MOSHI   11.12- 11.44  Yeah,@11.12 yeah,@11.44
+MOSHI   11.84- 12.40  that's@11.84 a@12.16 good@12.24 one.@12.40
+  --    13.52         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 12.72s)
+  >>   reply to 'Kumquat.': FILLER [scored]
+USER    13.84- 14.61  'Strawberry.'                                              [user fruit 2/12]
+MOSHI   14.72- 14.72  Yeah,@14.72
+MOSHI   15.60- 15.84  yeah,@15.60 yeah.@15.84
+  --    17.12         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 16.32s)
+  >>   reply to 'Strawberry.': FILLER [scored]
+USER    17.52- 17.98  'Apple.'                                                   [user fruit 3/12]
+MOSHI   18.08- 19.28  Yeah,@18.08 yeah,@18.32 that's@18.72 a@19.04 good@19.12 one.@19.28
+  --    20.40         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 19.60s)
+  >>   reply to 'Apple.': FILLER [scored]
+USER    21.12- 21.73  'Cantaloupe.'                                              [user fruit 4/12]
+MOSHI   21.76- 22.32  Yeah,@21.76 yeah,@22.00 good.@22.32
+  --    24.32         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 23.52s)
+  >>   reply to 'Cantaloupe.': FILLER [scored]
+USER    25.04- 25.76  'Grapefruit.'                                              [user fruit 5/12]
+MOSHI   25.76- 26.08  Yeah,@25.76 yeah,@26.08
+MOSHI   26.48- 26.48  yeah.@26.48
+  --    27.76         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 26.96s)
+  >>   reply to 'Grapefruit.': FILLER [scored]
+USER    28.24- 28.89  'Mulberry.'                                                [user fruit 6/12]
+MOSHI   28.96- 29.12  Yeah,@28.96 yeah,@29.12
+MOSHI   29.92- 30.16  yeah,@29.92 yeah.@30.16
+  --    31.28         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 30.48s)
+  >>   reply to 'Mulberry.': FILLER [scored]
+USER    31.92- 32.75  'Granny smith.'                                            [user fruit 7/12]
+MOSHI   32.88- 33.76  Yeah,@32.88 yeah,@33.04 yeah,@33.44 yeah.@33.76
+  --    34.64         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 33.84s)
+  >>   reply to 'Granny smith.': FILLER [scored]
+USER    35.44- 35.85  'Lemon.'                                                   [user fruit 8/12]
+MOSHI   36.00- 36.48  Yeah,@36.00 yeah,@36.16 yeah.@36.48
+  --    37.68         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 36.88s)
+  >>   reply to 'Lemon.': FILLER [scored]
+USER    38.24- 38.86  'Jackfruit.'                                               [user fruit 9/12]
+MOSHI   38.96- 39.44  Yeah,@38.96 yeah,@39.20 yeah.@39.44
+  --    40.56         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 39.76s)
+  >>   reply to 'Jackfruit.': FILLER [scored]
+USER    40.88- 41.39  'Pawpaw.'                                                  [user fruit 10/12]
+MOSHI   41.52- 42.16  Yeah,@41.52 yeah,@41.84 yeah.@42.16
+  --    43.44         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 42.64s)
+  >>   reply to 'Pawpaw.': FILLER [scored]
+USER    43.76- 44.36  'Durian.'                                                  [user fruit 11/12]
+MOSHI   44.48- 45.04  Yeah,@44.48 yeah,@44.80 yeah.@45.04
+  --    46.32         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 45.52s)
+  >>   reply to 'Durian.': FILLER [scored]
+USER    46.64- 47.35  'Crab apple.'                                              [user fruit 12/12]
+MOSHI   47.44- 48.08  Yeah,@47.44 yeah,@47.76 yeah.@48.08
+  --    49.20         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 48.40s)
+  >>   reply to 'Crab apple.': FILLER [scored]

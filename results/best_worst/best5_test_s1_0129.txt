@@ -1,0 +1,75 @@
+=== test_s1_0129  starter=user  voice=Cathal  length=62.2s
+    instructions: "Let's do a speed round of fruits. You and me, alternating, no repeating."
+    greeting: 'Hi there, how can I help you?'
+    counts: {'valid': 4, 'repeat': 3, 'non_fruit': 0, 'filler': 2, 'silent': 3, 'multi': 0}  overlaps=2  reward=0.2827
+    user lines started while Moshi mid-sentence: 0 of 13
+MOSHI    0.64-  0.88  Hi@0.64 there,@0.88
+MOSHI    1.52-  2.32  how@1.52 can@1.76 I@1.92 help@2.00 you?@2.32
+  --     3.28         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 2.48s)
+USER     3.84-  7.97  "Let's do a speed round of fruits. You and me, alternating, no repeating." [after greeting turn]
+  --    10.48         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to "Let's do a speed round of frui": SILENT [not scored]
+USER    11.28- 12.11  'Granny smith.'                                            [user fruit 1/12]
+MOSHI   11.76- 11.76  Okay,@11.76
+MOSHI   12.16- 12.40  I'm@12.16 ready.@12.40
+MOSHI   13.12- 13.60  Let's@13.12 do@13.44 this.@13.60
+  --    14.56         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 13.76s)
+  >>   reply to 'Granny smith.': FILLER, OVERLAP [scored]
+  --    14.96         gap_cancelled: Moshi resumed speaking during the gap; user waits
+MOSHI   15.04- 15.04  V.@15.04
+  --    16.16         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 15.36s)
+USER    16.96- 17.42  'Apple.'                                                   [user fruit 2/12]
+  --    20.00         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Apple.': SILENT [scored]
+USER    20.40- 21.11  'Crab apple.'                                              [user fruit 3/12]
+MOSHI   21.20- 21.20  I'm@21.20
+MOSHI   22.00- 22.88  going@22.00 to@22.24 try@22.40 crab@22.56 apple.@22.88
+MOSHI   23.92- 23.92  Next.@23.92
+  --    24.88         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 24.08s)
+  >>   reply to 'Crab apple.': REPEAT (crab apple) ECHO, latency +1.45s [scored]
+USER    25.60- 26.43  'Prickly pear.'                                            [user fruit 4/12; skipped already-said ['granny smith', 'apple', 'crab apple']]
+  --    28.96         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Prickly pear.': SILENT [scored]
+USER    29.76- 30.29  'Orange.'                                                  [user fruit 5/12]
+MOSHI   30.40- 31.04  I'@30.40 going@30.56 to@30.72 say@30.88 pear.@31.04
+  --    32.16         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 31.36s)
+  >>   reply to 'Orange.': VALID (pear), latency +0.75s [scored]
+MOSHI   32.72- 32.72  Now.@32.72
+  --    32.80         gap_cancelled: Moshi resumed speaking during the gap; user waits
+  --    33.84         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 33.04s)
+USER    34.56- 35.38  'Lingonberry.'                                             [user fruit 6/12]
+  --    37.92         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Lingonberry.': SILENT [scored]
+USER    38.40- 38.95  'Pineapple.'                                               [user fruit 7/12]
+MOSHI   39.12- 39.84  I'm@39.12 going@39.36 to@39.52 say@39.68 pineapple.@39.84
+  --    41.12         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 40.32s)
+  >>   reply to 'Pineapple.': REPEAT (pineapple) ECHO, latency +0.89s [scored]
+MOSHI   41.36- 41.36  Now.@41.36
+  --    41.36         gap_cancelled: Moshi resumed speaking during the gap; user waits
+  --    42.48         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 41.68s)
+USER    43.04- 43.69  'Mulberry.'                                                [user fruit 8/12; skipped already-said ['orange', 'lingonberry', 'pineapple']]
+MOSHI   43.76- 44.56  I'm@43.76 going@44.00 to@44.24 choose@44.40 blueberry.@44.56
+  --    45.84         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 45.04s)
+  >>   reply to 'Mulberry.': VALID (blueberry), latency +0.87s [scored]
+USER    46.32- 47.06  'Pomegranate.'                                             [user fruit 9/12]
+MOSHI   47.12- 47.76  I'm@47.12 going@47.36 to@47.52 say@47.60 plum.@47.76
+  --    48.88         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 48.08s)
+  >>   reply to 'Pomegranate.': VALID (plum), latency +0.70s [scored]
+USER    49.36- 49.96  'Durian.'                                                  [user fruit 10/12]
+MOSHI   50.08- 50.56  I@50.08 don't@50.24 know.@50.56
+  --    51.60         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 50.80s)
+  >>   reply to 'Durian.': REPEAT (durian) ECHO, latency +2.04s [scored]
+  --    51.92         gap_cancelled: Moshi resumed speaking during the gap; user waits
+MOSHI   52.00- 52.00  Durian.@52.00
+  --    53.28         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 52.48s)
+USER    53.84- 54.72  'Mangosteen.'                                              [user fruit 11/12; skipped already-said ['mulberry', 'pomegranate', 'durian']]
+MOSHI   54.80- 55.44  Let's@54.80 make@55.12 that@55.28 mango.@55.44
+  --    56.56         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 55.76s)
+  >>   reply to 'Mangosteen.': VALID (mango), latency +0.72s [scored]
+MOSHI   56.64- 57.68  You're@56.64 doing@56.88 a@57.12 terrible@57.36 job.@57.68
+  --    56.64         gap_cancelled: Moshi resumed speaking during the gap; user waits
+  --    58.80         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 58.00s)
+USER    59.36- 60.13  'Strawberry.'                                              [user fruit 12/12]
+MOSHI   60.08- 61.12  You're@60.08 doing@60.32 a@60.48 terrible@60.72 job.@61.12
+  --    62.16         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 61.36s)
+  >>   reply to 'Strawberry.': FILLER, OVERLAP [scored]

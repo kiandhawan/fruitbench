@@ -1,0 +1,433 @@
+{
+ "test": {
+  "games": 200,
+  "scored_turns": 2467,
+  "rates": {
+   "valid": 0.0604,
+   "repeat": 0.1885,
+   "non_fruit": 0.0458,
+   "filler": 0.3437,
+   "silent": 0.2862,
+   "multi": 0.0754
+  },
+  "counts": {
+   "valid": 149,
+   "repeat": 465,
+   "non_fruit": 113,
+   "filler": 848,
+   "silent": 706,
+   "multi": 186
+  },
+  "overlap_rate": 0.124,
+  "echo_rate": 0.1488,
+  "latency_valid": {
+   "n": 149,
+   "median": 0.132,
+   "mean": 0.78
+  },
+  "latency_any_fruit": {
+   "n": 800,
+   "median": 0.13,
+   "mean": 0.563
+  },
+  "mean_reward": 0.0605,
+  "games_with_any_valid": 0.435,
+  "by_starter": {
+   "user": {
+    "games": 133,
+    "turns": 1596,
+    "valid": 0.0677
+   },
+   "moshi": {
+    "games": 67,
+    "turns": 871,
+    "valid": 0.0471
+   }
+  },
+  "opening_turn_moshi_starts": {
+   "filler": 38,
+   "silent": 15,
+   "valid": 10,
+   "multi": 4
+  },
+  "top_filler": [
+   [
+    "okay",
+    151
+   ],
+   [
+    "yeah",
+    28
+   ],
+   [
+    "yes",
+    22
+   ],
+   [
+    "oh okay",
+    16
+   ],
+   [
+    "oh",
+    15
+   ],
+   [
+    "oh i know",
+    11
+   ],
+   [
+    "yes that's correct",
+    11
+   ],
+   [
+    "no",
+    11
+   ],
+   [
+    "oh that's a good one",
+    10
+   ],
+   [
+    "yeah yeah yeah",
+    9
+   ]
+  ],
+  "top_greetings": [
+   [
+    "hi how is it going",
+    20
+   ],
+   [
+    "hello how is it going",
+    16
+   ],
+   [
+    "hi there how can i help you",
+    15
+   ],
+   [
+    "hello how can i help you",
+    13
+   ],
+   [
+    "good day how is it going",
+    12
+   ]
+  ],
+  "game_len_sec": {
+   "median": 59.4,
+   "max": 131.1
+  }
+ },
+ "grpo": {
+  "groups": 25,
+  "group_sizes": [
+   16
+  ],
+  "frac_groups_total_reward_varies": 1.0,
+  "frac_groups_turn_rewards_vary": 1.0,
+  "frac_group_turn_positions_vary": 0.7987,
+  "mean_within_group_std_total": 0.0722,
+  "bench": {
+   "games": 400,
+   "scored_turns": 4928,
+   "rates": {
+    "valid": 0.0797,
+    "repeat": 0.1465,
+    "non_fruit": 0.072,
+    "filler": 0.2683,
+    "silent": 0.3551,
+    "multi": 0.0783
+   },
+   "counts": {
+    "valid": 393,
+    "repeat": 722,
+    "non_fruit": 355,
+    "filler": 1322,
+    "silent": 1750,
+    "multi": 386
+   },
+   "overlap_rate": 0.2058,
+   "echo_rate": 0.1063,
+   "latency_valid": {
+    "n": 393,
+    "median": 0.9,
+    "mean": 1.268
+   },
+   "latency_any_fruit": {
+    "n": 1501,
+    "median": 0.14,
+    "mean": 0.813
+   },
+   "mean_reward": 0.0664,
+   "games_with_any_valid": 0.4675,
+   "by_starter": {
+    "user": {
+     "games": 272,
+     "turns": 3264,
+     "valid": 0.0772
+    },
+    "moshi": {
+     "games": 128,
+     "turns": 1664,
+     "valid": 0.0847
+    }
+   },
+   "opening_turn_moshi_starts": {
+    "silent": 45,
+    "filler": 58,
+    "valid": 13,
+    "multi": 11,
+    "non_fruit": 1
+   },
+   "top_filler": [
+    [
+     "okay",
+     99
+    ],
+    [
+     "yeah",
+     22
+    ],
+    [
+     "oh",
+     16
+    ],
+    [
+     "okay i'll go first",
+     15
+    ],
+    [
+     "oh okay",
+     14
+    ],
+    [
+     "yes",
+     11
+    ],
+    [
+     "okay i'll go with that",
+     11
+    ],
+    [
+     "next one",
+     9
+    ],
+    [
+     "okay that's a good one",
+     9
+    ],
+    [
+     "that a good one",
+     9
+    ]
+   ],
+   "top_greetings": [
+    [
+     "hello how is it going",
+     37
+    ],
+    [
+     "hi how is it going",
+     33
+    ],
+    [
+     "hi there how can i help you",
+     28
+    ],
+    [
+     "hello what's going on",
+     25
+    ],
+    [
+     "hello what's up",
+     24
+    ]
+   ],
+   "game_len_sec": {
+    "median": 63.9,
+    "max": 148.5
+   }
+  }
+ },
+ "timing": {
+  "games": 32,
+  "batch": 32,
+  "wall_sec": 74.89,
+  "loop_sec": 74.1,
+  "game_sec_longest": 134.5,
+  "realtime_factor": 0.551,
+  "peak_mem_gb": 67.09,
+  "gpu": "1x H200"
+ },
+ "asr": {
+  "games": 20,
+  "fruit_mentions_game_level": {
+   "fruit_mentions_text": 183,
+   "fruit_mentions_asr": 181,
+   "matched": 175,
+   "text_mentions_heard_in_audio": 0.956,
+   "asr_mentions_in_text": 0.967
+  },
+  "scored_turns": 247,
+  "agree_class": 0.858,
+  "agree_class_and_fruit": 0.85,
+  "per_text_class": {
+   "filler": {
+    "n": 68,
+    "agree": 0.971
+   },
+   "multi": {
+    "n": 27,
+    "agree": 0.778
+   },
+   "non_fruit": {
+    "n": 20,
+    "agree": 0.45
+   },
+   "repeat": {
+    "n": 49,
+    "agree": 0.837
+   },
+   "silent": {
+    "n": 65,
+    "agree": 0.938
+   },
+   "valid": {
+    "n": 18,
+    "agree": 0.778
+   }
+  },
+  "disagreements": {
+   "non_fruit->filler": 4,
+   "non_fruit->silent": 4,
+   "multi->valid": 4,
+   "repeat->filler": 3,
+   "non_fruit->valid": 3,
+   "repeat->valid": 3,
+   "multi->repeat": 2,
+   "valid->non_fruit": 2,
+   "valid->silent": 2,
+   "filler->silent": 1,
+   "silent->repeat": 1,
+   "filler->repeat": 1,
+   "silent->valid": 1,
+   "silent->non_fruit": 1,
+   "repeat->multi": 1,
+   "repeat->silent": 1,
+   "silent->filler": 1
+  }
+ },
+ "listen": {
+  "best1_test_s1_0195": {
+   "reward": 0.4931,
+   "counts": {
+    "valid": 6,
+    "repeat": 3,
+    "non_fruit": 0,
+    "filler": 0,
+    "silent": 3,
+    "multi": 0
+   }
+  },
+  "best2_test_s1_0048": {
+   "reward": 0.4672,
+   "counts": {
+    "valid": 6,
+    "repeat": 6,
+    "non_fruit": 0,
+    "filler": 0,
+    "silent": 0,
+    "multi": 0
+   }
+  },
+  "best3_test_s1_0136": {
+   "reward": 0.4075,
+   "counts": {
+    "valid": 5,
+    "repeat": 5,
+    "non_fruit": 0,
+    "filler": 1,
+    "silent": 0,
+    "multi": 1
+   }
+  },
+  "best4_test_s1_0121": {
+   "reward": 0.3282,
+   "counts": {
+    "valid": 4,
+    "repeat": 6,
+    "non_fruit": 1,
+    "filler": 1,
+    "silent": 0,
+    "multi": 0
+   }
+  },
+  "best5_test_s1_0129": {
+   "reward": 0.2827,
+   "counts": {
+    "valid": 4,
+    "repeat": 3,
+    "non_fruit": 0,
+    "filler": 2,
+    "silent": 3,
+    "multi": 0
+   }
+  },
+  "worst1_test_s1_0001": {
+   "reward": 0.0,
+   "counts": {
+    "valid": 0,
+    "repeat": 0,
+    "non_fruit": 0,
+    "filler": 13,
+    "silent": 0,
+    "multi": 0
+   }
+  },
+  "worst2_test_s1_0036": {
+   "reward": 0.0,
+   "counts": {
+    "valid": 0,
+    "repeat": 0,
+    "non_fruit": 0,
+    "filler": 13,
+    "silent": 0,
+    "multi": 0
+   }
+  },
+  "worst3_test_s1_0041": {
+   "reward": 0.0,
+   "counts": {
+    "valid": 0,
+    "repeat": 0,
+    "non_fruit": 0,
+    "filler": 13,
+    "silent": 0,
+    "multi": 0
+   }
+  },
+  "worst4_test_s1_0088": {
+   "reward": 0.0,
+   "counts": {
+    "valid": 0,
+    "repeat": 12,
+    "non_fruit": 0,
+    "filler": 1,
+    "silent": 0,
+    "multi": 0
+   }
+  },
+  "worst5_test_s1_0094": {
+   "reward": 0.0,
+   "counts": {
+    "valid": 0,
+    "repeat": 2,
+    "non_fruit": 2,
+    "filler": 9,
+    "silent": 0,
+    "multi": 0
+   }
+  }
+ }
+}

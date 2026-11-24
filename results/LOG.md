@@ -1,5 +1,25 @@
 # LOG (newest first)
 
+## 2026-11-24 — Step 4/5: base fruit-bench, GRPO readiness, timing (no training)
+- Runs: 200 test games seed 1 (4 GPUs, batch 50, 118 s); GRPO check 25 train starts x 16 (`--repeat
+  16`, batch 50, 214 s); timing 32 test games seed 2 on 1 GPU at batch 32. Report:
+  `scripts/report.py` -> `results/base_fruitbench.md/.json` (it rescores every game with the current
+  scorer). Batch 50 instead of 32 for the big runs so each GPU gets whole batches (200 = 4 x 50).
+- **Base: 6.0% valid new fruit** of 2467 scored turns; filler 34.4%, silent 28.6%, repeat 18.9%
+  (echo 14.9%), multi 7.5%, non-fruit 4.6%; overlap 12.4%. Valid latency median 0.13 s, mean 0.78 s.
+  Top filler "okay" (151). Listener mode reproduced, as in the real failure game.
+- **GRPO readiness**: 25/25 groups have non-identical total rewards and non-identical per-turn reward
+  vectors; 79.9% of (group, turn) positions vary; mean within-group std of the total 0.072. Signal
+  exists everywhere but is thin; reward shaping (e.g. partial credit for answering at all, or a
+  penalty for silence/filler) can be considered when training starts.
+- **Timing**: 32 games / 1 H200: 74.9 s wall (longest game 134.5 s; 0.55x real time), peak 67.1 GB;
+  batch 50 peaks at 95.9 GB.
+- Turn-taking at scale: 2.2% of user lines start while Moshi's audio is speech (mostly 10 s caps);
+  646 gaps cancelled because Moshi resumed. The timeline's text heuristic over-flags comma lists
+  ("Apple, | banana,"), which are one fruit per turn and end with a real audio pause.
+- Best/worst 5 games: transcripts in `results/best_worst/`, MP3s in GitHub release `base-best-worst`
+  (not in git). Stopping here as instructed: no training started.
+
 ## 2026-11-24 — Step 3: text-stream scorer vs Whisper on Moshi's audio
 - `scripts/asr_check.py` (separate `.venv-asr`: faster-whisper 1.1.1, large-v3, fp16, VAD on, beam 5,
   English) transcribes Moshi's channel of 20 randomly chosen (seed 0) base test games, turns Whisper's

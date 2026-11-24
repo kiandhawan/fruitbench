@@ -1,0 +1,69 @@
+=== test_s1_0094  starter=moshi  voice=Cathal  length=54.7s
+    instructions: "Name a fruit, then I'll name one, and we keep alternating. Go!"
+    greeting: 'Hey, how was your day?'
+    counts: {'valid': 0, 'repeat': 2, 'non_fruit': 2, 'filler': 9, 'silent': 0, 'multi': 0}  overlaps=1  reward=0.0
+    user lines started while Moshi mid-sentence: 0 of 13
+MOSHI    0.64-  0.64  Hey,@0.64
+MOSHI    1.60-  2.08  how@1.60 was@1.76 your@1.84 day?@2.08
+  --     3.12         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 2.32s)
+USER     3.60-  7.37  "Name a fruit, then I'll name one, and we keep alternating. Go!" [after greeting turn]
+MOSHI    7.44-  8.32  I@7.44 know@7.60 a@7.76 lot@7.92 about@8.08 fruits.@8.32
+  --     9.60         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 8.80s)
+  >>   reply to "Name a fruit, then I'll name o": FILLER [scored]
+MOSHI    9.92- 10.32  What@9.92 about@10.08 you?@10.32
+  --     9.92         gap_cancelled: Moshi resumed speaking during the gap; user waits
+  --    11.44         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 10.64s)
+USER    12.00- 12.64  'Blueberry.'                                               [user fruit 1/12]
+MOSHI   12.24- 13.44  Yeah,@12.24 I've@12.56 had@12.88 some@12.96 of@13.20 those@13.36 before.@13.44
+  --    14.88         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 14.08s)
+  >>   reply to 'Blueberry.': FILLER, OVERLAP [scored]
+USER    15.36- 15.98  'Jackfruit.'                                               [user fruit 2/12]
+MOSHI   16.00- 16.00  Yeah,@16.00
+MOSHI   16.80- 17.52  I've@16.80 had@17.12 those@17.28 too.@17.52
+  --    18.64         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 17.84s)
+  >>   reply to 'Jackfruit.': FILLER [scored]
+USER    18.96- 19.51  'Pineapple.'                                               [user fruit 3/12]
+MOSHI   19.68- 20.32  Yeah,@19.68 I@20.00 like@20.08 pineapple.@20.32
+  --    21.84         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 21.04s)
+  >>   reply to 'Pineapple.': REPEAT (pineapple) ECHO, latency +0.81s [scored]
+USER    22.16- 22.62  'Apple.'                                                   [user fruit 4/12; skipped already-said ['blueberry', 'jackfruit', 'pineapple']]
+MOSHI   22.64- 22.96  I@22.64 love@22.80 apples.@22.96
+  --    24.24         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 23.44s)
+  >>   reply to 'Apple.': REPEAT (apple) ECHO, latency +0.34s [scored]
+USER    24.72- 25.55  'Granny smith.'                                            [user fruit 5/12; skipped already-said ['jackfruit', 'pineapple', 'apple']]
+  --    28.08         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Granny smith.': FILLER [scored]
+MOSHI   28.32- 29.04  don't@28.32 know@28.56 what@28.72 that@28.88 is.@29.04
+  --    28.40         gap_cancelled: Moshi resumed speaking during the gap; user waits
+  --    30.24         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 29.44s)
+USER    30.96- 31.57  'Cantaloupe.'                                              [user fruit 6/12]
+MOSHI   31.60- 31.60  Oh,@31.60
+MOSHI   32.16- 32.16  I've@32.16
+MOSHI   32.56- 32.96  had@32.56 those@32.72 before.@32.96
+MOSHI   33.60- 34.24  They're@33.60 really@34.00 good.@34.24
+  --    35.44         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 34.64s)
+  >>   reply to 'Cantaloupe.': FILLER [scored]
+USER    36.08- 36.73  'Mulberry.'                                                [user fruit 7/12]
+MOSHI   36.80- 37.44  I've@36.80 had@37.04 those@37.20 before.@37.44
+  --    38.80         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 38.00s)
+  >>   reply to 'Mulberry.': FILLER [scored]
+USER    39.12- 39.65  'Orange.'                                                  [user fruit 8/12]
+MOSHI   39.68- 40.24  I'@39.68 had@39.84 those@40.00 before.@40.24
+  --    41.60         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 40.80s)
+  >>   reply to 'Orange.': NON_FRUIT [scored]
+USER    41.92- 42.64  'Grapefruit.'                                              [user fruit 9/12]
+MOSHI   42.64- 43.52  Yeah,@42.64 I've@42.88 had@43.12 those@43.28 before.@43.52
+  --    44.88         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 44.08s)
+  >>   reply to 'Grapefruit.': FILLER [scored]
+USER    45.28- 46.11  'Prickly pear.'                                            [user fruit 10/12]
+MOSHI   46.24- 47.12  Yeah,@46.24 I've@46.40 had@46.72 those@46.88 before.@47.12
+  --    48.40         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 47.60s)
+  >>   reply to 'Prickly pear.': FILLER [scored]
+USER    48.88- 49.76  'Mangosteen.'                                              [user fruit 11/12]
+MOSHI   49.84- 50.40  I've@49.84 had@50.08 those@50.16 before.@50.40
+  --    51.68         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 50.88s)
+  >>   reply to 'Mangosteen.': FILLER [scored]
+USER    52.16- 52.76  'Durian.'                                                  [user fruit 12/12]
+MOSHI   52.88- 53.44  I'@52.88 had@53.04 those@53.20 before.@53.44
+  --    54.72         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 53.92s)
+  >>   reply to 'Durian.': NON_FRUIT [scored]

@@ -1,0 +1,61 @@
+=== test_s1_0136  starter=user  voice=Cathal  length=43.4s
+    instructions: "Let's take turns naming fruits as fast as we can."
+    greeting: "Hi, what's going on?"
+    counts: {'valid': 5, 'repeat': 5, 'non_fruit': 0, 'filler': 1, 'silent': 0, 'multi': 1}  overlaps=2  reward=0.4075
+    user lines started while Moshi mid-sentence: 0 of 13
+MOSHI    0.64-  0.64  Hi,@0.64
+MOSHI    1.44-  2.08  what's@1.44 going@1.76 on?@2.08
+  --     3.12         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 2.32s)
+USER     3.76-  6.36  "Let's take turns naming fruits as fast as we can."        [after greeting turn]
+  --     8.88         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to "Let's take turns naming fruits": SILENT [not scored]
+USER     9.44- 10.27  'Granny smith.'                                            [user fruit 1/12]
+MOSHI   10.24- 10.24  Okay,@10.24
+MOSHI   10.64- 11.04  I'll@10.64 go@10.88 first.@11.04
+  --    12.24         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 11.44s)
+  >>   reply to 'Granny smith.': FILLER, OVERLAP [scored]
+USER    12.80- 13.42  'Jackfruit.'                                               [user fruit 2/12]
+MOSHI   13.44- 13.44  apple.@13.44
+  --    14.80         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 14.00s)
+  >>   reply to 'Jackfruit.': VALID (apple), latency +0.02s [scored]
+USER    15.12- 15.84  'Grapefruit.'                                              [user fruit 3/12]
+MOSHI   15.92- 15.92  peach.@15.92
+  --    17.12         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 16.32s)
+  >>   reply to 'Grapefruit.': VALID (peach), latency +0.08s [scored]
+USER    17.92- 18.53  'Cantaloupe.'                                              [user fruit 4/12]
+MOSHI   18.64- 18.64  orange.@18.64
+  --    19.92         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 19.12s)
+  >>   reply to 'Cantaloupe.': VALID (orange), latency +0.11s [scored]
+USER    20.48- 21.25  'Strawberry.'                                              [user fruit 5/12]
+MOSHI   21.04- 21.04  blueberry.@21.04
+  --    22.80         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 22.00s)
+  >>   reply to 'Strawberry.': VALID (blueberry), latency -0.21s, OVERLAP [scored]
+USER    23.44- 23.95  'Pawpaw.'                                                  [user fruit 6/12]
+MOSHI   24.08- 24.08  kiwi.@24.08
+MOSHI   25.44- 25.44  pineapple.@25.44
+  --    26.96         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 26.16s)
+  >>   reply to 'Pawpaw.': MULTI, latency +0.13s [scored]
+USER    27.44- 28.15  'Crab apple.'                                              [user fruit 7/12]
+MOSHI   28.24- 28.24  watermelon.@28.24
+  --    29.84         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 29.04s)
+  >>   reply to 'Crab apple.': VALID (watermelon), latency +0.09s [scored]
+USER    30.40- 31.22  'Lingonberry.'                                             [user fruit 8/12]
+MOSHI   31.28- 31.28  berry.@31.28
+  --    32.48         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 31.68s)
+  >>   reply to 'Lingonberry.': REPEAT (blueberry) fuzzy ['berry.->blueberry'], latency +0.06s [scored]
+USER    33.04- 33.69  'Mulberry.'                                                [user fruit 9/12; skipped already-said ['lingonberry', 'blueberry', 'apple']]
+MOSHI   33.84- 33.84  mulberry.@33.84
+  --    35.20         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 34.40s)
+  >>   reply to 'Mulberry.': REPEAT (mulberry) ECHO, latency +0.15s [scored]
+USER    35.92- 36.43  'Kumquat.'                                                 [user fruit 10/12; skipped already-said ['blueberry', 'apple', 'mulberry']]
+MOSHI   36.56- 36.72  a@36.56 kiwi.@36.72
+  --    37.76         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 36.96s)
+  >>   reply to 'Kumquat.': REPEAT (kiwi), latency +0.29s [scored]
+USER    38.16- 38.90  'Pomegranate.'                                             [user fruit 11/12]
+MOSHI   38.96- 38.96  pomegranate.@38.96
+  --    40.32         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 39.52s)
+  >>   reply to 'Pomegranate.': REPEAT (pomegranate) ECHO, latency +0.06s [scored]
+USER    41.12- 41.81  'Clementine.'                                              [user fruit 12/12; skipped already-said ['kumquat', 'pomegranate', 'orange']]
+MOSHI   41.92- 42.00  a@41.92 kiwi.@42.00
+  --    43.44         moshi_turn_end: Moshi audio quiet 0.8s after speaking (speech until 42.64s)
+  >>   reply to 'Clementine.': REPEAT (kiwi), latency +0.19s [scored]
