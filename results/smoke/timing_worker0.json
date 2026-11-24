@@ -1,0 +1,11 @@
+[
+ {
+  "games": 4,
+  "batch": 4,
+  "wall_sec": 13.83,
+  "loop_sec": 13.75,
+  "frames": 567,
+  "game_sec": 45.4,
+  "peak_mem_gb": 22.3
+ }
+]

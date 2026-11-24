@@ -57,7 +57,7 @@ FRUITS: dict[str, list[str]] = {
 
 # Recognised in Moshi's replies (valid fruits) but never said by the simulated user.
 EXTRA_RECOGNISED: dict[str, list[str]] = {
-    "melon": [], "berry": [], "citrus": [], "nut": [], "pumpkin": [], "cucumber": [], "eggplant": ["aubergine"],
+    "melon": [], "pumpkin": [], "cucumber": [], "eggplant": ["aubergine"],
     "pepper": ["bell pepper"], "squash": [], "zucchini": [], "chestnut": [], "almond": [],
     "walnut": [], "peanut": [], "cashew": [], "pecan": [], "hazelnut": [], "pistachio": [],
     "macadamia": [], "rose hip": ["rosehip"], "hawthorn": [], "mayhaw": [], "pineberry": [],
@@ -67,7 +67,7 @@ EXTRA_RECOGNISED: dict[str, list[str]] = {
 # Botanically fruits but rarely accepted in a "fruit" game; the scorer reports them separately
 # under these names when Moshi says them (they still count as fruits for now; see LOG.md).
 BOTANICAL_EDGE = {"tomato", "olive", "pumpkin", "cucumber", "eggplant", "pepper", "squash", "zucchini",
-                  "nut", "chestnut", "almond", "walnut", "peanut", "cashew", "pecan", "hazelnut",
+                  "chestnut", "almond", "walnut", "peanut", "cashew", "pecan", "hazelnut",
                   "pistachio", "macadamia", "rhubarb", "carob", "bitter melon", "winter melon"}
 
 # The simulated user never says these (debatable as "fruit"), but they stay recognised.
@@ -121,6 +121,9 @@ whats how how's who why when hey hi hello thanks thank please sorry name names n
 fruits fruity think know see wait just like really very too also not no nope don't dont can can't
 cant will i'll ill would could should okay okey to of for on in at with up yourself myself
 gonna wanna love sounds sound interesting fast faster quick quickly as possible try trying
+out idea ideas stuck hard tough tricky one pass skip give up mind blank any anything something
+heard never tried tasted familiar sure guess maybe probably favorite favourite
+correct incorrect wrong true exactly indeed absolutely definitely totally mmhmm mhmm uhhuh even close
 """.split())
 
 SPLITS_PATH = Path(__file__).resolve().parent.parent / "data" / "splits.json"

@@ -1,0 +1,684 @@
+{
+ "game_id": "smoke_val_s1_0000",
+ "spec": {
+  "game_id": "smoke_val_s1_0000",
+  "split": "val",
+  "seed": 1,
+  "voice": "Megan",
+  "starter": "user",
+  "phrasing": "We're going to take turns saying fruits, super fast. Ready? I'll go first.",
+  "fruit_order": [
+   "blood orange",
+   "sea buckthorn",
+   "lychee",
+   "calamansi",
+   "monk fruit",
+   "marionberry",
+   "physalis",
+   "salmonberry",
+   "langsat",
+   "mirabelle",
+   "salak",
+   "cloudberry",
+   "duku",
+   "watermelon",
+   "passion fruit"
+  ],
+  "gaps": [
+   0.445,
+   0.653,
+   0.559,
+   0.336,
+   0.361,
+   0.787,
+   0.539,
+   0.466,
+   0.581,
+   0.459,
+   0.448,
+   0.534,
+   0.379,
+   0.568
+  ]
+ },
+ "starter": "user",
+ "sampling": {
+  "use_sampling": true,
+  "temp": 0.8,
+  "temp_text": 0.7,
+  "top_k": 250,
+  "top_k_text": 25
+ },
+ "sampling_seed": 100000,
+ "frame_sec": 0.08,
+ "end_time": 45.36,
+ "user_turns": [
+  {
+   "kind": "instructions",
+   "text": "We're going to take turns saying fruits, super fast. Ready? I'll go first.",
+   "fruit": null,
+   "start": 2.08,
+   "speech_end": 7.29,
+   "clip": "data/audio/clips/Megan/phrasing/we_re_going_to_take_turns_saying_fruits_super_fast_ready_i_l.wav",
+   "voice": "Megan",
+   "frame": 26,
+   "reason": "after greeting turn"
+  },
+  {
+   "kind": "fruit",
+   "text": "Blood orange.",
+   "fruit": "blood orange",
+   "start": 8.56,
+   "speech_end": 9.46,
+   "clip": "data/audio/clips/Megan/fruit/blood_orange.wav",
+   "voice": "Megan",
+   "frame": 107,
+   "reason": "user fruit 1/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Sea buckthorn.",
+   "fruit": "sea buckthorn",
+   "start": 12.24,
+   "speech_end": 13.24,
+   "clip": "data/audio/clips/Megan/fruit/sea_buckthorn.wav",
+   "voice": "Megan",
+   "frame": 153,
+   "reason": "user fruit 2/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Lychee.",
+   "fruit": "lychee",
+   "start": 14.56,
+   "speech_end": 15.36,
+   "clip": "data/audio/clips/Megan/fruit/lychee.wav",
+   "voice": "Megan",
+   "frame": 182,
+   "reason": "user fruit 3/12; skipped already-said ['blood orange', 'sea buckthorn']"
+  },
+  {
+   "kind": "fruit",
+   "text": "Calamansi.",
+   "fruit": "calamansi",
+   "start": 16.56,
+   "speech_end": 17.47,
+   "clip": "data/audio/clips/Megan/fruit/calamansi.wav",
+   "voice": "Megan",
+   "frame": 207,
+   "reason": "user fruit 4/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Monk fruit.",
+   "fruit": "monk fruit",
+   "start": 20.8,
+   "speech_end": 21.73,
+   "clip": "data/audio/clips/Megan/fruit/monk_fruit.wav",
+   "voice": "Megan",
+   "frame": 260,
+   "reason": "user fruit 5/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Marionberry.",
+   "fruit": "marionberry",
+   "start": 24.8,
+   "speech_end": 25.77,
+   "clip": "data/audio/clips/Megan/fruit/marionberry.wav",
+   "voice": "Megan",
+   "frame": 310,
+   "reason": "user fruit 6/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Physalis.",
+   "fruit": "physalis",
+   "start": 27.52,
+   "speech_end": 28.35,
+   "clip": "data/audio/clips/Megan/fruit/physalis.wav",
+   "voice": "Megan",
+   "frame": 344,
+   "reason": "user fruit 7/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Salmonberry.",
+   "fruit": "salmonberry",
+   "start": 31.44,
+   "speech_end": 32.33,
+   "clip": "data/audio/clips/Megan/fruit/salmonberry.wav",
+   "voice": "Megan",
+   "frame": 393,
+   "reason": "user fruit 8/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Langsat.",
+   "fruit": "langsat",
+   "start": 33.52,
+   "speech_end": 34.45,
+   "clip": "data/audio/clips/Megan/fruit/langsat.wav",
+   "voice": "Megan",
+   "frame": 419,
+   "reason": "user fruit 9/12; skipped already-said ['marionberry', 'physalis', 'salmonberry']"
+  },
+  {
+   "kind": "fruit",
+   "text": "Mirabelle.",
+   "fruit": "mirabelle",
+   "start": 37.44,
+   "speech_end": 38.16,
+   "clip": "data/audio/clips/Megan/fruit/mirabelle.wav",
+   "voice": "Megan",
+   "frame": 468,
+   "reason": "user fruit 10/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Salak.",
+   "fruit": "salak",
+   "start": 41.28,
+   "speech_end": 41.99,
+   "clip": "data/audio/clips/Megan/fruit/salak.wav",
+   "voice": "Megan",
+   "frame": 516,
+   "reason": "user fruit 11/12"
+  },
+  {
+   "kind": "fruit",
+   "text": "Cloudberry.",
+   "fruit": "cloudberry",
+   "start": 43.52,
+   "speech_end": 44.32,
+   "clip": "data/audio/clips/Megan/fruit/cloudberry.wav",
+   "voice": "Megan",
+   "frame": 544,
+   "reason": "user fruit 12/12"
+  }
+ ],
+ "moshi_tokens": [
+  {
+   "t": 0.72,
+   "id": 2769,
+   "piece": "▁Hi"
+  },
+  {
+   "t": 0.96,
+   "id": 370,
+   "piece": "▁there"
+  },
+  {
+   "t": 1.04,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 1.68,
+   "id": 419,
+   "piece": "▁what"
+  },
+  {
+   "t": 1.76,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 1.84,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 1.92,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 2.24,
+   "id": 291,
+   "piece": "▁on"
+  },
+  {
+   "t": 2.32,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 7.36,
+   "id": 3669,
+   "piece": "▁ready"
+  },
+  {
+   "t": 8.48,
+   "id": 687,
+   "piece": "▁go"
+  },
+  {
+   "t": 8.8,
+   "id": 4630,
+   "piece": "▁ahead"
+  },
+  {
+   "t": 9.52,
+   "id": 307,
+   "piece": "▁or"
+  },
+  {
+   "t": 9.84,
+   "id": 2203,
+   "piece": "▁en"
+  },
+  {
+   "t": 10.24,
+   "id": 490,
+   "piece": "▁H"
+  },
+  {
+   "t": 10.64,
+   "id": 453,
+   "piece": "▁E"
+  },
+  {
+   "t": 11.04,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 11.12,
+   "id": 270,
+   "piece": "2"
+  },
+  {
+   "t": 11.84,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 11.92,
+   "id": 270,
+   "piece": "2"
+  },
+  {
+   "t": 12.0,
+   "id": 284,
+   "piece": "8"
+  },
+  {
+   "t": 13.36,
+   "id": 2105,
+   "piece": "▁sea"
+  },
+  {
+   "t": 13.6,
+   "id": 15058,
+   "piece": "▁buck"
+  },
+  {
+   "t": 13.68,
+   "id": 15719,
+   "piece": "thorn"
+  },
+  {
+   "t": 14.72,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 14.96,
+   "id": 551,
+   "piece": "▁don"
+  },
+  {
+   "t": 15.04,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 15.12,
+   "id": 303,
+   "piece": "t"
+  },
+  {
+   "t": 15.2,
+   "id": 534,
+   "piece": "▁know"
+  },
+  {
+   "t": 15.36,
+   "id": 283,
+   "piece": "▁that"
+  },
+  {
+   "t": 15.6,
+   "id": 4729,
+   "piece": "▁fruit"
+  },
+  {
+   "t": 16.72,
+   "id": 583,
+   "piece": "▁right"
+  },
+  {
+   "t": 25.92,
+   "id": 283,
+   "piece": "▁that"
+  },
+  {
+   "t": 26.0,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 26.08,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 26.16,
+   "id": 272,
+   "piece": "▁a"
+  },
+  {
+   "t": 26.32,
+   "id": 2074,
+   "piece": "▁fast"
+  },
+  {
+   "t": 26.48,
+   "id": 332,
+   "piece": "▁one"
+  },
+  {
+   "t": 27.52,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 27.6,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 27.68,
+   "id": 339,
+   "piece": "m"
+  },
+  {
+   "t": 27.76,
+   "id": 309,
+   "piece": "▁not"
+  },
+  {
+   "t": 27.92,
+   "id": 528,
+   "piece": "▁even"
+  },
+  {
+   "t": 28.16,
+   "id": 1085,
+   "piece": "▁close"
+  },
+  {
+   "t": 32.4,
+   "id": 19864,
+   "piece": "▁salmon"
+  },
+  {
+   "t": 32.48,
+   "id": 8946,
+   "piece": "berry"
+  },
+  {
+   "t": 33.2,
+   "id": 11302,
+   "piece": "▁okay"
+  },
+  {
+   "t": 42.08,
+   "id": 283,
+   "piece": "▁that"
+  },
+  {
+   "t": 42.16,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 42.24,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 42.56,
+   "id": 2074,
+   "piece": "▁fast"
+  },
+  {
+   "t": 43.52,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 43.68,
+   "id": 314,
+   "piece": "▁can"
+  },
+  {
+   "t": 43.76,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 43.84,
+   "id": 303,
+   "piece": "t"
+  },
+  {
+   "t": 44.0,
+   "id": 528,
+   "piece": "▁even"
+  },
+  {
+   "t": 44.32,
+   "id": 755,
+   "piece": "▁say"
+  },
+  {
+   "t": 44.48,
+   "id": 338,
+   "piece": "▁all"
+  },
+  {
+   "t": 44.64,
+   "id": 531,
+   "piece": "▁those"
+  },
+  {
+   "t": 44.8,
+   "id": 2415,
+   "piece": "▁names"
+  }
+ ],
+ "moshi_text": "Hi there, what's going on? ready go ahead or en H E 2 28 sea buckthorn I don't know that fruit right that's a fast one I'm not even close salmonberry okay that's fast I can't even say all those names",
+ "events": [
+  {
+   "t": 1.6,
+   "event": "moshi_turn_end",
+   "why": "Moshi quiet 0.5s after speaking (last text 1.04s)"
+  },
+  {
+   "t": 2.08,
+   "event": "user_clip",
+   "kind": "instructions",
+   "text": "We're going to take turns saying fruits, super fast. Ready? I'll go first.",
+   "speech_end": 7.29,
+   "why": "after greeting turn"
+  },
+  {
+   "t": 7.92,
+   "event": "moshi_turn_end",
+   "why": "Moshi quiet 0.5s after speaking (last text 7.36s)"
+  },
+  {
+   "t": 8.56,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Blood orange.",
+   "speech_end": 9.46,
+   "why": "user fruit 1/12"
+  },
+  {
+   "t": 11.68,
+   "event": "moshi_turn_end",
+   "why": "Moshi quiet 0.5s after speaking (last text 11.12s)"
+  },
+  {
+   "t": 12.24,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Sea buckthorn.",
+   "speech_end": 13.24,
+   "why": "user fruit 2/12"
+  },
+  {
+   "t": 14.24,
+   "event": "moshi_turn_end",
+   "why": "Moshi quiet 0.5s after speaking (last text 13.68s)"
+  },
+  {
+   "t": 14.56,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Lychee.",
+   "speech_end": 15.36,
+   "why": "user fruit 3/12; skipped already-said ['blood orange', 'sea buckthorn']"
+  },
+  {
+   "t": 16.16,
+   "event": "moshi_turn_end",
+   "why": "Moshi quiet 0.5s after speaking (last text 15.60s)"
+  },
+  {
+   "t": 16.56,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Calamansi.",
+   "speech_end": 17.47,
+   "why": "user fruit 4/12"
+  },
+  {
+   "t": 20.0,
+   "event": "moshi_turn_end",
+   "why": "Moshi silent 2.5s"
+  },
+  {
+   "t": 20.8,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Monk fruit.",
+   "speech_end": 21.73,
+   "why": "user fruit 5/12"
+  },
+  {
+   "t": 24.24,
+   "event": "moshi_turn_end",
+   "why": "Moshi silent 2.5s"
+  },
+  {
+   "t": 24.8,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Marionberry.",
+   "speech_end": 25.77,
+   "why": "user fruit 6/12"
+  },
+  {
+   "t": 27.04,
+   "event": "moshi_turn_end",
+   "why": "Moshi quiet 0.5s after speaking (last text 26.48s)"
+  },
+  {
+   "t": 27.52,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Physalis.",
+   "speech_end": 28.35,
+   "why": "user fruit 7/12"
+  },
+  {
+   "t": 30.88,
+   "event": "moshi_turn_end",
+   "why": "Moshi silent 2.5s"
+  },
+  {
+   "t": 31.44,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Salmonberry.",
+   "speech_end": 32.33,
+   "why": "user fruit 8/12"
+  },
+  {
+   "t": 33.04,
+   "event": "moshi_turn_end",
+   "why": "Moshi quiet 0.5s after speaking (last text 32.48s)"
+  },
+  {
+   "t": 33.52,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Langsat.",
+   "speech_end": 34.45,
+   "why": "user fruit 9/12; skipped already-said ['marionberry', 'physalis', 'salmonberry']"
+  },
+  {
+   "t": 36.96,
+   "event": "moshi_turn_end",
+   "why": "Moshi silent 2.5s"
+  },
+  {
+   "t": 37.44,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Mirabelle.",
+   "speech_end": 38.16,
+   "why": "user fruit 10/12"
+  },
+  {
+   "t": 40.72,
+   "event": "moshi_turn_end",
+   "why": "Moshi silent 2.5s"
+  },
+  {
+   "t": 41.28,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Salak.",
+   "speech_end": 41.99,
+   "why": "user fruit 11/12"
+  },
+  {
+   "t": 43.12,
+   "event": "moshi_turn_end",
+   "why": "Moshi quiet 0.5s after speaking (last text 42.56s)"
+  },
+  {
+   "t": 43.52,
+   "event": "user_clip",
+   "kind": "fruit",
+   "text": "Cloudberry.",
+   "speech_end": 44.32,
+   "why": "user fruit 12/12"
+  },
+  {
+   "t": 45.36,
+   "event": "moshi_turn_end",
+   "why": "Moshi quiet 0.5s after speaking (last text 44.80s)"
+  }
+ ],
+ "batch_size": 4,
+ "batch_wall_sec": 13.75,
+ "batch_frames": 567,
+ "peak_mem_gb": 22.3,
+ "user_audio": "live"
+}

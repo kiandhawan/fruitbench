@@ -3,8 +3,10 @@
 Words: Moshi's non-padding text tokens are SentencePiece pieces; a piece starting with "▁" starts a
 new word, whose time is the time of its first piece (the output slot it was emitted in).
 
-Reply windows: the reply to user turn k is every Moshi word whose start lies in
-[start of user clip k, start of user clip k+1) (the last window runs to the end of the game). Scored
+Utterances: consecutive words less than 0.5 s apart (the same pause that ends Moshi's turn in the
+game loop). Reply windows: the reply to user turn k is every Moshi utterance whose first word starts
+in [start of user clip k, start of user clip k+1) (the last window runs to the end of the game), so
+an utterance that runs past the next user clip's start stays with the turn it began in. Scored
 replies: the replies to the 12 user fruits, plus, in games where the user asks Moshi to start, the
 reply to the instructions ("opening"). The reply to the instructions in user-starts games
 (an acknowledgement is fine there) and the greeting before the instructions are reported, not scored.
@@ -13,15 +15,20 @@ Classes (first match wins):
   silent      no words at all
   multi       two or more distinct fruits
   repeat      exactly one fruit, already said earlier in the game by either side (incl. the user's
-              fruit it is replying to)
+              fruit it is replying to; `echo` = it is that fruit). Moshi's text often misspells a rare
+              fruit it echoes ("Lichie", "samumberry", "kolamansee"), so words of 5+ letters that
+              are not filler are also fuzzy-matched (difflib ratio >= 0.6) against the fruits already
+              said in the game (only those: fuzzy matching all fruits turns "speech" into "peach").
   valid       exactly one fruit, new
-  non_fruit   no fruit; a short reply (<= 4 words) with at least one non-filler word ("Carrot.")
-  filler      no fruit; only filler/meta talk ("Okay, I'm ready", "Sure, go ahead", "Your turn!",
+  non_fruit   no fruit, but Moshi names something else: "go with / I'll say / how about X" with X not
+              a fruit ("I'm going to go with a lobster"), or a short reply (<= 4 words) with at most
+              2 non-filler words ("Carrot.", "Potato chips!")
+  filler      no fruit; filler/meta talk ("Okay, I'm ready", "Sure, go ahead", "I'm out of ideas",
               or longer chat without a fruit)
 Latency: start of Moshi's (first) fruit word minus the end of the user's speech (the user's fruit
 clip, or the instructions for the opening turn). Negative = Moshi started its fruit before the user
-finished. Overlap: a reply overlaps if any of its words starts before the user's speech in that
-turn ended.
+finished. Overlap: a reply overlaps if any of its words falls inside the user's speech, in that
+turn's clip or the next one (Moshi talking over the user).
 
 Provisional per-turn reward (for checking GRPO signal only; training will revisit it):
   valid: 1.0 - 0.2 * clip(latency, 0, 2.5)   (1.0 when instant, 0.5 at 2.5 s), -0.3 if overlap
@@ -66,7 +73,7 @@ def tokens_to_words(tokens: list[dict]) -> list[dict]:
 
 
 def find_fruits(words: list[dict]) -> list[dict]:
-    """Longest-match fruit mentions: [{"fruit": canonical, "t": start time, "i": word index}]."""
+    """Longest-match fruit mentions: [{"fruit": canonical, "t": start time, "i": word index, "n": words}]."""
     found, i = [], 0
     norms = [w["norm"] for w in words]
     while i < len(words):
@@ -80,15 +87,62 @@ def find_fruits(words: list[dict]) -> list[dict]:
             if hit:
                 break
         if hit:
-            found.append({"fruit": hit[0], "t": words[i]["t"], "i": i})
+            found.append({"fruit": hit[0], "t": words[i]["t"], "i": i, "n": hit[1]})
             i += hit[1]
         else:
             i += 1
     return found
 
 
+UTTERANCE_GAP = 0.5
+NAMING = re.compile(r"\b(?:go(?:ing)? with|i(?:'ll| will)? say|how about|what about|i choose|i pick|"
+                    r"mine is|my (?:fruit|pick|answer) is)\s+(?:an? |the |some )?([a-z']+)")
+
+
+def utterances(words: list[dict]) -> list[list[dict]]:
+    out: list[list[dict]] = []
+    for w in words:
+        if out and w["t"] - out[-1][-1]["t"] < UTTERANCE_GAP:
+            out[-1].append(w)
+        else:
+            out.append([w])
+    return out
+
+
+FUZZY_RATIO = 0.6
+FUZZY_MIN_LEN = 5
+
+
+def fuzzy_said(words: list[dict], said: list[str], skip: set[int]) -> list[dict]:
+    """Misspelled mentions of fruits already said in the game (canonical names in `said`)."""
+    import difflib
+    forms = {}
+    for a, c in ALIASES.items():
+        if c in said:
+            forms[a.replace(" ", "")] = c
+    out = []
+    for i, w in enumerate(words):
+        if i in skip or len(w["norm"]) < FUZZY_MIN_LEN or w["norm"] in FILLER_WORDS:
+            continue
+        cands = [w["norm"]]
+        if i + 1 < len(words) and i + 1 not in skip:
+            cands.append(w["norm"] + words[i + 1]["norm"])
+        best = max(((difflib.SequenceMatcher(None, c, f).ratio(), f) for c in cands for f in forms), default=(0, None))
+        if best[0] >= FUZZY_RATIO:
+            out.append({"fruit": forms[best[1]], "t": w["t"], "i": i, "fuzzy": w["text"]})
+    return out
+
+
 def is_filler(words: list[dict]) -> bool:
     return all(w["norm"] in FILLER_WORDS for w in words)
+
+
+def names_non_fruit(words: list[dict]) -> bool:
+    content = [w for w in words if w["norm"] not in FILLER_WORDS]
+    if content and len(words) <= 4 and len(content) <= 2:
+        return True
+    m = NAMING.search(" ".join(w["norm"] for w in words))
+    return bool(m) and m.group(1) not in FILLER_WORDS
 
 
 @dataclass
@@ -106,11 +160,13 @@ class Reply:
     fruit: str | None = None
     latency: float | None = None
     overlap: bool = False
+    echo: bool = False
+    fuzzy: list[str] = field(default_factory=list)
     reward: float = 0.0
 
     def as_dict(self) -> dict:
         d = {k: getattr(self, k) for k in ("turn", "kind", "scored", "user_text", "user_fruit", "user_end", "text",
-                                            "cls", "fruits", "fruit", "latency", "overlap", "reward")}
+                                            "cls", "fruits", "fruit", "latency", "overlap", "echo", "fuzzy", "reward")}
         d["first_word_t"] = self.words[0]["t"] if self.words else None
         return d
 
@@ -125,14 +181,17 @@ def turn_reward(cls: str, latency: float | None, overlap: bool) -> float:
 def score_game(game: dict) -> dict:
     """game: the JSON summary written by the game loop (needs user_turns, moshi_tokens, starter, end_time)."""
     words = tokens_to_words(game["moshi_tokens"])
+    utts = utterances(words)
     turns = game["user_turns"]
     said: list[str] = []              # canonical fruits in order of mention (both sides)
-    greeting = [w for w in words if w["t"] < turns[0]["start"]] if turns else words
+    first_start = turns[0]["start"] if turns else 1e9
+    greeting = [w for u in utts if u[0]["t"] < first_start for w in u]
+    speech = [(t["start"], t["speech_end"]) for t in turns]
     replies: list[Reply] = []
     for k, ut in enumerate(turns):
         lo = ut["start"]
         hi = turns[k + 1]["start"] if k + 1 < len(turns) else game["end_time"] + 1e9
-        ws = [w for w in words if lo <= w["t"] < hi]
+        ws = [w for u in utts if lo <= u[0]["t"] < hi for w in u]
         is_fruit = ut["kind"] == "fruit"
         scored = is_fruit or game["starter"] == "moshi"
         if is_fruit:
@@ -141,9 +200,14 @@ def score_game(game: dict) -> dict:
                   user_fruit=ut.get("fruit"), user_end=ut["speech_end"], words=ws,
                   text=" ".join(w["text"] for w in ws))
         mentions = find_fruits(ws)
+        exact_idx = {j for m in mentions for j in range(m["i"], m["i"] + m["n"])}
+        fuzzy = fuzzy_said(ws, said, exact_idx)
+        r.fuzzy = [f"{m['fuzzy']}->{m['fruit']}" for m in fuzzy]
+        mentions = sorted(mentions + fuzzy, key=lambda m: m["i"])
         distinct = list(dict.fromkeys(m["fruit"] for m in mentions))
         r.fruits = distinct
-        r.overlap = any(w["t"] < ut["speech_end"] for w in ws)
+        talk_over = speech[k:k + 2]
+        r.overlap = any(a <= w["t"] < b for w in ws for a, b in talk_over)
         if not ws:
             r.cls = "silent"
         elif len(distinct) >= 2:
@@ -151,7 +215,8 @@ def score_game(game: dict) -> dict:
         elif len(distinct) == 1:
             r.fruit = distinct[0]
             r.cls = "repeat" if r.fruit in said else "valid"
-        elif len(ws) <= 4 and not is_filler(ws):
+            r.echo = is_fruit and r.fruit == ut["fruit"]
+        elif names_non_fruit(ws):
             r.cls = "non_fruit"
         else:
             r.cls = "filler"

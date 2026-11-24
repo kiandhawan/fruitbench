@@ -1,0 +1,246 @@
+=== smoke_val_s1_0000  starter=user  voice=Megan  length=45.4s
+    instructions: "We're going to take turns saying fruits, super fast. Ready? I'll go first."
+    greeting: "Hi there, what's going on?"
+    counts: {'valid': 0, 'repeat': 2, 'non_fruit': 0, 'filler': 7, 'silent': 3, 'multi': 0}  overlaps=4  reward=0.0
+MOSHI    0.72-  0.96  Hi@0.72 there,@0.96
+  --     1.60         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 1.04s)
+MOSHI    1.68-  2.24  what's@1.68 going@1.92 on?@2.24
+USER     2.08-  7.29  "We're going to take turns saying fruits, super fast. Ready? I'll go first." [after greeting turn]
+MOSHI    7.36-  7.36  ready@7.36
+  --     7.92         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 7.36s)
+  >>   reply to "We're going to take turns sayi": FILLER, OVERLAP [not scored]
+MOSHI    8.48-  8.80  go@8.48 ahead@8.80
+USER     8.56-  9.46  'Blood orange.'                                            [user fruit 1/12]
+MOSHI    9.52-  9.84  or@9.52 en@9.84
+MOSHI   10.24- 10.24  H@10.24
+MOSHI   10.64- 11.04  E@10.64 2@11.04
+  --    11.68         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 11.12s)
+  >>   reply to 'Blood orange.': FILLER [scored]
+MOSHI   11.84- 11.84  28@11.84
+USER    12.24- 13.24  'Sea buckthorn.'                                           [user fruit 2/12]
+MOSHI   13.36- 13.60  sea@13.36 buckthorn@13.60
+  --    14.24         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 13.68s)
+  >>   reply to 'Sea buckthorn.': REPEAT (sea buckthorn) ECHO, latency +0.12s [scored]
+USER    14.56- 15.36  'Lychee.'                                                  [user fruit 3/12; skipped already-said ['blood orange', 'sea buckthorn']]
+MOSHI   14.72- 15.60  I@14.72 don't@14.96 know@15.20 that@15.36 fruit@15.60
+  --    16.16         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 15.60s)
+  >>   reply to 'Lychee.': FILLER, OVERLAP [scored]
+USER    16.56- 17.47  'Calamansi.'                                               [user fruit 4/12]
+MOSHI   16.72- 16.72  right@16.72
+  --    20.00         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Calamansi.': FILLER, OVERLAP [scored]
+USER    20.80- 21.73  'Monk fruit.'                                              [user fruit 5/12]
+  --    24.24         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Monk fruit.': SILENT [scored]
+USER    24.80- 25.77  'Marionberry.'                                             [user fruit 6/12]
+MOSHI   25.92- 26.48  that's@25.92 a@26.16 fast@26.32 one@26.48
+  --    27.04         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 26.48s)
+  >>   reply to 'Marionberry.': FILLER [scored]
+USER    27.52- 28.35  'Physalis.'                                                [user fruit 7/12]
+MOSHI   27.52- 28.16  I'm@27.52 not@27.76 even@27.92 close@28.16
+  --    30.88         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Physalis.': FILLER, OVERLAP [scored]
+USER    31.44- 32.33  'Salmonberry.'                                             [user fruit 8/12]
+MOSHI   32.40- 32.40  salmonberry@32.40
+  --    33.04         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 32.48s)
+  >>   reply to 'Salmonberry.': REPEAT (salmonberry) ECHO, latency +0.07s [scored]
+MOSHI   33.20- 33.20  okay@33.20
+USER    33.52- 34.45  'Langsat.'                                                 [user fruit 9/12; skipped already-said ['marionberry', 'physalis', 'salmonberry']]
+  --    36.96         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Langsat.': SILENT [scored]
+USER    37.44- 38.16  'Mirabelle.'                                               [user fruit 10/12]
+  --    40.72         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Mirabelle.': SILENT [scored]
+USER    41.28- 41.99  'Salak.'                                                   [user fruit 11/12]
+MOSHI   42.08- 42.08  that's@42.08
+MOSHI   42.56- 42.56  fast@42.56
+  --    43.12         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 42.56s)
+  >>   reply to 'Salak.': FILLER [scored]
+USER    43.52- 44.32  'Cloudberry.'                                              [user fruit 12/12]
+MOSHI   43.52- 44.80  I@43.52 can't@43.68 even@44.00 say@44.32 all@44.48 those@44.64 names@44.80
+  --    45.36         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 44.80s)
+  >>   reply to 'Cloudberry.': FILLER, OVERLAP [scored]
+
+=== smoke_val_s1_0001  starter=user  voice=Megan  length=43.8s
+    instructions: "We're going to take turns saying fruits, super fast. Ready? I'll go first."
+    greeting: "Hey, what's up?"
+    counts: {'valid': 0, 'repeat': 8, 'non_fruit': 0, 'filler': 3, 'silent': 1, 'multi': 0}  overlaps=6  reward=0.0
+MOSHI    0.56-  1.20  Hey,@0.56 what's@0.96 up?@1.20
+  --     1.84         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 1.28s)
+USER     2.48-  7.69  "We're going to take turns saying fruits, super fast. Ready? I'll go first." [after greeting turn]
+MOSHI    6.48-  6.48  Yes,@6.48
+MOSHI    7.28-  7.52  let's@7.28 do@7.52
+  --    10.24         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to "We're going to take turns sayi": FILLER, OVERLAP [not scored]
+USER    10.96- 11.86  'Blood orange.'                                            [user fruit 1/12]
+MOSHI   11.92- 11.92  A@11.92
+MOSHI   12.40- 12.40  blood@12.40
+MOSHI   12.96- 12.96  orange.@12.96
+  --    13.60         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 13.04s)
+  >>   reply to 'Blood orange.': REPEAT (blood orange) ECHO, latency +0.54s [scored]
+USER    14.32- 15.25  'Monk fruit.'                                              [user fruit 2/12; skipped already-said ['blood orange']]
+MOSHI   14.80- 14.80  That's@14.80
+MOSHI   15.52- 15.52  fruit.@15.52
+  --    16.16         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 15.60s)
+  >>   reply to 'Monk fruit.': FILLER, OVERLAP [scored]
+USER    16.88- 17.87  'Passion fruit.'                                           [user fruit 3/12]
+  --    20.40         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Passion fruit.': SILENT [scored]
+USER    20.96- 21.58  'Duku.'                                                    [user fruit 4/12]
+MOSHI   21.68- 22.32  A@21.68 passion@22.00 fruit.@22.32
+  --    22.96         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 22.40s)
+  >>   reply to 'Duku.': REPEAT (passion fruit), latency +0.42s [scored]
+USER    23.76- 24.60  'Watermelon.'                                              [user fruit 5/12]
+MOSHI   23.92- 24.32  That's@23.92 me.@24.32
+  --    27.12         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Watermelon.': FILLER, OVERLAP [scored]
+USER    27.76- 28.56  'Cloudberry.'                                              [user fruit 6/12]
+MOSHI   28.64- 28.64  Watermelon.@28.64
+  --    29.44         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 28.88s)
+  >>   reply to 'Cloudberry.': REPEAT (watermelon), latency +0.08s [scored]
+USER    29.92- 30.81  'Salmonberry.'                                             [user fruit 7/12]
+MOSHI   30.08- 30.08  That's@30.08
+MOSHI   30.48- 30.48  good.@30.48
+MOSHI   30.96- 31.20  A@30.96 samumberry.@31.20
+  --    32.08         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 31.52s)
+  >>   reply to 'Salmonberry.': REPEAT (salmonberry) ECHO fuzzy ['samumberry.->salmonberry'], latency +0.39s, OVERLAP [scored]
+USER    32.40- 33.20  'Lychee.'                                                  [user fruit 8/12]
+MOSHI   33.84- 33.84  Lichie.@33.84
+  --    34.64         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 34.08s)
+  >>   reply to 'Lychee.': REPEAT (lychee) ECHO fuzzy ['Lichie.->lychee'], latency +0.64s [scored]
+USER    35.44- 36.37  'Langsat.'                                                 [user fruit 9/12]
+MOSHI   35.68- 36.16  What's@35.68 a@36.00 langsa?@36.16
+  --    37.04         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 36.48s)
+  >>   reply to 'Langsat.': REPEAT (langsat) ECHO fuzzy ['langsa?->langsat'], latency -0.21s, OVERLAP [scored]
+USER    37.36- 38.27  'Calamansi.'                                               [user fruit 10/12]
+MOSHI   38.32- 38.64  A@38.32 kolamansee.@38.64
+  --    39.52         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 38.96s)
+  >>   reply to 'Calamansi.': REPEAT (calamansi) ECHO fuzzy ['kolamansee.->calamansi'], latency +0.37s [scored]
+USER    40.00- 40.72  'Mirabelle.'                                               [user fruit 11/12]
+MOSHI   40.00- 41.04  That's@40.00 him.@40.40 A@40.72 muubell.@41.04
+  --    41.92         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 41.36s)
+  >>   reply to 'Mirabelle.': REPEAT (mirabelle) ECHO fuzzy ['muubell.->mirabelle'], latency +0.32s, OVERLAP [scored]
+USER    42.48- 43.19  'Salak.'                                                   [user fruit 12/12]
+MOSHI   42.64- 42.64  That's@42.64
+MOSHI   43.12- 43.12  fruit.@43.12
+  --    43.76         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 43.20s)
+  >>   reply to 'Salak.': FILLER, OVERLAP [scored]
+
+=== smoke_val_s1_0003  starter=moshi  voice=Gareth  length=42.3s
+    instructions: "Let's play a game where we take turns naming fruits. You go first."
+    greeting: 'Hi, how can I help you?'
+    counts: {'valid': 0, 'repeat': 1, 'non_fruit': 0, 'filler': 9, 'silent': 3, 'multi': 0}  overlaps=8  reward=0.0
+MOSHI    0.72-  0.72  Hi,@0.72
+  --     1.36         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 0.80s)
+MOSHI    1.76-  2.40  how@1.76 can@1.92 I@2.08 help@2.16 you?@2.40
+USER     2.00-  6.51  "Let's play a game where we take turns naming fruits. You go first." [after greeting turn]
+  --     9.04         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to "Let's play a game where we tak": SILENT [scored]
+USER     9.52- 10.37  'Monk fruit.'                                              [user fruit 1/12]
+MOSHI   10.40- 10.40  Okay,@10.40
+  --    11.04         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 10.48s)
+  >>   reply to 'Monk fruit.': FILLER, OVERLAP [scored]
+MOSHI   11.44- 12.40  I'll@11.44 start@11.76 with@11.92 fruit.@12.08 Yes,@12.40
+USER    11.52- 12.40  'Passion fruit.'                                           [user fruit 2/12]
+MOSHI   13.04- 13.36  that's@13.04 correct.@13.36
+  --    14.00         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 13.44s)
+  >>   reply to 'Passion fruit.': FILLER [scored]
+USER    14.40- 15.25  'Physalis.'                                                [user fruit 3/12]
+MOSHI   14.48- 15.36  Now@14.48 it's@14.80 your@15.20 turn.@15.36
+  --    16.00         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 15.44s)
+  >>   reply to 'Physalis.': FILLER, OVERLAP [scored]
+USER    16.80- 17.58  'Langsat.'                                                 [user fruit 4/12]
+  --    20.08         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Langsat.': SILENT [scored]
+USER    20.64- 21.43  'Mirabelle.'                                               [user fruit 5/12]
+MOSHI   21.44- 21.76  You're@21.44 right.@21.76
+  --    22.40         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 21.84s)
+  >>   reply to 'Mirabelle.': REPEAT (langsat), latency +1.77s, OVERLAP [scored]
+MOSHI   22.72- 23.20  It's@22.72 a@23.04 langsat.@23.20
+USER    23.12- 24.06  'Salmonberry.'                                             [user fruit 6/12]
+  --    26.56         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Salmonberry.': SILENT [scored]
+USER    26.88- 27.77  'Cloudberry.'                                              [user fruit 7/12]
+MOSHI   27.76- 27.76  Yes,@27.76
+  --    28.40         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 27.84s)
+  >>   reply to 'Cloudberry.': FILLER, OVERLAP [scored]
+USER    28.72- 29.42  'Lychee.'                                                  [user fruit 8/12]
+MOSHI   28.72- 29.04  that's@28.72 correct.@29.04
+MOSHI   29.52- 29.52  Yes,@29.52
+MOSHI   30.00- 30.32  that's@30.00 correct.@30.32
+  --    30.96         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 30.40s)
+  >>   reply to 'Lychee.': FILLER, OVERLAP [scored]
+USER    31.44- 32.47  'Blood orange.'                                            [user fruit 9/12]
+MOSHI   31.52- 32.48  Now@31.52 it's@31.76 your@32.00 turn.@32.24 Yes,@32.48
+MOSHI   32.88- 33.20  that's@32.88 correct.@33.20
+  --    33.84         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 33.28s)
+  >>   reply to 'Blood orange.': FILLER, OVERLAP [scored]
+MOSHI   34.32- 34.96  Now@34.32 it's@34.48 your@34.72 turn.@34.96
+USER    34.48- 35.56  'Sea buckthorn.'                                           [user fruit 10/12]
+MOSHI   35.68- 36.24  Yes,@35.68 that's@36.00 correct.@36.24
+  --    36.88         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 36.32s)
+  >>   reply to 'Sea buckthorn.': FILLER, OVERLAP [scored]
+MOSHI   37.52- 38.08  Now@37.52 it's@37.68 your@37.92 turn.@38.08
+USER    37.68- 38.66  'Calamansi.'                                               [user fruit 11/12]
+MOSHI   38.80- 39.36  Yes,@38.80 that's@39.04 correct.@39.36
+  --    40.00         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 39.44s)
+  >>   reply to 'Calamansi.': FILLER [scored]
+USER    40.32- 41.00  'Salak.'                                                   [user fruit 12/12]
+MOSHI   40.96- 41.68  Yes,@40.96 that's@41.36 correct.@41.68
+  --    42.32         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 41.76s)
+  >>   reply to 'Salak.': FILLER, OVERLAP [scored]
+
+=== smoke_val_s1_0006  starter=moshi  voice=Megan  length=43.2s
+    instructions: "Let's play a game where we take turns naming fruits. You go first."
+    greeting: 'Hello, how are you today?'
+    counts: {'valid': 0, 'repeat': 0, 'non_fruit': 0, 'filler': 8, 'silent': 5, 'multi': 0}  overlaps=3  reward=0.0
+MOSHI    0.48-  0.48  Hello,@0.48
+  --     1.12         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 0.56s)
+MOSHI    1.20-  1.60  how@1.20 are@1.36 you@1.52 today?@1.60
+USER     1.60-  5.73  "Let's play a game where we take turns naming fruits. You go first." [after greeting turn]
+MOSHI    5.60-  5.76  Mm@5.60 hmm.@5.76
+  --     6.48         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 5.92s)
+  >>   reply to "Let's play a game where we tak": FILLER, OVERLAP [scored]
+USER     7.28-  7.99  'Salak.'                                                   [user fruit 1/12]
+  --    10.56         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Salak.': SILENT [scored]
+USER    11.36- 12.08  'Mirabelle.'                                               [user fruit 2/12]
+  --    14.64         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Mirabelle.': SILENT [scored]
+USER    15.20- 16.17  'Marionberry.'                                             [user fruit 3/12]
+MOSHI   16.24- 16.48  Mm@16.24 hmm.@16.48
+  --    17.20         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 16.64s)
+  >>   reply to 'Marionberry.': FILLER [scored]
+USER    17.68- 18.30  'Duku.'                                                    [user fruit 4/12]
+  --    20.80         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Duku.': SILENT [scored]
+USER    21.20- 22.10  'Blood orange.'                                            [user fruit 5/12]
+MOSHI   22.16- 22.32  Mm@22.16 hmm.@22.32
+  --    23.04         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 22.48s)
+  >>   reply to 'Blood orange.': FILLER [scored]
+USER    23.60- 24.44  'Watermelon.'                                              [user fruit 6/12]
+  --    26.96         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Watermelon.': SILENT [scored]
+USER    27.68- 28.68  'Sea buckthorn.'                                           [user fruit 7/12]
+MOSHI   28.80- 29.04  Mm@28.80 hmm.@29.04
+  --    29.76         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 29.20s)
+  >>   reply to 'Sea buckthorn.': FILLER [scored]
+USER    30.48- 31.39  'Calamansi.'                                               [user fruit 8/12]
+  --    33.92         moshi_turn_end: Moshi silent 2.5s
+  >>   reply to 'Calamansi.': SILENT [scored]
+USER    34.40- 35.20  'Lychee.'                                                  [user fruit 9/12]
+MOSHI   35.28- 35.52  Mm@35.28 hmm.@35.52
+  --    36.24         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 35.68s)
+  >>   reply to 'Lychee.': FILLER [scored]
+USER    36.64- 37.63  'Passion fruit.'                                           [user fruit 10/12]
+MOSHI   37.60- 37.76  Mm@37.60 hmm.@37.76
+  --    38.48         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 37.92s)
+  >>   reply to 'Passion fruit.': FILLER, OVERLAP [scored]
+USER    38.96- 39.76  'Cloudberry.'                                              [user fruit 11/12]
+MOSHI   39.84- 40.08  Mm@39.84 hmm.@40.08
+  --    40.80         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 40.24s)
+  >>   reply to 'Cloudberry.': FILLER [scored]
+USER    41.44- 42.37  'Monk fruit.'                                              [user fruit 12/12]
+MOSHI   42.24- 42.48  Mm@42.24 hmm.@42.48
+  --    43.20         moshi_turn_end: Moshi quiet 0.5s after speaking (last text 42.64s)
+  >>   reply to 'Monk fruit.': FILLER, OVERLAP [scored]

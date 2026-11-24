@@ -1,0 +1,292 @@
+{
+ "game_id": "smoke_val_s1_0001",
+ "starter": "user",
+ "greeting": "Hey, what's up?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": false,
+   "user_text": "We're going to take turns saying fruits, super fast. Ready? I'll go first.",
+   "user_fruit": null,
+   "user_end": 7.69,
+   "text": "Yes, let's do",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 6.48
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Blood orange.",
+   "user_fruit": "blood orange",
+   "user_end": 11.86,
+   "text": "A blood orange.",
+   "cls": "repeat",
+   "fruits": [
+    "blood orange"
+   ],
+   "fruit": "blood orange",
+   "latency": 0.54,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 11.92
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Monk fruit.",
+   "user_fruit": "monk fruit",
+   "user_end": 15.25,
+   "text": "That's fruit.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 14.8
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Passion fruit.",
+   "user_fruit": "passion fruit",
+   "user_end": 17.87,
+   "text": "",
+   "cls": "silent",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": null
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Duku.",
+   "user_fruit": "duku",
+   "user_end": 21.58,
+   "text": "A passion fruit.",
+   "cls": "repeat",
+   "fruits": [
+    "passion fruit"
+   ],
+   "fruit": "passion fruit",
+   "latency": 0.42,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 21.68
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Watermelon.",
+   "user_fruit": "watermelon",
+   "user_end": 24.6,
+   "text": "That's me.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 23.92
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cloudberry.",
+   "user_fruit": "cloudberry",
+   "user_end": 28.56,
+   "text": "Watermelon.",
+   "cls": "repeat",
+   "fruits": [
+    "watermelon"
+   ],
+   "fruit": "watermelon",
+   "latency": 0.08,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 28.64
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Salmonberry.",
+   "user_fruit": "salmonberry",
+   "user_end": 30.81,
+   "text": "That's good. A samumberry.",
+   "cls": "repeat",
+   "fruits": [
+    "salmonberry"
+   ],
+   "fruit": "salmonberry",
+   "latency": 0.39,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [
+    "samumberry.->salmonberry"
+   ],
+   "reward": 0.0,
+   "first_word_t": 30.08
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lychee.",
+   "user_fruit": "lychee",
+   "user_end": 33.2,
+   "text": "Lichie.",
+   "cls": "repeat",
+   "fruits": [
+    "lychee"
+   ],
+   "fruit": "lychee",
+   "latency": 0.64,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [
+    "Lichie.->lychee"
+   ],
+   "reward": 0.0,
+   "first_word_t": 33.84
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Langsat.",
+   "user_fruit": "langsat",
+   "user_end": 36.37,
+   "text": "What's a langsa?",
+   "cls": "repeat",
+   "fruits": [
+    "langsat"
+   ],
+   "fruit": "langsat",
+   "latency": -0.21,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [
+    "langsa?->langsat"
+   ],
+   "reward": 0.0,
+   "first_word_t": 35.68
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Calamansi.",
+   "user_fruit": "calamansi",
+   "user_end": 38.27,
+   "text": "A kolamansee.",
+   "cls": "repeat",
+   "fruits": [
+    "calamansi"
+   ],
+   "fruit": "calamansi",
+   "latency": 0.37,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [
+    "kolamansee.->calamansi"
+   ],
+   "reward": 0.0,
+   "first_word_t": 38.32
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mirabelle.",
+   "user_fruit": "mirabelle",
+   "user_end": 40.72,
+   "text": "That's him. A muubell.",
+   "cls": "repeat",
+   "fruits": [
+    "mirabelle"
+   ],
+   "fruit": "mirabelle",
+   "latency": 0.32,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [
+    "muubell.->mirabelle"
+   ],
+   "reward": 0.0,
+   "first_word_t": 40.0
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Salak.",
+   "user_fruit": "salak",
+   "user_end": 43.19,
+   "text": "That's fruit.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 42.64
+  }
+ ],
+ "n_scored": 12,
+ "counts": {
+  "valid": 0,
+  "repeat": 8,
+  "non_fruit": 0,
+  "filler": 3,
+  "silent": 1,
+  "multi": 0
+ },
+ "overlaps": 6,
+ "total_reward": 0.0,
+ "turn_rewards": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ]
+}

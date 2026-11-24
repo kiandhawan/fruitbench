@@ -1,5 +1,47 @@
 # LOG (newest first)
 
+## 2026-11-24 — Step 2: streaming game loop; checkpoint B smoke test
+- **Loop** (`fruitbench/game.py`, `scripts/run_games.py`): B games in lockstep on one GPU, one 80 ms
+  frame per step, one worker process per GPU. Output-frame convention from moshi-finetune
+  `run_inference.py`: the frame LMGen returns after input frame i goes in slot i+1, so the simulated user
+  only reacts to Moshi text it could have heard. Game: Moshi's greeting turn from t=0 (base Moshi greets
+  unprompted), instructions, Moshi's turn, then 12 user fruits each followed by Moshi's turn; 1/3 of games
+  "Moshi starts". Turn end: 0.5 s with no text after Moshi spoke, 2.5 s of silence, or a 10 s cap; then a
+  0.3-0.8 s gap and the next fruit in the game's shuffled order that neither side has said.
+- **Turn-end fix**: at first, text emitted *during* the user's clip started the 0.5 s clock. In a
+  Moshi-starts smoke game the tail of the greeting ("what's going on?") ran into the instructions, so
+  Moshi's turn ended 0.5 s after the instructions, before it could answer. Now only text after the
+  user's speech ends counts toward ending the turn; talk over the user is scored as overlap.
+- **User audio is encoded live** (default `--user-audio live`): the right-channel PCM (clips placed at
+  their frames, zeros elsewhere) goes through streaming Mimi each frame, in the batch, like
+  moshi.server. Splicing the pre-encoded clip tokens into a constant silence code (the step-1 plan)
+  agreed poorly with a live encode of the same audio (`scripts/check_tokens.py` on the smoke games:
+  ~27% of silence frames and ~58% of speech-frame tokens, codebook 0 85%), because Mimi's encoder has
+  seconds of context: silence after speech does not encode like steady silence. Moshi would have heard
+  a user channel no real conversation produces. Live encoding costs no measurable time (4 games:
+  13.8 s either way) and the fed tokens match a single-stream server-style encode 97.5-98.9%
+  (codebook 0: 99.6-100%; the rest are batch-numerics near-ties). The pre-encoded tokens remain
+  available (`--user-audio tokens`) but are not used for results. Behaviour changed noticeably: with
+  spliced tokens Moshi chatted ("I've heard of cloudberries, but I've never had them") and once named 6
+  fruits; with live audio it behaves like the real failure (listener mode: "Mm hmm", "Now it's your
+  turn", "Yes, that's correct", echoes the user's fruit, silence).
+- **Scorer changes from reading the smoke timelines** (`fruitbench/score.py`):
+  - Words are grouped into utterances (gaps < 0.5 s) and whole utterances are assigned to the turn in
+    which they start; per-word windows split "I like blood | oranges" across two turns.
+  - Generic "berry", "citrus", "nut" are no longer fruit names ("not a berry" was valid).
+  - Echoes of rare fruits are misspelled in Moshi's text ("Lichie", "samumberry", "kolamansee",
+    "muubell"); fuzzy match (ratio >= 0.6, words of 5+ letters, non-filler) against fruits *already
+    said* turns them into repeats (`echo` flag when it is the user's fruit). Not against all fruits:
+    "speech"/"peach" would be false hits.
+  - non_fruit = names something else ("go with / I'll say / how about X", or <= 4 words with <= 2
+    content words); more meta words count as filler ("correct", "out of ideas", "stuck", ...).
+- **Smoke test** (val split, seed 1, batch 4, GPU 0): 4 games (2 user-starts, 2 Moshi-starts), 43-45 s
+  each, 13.8 s wall for the batch (x0.30 real time), 22.3 GB peak. 0 valid fruits in 49 scored turns;
+  filler 27, silent 12, repeat 11 (8 of them echoes). Timelines: `results/smoke/timelines.txt`.
+- Open point for review: the 0.5 s rule on *text* tokens ends Moshi's greeting mid-sentence in 3 of 4
+  games ("Hi there, | what's going on?": text tokens arrive one per word with pauses of 0.5-0.8 s inside
+  a sentence), so the instructions start while Moshi is still talking.
+
 ## 2026-11-24 — Step 1: lists, splits, voices, rendering, Mimi tokens
 - **Fruits** (`fruitbench/lists.py`): 150 fruits the simulated user may say, each with accepted
   spellings/aliases (e.g. "kiwifruit", "dragonfruit"/"pitaya", "litchi") plus generated plurals; 32 more
