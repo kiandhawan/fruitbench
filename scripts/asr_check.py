@@ -91,14 +91,23 @@ def main() -> None:
         return Counter(m["fruit"] for m in find_fruits(
             [{"t": 0, "text": w, "norm": norm_word(w)} for w in t.split() if norm_word(w)], ALIASES_BY_RULES[args.rules]))
     inter = tot_t = tot_a = 0
+    d_inter = d_t = d_a = 0
     for gg in games:
         ct, ca = fr(gg["moshi_text"]), fr(gg["asr_text"])
         inter += sum((ct & ca).values())
         tot_t += sum(ct.values())
         tot_a += sum(ca.values())
+        st_, sa_ = set(ct), set(ca)  # distinct fruits per game: robust to Whisper collapsing repeats
+        d_inter += len(st_ & sa_)
+        d_t += len(st_)
+        d_a += len(sa_)
     mentions = {"fruit_mentions_text": tot_t, "fruit_mentions_asr": tot_a, "matched": inter,
-                "text_mentions_heard_in_audio": round(inter / max(tot_t, 1), 3),
-                "asr_mentions_in_text": round(inter / max(tot_a, 1), 3)}
+                "mentions_heard_in_audio": round(inter / max(tot_t, 1), 3),
+                "distinct_fruits_text": d_t, "distinct_fruits_asr": d_a, "distinct_matched": d_inter,
+                # flag metric (since smoke run 3): distinct fruits per game in the text stream that
+                # Whisper also hears in that game's audio
+                "text_mentions_heard_in_audio": round(d_inter / max(d_t, 1), 3),
+                "asr_mentions_in_text": round(d_inter / max(d_a, 1), 3)}
     out = {"games": len(files), "fruit_mentions_game_level": mentions, "scored_turns": len(turns), "agree_class": round(sum(agree) / len(turns), 3),
            "agree_class_and_fruit": round(sum(strict) / len(turns), 3), "per_text_class": per_cls,
            "disagreements": dict(conf.most_common()), "turns": turns, "transcripts": games,

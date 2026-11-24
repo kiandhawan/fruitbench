@@ -1,5 +1,30 @@
 # LOG (newest first)
 
+## 2026-11-24 — Smoke run 3 (reward v3, 12 training turns, 20 steps, same seed)
+- **Validation step 0 -> 20** (100 val games, 12 turns, v3 scorer and reward; full table with base and
+  smoke 1-2 rescored under v3: `results/grpo/rescore_v3.md`): bare valid 0.2% -> **52.7%**
+  (smoke 2: 26.1%, smoke 1: 5.9%); sentence 2.7% -> 4.5%; repeat 16.0% -> 19.6%
+  (echo 11.6% -> 8.3%); multi 5.3% -> 9.7%; filler 33.6% -> 5.1%; silent
+  36.4% -> 3.4%; non-fruit 5.8% -> 5.0%; overlap raw 26.4% -> 40.4%,
+  counted 11.3% -> 9.8%; valid latency median 0.03 s; words/turn median 1
+  (mean 5.21 -> 1.55); 10 s cap 0.66 -> 0.03 per game; mean reward -0.54 -> +0.35.
+- **Turns 1-6 vs 7-12** (step 20): valid 58.5% vs 49.2%; sentence 5.2% vs
+  3.3%; repeat 12.2% vs 28.2%; overlap 44.0% vs 35.5%. Training on 12 turns
+  narrowed the late-game gap (smoke 2: 34.0% vs 19.7% valid, 40.5% late repeats).
+- Training: silence rose to 73% (step 8; silence's group advantage was +0.28 at steps 3-5 because
+  most spoken turns scored below -0.3) and then fell to 3% as bare fruits took over (valid 5% at
+  step 8 -> 71-75% at steps 19-20). 51.3-79.0 s per step (mean 62), 45 GB peak.
+- **Whisper check**: changed the flag metric to distinct fruits per game (base Moshi's step-0 games
+  gave 69% on one run and 86% on a rerun with the old count metric because Whisper collapses
+  repeated words, e.g. "breadfruit breadfruit ..."); the step-0 val.jsonl row keeps the old 69%.
+  Distinct-fruit agreement: step 0 88.4%, step 20 89.3% (flag fires at the fixed 90% threshold both
+  times; base itself sits there). Every fruit Whisper hears is in the text stream (100%). Per-turn
+  class agreement fell 86% -> 66%: Moshi now answers with one word right at the end of the user's
+  line, and Whisper drops or garbles many isolated one-word answers ("Fig." -> "Rhine", "plum." ->
+  nothing) or shifts them across turn windows; some may be clipped audio - listen to the samples.
+- Samples: release `grpo-smoke3` (best 13/13 bare fruits at 0.00-0.21 s; median 12/13 valid but
+  several start before the user finished; worst = silence/echo/list mix).
+
 ## 2026-11-24 — Reward v3 (`configs/grpo_smoke3.yaml`): only a bare fruit counts as valid
 Requested by the user before smoke run 3. Changes vs v2:
 1. **Scorer rules v3** (`score_game(game, rules="v3")`; v1 stays the default and still reproduces all

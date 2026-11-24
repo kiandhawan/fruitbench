@@ -1,0 +1,1461 @@
+{
+ "games": 10,
+ "fruit_mentions_game_level": {
+  "fruit_mentions_text": 72,
+  "fruit_mentions_asr": 64,
+  "matched": 62,
+  "mentions_heard_in_audio": 0.861,
+  "distinct_fruits_text": 43,
+  "distinct_fruits_asr": 38,
+  "distinct_matched": 38,
+  "text_mentions_heard_in_audio": 0.884,
+  "asr_mentions_in_text": 1.0
+ },
+ "scored_turns": 122,
+ "agree_class": 0.861,
+ "agree_class_and_fruit": 0.852,
+ "per_text_class": {
+  "filler": {
+   "n": 37,
+   "agree": 0.919
+  },
+  "multi": {
+   "n": 2,
+   "agree": 0.0
+  },
+  "non_fruit": {
+   "n": 3,
+   "agree": 1.0
+  },
+  "repeat": {
+   "n": 38,
+   "agree": 0.737
+  },
+  "sentence": {
+   "n": 5,
+   "agree": 0.8
+  },
+  "silent": {
+   "n": 36,
+   "agree": 0.972
+  },
+  "valid": {
+   "n": 1,
+   "agree": 1.0
+  }
+ },
+ "disagreements": {
+  "repeat->multi": 3,
+  "repeat->non_fruit": 3,
+  "filler->silent": 3,
+  "repeat->filler": 2,
+  "silent->filler": 1,
+  "sentence->filler": 1,
+  "repeat->sentence": 1,
+  "multi->sentence": 1,
+  "multi->non_fruit": 1,
+  "repeat->silent": 1
+ },
+ "turns": [
+  {
+   "game": "val_s7_0005",
+   "turn": 0,
+   "user": "Speed round of fruits, no repeats. You start us off.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Sure, let's go. I ready.",
+   "asr": "Sure, let's go. I'm ready."
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 1,
+   "user": "Breadfruit.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 2,
+   "user": "Blood orange.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 3,
+   "user": "Apricot.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Oh, I like the sound of that. What's the next one?",
+   "asr": "Oh, I like the sound of that. What's the next one?"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 4,
+   "user": "Raspberry.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Oh I love berry. I'm ready.",
+   "asr": "Oh I love berry. I'm ready"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 5,
+   "user": "Dragon fruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay, what's the next one?",
+   "asr": "Okay, what's the next one?"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 6,
+   "user": "Starfruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Oh, okay.",
+   "asr": "Okay,"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 7,
+   "user": "Cloudberry.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Yeah, that sounds good. I'm ready.",
+   "asr": "yeah, that sounds good. I'm ready."
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 8,
+   "user": "Fig.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "fig",
+   "asr_fruit": "fig",
+   "text": "Oh I like fig. That's a good one.",
+   "asr": "Oh I like fig. That's a good one."
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 9,
+   "user": "Peach.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "peach",
+   "asr_fruit": "peach",
+   "text": "Oh peach is good. I like peach. Yeah, that's good.",
+   "asr": "Oh Peach is good. I like peach. Yeah, that's a good."
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 10,
+   "user": "Nectarine.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "nectarine",
+   "asr_fruit": "nectarine",
+   "text": "Oh I love nectarine. That's a good one.",
+   "asr": "Oh, I love nectarine. That's a good one"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 11,
+   "user": "Watermelon.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "Oh watermelon. Oh, that's good. I'm ready. What's the next one?",
+   "asr": "Oh watermelon. Oh, that's good. I'm ready. What's the next one?"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 12,
+   "user": "Lychee.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Oh, I like the sound of that. I'm ready.",
+   "asr": "Oh, I like the sound of that. I'm ready"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 0,
+   "user": "Speed round of fruits, no repeats. You start us off.",
+   "text_cls": "silent",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": "Yeah,"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 1,
+   "user": "Apricot.",
+   "text_cls": "sentence",
+   "asr_cls": "sentence",
+   "text_fruit": "orange",
+   "asr_fruit": "orange",
+   "text": "Yeah, sure, so first we have the orange. It's a sweet and juicy fruit, a great source of vitamin C and fiber. It can help boost your immune system",
+   "asr": "sure. So first we have the orange. It's a sweet and juicy fruit. A great source of vitamin C and fiber. It can help boost your immune system and"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 2,
+   "user": "Fig.",
+   "text_cls": "non_fruit",
+   "asr_cls": "non_fruit",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "and improve digestion.",
+   "asr": "improve digestion."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 3,
+   "user": "Lychee.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 4,
+   "user": "Watermelon.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 5,
+   "user": "Cloudberry.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "Next, we have the watermelon. It's a s and incredibly refreshing. It's packed with vitamins, antioxidants, and specific minerals like potassium.",
+   "asr": "Next, we have the watermelon. It's satiety and incredibly refreshing. It's packed with vitamins, antioxidants, and specific minerals"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 6,
+   "user": "Blood orange.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "Eating watermelon can improve your cardiovascular health, boost your energy levels, and even help with weight loss.",
+   "asr": "like potassium, Eating watermelon can improve your cardiovascular health, boost your energy levels, and even help with weight loss."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 7,
+   "user": "Breadfruit.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 8,
+   "user": "Starfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "multi",
+   "text_fruit": "breadfruit",
+   "asr_fruit": null,
+   "text": "Finally, we have the breadfruit.",
+   "asr": "Finally, we have the breadfruit. Starfruit."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 9,
+   "user": "Dragon fruit.",
+   "text_cls": "repeat",
+   "asr_cls": "filler",
+   "text_fruit": "starfruit",
+   "asr_fruit": null,
+   "text": "Starfruit, it's a delicate fruit with a unique flavor. It's high in vitamins, minerals, and proteins. It's great for our heart and digestive system.",
+   "asr": "It's a delicate fruit with a unique flavor. It's high in vitamins, minerals, and proteins. It's great for our heart and digestive system."
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 10,
+   "user": "Peach.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 11,
+   "user": "Nectarine.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "nectarine",
+   "asr_fruit": "nectarine",
+   "text": "And last but not least, we have the nectarine. It's a delicious, ripe fruit with a sweet and tangy flavor. It's rich in vitamin C,",
+   "asr": "And last but not least, we have the nectarine. It's a delicious, ripe fruit with a sweet and tangy flavor. It's rich in vitamin C, potassium,"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 12,
+   "user": "Raspberry.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "nectarine",
+   "asr_fruit": "nectarine",
+   "text": "potassium, and other important nutrients.",
+   "asr": "and other important nutrients."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 1,
+   "user": "Blood orange.",
+   "text_cls": "sentence",
+   "asr_cls": "filler",
+   "text_fruit": "orange",
+   "asr_fruit": null,
+   "text": "Orange. Fast.",
+   "asr": "fast no"
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 2,
+   "user": "Starfruit.",
+   "text_cls": "non_fruit",
+   "asr_cls": "non_fruit",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "No repeat.",
+   "asr": "repeat big"
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 3,
+   "user": "Raspberry.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 4,
+   "user": "Fig.",
+   "text_cls": "repeat",
+   "asr_cls": "non_fruit",
+   "text_fruit": "fig",
+   "asr_fruit": null,
+   "text": "Fig. Fast too. Re repeat.",
+   "asr": "fast too repeat"
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 5,
+   "user": "Cloudberry.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 6,
+   "user": "Apricot.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "cloudberry",
+   "asr_fruit": "cloudberry",
+   "text": "Cloudberry. Slow. No repeat",
+   "asr": "cloudberry slow no repeat"
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 7,
+   "user": "Lychee.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 8,
+   "user": "Peach.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 9,
+   "user": "Breadfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "sentence",
+   "text_fruit": "peach",
+   "asr_fruit": "watermelon",
+   "text": "Peach. Fast. No repeat.",
+   "asr": "fast no repeat watermelon"
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 10,
+   "user": "Watermelon.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 11,
+   "user": "Nectarine.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 12,
+   "user": "Dragon fruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "peach",
+   "text": "Watermelon. Slow. No repeat",
+   "asr": "slow no repeat Peace."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 1,
+   "user": "Blood orange.",
+   "text_cls": "sentence",
+   "asr_cls": "sentence",
+   "text_fruit": "orange",
+   "asr_fruit": "orange",
+   "text": "Oh, that's tough! I'd say orange, because it's so sweet and juicy.",
+   "asr": "That's tough. I'd say orange, cause it's so sweet and juicy."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 2,
+   "user": "Watermelon.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 3,
+   "user": "Cloudberry.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 4,
+   "user": "Breadfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "breadfruit",
+   "asr_fruit": "breadfruit",
+   "text": "Oh, I'd probably go with breadfruit. It's so versatile and can be used in so many dishes.",
+   "asr": "I'd probably go with breadfruit. It's so versatile and can be used in so many dishes. Oh,"
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 5,
+   "user": "Nectarine.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 6,
+   "user": "Dragon fruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "dragon fruit",
+   "asr_fruit": "dragon fruit",
+   "text": "Oh, I'd have to go with dragonfruit. It's so sweet and has this delicious crunch.",
+   "asr": "I'd have to go with dragonfruit. It's so sweet and has this delicious crunch."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 7,
+   "user": "Lychee.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 8,
+   "user": "Fig.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 9,
+   "user": "Peach.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "peach",
+   "asr_fruit": "peach",
+   "text": "Peach, definitely. It's so sweet and juicy.",
+   "asr": "Peach, definitely. It's so sweet and juicy."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 10,
+   "user": "Starfruit.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 11,
+   "user": "Raspberry.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "raspberry",
+   "asr_fruit": "raspberry",
+   "text": "Oh, that's a tough one! I'd have to go with raspberry.",
+   "asr": "That's a tough one. I'd have to go with raspberry."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 12,
+   "user": "Apricot.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 1,
+   "user": "Lychee.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay, so we're just going to say it as quickly as possible. We'll start with the first one. One, two, three, four, five, six, seven, eight, nine, ten.",
+   "asr": "Okay, so we're just going to say it as quickly as possible. We'll start with the first one. 1, 2, 3, 4, 5, 6, 7,"
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 2,
+   "user": "Fig.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "One, two, three, four, five, six, seven, eight, nine, ten. Okay, so we just said it. We'll do the same for the second one.",
+   "asr": "9, 10. 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Okay, so we just said it. We'll do the same for the second one."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 3,
+   "user": "Apricot.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay, so the second one, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten.",
+   "asr": "Okay, so the second one, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 4,
+   "user": "Blood orange.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Ah, okay, so we just said it. We'll do the same for the third one.",
+   "asr": "Ah, okay, so we just said it. We'll do the same for the third one."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 5,
+   "user": "Starfruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay, so the third one, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten. Okay, so the third one, one, two, three, four, five, six, seven, eight, nine, ten, one,",
+   "asr": "Okay, so the third one, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7,"
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 6,
+   "user": "Watermelon.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five,",
+   "asr": "8, 9. Okay, so the third one."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 7,
+   "user": "Nectarine.",
+   "text_cls": "filler",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight,",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 8,
+   "user": "Cloudberry.",
+   "text_cls": "filler",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight,",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 9,
+   "user": "Peach.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, ten, one,",
+   "asr": "three four five six seven eight nine 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5"
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 10,
+   "user": "Dragon fruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten,",
+   "asr": "6 7 8 10 1 2 3 4 or 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1"
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 11,
+   "user": "Breadfruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one,",
+   "asr": "2 3 4 5 6 7 8 9 10 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1,"
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 12,
+   "user": "Raspberry.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "two, three, four, five, six, seven, eight, nine, ten, one, two, three, four,",
+   "asr": "2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 1,
+   "user": "Fig.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I'm good. How about you?",
+   "asr": "good how about you i've"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 2,
+   "user": "Apricot.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I've been better. I've been dealing with a lot of stress lately.",
+   "asr": "been better i've been dealing with a lot of stress lately yeah"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 3,
+   "user": "Cloudberry.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Yeah, it' been quite a ride.",
+   "asr": "it's been quite a ride so"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 4,
+   "user": "Breadfruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "So,",
+   "asr": "i"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 5,
+   "user": "Nectarine.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 6,
+   "user": "Lychee.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 7,
+   "user": "Peach.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I know. It's hard. But I think we both have a lot to learn from each other.",
+   "asr": "know it's hard but i think we both have a lot to learn from each other i'm"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 8,
+   "user": "Raspberry.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I' just hoping that we can get through this together.",
+   "asr": "just hoping that we can get through this together i"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 9,
+   "user": "Starfruit.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 10,
+   "user": "Blood orange.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 11,
+   "user": "Dragon fruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I know. Let's try and focus on the positives.",
+   "asr": "know let's try and focus on the positives."
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 12,
+   "user": "Watermelon.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "We've been through tougher things before.",
+   "asr": "We've built through tougher things before."
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 1,
+   "user": "Cloudberry.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 2,
+   "user": "Starfruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Sure, I can play fruit, but I need to win first. Let's play with some rules.",
+   "asr": "Sure, I can play Fruit. But I need to win first. Let's play with some rules."
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 3,
+   "user": "Lychee.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "The two friends agreed on the rules of the game.",
+   "asr": "The two friends agreed on the rules of the game."
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 4,
+   "user": "Peach.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "First, they chose a game to play, and they agreed on the rules of the game.",
+   "asr": "First, they chose a game to play. And they agreed on the rules of the game. They decided to play Fruit."
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 5,
+   "user": "Apricot.",
+   "text_cls": "filler",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "They decided to play fruit.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 6,
+   "user": "Raspberry.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 7,
+   "user": "Watermelon.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 8,
+   "user": "Dragon fruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay, I'm ready. Let's play fruit.",
+   "asr": "Okay, I'm ready. Let's play Fruit."
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 9,
+   "user": "Breadfruit.",
+   "text_cls": "non_fruit",
+   "asr_cls": "non_fruit",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Very lightly,",
+   "asr": "Very light, lightly."
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 10,
+   "user": "Nectarine.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 11,
+   "user": "Fig.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 12,
+   "user": "Blood orange.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 1,
+   "user": "Blood orange.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 2,
+   "user": "Peach.",
+   "text_cls": "sentence",
+   "asr_cls": "sentence",
+   "text_fruit": "orange",
+   "asr_fruit": "orange",
+   "text": "One fruit, orange.",
+   "asr": "One fruit. Orange. One"
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 3,
+   "user": "Lychee.",
+   "text_cls": "sentence",
+   "asr_cls": "sentence",
+   "text_fruit": "cherry",
+   "asr_fruit": "cherry",
+   "text": "One fruit, cherries.",
+   "asr": "fruit. Cherries."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 4,
+   "user": "Starfruit.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 5,
+   "user": "Nectarine.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "lychee",
+   "asr_fruit": "lychee",
+   "text": "One fruit, lychee.",
+   "asr": "One fruit. Lychee."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 6,
+   "user": "Breadfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "non_fruit",
+   "text_fruit": "breadfruit",
+   "asr_fruit": null,
+   "text": "One fruit, breadfruit.",
+   "asr": "One fruit. Red fruit."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 7,
+   "user": "Dragon fruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "One fruit,",
+   "asr": "One fruit."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 8,
+   "user": "Fig.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "dragon fruit",
+   "asr_fruit": "dragon fruit",
+   "text": "dragonfruit.",
+   "asr": "Dragon fruit."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 9,
+   "user": "Apricot.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "apricot",
+   "asr_fruit": "apricot",
+   "text": "One fruit, apricot.",
+   "asr": "One fruit. Apricot."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 10,
+   "user": "Watermelon.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "One fruit, watermelon.",
+   "asr": "One fruit. Watermelon."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 11,
+   "user": "Raspberry.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "raspberry",
+   "asr_fruit": "raspberry",
+   "text": "One fruit, raspberry.",
+   "asr": "One fruit. Raspberry."
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 12,
+   "user": "Cloudberry.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 1,
+   "user": "Nectarine.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 2,
+   "user": "Peach.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "peach",
+   "asr_fruit": "peach",
+   "text": "peach peach you peach you",
+   "asr": "peachy peachy dragon"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 3,
+   "user": "Dragon fruit.",
+   "text_cls": "repeat",
+   "asr_cls": "filler",
+   "text_fruit": "dragon fruit",
+   "asr_fruit": null,
+   "text": "dragon fruit",
+   "asr": "fruit"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 4,
+   "user": "Watermelon.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "watermelon watermelon",
+   "asr": "watermelon watermelon watermelon"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 5,
+   "user": "Apricot.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "watermelon watermelon watermelon watermelon watermelon watermelon",
+   "asr": "watermelon watermelon watermelon watermelon watermelon watermelon watermelon"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 6,
+   "user": "Blood orange.",
+   "text_cls": "multi",
+   "asr_cls": "sentence",
+   "text_fruit": null,
+   "asr_fruit": "orange",
+   "text": "watermelon orange",
+   "asr": "orange orange"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 7,
+   "user": "Cloudberry.",
+   "text_cls": "multi",
+   "asr_cls": "non_fruit",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "orange cloudberry",
+   "asr": "Cogberry"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 8,
+   "user": "Breadfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "breadfruit",
+   "asr_fruit": "breadfruit",
+   "text": "breadfruit breadfruit breadfruit breadfruit",
+   "asr": "Breadfruit Breadfruit Breadfruit Redfruit"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 9,
+   "user": "Raspberry.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "raspberry",
+   "asr_fruit": "raspberry",
+   "text": "raspberry raspberry raspberry raspberry",
+   "asr": "Raspberry Raspberry Raspberry"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 10,
+   "user": "Lychee.",
+   "text_cls": "repeat",
+   "asr_cls": "multi",
+   "text_fruit": "lychee",
+   "asr_fruit": null,
+   "text": "lychee lychee lychee lychee lychee",
+   "asr": "Lychee Lychee Lychee Lychee Fig"
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 11,
+   "user": "Fig.",
+   "text_cls": "repeat",
+   "asr_cls": "multi",
+   "text_fruit": "fig",
+   "asr_fruit": null,
+   "text": "fig fig fig fig fig fig fig",
+   "asr": "Fig Fig, fig, fig, fig, fig, fig, starfruit."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 12,
+   "user": "Starfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "silent",
+   "text_fruit": "starfruit",
+   "asr_fruit": null,
+   "text": "starfruit",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 1,
+   "user": "Blood orange.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "blood orange",
+   "asr_fruit": "blood orange",
+   "text": "I'll say blood orange.",
+   "asr": "I'll say blood orange."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 2,
+   "user": "Cloudberry.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "cloudberry",
+   "asr_fruit": "cloudberry",
+   "text": "Cloudberry.",
+   "asr": "Cloudberry."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 3,
+   "user": "Watermelon.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 4,
+   "user": "Dragon fruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Oh, I don't know.",
+   "asr": "I don't know."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 5,
+   "user": "Raspberry.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "I don't know. I'm not really sure.",
+   "asr": "I don't know. I'm not really sure."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 6,
+   "user": "Peach.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "peach",
+   "asr_fruit": "peach",
+   "text": "Peach.",
+   "asr": "Peach."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 7,
+   "user": "Breadfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "non_fruit",
+   "text_fruit": "breadfruit",
+   "asr_fruit": null,
+   "text": "Breadfruit.",
+   "asr": "Red fruit."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 8,
+   "user": "Apricot.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "apple",
+   "asr_fruit": "apple",
+   "text": "Apple.",
+   "asr": "Apple."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 9,
+   "user": "Nectarine.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 10,
+   "user": "Starfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "starfruit",
+   "asr_fruit": "starfruit",
+   "text": "Starfruit.",
+   "asr": "Star fruit."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 11,
+   "user": "Lychee.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Oh, I don't know.",
+   "asr": "Oh, I don't know."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 12,
+   "user": "Fig.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Oh, I don't know.",
+   "asr": "Oh, I don't know."
+  }
+ ],
+ "transcripts": [
+  {
+   "game": "val_s7_0005",
+   "asr_text": "Hi, how was your day? Sure, let's go. I'm ready. Oh, I like the sound of that. What's the next one? Oh I love berry. I'm ready Okay, what's the next one? Okay, yeah, that sounds good. I'm ready. Oh I like fig. That's a good one. Oh Peach is good. I like peach. Yeah, that's a good. Oh, I love nectarine. That's a good one Oh watermelon. Oh, that's good. I'm ready. What's the next one? Oh, I like the sound of that. I'm ready",
+   "moshi_text": "Hi, how is your day? Sure, let's go. I ready. Oh, I like the sound of that. What's the next one? Oh I love berry. I'm ready. Okay, what's the next one? Oh, okay. Yeah, that sounds good. I'm ready. Oh I like fig. That's a good one. Oh peach is good. I like peach. Yeah, that's good. Oh I love nectarine. That's a good one. Oh watermelon. Oh, that's good. I'm ready. What's the next one? Oh, I like the sound of that. I'm ready."
+  },
+  {
+   "game": "val_s7_0033",
+   "asr_text": "Hey there! How is it going? Yeah, sure. So first we have the orange. It's a sweet and juicy fruit. A great source of vitamin C and fiber. It can help boost your immune system and improve digestion. Next, we have the watermelon. It's satiety and incredibly refreshing. It's packed with vitamins, antioxidants, and specific minerals like potassium, Eating watermelon can improve your cardiovascular health, boost your energy levels, and even help with weight loss. Finally, we have the breadfruit. Starfruit. It's a delicate fruit with a unique flavor. It's high in vitamins, minerals, and proteins. It's great for our heart and digestive system. And last but not least, we have the nectarine. It's a delicious, ripe fruit with a sweet and tangy flavor. It's rich in vitamin C, potassium, and other important nutrients.",
+   "moshi_text": "Hey there, how is it going? Yeah, sure, so first we have the orange. It's a sweet and juicy fruit, a great source of vitamin C and fiber. It can help boost your immune system and improve digestion. Next, we have the watermelon. It's a s and incredibly refreshing. It's packed with vitamins, antioxidants, and specific minerals like potassium. Eating watermelon can improve your cardiovascular health, boost your energy levels, and even help with weight loss. Finally, we have the breadfruit. Starfruit, it's a delicate fruit with a unique flavor. It's high in vitamins, minerals, and proteins. It's great for our heart and digestive system. And last but not least, we have the nectarine. It's a delicious, ripe fruit with a sweet and tangy flavor. It's rich in vitamin C, potassium, and other important nutrients."
+  },
+  {
+   "game": "val_s7_0038",
+   "asr_text": "hi how are you doing orange fast no repeat big fast too repeat cloudberry slow no repeat fast no repeat watermelon slow no repeat Peace.",
+   "moshi_text": "Hi, how are you doing? Orange. Fast. No repeat. Fig. Fast too. Re- repeat. Cloudberry. Slow. No repeat- Peach. Fast. No repeat. Watermelon. Slow. No repeat-"
+  },
+  {
+   "game": "val_s7_0049",
+   "asr_text": "Hello, what's up? That's tough. I'd say orange, cause it's so sweet and juicy. I'd probably go with breadfruit. It's so versatile and can be used in so many dishes. Oh, I'd have to go with dragonfruit. It's so sweet and has this delicious crunch. Peach, definitely. It's so sweet and juicy. That's a tough one. I'd have to go with raspberry.",
+   "moshi_text": "Hello, what's up? Oh, that's tough! I'd say orange, because it's so sweet and juicy. Oh, I'd probably go with breadfruit. It's so versatile and can be used in so many dishes. Oh, I'd have to go with dragonfruit. It's so sweet and has this delicious crunch. Peach, definitely. It's so sweet and juicy. Oh, that's a tough one! I'd have to go with raspberry."
+  },
+  {
+   "game": "val_s7_0051",
+   "asr_text": "Hello, how are you today? Okay, okay, so we'll start with the first one. Do we have to repeat any? No, we don't have to repeat any. So we can just start with the second one. Okay, so we're just going to say it as quickly as possible. We'll start with the first one. 1, 2, 3, 4, 5, 6, 7, 9, 10. 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Okay, so we just said it. We'll do the same for the second one. Okay, so the second one, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Ah, okay, so we just said it. We'll do the same for the third one. Okay, so the third one, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9. Okay, so the third one. three four five six seven eight nine 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 10 1 2 3 4 or 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2",
+   "moshi_text": "Hello, how are you today? Okay. Okay, so we'll start with the first one. Do we have to repeat any? No, we don't have to repeat any, so we can just start with the second one. Okay, so we're just going to say it as quickly as possible. We'll start with the first one. One, two, three, four, five, six, seven, eight, nine, ten. One, two, three, four, five, six, seven, eight, nine, ten. Okay, so we just said it. We'll do the same for the second one. Okay, so the second one, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten. Ah, okay, so we just said it. We'll do the same for the third one. Okay, so the third one, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten. Okay, so the third one, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four,"
+  },
+  {
+   "game": "val_s7_0053",
+   "asr_text": "hi there what's going on i'm good how about you i've been better i've been dealing with a lot of stress lately yeah it's been quite a ride so i know it's hard but i think we both have a lot to learn from each other i'm just hoping that we can get through this together i know let's try and focus on the positives. We've built through tougher things before.",
+   "moshi_text": "Hi there, what's going on? I'm good. How about you? I've been better. I've been dealing with a lot of stress lately. Yeah, it' been quite a ride. So, I know. It's hard. But I think we both have a lot to learn from each other. I' just hoping that we can get through this together. I know. Let's try and focus on the positives. We've been through tougher things before."
+  },
+  {
+   "game": "val_s7_0061",
+   "asr_text": "Hello, what's up? Sure, I can play Fruit. But I need to win first. Let's play with some rules. The two friends agreed on the rules of the game. First, they chose a game to play. And they agreed on the rules of the game. They decided to play Fruit. Okay, I'm ready. Let's play Fruit. Very light, lightly.",
+   "moshi_text": "Hello, what's up? Sure, I can play fruit, but I need to win first. Let's play with some rules. The two friends agreed on the rules of the game. First, they chose a game to play, and they agreed on the rules of the game. They decided to play fruit. Okay, I'm ready. Let's play fruit. Very lightly,"
+  },
+  {
+   "game": "val_s7_0062",
+   "asr_text": "How you there? How's your day? One fruit. Orange. One fruit. Cherries. One fruit. Lychee. One fruit. Red fruit. One fruit. Dragon fruit. One fruit. Apricot. One fruit. Watermelon. One fruit. Raspberry.",
+   "moshi_text": "Hi there, how's your day? One fruit, orange. One fruit, cherries. One fruit, lychee. One fruit, breadfruit. One fruit, dragonfruit. One fruit, apricot. One fruit, watermelon. One fruit, raspberry."
+  },
+  {
+   "game": "val_s7_0065",
+   "asr_text": "hi there how can I help you okay I won't repeat peach peachy peachy dragon fruit watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon orange orange Cogberry Breadfruit Breadfruit Breadfruit Redfruit Raspberry Raspberry Raspberry Lychee Lychee Lychee Lychee Fig Fig Fig, fig, fig, fig, fig, fig, starfruit.",
+   "moshi_text": "Hi there, how can I help you? okay i won't repeat peach peach you peach you dragon fruit watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon orange orange cloudberry breadfruit breadfruit breadfruit breadfruit raspberry raspberry raspberry raspberry lychee lychee lychee lychee lychee fig fig fig fig fig fig fig starfruit"
+  },
+  {
+   "game": "val_s7_0097",
+   "asr_text": "Hello, what's up? I'll say blood orange. Cloudberry. I don't know. I don't know. I'm not really sure. Peach. Red fruit. Apple. Star fruit. Oh, I don't know. Oh, I don't know.",
+   "moshi_text": "Hello, what's up? I'll say blood orange. Cloudberry. Oh, I don't know. I don't know. I'm not really sure. Peach. Breadfruit. Apple. Starfruit. Oh, I don't know. Oh, I don't know."
+  }
+ ],
+ "whisper": {
+  "model": "large-v3",
+  "vad_filter": true,
+  "beam_size": 5,
+  "language": "en"
+ }
+}

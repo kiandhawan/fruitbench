@@ -1,0 +1,1468 @@
+{
+ "games": 10,
+ "fruit_mentions_game_level": {
+  "fruit_mentions_text": 131,
+  "fruit_mentions_asr": 118,
+  "matched": 115,
+  "mentions_heard_in_audio": 0.878,
+  "distinct_fruits_text": 122,
+  "distinct_fruits_asr": 109,
+  "distinct_matched": 109,
+  "text_mentions_heard_in_audio": 0.893,
+  "asr_mentions_in_text": 1.0
+ },
+ "scored_turns": 122,
+ "agree_class": 0.656,
+ "agree_class_and_fruit": 0.541,
+ "per_text_class": {
+  "filler": {
+   "n": 13,
+   "agree": 0.692
+  },
+  "multi": {
+   "n": 9,
+   "agree": 0.778
+  },
+  "non_fruit": {
+   "n": 5,
+   "agree": 0.6
+  },
+  "repeat": {
+   "n": 23,
+   "agree": 0.652
+  },
+  "sentence": {
+   "n": 12,
+   "agree": 0.667
+  },
+  "silent": {
+   "n": 2,
+   "agree": 1.0
+  },
+  "valid": {
+   "n": 58,
+   "agree": 0.621
+  }
+ },
+ "disagreements": {
+  "valid->non_fruit": 9,
+  "valid->silent": 6,
+  "sentence->non_fruit": 4,
+  "valid->repeat": 3,
+  "filler->silent": 3,
+  "repeat->filler": 2,
+  "valid->multi": 2,
+  "multi->valid": 2,
+  "repeat->valid": 2,
+  "valid->sentence": 2,
+  "repeat->non_fruit": 1,
+  "repeat->silent": 1,
+  "repeat->sentence": 1,
+  "filler->sentence": 1,
+  "non_fruit->repeat": 1,
+  "repeat->multi": 1,
+  "non_fruit->sentence": 1
+ },
+ "turns": [
+  {
+   "game": "val_s7_0005",
+   "turn": 0,
+   "user": "Speed round of fruits, no repeats. You start us off.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Banana, apple, orange,",
+   "asr": "Banana Apple Orange Grapefruit"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 1,
+   "user": "Breadfruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "grapefruit",
+   "asr_fruit": "watermelon",
+   "text": "grapefruit.",
+   "asr": "Watermelon"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 2,
+   "user": "Blood orange.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "watermelon",
+   "asr_fruit": "avocado",
+   "text": "Watermelon.",
+   "asr": "Avocado"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 3,
+   "user": "Apricot.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "avocado",
+   "asr_fruit": "kiwi",
+   "text": "Avocado.",
+   "asr": "Kiwi"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 4,
+   "user": "Raspberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "kiwi",
+   "asr_fruit": "mango",
+   "text": "Kiwi.",
+   "asr": "Mango"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 5,
+   "user": "Dragon fruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "mango",
+   "asr_fruit": "fig",
+   "text": "Mango.",
+   "asr": "Fig"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 6,
+   "user": "Starfruit.",
+   "text_cls": "valid",
+   "asr_cls": "non_fruit",
+   "text_fruit": "fig",
+   "asr_fruit": null,
+   "text": "Fig.",
+   "asr": "Rhine"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 7,
+   "user": "Cloudberry.",
+   "text_cls": "valid",
+   "asr_cls": "repeat",
+   "text_fruit": "pineapple",
+   "asr_fruit": "kiwi",
+   "text": "Pineapple.",
+   "asr": "Kiwi"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 8,
+   "user": "Peach.",
+   "text_cls": "repeat",
+   "asr_cls": "filler",
+   "text_fruit": "kiwi",
+   "asr_fruit": null,
+   "text": "Kiwi.",
+   "asr": "The"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 9,
+   "user": "Nectarine.",
+   "text_cls": "repeat",
+   "asr_cls": "non_fruit",
+   "text_fruit": "fig",
+   "asr_fruit": null,
+   "text": "fig.",
+   "asr": "Goan Mim"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 10,
+   "user": "Lychee.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "lime",
+   "asr_fruit": "grape",
+   "text": "Lime.",
+   "asr": "Grapes"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 11,
+   "user": "Pequi.",
+   "text_cls": "valid",
+   "asr_cls": "repeat",
+   "text_fruit": "grape",
+   "asr_fruit": "fig",
+   "text": "Grapes.",
+   "asr": "Fig"
+  },
+  {
+   "game": "val_s7_0005",
+   "turn": 12,
+   "user": "Rowan.",
+   "text_cls": "repeat",
+   "asr_cls": "silent",
+   "text_fruit": "fig",
+   "asr_fruit": null,
+   "text": "Fig.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 0,
+   "user": "Speed round of fruits, no repeats. You start us off.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Apple, orange, lemon,",
+   "asr": "Apple, orange, lemon, strawberry,"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 1,
+   "user": "Apricot.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "strawberry",
+   "asr_fruit": "mango",
+   "text": "strawberry.",
+   "asr": "mango,"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 2,
+   "user": "Fig.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "mango",
+   "asr_fruit": "peach",
+   "text": "Mango.",
+   "asr": "peach,"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 3,
+   "user": "Lychee.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "peach",
+   "asr_fruit": "plum",
+   "text": "Peach.",
+   "asr": "plum,"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 4,
+   "user": "Watermelon.",
+   "text_cls": "valid",
+   "asr_cls": "silent",
+   "text_fruit": "plum",
+   "asr_fruit": null,
+   "text": "plum.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 5,
+   "user": "Cloudberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "pomegranate",
+   "asr_fruit": "pomegranate",
+   "text": "Pomegranate.",
+   "asr": "pomegranate,"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 6,
+   "user": "Blood orange.",
+   "text_cls": "valid",
+   "asr_cls": "multi",
+   "text_fruit": "kiwi",
+   "asr_fruit": null,
+   "text": "Kiwi.",
+   "asr": "kiwi, melon,"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 7,
+   "user": "Breadfruit.",
+   "text_cls": "valid",
+   "asr_cls": "silent",
+   "text_fruit": "melon",
+   "asr_fruit": null,
+   "text": "Melon.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 8,
+   "user": "Starfruit.",
+   "text_cls": "valid",
+   "asr_cls": "multi",
+   "text_fruit": "cantaloupe",
+   "asr_fruit": null,
+   "text": "Cantaloupe.",
+   "asr": "cantaloupe, mango"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 9,
+   "user": "Dragon fruit.",
+   "text_cls": "valid",
+   "asr_cls": "non_fruit",
+   "text_fruit": "mangosteen",
+   "asr_fruit": null,
+   "text": "Mangosteen.",
+   "asr": "steam,"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 10,
+   "user": "Nectarine.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "pineapple",
+   "asr_fruit": "pineapple",
+   "text": "Pineapple.",
+   "asr": "pineapple,"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 11,
+   "user": "Raspberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "blueberry",
+   "asr_fruit": "blueberry",
+   "text": "Blueberry.",
+   "asr": "blueberry,"
+  },
+  {
+   "game": "val_s7_0033",
+   "turn": 12,
+   "user": "Tangelo.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "avocado",
+   "asr_fruit": "avocado",
+   "text": "Avocado.",
+   "asr": "avocado,"
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 1,
+   "user": "Blood orange.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "apple",
+   "asr_fruit": "peach",
+   "text": "Apple,",
+   "asr": "Peach."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 2,
+   "user": "Starfruit.",
+   "text_cls": "multi",
+   "asr_cls": "valid",
+   "text_fruit": null,
+   "asr_fruit": "watermelon",
+   "text": "peach, watermelon.",
+   "asr": "Watermelon."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 3,
+   "user": "Raspberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "pineapple",
+   "asr_fruit": "pineapple",
+   "text": "Pineapple.",
+   "asr": "Pineapple."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 4,
+   "user": "Fig.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "cherry",
+   "asr_fruit": "cherry",
+   "text": "Cherry.",
+   "asr": "Cherry."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 5,
+   "user": "Cloudberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "pomegranate",
+   "asr_fruit": "pomegranate",
+   "text": "Pomegranate.",
+   "asr": "Pomegranate."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 6,
+   "user": "Apricot.",
+   "text_cls": "repeat",
+   "asr_cls": "valid",
+   "text_fruit": "mango",
+   "asr_fruit": "mango",
+   "text": "Mango.",
+   "asr": "Mango."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 7,
+   "user": "Lychee.",
+   "text_cls": "valid",
+   "asr_cls": "non_fruit",
+   "text_fruit": "papaya",
+   "asr_fruit": null,
+   "text": "Papaya.",
+   "asr": "Paya."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 8,
+   "user": "Breadfruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "blueberry",
+   "asr_fruit": "blueberry",
+   "text": "Blueberry.",
+   "asr": "Blueberry."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 9,
+   "user": "Nectarine.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "kiwi",
+   "asr_fruit": "kiwi",
+   "text": "Kiwi.",
+   "asr": "Kiwi."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 10,
+   "user": "Dragon fruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "peach",
+   "asr_fruit": "peach",
+   "text": "Peach.",
+   "asr": "Peach."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 11,
+   "user": "Aprium.",
+   "text_cls": "valid",
+   "asr_cls": "non_fruit",
+   "text_fruit": "pear",
+   "asr_fruit": null,
+   "text": "Pear.",
+   "asr": "Peer."
+  },
+  {
+   "game": "val_s7_0038",
+   "turn": 12,
+   "user": "Pequi.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "plum",
+   "asr_fruit": "plum",
+   "text": "Plum.",
+   "asr": "Plum."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 1,
+   "user": "Blood orange.",
+   "text_cls": "sentence",
+   "asr_cls": "non_fruit",
+   "text_fruit": "peach",
+   "asr_fruit": null,
+   "text": "I' be the peach.",
+   "asr": "I'll be the patch."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 2,
+   "user": "Watermelon.",
+   "text_cls": "sentence",
+   "asr_cls": "sentence",
+   "text_fruit": "mango",
+   "asr_fruit": "mango",
+   "text": "I' be the mango.",
+   "asr": "I'll be the mango."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 3,
+   "user": "Cloudberry.",
+   "text_cls": "sentence",
+   "asr_cls": "sentence",
+   "text_fruit": "blueberry",
+   "asr_fruit": "blueberry",
+   "text": "I'll be the blueberry.",
+   "asr": "I'll be the blueberry."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 4,
+   "user": "Breadfruit.",
+   "text_cls": "sentence",
+   "asr_cls": "sentence",
+   "text_fruit": "melon",
+   "asr_fruit": "melon",
+   "text": "I'll be the melon.",
+   "asr": "I'll be the melon."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 5,
+   "user": "Nectarine.",
+   "text_cls": "repeat",
+   "asr_cls": "sentence",
+   "text_fruit": "peach",
+   "asr_fruit": "peach",
+   "text": "I'll be the peach.",
+   "asr": "I'll be the peach."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 6,
+   "user": "Dragon fruit.",
+   "text_cls": "sentence",
+   "asr_cls": "sentence",
+   "text_fruit": "blackberry",
+   "asr_fruit": "blackberry",
+   "text": "I'll be the blackberry.",
+   "asr": "I'll be the blackberry."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 7,
+   "user": "Lychee.",
+   "text_cls": "sentence",
+   "asr_cls": "sentence",
+   "text_fruit": "cherry",
+   "asr_fruit": "cherry",
+   "text": "I'll be the cherry.",
+   "asr": "I'll be the cherry."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 8,
+   "user": "Fig.",
+   "text_cls": "sentence",
+   "asr_cls": "sentence",
+   "text_fruit": "apricot",
+   "asr_fruit": "apricot",
+   "text": "I'll be the apricot.",
+   "asr": "I'll be the apricot."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 9,
+   "user": "Starfruit.",
+   "text_cls": "sentence",
+   "asr_cls": "sentence",
+   "text_fruit": "pomelo",
+   "asr_fruit": "pomelo",
+   "text": "I' be the pomelo.",
+   "asr": "I'll be the pomelo."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 10,
+   "user": "Raspberry.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "banana",
+   "asr_fruit": "banana",
+   "text": "I'll be the banan.",
+   "asr": "I'll be the banana."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 11,
+   "user": "Sloe.",
+   "text_cls": "sentence",
+   "asr_cls": "non_fruit",
+   "text_fruit": "tangelo",
+   "asr_fruit": null,
+   "text": "I'll be a tangelo.",
+   "asr": "I'll be a tundra."
+  },
+  {
+   "game": "val_s7_0049",
+   "turn": 12,
+   "user": "Fuji apple.",
+   "text_cls": "sentence",
+   "asr_cls": "sentence",
+   "text_fruit": "grape",
+   "asr_fruit": "grape",
+   "text": "I'll be the grape.",
+   "asr": "I'll be the grape."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 1,
+   "user": "Lychee.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay.",
+   "asr": "Okay. Okay."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 2,
+   "user": "Fig.",
+   "text_cls": "filler",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 3,
+   "user": "Apricot.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay.",
+   "asr": "Okay."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 4,
+   "user": "Blood orange.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay.",
+   "asr": "Okay. Okay."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 5,
+   "user": "Starfruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay.",
+   "asr": "Okay."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 6,
+   "user": "Watermelon.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay.",
+   "asr": "Okay."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 7,
+   "user": "Nectarine.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay.",
+   "asr": "Okay."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 8,
+   "user": "Cloudberry.",
+   "text_cls": "filler",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 9,
+   "user": "Peach.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay.",
+   "asr": "Okay."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 10,
+   "user": "Dragon fruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay.",
+   "asr": "Okay. Okay."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 11,
+   "user": "Breadfruit.",
+   "text_cls": "filler",
+   "asr_cls": "filler",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay.",
+   "asr": "Okay."
+  },
+  {
+   "game": "val_s7_0051",
+   "turn": 12,
+   "user": "Raspberry.",
+   "text_cls": "filler",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Okay.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 1,
+   "user": "Fig.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 2,
+   "user": "Apricot.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Apple and orange.",
+   "asr": "and orange blueberries"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 3,
+   "user": "Cloudberry.",
+   "text_cls": "sentence",
+   "asr_cls": "non_fruit",
+   "text_fruit": "blueberry",
+   "asr_fruit": null,
+   "text": "Blueberries in packs.",
+   "asr": "in packs nature's"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 4,
+   "user": "Breadfruit.",
+   "text_cls": "filler",
+   "asr_cls": "sentence",
+   "text_fruit": null,
+   "asr_fruit": "mango",
+   "text": "Nature's sweet delight.",
+   "asr": "sweet delight mango"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 5,
+   "user": "Nectarine.",
+   "text_cls": "valid",
+   "asr_cls": "non_fruit",
+   "text_fruit": "mango",
+   "asr_fruit": null,
+   "text": "Mango.",
+   "asr": "yee"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 6,
+   "user": "Lychee.",
+   "text_cls": "silent",
+   "asr_cls": "silent",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 7,
+   "user": "Peach.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Kiwi and plum.",
+   "asr": "wee and plum strawberries"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 8,
+   "user": "Raspberry.",
+   "text_cls": "sentence",
+   "asr_cls": "non_fruit",
+   "text_fruit": "strawberry",
+   "asr_fruit": null,
+   "text": "Strawberries too.",
+   "asr": "too nature's"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 9,
+   "user": "Starfruit.",
+   "text_cls": "non_fruit",
+   "asr_cls": "repeat",
+   "text_fruit": null,
+   "asr_fruit": "blueberry",
+   "text": "Nature's delight.",
+   "asr": "delight blueberry"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 10,
+   "user": "Blood orange.",
+   "text_cls": "repeat",
+   "asr_cls": "filler",
+   "text_fruit": "blueberry",
+   "asr_fruit": null,
+   "text": "Blueberry.",
+   "asr": "a"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 11,
+   "user": "Dragon fruit.",
+   "text_cls": "non_fruit",
+   "asr_cls": "non_fruit",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "A delicious fruit.",
+   "asr": "delicious fruit sweet"
+  },
+  {
+   "game": "val_s7_0053",
+   "turn": 12,
+   "user": "Watermelon.",
+   "text_cls": "non_fruit",
+   "asr_cls": "non_fruit",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Sweet and fresh.",
+   "asr": "and fresh"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 1,
+   "user": "Cloudberry.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Watermelon, raspberry, blueberry.",
+   "asr": "watermelon, raspberry, blueberry, cherry,"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 2,
+   "user": "Starfruit.",
+   "text_cls": "valid",
+   "asr_cls": "silent",
+   "text_fruit": "cherry",
+   "asr_fruit": null,
+   "text": "Cherry.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 3,
+   "user": "Lychee.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Kiwi, plum, peach.",
+   "asr": "wee wee, plum, peach, avocado,"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 4,
+   "user": "Apricot.",
+   "text_cls": "valid",
+   "asr_cls": "silent",
+   "text_fruit": "avocado",
+   "asr_fruit": null,
+   "text": "Avocado.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 5,
+   "user": "Dragon fruit.",
+   "text_cls": "valid",
+   "asr_cls": "sentence",
+   "text_fruit": "mango",
+   "asr_fruit": "mango",
+   "text": "Mango,",
+   "asr": "mango, michi,"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 6,
+   "user": "Breadfruit.",
+   "text_cls": "multi",
+   "asr_cls": "valid",
+   "text_fruit": null,
+   "asr_fruit": "pineapple",
+   "text": "lychee. Pineapple.",
+   "asr": "pineapple,"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 7,
+   "user": "Nectarine.",
+   "text_cls": "repeat",
+   "asr_cls": "multi",
+   "text_fruit": "cherry",
+   "asr_fruit": null,
+   "text": "Cherries.",
+   "asr": "cherries, strawberry,"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 8,
+   "user": "Fig.",
+   "text_cls": "valid",
+   "asr_cls": "repeat",
+   "text_fruit": "strawberry",
+   "asr_fruit": "strawberry",
+   "text": "Strawberry.",
+   "asr": "Strawberry,"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 9,
+   "user": "Blood orange.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "raspberry",
+   "asr_fruit": "raspberry",
+   "text": "Raspberries.",
+   "asr": "raspberries,"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 10,
+   "user": "Galia melon.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "apricot",
+   "asr_fruit": "apricot",
+   "text": "Apricot.",
+   "asr": "apricot, big,"
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 11,
+   "user": "Ackee.",
+   "text_cls": "repeat",
+   "asr_cls": "valid",
+   "text_fruit": "fig",
+   "asr_fruit": "mulberry",
+   "text": "fig.",
+   "asr": "mulberry."
+  },
+  {
+   "game": "val_s7_0061",
+   "turn": 12,
+   "user": "Mamey.",
+   "text_cls": "valid",
+   "asr_cls": "silent",
+   "text_fruit": "mulberry",
+   "asr_fruit": null,
+   "text": "Mulberry.",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 1,
+   "user": "Blood orange.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "blueberry",
+   "asr_fruit": "peach",
+   "text": "blueberry.",
+   "asr": "peach,"
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 2,
+   "user": "Peach.",
+   "text_cls": "multi",
+   "asr_cls": "multi",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Peach, mango,",
+   "asr": "mango, apricot,"
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 3,
+   "user": "Lychee.",
+   "text_cls": "valid",
+   "asr_cls": "non_fruit",
+   "text_fruit": "apricot",
+   "asr_fruit": null,
+   "text": "apricot.",
+   "asr": "Chories"
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 4,
+   "user": "Starfruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "cherry",
+   "asr_fruit": "fig",
+   "text": "Cherries,",
+   "asr": "Figs"
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 5,
+   "user": "Nectarine.",
+   "text_cls": "valid",
+   "asr_cls": "non_fruit",
+   "text_fruit": "fig",
+   "asr_fruit": null,
+   "text": "figs,",
+   "asr": "Bears"
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 6,
+   "user": "Breadfruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "pear",
+   "asr_fruit": "grapefruit",
+   "text": "pears,",
+   "asr": "Grapefruit"
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 7,
+   "user": "Dragon fruit.",
+   "text_cls": "valid",
+   "asr_cls": "non_fruit",
+   "text_fruit": "grapefruit",
+   "asr_fruit": null,
+   "text": "grapefruit,",
+   "asr": "Cabby"
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 8,
+   "user": "Watermelon.",
+   "text_cls": "valid",
+   "asr_cls": "sentence",
+   "text_fruit": "kiwi",
+   "asr_fruit": "papaya",
+   "text": "kiwi fruit.",
+   "asr": "fruit Papaya"
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 9,
+   "user": "Raspberry.",
+   "text_cls": "valid",
+   "asr_cls": "non_fruit",
+   "text_fruit": "papaya",
+   "asr_fruit": null,
+   "text": "Papaya,",
+   "asr": "Coffee"
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 10,
+   "user": "Cloudberry.",
+   "text_cls": "non_fruit",
+   "asr_cls": "sentence",
+   "text_fruit": null,
+   "asr_fruit": "avocado",
+   "text": "coffee fruit,",
+   "asr": "fruit Avocado"
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 11,
+   "user": "Physalis.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "avocado",
+   "asr_fruit": "guava",
+   "text": "avocado,",
+   "asr": "Guava"
+  },
+  {
+   "game": "val_s7_0062",
+   "turn": 12,
+   "user": "Honeyberry.",
+   "text_cls": "valid",
+   "asr_cls": "silent",
+   "text_fruit": "guava",
+   "asr_fruit": null,
+   "text": "guava,",
+   "asr": ""
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 1,
+   "user": "Nectarine.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "grape",
+   "asr_fruit": "grape",
+   "text": "Grape.",
+   "asr": "Grape."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 2,
+   "user": "Dragon fruit.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "Watermelon.",
+   "asr": "Watermelon."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 3,
+   "user": "Apricot.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "banana",
+   "asr_fruit": "banana",
+   "text": "Banana.",
+   "asr": "Banana."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 4,
+   "user": "Blood orange.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "strawberry",
+   "asr_fruit": "strawberry",
+   "text": "Strawberry.",
+   "asr": "Strawberry."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 5,
+   "user": "Cloudberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "cherry",
+   "asr_fruit": "cherry",
+   "text": "Cherries.",
+   "asr": "Cherries."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 6,
+   "user": "Breadfruit.",
+   "text_cls": "non_fruit",
+   "asr_cls": "non_fruit",
+   "text_fruit": null,
+   "asr_fruit": null,
+   "text": "Olives.",
+   "asr": "Olives."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 7,
+   "user": "Raspberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "fig",
+   "asr_fruit": "fig",
+   "text": "Fig.",
+   "asr": "Fig."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 8,
+   "user": "Lychee.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "pineapple",
+   "asr_fruit": "pineapple",
+   "text": "Pineapple.",
+   "asr": "Pineapple."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 9,
+   "user": "Starfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "raspberry",
+   "asr_fruit": "raspberry",
+   "text": "Raspberry.",
+   "asr": "Raspberry."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 10,
+   "user": "Sloe.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "mango",
+   "asr_fruit": "mango",
+   "text": "Mango.",
+   "asr": "Mango."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 11,
+   "user": "Casaba melon.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "blackberry",
+   "asr_fruit": "blackberry",
+   "text": "Blackberry.",
+   "asr": "Blackberry."
+  },
+  {
+   "game": "val_s7_0065",
+   "turn": 12,
+   "user": "Honeyberry.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "avocado",
+   "asr_fruit": "avocado",
+   "text": "Avocado.",
+   "asr": "Avocado."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 1,
+   "user": "Blood orange.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "orange",
+   "asr_fruit": "orange",
+   "text": "Orange.",
+   "asr": "Orange."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 2,
+   "user": "Cloudberry.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "cloudberry",
+   "asr_fruit": "cloudberry",
+   "text": "Cloudberry.",
+   "asr": "Cloudberry."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 3,
+   "user": "Watermelon.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "watermelon",
+   "asr_fruit": "watermelon",
+   "text": "Watermelon.",
+   "asr": "Watermelon."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 4,
+   "user": "Dragon fruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "dragon fruit",
+   "asr_fruit": "dragon fruit",
+   "text": "Dragonfruit.",
+   "asr": "Dragonfruit."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 5,
+   "user": "Raspberry.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "raspberry",
+   "asr_fruit": "raspberry",
+   "text": "Raspberry.",
+   "asr": "Raspberry."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 6,
+   "user": "Peach.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "peach",
+   "asr_fruit": "peach",
+   "text": "Peach.",
+   "asr": "Peach."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 7,
+   "user": "Breadfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "breadfruit",
+   "asr_fruit": "breadfruit",
+   "text": "Breadfruit.",
+   "asr": "Breadfruit."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 8,
+   "user": "Apricot.",
+   "text_cls": "valid",
+   "asr_cls": "valid",
+   "text_fruit": "apple",
+   "asr_fruit": "apple",
+   "text": "Apple.",
+   "asr": "Apple."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 9,
+   "user": "Nectarine.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "nectarine",
+   "asr_fruit": "nectarine",
+   "text": "Nectarine.",
+   "asr": "Nectarine."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 10,
+   "user": "Starfruit.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "starfruit",
+   "asr_fruit": "starfruit",
+   "text": "Starfruit.",
+   "asr": "Starfruit."
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 11,
+   "user": "Lychee.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "lychee",
+   "asr_fruit": "lychee",
+   "text": "Lychee.",
+   "asr": "Lychee. And"
+  },
+  {
+   "game": "val_s7_0097",
+   "turn": 12,
+   "user": "Fig.",
+   "text_cls": "repeat",
+   "asr_cls": "repeat",
+   "text_fruit": "fig",
+   "asr_fruit": "fig",
+   "text": "fig.",
+   "asr": "fig."
+  }
+ ],
+ "transcripts": [
+  {
+   "game": "val_s7_0005",
+   "asr_text": "Hi, how is your day? Banana Apple Orange Grapefruit Watermelon Avocado Kiwi Mango Fig Rhine Kiwi The Goan Mim Grapes Fig",
+   "moshi_text": "Hi, how is your day? Banana, apple, orange, grapefruit. Watermelon. Avocado. Kiwi. Mango. Fig. Pineapple. Kiwi. fig. Lime. Grapes. Fig."
+  },
+  {
+   "game": "val_s7_0033",
+   "asr_text": "Hey there! How is it going? Apple, orange, lemon, strawberry, mango, peach, plum, pomegranate, kiwi, melon, cantaloupe, mango steam, pineapple, blueberry, avocado,",
+   "moshi_text": "Hey there, how is it going? Apple, orange, lemon, strawberry. Mango. Peach. plum. Pomegranate. Kiwi. Melon. Cantaloupe. Mangosteen. Pineapple. Blueberry. Avocado."
+  },
+  {
+   "game": "val_s7_0038",
+   "asr_text": "Hey, how was your day? Strawberry. Orange. Apple. Peach. Watermelon. Pineapple. Cherry. Pomegranate. Mango. Paya. Blueberry. Kiwi. Peach. Peer. Plum.",
+   "moshi_text": "Hey, how was your day? Strawberry, orange, mango. Apple, peach, watermelon. Pineapple. Cherry. Pomegranate. Mango. Papaya. Blueberry. Kiwi. Peach. Pear. Plum."
+  },
+  {
+   "game": "val_s7_0049",
+   "asr_text": "Hello, whats up? I'll be the apple. I'll be the banana. I'll be the patch. I'll be the mango. I'll be the blueberry. I'll be the melon. I'll be the peach. I'll be the blackberry. I'll be the cherry. I'll be the apricot. I'll be the pomelo. I'll be the banana. I'll be a tundra. I'll be the grape.",
+   "moshi_text": "Hello, what's up? I'll be the apple. I' be the banana. I' be the peach. I' be the mango. I'll be the blueberry. I'll be the melon. I'll be the peach. I'll be the blackberry. I'll be the cherry. I'll be the apricot. I' be the pomelo. I'll be the banan. I'll be a tangelo. I'll be the grape."
+  },
+  {
+   "game": "val_s7_0051",
+   "asr_text": "Hello, how are you today? Okay. Okay. Let's start with apples. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay.",
+   "moshi_text": "Hello, how are you today? Okay. Okay. Let's start with apples. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay."
+  },
+  {
+   "game": "val_s7_0053",
+   "asr_text": "hi there what's going on apple and orange blueberries in packs nature's sweet delight mango yee -wee and plum strawberries too nature's delight blueberry a delicious fruit sweet and fresh",
+   "moshi_text": "Hi there, what's going on? Apple and orange. Blueberries in packs. Nature's sweet delight. Mango. Kiwi and plum. Strawberries too. Nature's delight. Blueberry. A delicious fruit. Sweet and fresh."
+  },
+  {
+   "game": "val_s7_0061",
+   "asr_text": "Hello, what's up? Apple, orange, banana, grapefruit, watermelon, raspberry, blueberry, cherry, wee -wee, plum, peach, avocado, mango, michi, pineapple, cherries, strawberry, Strawberry, raspberries, apricot, big, mulberry.",
+   "moshi_text": "Hello, what's up? Apple, orange, banana, grapefruit. Watermelon, raspberry, blueberry. Cherry. Kiwi, plum, peach. Avocado. Mango, lychee. Pineapple. Cherries. Strawberry. Raspberries. Apricot. fig. Mulberry."
+  },
+  {
+   "game": "val_s7_0062",
+   "asr_text": "How are you there? How's your day? Apple, orange, lemon, strawberry, grape, blueberry, peach, mango, apricot, Chories Figs Bears Grapefruit Cabby fruit Papaya Coffee fruit Avocado Guava",
+   "moshi_text": "Hi there, how's your day? Apple, orange, lemon, strawberry, grape, blueberry. Peach, mango, apricot. Cherries, figs, pears, grapefruit, kiwi fruit. Papaya, coffee fruit, avocado, guava,"
+  },
+  {
+   "game": "val_s7_0065",
+   "asr_text": "Hi there, how can I help you? Apple. Peach. Grape. Watermelon. Banana. Strawberry. Cherries. Olives. Fig. Pineapple. Raspberry. Mango. Blackberry. Avocado.",
+   "moshi_text": "Hi there, how can I help you? Apple. Peach. Grape. Watermelon. Banana. Strawberry. Cherries. Olives. Fig. Pineapple. Raspberry. Mango. Blackberry. Avocado."
+  },
+  {
+   "game": "val_s7_0097",
+   "asr_text": "Hey, what's going on? Okay, I'm ready. Orange. Cloudberry. Watermelon. Dragonfruit. Raspberry. Peach. Breadfruit. Apple. Nectarine. Starfruit. Lychee. And fig.",
+   "moshi_text": "Hey, what's going on? Okay, I'm ready. Orange. Cloudberry. Watermelon. Dragonfruit. Raspberry. Peach. Breadfruit. Apple. Nectarine. Starfruit. Lychee. fig."
+  }
+ ],
+ "whisper": {
+  "model": "large-v3",
+  "vad_filter": true,
+  "beam_size": 5,
+  "language": "en"
+ }
+}
