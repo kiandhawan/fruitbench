@@ -1,0 +1,843 @@
+{
+ "what": "100 TTS fruit clips (seed 0), padded 0.5s, fruit prompt",
+ "recall": 0.82,
+ "recall_by_voice": {
+  "Cathal": 0.778,
+  "Gareth": 0.588,
+  "Megan": 0.95,
+  "Rohan": 0.917,
+  "Sheila": 0.81
+ },
+ "misses": [
+  {
+   "clip": "data/audio/clips/Gareth/fruit/baobab.wav",
+   "voice": "Gareth",
+   "fruit": "baobab",
+   "asr": "BioBab",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/tayberry.wav",
+   "voice": "Sheila",
+   "fruit": "tayberry",
+   "asr": "hey berry",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/ugni.wav",
+   "voice": "Gareth",
+   "fruit": "ugni",
+   "asr": "Ogni",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/camu_camu.wav",
+   "voice": "Gareth",
+   "fruit": "camu camu",
+   "asr": "Come you come you",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/pear.wav",
+   "voice": "Gareth",
+   "fruit": "pear",
+   "asr": "Peer",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/mamey.wav",
+   "voice": "Cathal",
+   "fruit": "mamey",
+   "asr": "Mamie",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/cupuacu.wav",
+   "voice": "Cathal",
+   "fruit": "cupuacu",
+   "asr": "Kupuku",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/bael.wav",
+   "voice": "Rohan",
+   "fruit": "bael",
+   "asr": "Bale",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/minneola.wav",
+   "voice": "Sheila",
+   "fruit": "minneola",
+   "asr": "Mineola",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/casaba_melon.wav",
+   "voice": "Gareth",
+   "fruit": "casaba melon",
+   "asr": "Cassava Melon",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/bael.wav",
+   "voice": "Gareth",
+   "fruit": "bael",
+   "asr": "Bile",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/pequi.wav",
+   "voice": "Rohan",
+   "fruit": "pequi",
+   "asr": "Peaky",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/cupuacu.wav",
+   "voice": "Gareth",
+   "fruit": "cupuacu",
+   "asr": "coo-poo-coo",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/ugni.wav",
+   "voice": "Megan",
+   "fruit": "ugni",
+   "asr": "Oogney",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/casaba_melon.wav",
+   "voice": "Cathal",
+   "fruit": "casaba melon",
+   "asr": "Cassava melon",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/pear.wav",
+   "voice": "Cathal",
+   "fruit": "pear",
+   "asr": "Peer",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/jujube.wav",
+   "voice": "Sheila",
+   "fruit": "jujube",
+   "asr": "Juju",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/sloe.wav",
+   "voice": "Sheila",
+   "fruit": "sloe",
+   "asr": "Slow.",
+   "heard": false
+  }
+ ],
+ "clips": [
+  {
+   "clip": "data/audio/clips/Gareth/fruit/mirabelle.wav",
+   "voice": "Gareth",
+   "fruit": "mirabelle",
+   "asr": "Mirabelle.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/satsuma.wav",
+   "voice": "Gareth",
+   "fruit": "satsuma",
+   "asr": "Satsuma.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/currant.wav",
+   "voice": "Sheila",
+   "fruit": "currant",
+   "asr": "Currant.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/plantain.wav",
+   "voice": "Megan",
+   "fruit": "plantain",
+   "asr": "Plantain.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/kiwiberry.wav",
+   "voice": "Rohan",
+   "fruit": "kiwiberry",
+   "asr": "Kiwi berry.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/durian.wav",
+   "voice": "Rohan",
+   "fruit": "durian",
+   "asr": "Durian.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/pitanga.wav",
+   "voice": "Gareth",
+   "fruit": "pitanga",
+   "asr": "Pitanga",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/baobab.wav",
+   "voice": "Gareth",
+   "fruit": "baobab",
+   "asr": "BioBab",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/cranberry.wav",
+   "voice": "Rohan",
+   "fruit": "cranberry",
+   "asr": "cranberry",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/huckleberry.wav",
+   "voice": "Gareth",
+   "fruit": "huckleberry",
+   "asr": "Huckleberry.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/white_currant.wav",
+   "voice": "Rohan",
+   "fruit": "white currant",
+   "asr": "White Currant",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/kiwiberry.wav",
+   "voice": "Megan",
+   "fruit": "kiwiberry",
+   "asr": "Kiwi berry.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/huckleberry.wav",
+   "voice": "Rohan",
+   "fruit": "huckleberry",
+   "asr": "Huckleberry.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/tayberry.wav",
+   "voice": "Sheila",
+   "fruit": "tayberry",
+   "asr": "hey berry",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/sweet_lime.wav",
+   "voice": "Megan",
+   "fruit": "sweet lime",
+   "asr": "Sweet lime.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/ugli_fruit.wav",
+   "voice": "Sheila",
+   "fruit": "ugli fruit",
+   "asr": "Ugly fruit",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/mulberry.wav",
+   "voice": "Sheila",
+   "fruit": "mulberry",
+   "asr": "Mulberry",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/clementine.wav",
+   "voice": "Cathal",
+   "fruit": "clementine",
+   "asr": "clementine",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/pawpaw.wav",
+   "voice": "Megan",
+   "fruit": "pawpaw",
+   "asr": "Pawpaw.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/miracle_fruit.wav",
+   "voice": "Rohan",
+   "fruit": "miracle fruit",
+   "asr": "Miracle Fruit",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/quince.wav",
+   "voice": "Cathal",
+   "fruit": "quince",
+   "asr": "quince",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/blackberry.wav",
+   "voice": "Cathal",
+   "fruit": "blackberry",
+   "asr": "Blackberry.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/acai.wav",
+   "voice": "Megan",
+   "fruit": "acai",
+   "asr": "Acai",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/blood_orange.wav",
+   "voice": "Gareth",
+   "fruit": "blood orange",
+   "asr": "Blood orange.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/nectarine.wav",
+   "voice": "Sheila",
+   "fruit": "nectarine",
+   "asr": "Nectarine",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/langsat.wav",
+   "voice": "Sheila",
+   "fruit": "langsat",
+   "asr": "Langsat.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/navel_orange.wav",
+   "voice": "Cathal",
+   "fruit": "navel orange",
+   "asr": "Navel orange.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/cranberry.wav",
+   "voice": "Gareth",
+   "fruit": "cranberry",
+   "asr": "cranberry",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/clementine.wav",
+   "voice": "Rohan",
+   "fruit": "clementine",
+   "asr": "clementine",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/rambutan.wav",
+   "voice": "Rohan",
+   "fruit": "rambutan",
+   "asr": "rambutan",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/orange.wav",
+   "voice": "Sheila",
+   "fruit": "orange",
+   "asr": "Orange.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/honeyberry.wav",
+   "voice": "Gareth",
+   "fruit": "honeyberry",
+   "asr": "Honeyberry.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/ugni.wav",
+   "voice": "Gareth",
+   "fruit": "ugni",
+   "asr": "Ogni",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/camu_camu.wav",
+   "voice": "Gareth",
+   "fruit": "camu camu",
+   "asr": "Come you come you",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/cantaloupe.wav",
+   "voice": "Cathal",
+   "fruit": "cantaloupe",
+   "asr": "Cantaloupe.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/goji_berry.wav",
+   "voice": "Cathal",
+   "fruit": "goji berry",
+   "asr": "goji berry",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/grapefruit.wav",
+   "voice": "Megan",
+   "fruit": "grapefruit",
+   "asr": "Grapefruit.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/plantain.wav",
+   "voice": "Rohan",
+   "fruit": "plantain",
+   "asr": "Plantain.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/tangerine.wav",
+   "voice": "Cathal",
+   "fruit": "tangerine",
+   "asr": "tangerine",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/apple.wav",
+   "voice": "Rohan",
+   "fruit": "apple",
+   "asr": "Apple.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/lychee.wav",
+   "voice": "Rohan",
+   "fruit": "lychee",
+   "asr": "Lychee.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/plum.wav",
+   "voice": "Megan",
+   "fruit": "plum",
+   "asr": "Plum",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/honeycrisp.wav",
+   "voice": "Sheila",
+   "fruit": "honeycrisp",
+   "asr": "honeycrisp",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/persimmon.wav",
+   "voice": "Rohan",
+   "fruit": "persimmon",
+   "asr": "Persimmon.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/bilberry.wav",
+   "voice": "Sheila",
+   "fruit": "bilberry",
+   "asr": "bilberry",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/miracle_fruit.wav",
+   "voice": "Sheila",
+   "fruit": "miracle fruit",
+   "asr": "Miracle Fruit",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/pear.wav",
+   "voice": "Gareth",
+   "fruit": "pear",
+   "asr": "Peer",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/mamey.wav",
+   "voice": "Cathal",
+   "fruit": "mamey",
+   "asr": "Mamie",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/cupuacu.wav",
+   "voice": "Cathal",
+   "fruit": "cupuacu",
+   "asr": "Kupuku",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/acerola.wav",
+   "voice": "Sheila",
+   "fruit": "acerola",
+   "asr": "Acerola",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/cara_cara_orange.wav",
+   "voice": "Cathal",
+   "fruit": "cara cara orange",
+   "asr": "Cara Cara Orange",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/goji_berry.wav",
+   "voice": "Rohan",
+   "fruit": "goji berry",
+   "asr": "Goji berry.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/currant.wav",
+   "voice": "Gareth",
+   "fruit": "currant",
+   "asr": "Currant.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/nashi_pear.wav",
+   "voice": "Megan",
+   "fruit": "nashi pear",
+   "asr": "Nashi pear.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/clementine.wav",
+   "voice": "Gareth",
+   "fruit": "clementine",
+   "asr": "clementine",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/honeydew.wav",
+   "voice": "Sheila",
+   "fruit": "honeydew",
+   "asr": "Honeydew?",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/dragon_fruit.wav",
+   "voice": "Megan",
+   "fruit": "dragon fruit",
+   "asr": "Dragon fruits.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/sea_buckthorn.wav",
+   "voice": "Rohan",
+   "fruit": "sea buckthorn",
+   "asr": "Sea buckthorn",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/lime.wav",
+   "voice": "Megan",
+   "fruit": "lime",
+   "asr": "Lime",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/mirabelle.wav",
+   "voice": "Megan",
+   "fruit": "mirabelle",
+   "asr": "Mirabelle.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/watermelon.wav",
+   "voice": "Sheila",
+   "fruit": "watermelon",
+   "asr": "Watermelon.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/pawpaw.wav",
+   "voice": "Rohan",
+   "fruit": "pawpaw",
+   "asr": "Pawpaw.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/bael.wav",
+   "voice": "Rohan",
+   "fruit": "bael",
+   "asr": "Bale",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/minneola.wav",
+   "voice": "Sheila",
+   "fruit": "minneola",
+   "asr": "Mineola",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/lucuma.wav",
+   "voice": "Sheila",
+   "fruit": "lucuma",
+   "asr": "LUCUMA",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/casaba_melon.wav",
+   "voice": "Gareth",
+   "fruit": "casaba melon",
+   "asr": "Cassava Melon",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/jujube.wav",
+   "voice": "Rohan",
+   "fruit": "jujube",
+   "asr": "jujube",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/finger_lime.wav",
+   "voice": "Rohan",
+   "fruit": "finger lime",
+   "asr": "Finger lime.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/persimmon.wav",
+   "voice": "Sheila",
+   "fruit": "persimmon",
+   "asr": "persimmon",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/bael.wav",
+   "voice": "Gareth",
+   "fruit": "bael",
+   "asr": "Bile",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/pitanga.wav",
+   "voice": "Rohan",
+   "fruit": "pitanga",
+   "asr": "pitanga",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/white_sapote.wav",
+   "voice": "Megan",
+   "fruit": "white sapote",
+   "asr": "White sapote",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/salmonberry.wav",
+   "voice": "Sheila",
+   "fruit": "salmonberry",
+   "asr": "Salmonberry.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/pequi.wav",
+   "voice": "Rohan",
+   "fruit": "pequi",
+   "asr": "Peaky",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/cupuacu.wav",
+   "voice": "Gareth",
+   "fruit": "cupuacu",
+   "asr": "coo-poo-coo",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/orange.wav",
+   "voice": "Rohan",
+   "fruit": "orange",
+   "asr": "Orange.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/grape.wav",
+   "voice": "Megan",
+   "fruit": "grape",
+   "asr": "Grape.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/blood_orange.wav",
+   "voice": "Cathal",
+   "fruit": "blood orange",
+   "asr": "Blood orange.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/lemon.wav",
+   "voice": "Cathal",
+   "fruit": "lemon",
+   "asr": "Lemon.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/acerola.wav",
+   "voice": "Cathal",
+   "fruit": "acerola",
+   "asr": "Acerola.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/ugni.wav",
+   "voice": "Megan",
+   "fruit": "ugni",
+   "asr": "Oogney",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/aprium.wav",
+   "voice": "Rohan",
+   "fruit": "aprium",
+   "asr": "Aprium",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/mandarin.wav",
+   "voice": "Cathal",
+   "fruit": "mandarin",
+   "asr": "Mandarin.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/baobab.wav",
+   "voice": "Cathal",
+   "fruit": "baobab",
+   "asr": "baobab",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/yuzu.wav",
+   "voice": "Cathal",
+   "fruit": "yuzu",
+   "asr": "Yuzu",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Gareth/fruit/canistel.wav",
+   "voice": "Gareth",
+   "fruit": "canistel",
+   "asr": "Canistel",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/tamarind.wav",
+   "voice": "Rohan",
+   "fruit": "tamarind",
+   "asr": "Tamarind.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/mulberry.wav",
+   "voice": "Megan",
+   "fruit": "mulberry",
+   "asr": "Mulberry",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/white_currant.wav",
+   "voice": "Megan",
+   "fruit": "white currant",
+   "asr": "White currant.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/cranberry.wav",
+   "voice": "Megan",
+   "fruit": "cranberry",
+   "asr": "cranberry",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/date.wav",
+   "voice": "Megan",
+   "fruit": "date",
+   "asr": "Date",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/currant.wav",
+   "voice": "Megan",
+   "fruit": "currant",
+   "asr": "Currant.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/clementine.wav",
+   "voice": "Sheila",
+   "fruit": "clementine",
+   "asr": "Clementine.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/casaba_melon.wav",
+   "voice": "Cathal",
+   "fruit": "casaba melon",
+   "asr": "Cassava melon",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Cathal/fruit/pear.wav",
+   "voice": "Cathal",
+   "fruit": "pear",
+   "asr": "Peer",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Rohan/fruit/crab_apple.wav",
+   "voice": "Rohan",
+   "fruit": "crab apple",
+   "asr": "Crab apple.",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/jujube.wav",
+   "voice": "Sheila",
+   "fruit": "jujube",
+   "asr": "Juju",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/medlar.wav",
+   "voice": "Sheila",
+   "fruit": "medlar",
+   "asr": "Medlar",
+   "heard": true
+  },
+  {
+   "clip": "data/audio/clips/Sheila/fruit/sloe.wav",
+   "voice": "Sheila",
+   "fruit": "sloe",
+   "asr": "Slow.",
+   "heard": false
+  },
+  {
+   "clip": "data/audio/clips/Megan/fruit/apple.wav",
+   "voice": "Megan",
+   "fruit": "apple",
+   "asr": "Apple",
+   "heard": true
+  }
+ ],
+ "recall_common_fruits": 0.9492,
+ "n_common_fruits": 59
+}

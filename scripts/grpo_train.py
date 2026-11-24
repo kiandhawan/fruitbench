@@ -264,6 +264,7 @@ def main() -> None:
                 fr = [r for r in sc["replies"] if r["kind"] == "fruit"]  # user fruit turns 1..12 in order
                 rows.append({"counts": sc["counts"], "rewards": game_rewards(sc, cfg["reward"]),
                              "lat": [r["latency"] for r in sr if r["cls"] == "valid"],
+                             "lat_all": [r["latency"] for r in sr if r["latency"] is not None],
                              "overlaps": sc["overlaps"], "n": sc["n_scored"],
                              "counted_overlaps": sum(counted_overlap(r, cfg["reward"]) for r in sr),
                              "echo": sum(r["echo"] for r in sr), "words": [len(r["word_t"]) for r in sr],
@@ -289,6 +290,13 @@ def main() -> None:
                    "turn_cap_per_game": round(sum(r["caps"] for r in rows) / len(rows), 3),
                    "games_with_turn_cap": round(sum(r["caps"] > 0 for r in rows) / len(rows), 3),
                    "gen_sec": round(time.time() - t0, 1)}
+            lat_all = [x for r in rows for x in r["lat_all"]]
+            rec["latency_dist"] = {
+                "valid_n": len(lat), "valid_before_user_ends": round(float(np.mean([x < 0 for x in lat])), 4) if lat else None,
+                "valid_p10_p50_p90": [round(float(q), 3) for q in np.percentile(lat, [10, 50, 90])] if lat else None,
+                "any_fruit_n": len(lat_all),
+                "any_fruit_before_user_ends": round(float(np.mean([x < 0 for x in lat_all])), 4) if lat_all else None,
+                "any_fruit_p10_p50_p90": [round(float(q), 3) for q in np.percentile(lat_all, [10, 50, 90])] if lat_all else None}
             for name, lo, hi in (("turns_1_6", 1, 6), ("turns_7_12", 7, 12)):
                 ps = [(c, o) for r in rows for (i, c, o) in r["pos"] if lo <= i <= hi]
                 rec[name] = {"n": len(ps), "valid": round(sum(c == "valid" for c, _ in ps) / len(ps), 4),
@@ -307,6 +315,19 @@ def main() -> None:
                            asr_flag=agree < v["whisper_min_agreement"])
             except Exception as e:  # noqa: BLE001
                 rec.update(asr_error=str(e)[:200])
+            if v.get("padded_whisper", False):
+                # padded Whisper recall per turn (.venv-asr, GPU): is the text stream's fruit in the audio?
+                qd = res_dir / f"val_step_{step:03d}_quality"
+                qd.mkdir(exist_ok=True)
+                try:
+                    subprocess.run([str(ASR_PY), str(ROOT / "scripts" / "padded_whisper.py"), "--games", str(vdir),
+                                    "--rules", RULES, "--gpu", str(local), "--out", str(qd / "padded_whisper.json")],
+                                   check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    w = json.loads((qd / "padded_whisper.json").read_text())
+                    rec["padded_whisper"] = {k: w[k] for k in ("recall_all_fruit_turns", "recall_bare_valid", "n_bare_valid",
+                                                               "recall_by_class", "false_positive_rate_no_fruit_turns")}
+                except Exception as e:  # noqa: BLE001
+                    rec["padded_whisper_error"] = str(e)[:200]
             with open(res_dir / "val.jsonl", "a") as f:
                 f.write(json.dumps(rec) + "\n")
             log0(f"[val step {step}] " + json.dumps(rec))
@@ -421,19 +442,23 @@ def main() -> None:
                     mt = tm & fmask[:, None]
                     ma = am & fmask[:, None]
 
-                    def part(lp, old, ref, mask):
+                    def part(lp, old, ref, mask, pg_w, beta):
                         ratio = torch.exp(lp - old)
                         Ae = A[:, None].expand_as(lp)
                         pg = -torch.minimum(ratio * Ae, ratio.clamp(1 - u["clip"], 1 + u["clip"]) * Ae)
                         d = ref - lp
                         kl = torch.exp(d) - d - 1
-                        tok = (pg + u["kl_beta"] * kl) * mask
+                        tok = (pg_w * pg + beta * kl) * mask
                         clipped = ((ratio - 1).abs() > u["clip"]) & mask
                         return tok.sum(), (kl * mask).sum().detach(), clipped.sum().detach()
 
-                    lt, klt, ct = part(lp_t, old_t, ref_t, mt)
-                    la, kla, ca = part(lp_a, old_a, ref_a, ma)
-                    loss = u["text_weight"] * lt / max(n_t, 1) + u["audio_weight"] * la / max(n_a, 1)
+                    # text: text_weight * PG + kl_beta_text * KL; audio: audio_weight * PG + kl_beta_audio * KL
+                    # (configs without kl_beta_text/audio: kl_beta for both, i.e. the smoke 1-3 loss)
+                    bt = u.get("kl_beta_text", u["kl_beta"])
+                    ba = u.get("kl_beta_audio", u["kl_beta"])
+                    lt, klt, ct = part(lp_t, old_t, ref_t, mt, u["text_weight"], bt)
+                    la, kla, ca = part(lp_a, old_a, ref_a, ma, u["audio_weight"], ba)
+                    loss = lt / max(n_t, 1) + la / max(n_a, 1)
                     loss.backward()
                 st["kl_t"] += float(klt)
                 st["kl_a"] += float(kla)

@@ -1,5 +1,23 @@
 # LOG (newest first)
 
+## 2026-11-24 — Smoke run 4 (`configs/grpo_smoke4.yaml`) and comparison with smoke 3
+- Changes vs smoke 3 (user): policy gradient on text tokens only (audio_weight 0); k3 KL on both with
+  beta text 0.04 / audio 0.2 (`kl_beta_text`, `kl_beta_audio`; logged separately); overlap -1.0 (was
+  -0.8), grace 0.1 s (was 0.2), valid with counted overlap capped at 0.0 (was +0.2); validation at
+  steps 0, 10, 20 with the latency distribution. Unit table: `results/reward_table_grpo_smoke4.md`.
+- Dropped at the user's request: the smoke-3 diagnosis (speech-quality model, padded Whisper recall,
+  worst-10 clips) and the padded Whisper recall in smoke-4 validation. DNSMOS was tried (UTMOS via
+  torch.hub was blocked by the permission check for running third-party repo code) and then removed
+  with its venv and model files; the only kept artifact is the padded-Whisper calibration on 100 TTS
+  fruit clips (`results/quality/whisper_tts_calibration.json`: 82% all, 94.9% common fruits).
+  Smoke 4 was restarted once during its step-0 validation to drop the padded Whisper check.
+- Results (validation rescored under the smoke-4 rules, `results/grpo/smoke3_vs_smoke4.md`): bare valid
+  smoke 3 52.7% vs smoke 4 42.9% (step 10: 7.9%, 70% silent); counted overlap (0.1 s grace) 16.4% vs
+  16.0%; valid fruits starting before the user finishes 38.0% vs 29.7%; turns 7-12 valid 49.2% vs
+  38.3%, repeat 28.2% vs 31.8%; audio KL at step 20 0.037 vs 0.006, text KL 0.045 vs 0.053; Whisper
+  distinct-fruit agreement 89.3% vs 93.7%. Silent phase deeper/longer in smoke 4 (peak 87% at step 8).
+- Samples: release `grpo-smoke4`.
+
 ## 2026-11-24 — Smoke run 3 (reward v3, 12 training turns, 20 steps, same seed)
 - **Validation step 0 -> 20** (100 val games, 12 turns, v3 scorer and reward; full table with base and
   smoke 1-2 rescored under v3: `results/grpo/rescore_v3.md`): bare valid 0.2% -> **52.7%**

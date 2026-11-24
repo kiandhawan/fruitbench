@@ -32,6 +32,7 @@ def stats(d: Path, w: dict, rules: str) -> dict:
         pos += [(i + 1, r) for i, r in enumerate(r for r in sc["replies"] if r["kind"] == "fruit")]
     n = len(reps)
     lat = [r["latency"] for r in reps if r["cls"] == "valid"]
+    lat_all = [r["latency"] for r in reps if r["latency"] is not None]
     words = [len(r["word_t"]) for r in reps]
     out = {"games": len(files), "turns": n, "mean_reward": round(float(np.mean(rew)), 4),
            **{f"{c}_rate": round(sum(r["cls"] == c for r in reps) / n, 4) for c in CLASSES},
@@ -40,7 +41,10 @@ def stats(d: Path, w: dict, rules: str) -> dict:
            "counted_overlap_rate": round(sum(counted_overlap(r, w) for r in reps) / n, 4),
            "latency_median": round(float(np.median(lat)), 3) if lat else None,
            "words_per_turn_median": float(np.median(words)), "words_per_turn_mean": round(float(np.mean(words)), 2),
-           "turn_cap_per_game": round(sum(caps) / len(files), 3)}
+           "turn_cap_per_game": round(sum(caps) / len(files), 3),
+           "valid_before_user_ends": round(float(np.mean([x < 0 for x in lat])), 4) if lat else None,
+           "valid_lat_p10_p50_p90": [round(float(q), 2) for q in np.percentile(lat, [10, 50, 90])] if lat else None,
+           "fruit_before_user_ends": round(float(np.mean([x < 0 for x in lat_all])), 4) if lat_all else None}
     for name, lo, hi in (("turns_1_6", 1, 6), ("turns_7_12", 7, 12)):
         ps = [r for i, r in pos if lo <= i <= hi]
         out[name] = {k: round(sum(r["cls"] == k for r in ps) / len(ps), 4) for k in ("valid", "sentence", "repeat")}
@@ -62,14 +66,20 @@ def main() -> None:
     rows = [("valid (bare fruit)", "valid_rate"), ("sentence (new fruit in other words)", "sentence_rate"),
             ("repeat", "repeat_rate"), ("echo", "echo_rate"), ("multi", "multi_rate"), ("filler", "filler_rate"),
             ("silent", "silent_rate"), ("non_fruit", "non_fruit_rate"), ("overlap (raw)", "overlap_rate"),
-            ("overlap (counted, 0.2 s grace)", "counted_overlap_rate")]
-    md = [f"# Validation rescored under {rules} (`{a.config}`)\n", "| metric | " + " | ".join(labs) + " |",
+            (f"overlap (counted, {w.get('overlap_grace', 0)} s grace)", "counted_overlap_rate")]
+    md = [f"# Validation rescored with scorer {rules} and the rewards of `{a.config}`\n", "| metric | " + " | ".join(labs) + " |",
           "|---|" + "---|" * len(labs)]
     md.append("| mean reward per turn | " + " | ".join(f"{res[l]['mean_reward']:+.3f}" for l in labs) + " |")
     for t, k in rows:
         md.append(f"| {t} | " + " | ".join(f"{res[l][k]:.1%}" for l in labs) + " |")
     md.append("| valid latency median (s) | " + " | ".join(str(res[l]["latency_median"]) for l in labs) + " |")
     md.append("| words per turn median (mean) | " + " | ".join(f"{res[l]['words_per_turn_median']:.0f} ({res[l]['words_per_turn_mean']})" for l in labs) + " |")
+    md.append("| valid fruits starting before the user finishes | " + " | ".join(
+        f"{res[l]['valid_before_user_ends']:.1%}" if res[l]["valid_before_user_ends"] is not None else "-" for l in labs) + " |")
+    md.append("| any fruit turn starting before the user finishes | " + " | ".join(
+        f"{res[l]['fruit_before_user_ends']:.1%}" if res[l]["fruit_before_user_ends"] is not None else "-" for l in labs) + " |")
+    md.append("| valid latency p10 / p50 / p90 (s) | " + " | ".join(
+        " / ".join(f"{x:+.2f}" for x in res[l]["valid_lat_p10_p50_p90"]) if res[l]["valid_lat_p10_p50_p90"] else "-" for l in labs) + " |")
     md.append("| 10 s turn cap per game | " + " | ".join(str(res[l]["turn_cap_per_game"]) for l in labs) + " |")
     for part in ("turns_1_6", "turns_7_12"):
         for k in ("valid", "sentence", "repeat", "overlap"):

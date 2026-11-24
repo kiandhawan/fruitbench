@@ -1,0 +1,196 @@
+{
+ "config": "configs/grpo_smoke3.yaml",
+ "rules": "v3",
+ "runs": {
+  "s3_step0": {
+   "games": 100,
+   "turns": 1233,
+   "mean_reward": -0.538,
+   "valid_rate": 0.0024,
+   "sentence_rate": 0.0268,
+   "repeat_rate": 0.1598,
+   "non_fruit_rate": 0.0584,
+   "filler_rate": 0.3358,
+   "silent_rate": 0.3642,
+   "multi_rate": 0.0527,
+   "echo_rate": 0.116,
+   "overlap_rate": 0.2644,
+   "counted_overlap_rate": 0.1135,
+   "latency_median": 0.0,
+   "words_per_turn_median": 1.0,
+   "words_per_turn_mean": 5.21,
+   "turn_cap_per_game": 0.66,
+   "valid_before_user_ends": 0.3333,
+   "valid_lat_p10_p50_p90": [
+    -0.03,
+    0.0,
+    0.05
+   ],
+   "fruit_before_user_ends": 0.198,
+   "turns_1_6": {
+    "valid": 0.0017,
+    "sentence": 0.035,
+    "repeat": 0.1317,
+    "overlap": 0.275
+   },
+   "turns_7_12": {
+    "valid": 0.0033,
+    "sentence": 0.0117,
+    "repeat": 0.1967,
+    "overlap": 0.2567
+   }
+  },
+  "s3_step20": {
+   "games": 100,
+   "turns": 1233,
+   "mean_reward": 0.3479,
+   "valid_rate": 0.5272,
+   "sentence_rate": 0.0446,
+   "repeat_rate": 0.1963,
+   "non_fruit_rate": 0.0495,
+   "filler_rate": 0.0511,
+   "silent_rate": 0.0341,
+   "multi_rate": 0.0973,
+   "echo_rate": 0.0835,
+   "overlap_rate": 0.4039,
+   "counted_overlap_rate": 0.0981,
+   "latency_median": 0.03,
+   "words_per_turn_median": 1.0,
+   "words_per_turn_mean": 1.55,
+   "turn_cap_per_game": 0.03,
+   "valid_before_user_ends": 0.38,
+   "valid_lat_p10_p50_p90": [
+    -0.13,
+    0.03,
+    0.13
+   ],
+   "fruit_before_user_ends": 0.3908,
+   "turns_1_6": {
+    "valid": 0.585,
+    "sentence": 0.0517,
+    "repeat": 0.1217,
+    "overlap": 0.44
+   },
+   "turns_7_12": {
+    "valid": 0.4917,
+    "sentence": 0.0333,
+    "repeat": 0.2817,
+    "overlap": 0.355
+   }
+  },
+  "s4_step0": {
+   "games": 100,
+   "turns": 1233,
+   "mean_reward": -0.538,
+   "valid_rate": 0.0024,
+   "sentence_rate": 0.0268,
+   "repeat_rate": 0.1598,
+   "non_fruit_rate": 0.0584,
+   "filler_rate": 0.3358,
+   "silent_rate": 0.3642,
+   "multi_rate": 0.0527,
+   "echo_rate": 0.116,
+   "overlap_rate": 0.2644,
+   "counted_overlap_rate": 0.1135,
+   "latency_median": 0.0,
+   "words_per_turn_median": 1.0,
+   "words_per_turn_mean": 5.21,
+   "turn_cap_per_game": 0.66,
+   "valid_before_user_ends": 0.3333,
+   "valid_lat_p10_p50_p90": [
+    -0.03,
+    0.0,
+    0.05
+   ],
+   "fruit_before_user_ends": 0.198,
+   "turns_1_6": {
+    "valid": 0.0017,
+    "sentence": 0.035,
+    "repeat": 0.1317,
+    "overlap": 0.275
+   },
+   "turns_7_12": {
+    "valid": 0.0033,
+    "sentence": 0.0117,
+    "repeat": 0.1967,
+    "overlap": 0.2567
+   }
+  },
+  "s4_step10": {
+   "games": 100,
+   "turns": 1233,
+   "mean_reward": -0.245,
+   "valid_rate": 0.0787,
+   "sentence_rate": 0.0114,
+   "repeat_rate": 0.0746,
+   "non_fruit_rate": 0.0438,
+   "filler_rate": 0.0503,
+   "silent_rate": 0.6967,
+   "multi_rate": 0.0446,
+   "echo_rate": 0.0357,
+   "overlap_rate": 0.0998,
+   "counted_overlap_rate": 0.047,
+   "latency_median": 0.06,
+   "words_per_turn_median": 0.0,
+   "words_per_turn_mean": 0.85,
+   "turn_cap_per_game": 0.06,
+   "valid_before_user_ends": 0.299,
+   "valid_lat_p10_p50_p90": [
+    -0.27,
+    0.06,
+    0.57
+   ],
+   "fruit_before_user_ends": 0.2791,
+   "turns_1_6": {
+    "valid": 0.0933,
+    "sentence": 0.0117,
+    "repeat": 0.0733,
+    "overlap": 0.1367
+   },
+   "turns_7_12": {
+    "valid": 0.0683,
+    "sentence": 0.0067,
+    "repeat": 0.08,
+    "overlap": 0.065
+   }
+  },
+  "s4_step20": {
+   "games": 100,
+   "turns": 1233,
+   "mean_reward": 0.2068,
+   "valid_rate": 0.429,
+   "sentence_rate": 0.0308,
+   "repeat_rate": 0.2214,
+   "non_fruit_rate": 0.0884,
+   "filler_rate": 0.0706,
+   "silent_rate": 0.0616,
+   "multi_rate": 0.0981,
+   "echo_rate": 0.1014,
+   "overlap_rate": 0.3309,
+   "counted_overlap_rate": 0.1006,
+   "latency_median": 0.06,
+   "words_per_turn_median": 1.0,
+   "words_per_turn_mean": 1.47,
+   "turn_cap_per_game": 0.03,
+   "valid_before_user_ends": 0.2968,
+   "valid_lat_p10_p50_p90": [
+    -0.11,
+    0.06,
+    0.16
+   ],
+   "fruit_before_user_ends": 0.3195,
+   "turns_1_6": {
+    "valid": 0.4983,
+    "sentence": 0.035,
+    "repeat": 0.1367,
+    "overlap": 0.3483
+   },
+   "turns_7_12": {
+    "valid": 0.3833,
+    "sentence": 0.025,
+    "repeat": 0.3183,
+    "overlap": 0.2983
+   }
+  }
+ }
+}

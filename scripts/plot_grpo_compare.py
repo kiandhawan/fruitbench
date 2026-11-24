@@ -22,8 +22,9 @@ def main():
     data = {r.name: (load(r / "metrics.jsonl"), load(r / "val.jsonl")) for r in runs}
     keys = [("valid_rate", "% valid new fruit"), ("silent_rate", "% silent"), ("multi_rate", "% multi-fruit"),
             ("overlap_rate", "% overlap (raw, scorer)"), ("words_per_turn", "mean words per turn"),
-            ("mean_reward", "mean reward per turn (own reward)")]
-    f, axes = plt.subplots(2, 3, figsize=(15, 7.5))
+            ("mean_reward", "mean reward per turn (own reward)"), ("kl_text", "KL to base, text tokens"),
+            ("kl_audio", "KL to base, audio tokens")]
+    f, axes = plt.subplots(2, 4, figsize=(20, 7.5))
     for ax, (k, title) in zip(axes.flat, keys):
         for name, (tr, _) in data.items():
             pts = [(r["step"], r[k]) for r in tr if r.get(k) is not None]

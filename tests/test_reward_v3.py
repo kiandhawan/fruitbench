@@ -5,7 +5,7 @@ Game: instructions 0-3 s; user "Apple." 4.0-4.6 s (so apple is already said); us
 (the turn under test); user "Pear." 13.0-13.6 s. Moshi's test reply starts at the given time, words
 0.15 s apart; latency = first fruit word start - 10.7 s.
 
-  python tests/test_reward_v3.py
+  python tests/test_reward_v3.py [configs/grpo_smoke4.yaml]   (default: configs/grpo_smoke3.yaml)
 """
 import sys
 from pathlib import Path
@@ -17,14 +17,19 @@ sys.path.insert(0, str(ROOT))
 from fruitbench.rewards import counted_overlap, turn_reward  # noqa: E402
 from fruitbench.score import score_game  # noqa: E402
 
-W = yaml.safe_load((ROOT / "configs" / "grpo_smoke3.yaml").read_text())["reward"]
+CONFIG = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT / "configs" / "grpo_smoke3.yaml"
+W = yaml.safe_load(CONFIG.read_text())["reward"]
+TABLE = ROOT / "results" / ("reward_v3_table.md" if CONFIG.stem == "grpo_smoke3" else f"reward_table_{CONFIG.stem}.md")
 KIWI_END = 10.7
 
 CASES = [  # (label, Moshi reply text, start time)
     ('"Mango." fast (0.3 s)', "Mango.", 11.0),
     ('"Mango." slow (1.5 s)', "Mango.", 12.2),
-    ('"Mango." in the grace window (starts 0.1 s before user ends)', "Mango.", 10.6),
+    ('"Mango." starts 0.1 s before the user finishes', "Mango.", 10.6),
+    ('"Mango." starts 0.05 s before the user finishes', "Mango.", 10.65),
+    ('"Mango." starts 0.15 s before the user finishes', "Mango.", 10.55),
     ('"Mango." over the user (starts 0.5 s before user ends)', "Mango.", 10.2),
+    ('"Mango." starts 0.6 s before the user finishes', "Mango.", 10.1),
     ('"A mango!"', "A mango!", 11.0),
     ('"Mangoes?"', "Mangoes?", 11.0),
     ('"Dragon fruit."', "Dragon fruit.", 11.0),
@@ -62,8 +67,8 @@ def main() -> None:
                     f"{'yes' if counted_overlap(r, W) else 'no'} | {len(r['word_t'])} | **{turn_reward(r, W):+.2f}** |")
     table = "\n".join(rows)
     print(table)
-    (ROOT / "results" / "reward_v3_table.md").write_text(
-        "# Reward v3 unit table (`tests/test_reward_v3.py`, `configs/grpo_smoke3.yaml`)\n\n"
+    TABLE.write_text(
+        f"# Reward unit table (`tests/test_reward_v3.py {CONFIG.relative_to(ROOT)}`)\n\n"
         "Reply to the user's \"Kiwi.\" (user speech ends at 10.7 s; \"Apple.\" was said earlier).\n\n" + table + "\n")
 
 
