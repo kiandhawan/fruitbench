@@ -1,5 +1,14 @@
 # LOG (newest first)
 
+## 2026-11-24 — Watchdog for the full run (`scripts/watchdog.py`, tmux window `watchdog`)
+- The trainer itself checks the stop rules (after every validation; audio KL after every step), writes
+  "[STOP] <reason>" to the log, uploads latest + best LoRA (validation stops) and exits.
+- Independent backup in its own tmux window: every 30 s the watchdog re-checks the same rules from
+  val.jsonl / metrics.jsonl; if one holds and the trainer is still running 5 min later it writes
+  "[watchdog ...] STOP condition holds ..." to the log and stops the trainer (SIGINT, then SIGTERM).
+  When the trainer is no longer running (stop, crash or done) it uploads the latest checkpoint (and the
+  best one) to the draft release `checkpoints` (covers the audio-KL stop and crashes) and exits.
+
 ## 2026-11-24 — Full GRPO run setup (`configs/grpo_full.yaml`, 200 steps)
 Smoke 4 config plus (user):
 1. **Credit windows fixed** (`fruitbench/credit.py`, `credit_windows: v2`): reply k's frames are
