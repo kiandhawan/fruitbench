@@ -41,7 +41,7 @@ import torch.distributed as dist  # noqa: E402
 import torch.nn.functional as F  # noqa: E402
 
 from fruitbench.game import FRAME_SEC, GameRunner, GameSpec, make_specs, save_game  # noqa: E402
-from fruitbench.rewards import game_rewards  # noqa: E402
+from fruitbench.rewards import counted_overlap, game_rewards  # noqa: E402
 from fruitbench.score import CLASSES, score_game  # noqa: E402
 
 ASR_PY = ROOT / ".venv-asr" / "bin" / "python"
@@ -257,10 +257,15 @@ def main() -> None:
                 res.pop("codes", None)
                 save_game(res, vdir)
                 (vdir / f"{res['summary']['game_id']}.score.json").write_text(json.dumps(sc, ensure_ascii=False))
+                sr = [r for r in sc["replies"] if r["scored"]]
+                fr = [r for r in sc["replies"] if r["kind"] == "fruit"]  # user fruit turns 1..12 in order
                 rows.append({"counts": sc["counts"], "rewards": game_rewards(sc, cfg["reward"]),
-                             "lat": [r["latency"] for r in sc["replies"] if r["scored"] and r["cls"] == "valid"],
+                             "lat": [r["latency"] for r in sr if r["cls"] == "valid"],
                              "overlaps": sc["overlaps"], "n": sc["n_scored"],
-                             "echo": sum(r["echo"] for r in sc["replies"] if r["scored"])})
+                             "counted_overlaps": sum(counted_overlap(r, cfg["reward"]) for r in sr),
+                             "echo": sum(r["echo"] for r in sr), "words": [len(r["word_t"]) for r in sr],
+                             "caps": sum(1 for e in res["summary"]["events"] if "turn cap" in e.get("why", "")),
+                             "pos": [(i + 1, r["cls"], bool(r["overlap"])) for i, r in enumerate(fr)]})
         allrows = [None] * world
         dist.all_gather_object(allrows, rows)
         if rank == 0:
@@ -275,7 +280,17 @@ def main() -> None:
                    "overlap_rate": round(sum(r["overlaps"] for r in rows) / n, 4),
                    "latency_median": round(float(np.median(lat)), 3) if lat else None,
                    "latency_mean": round(float(np.mean(lat)), 3) if lat else None,
+                   "counted_overlap_rate": round(sum(r["counted_overlaps"] for r in rows) / n, 4),
+                   "words_per_turn_median": float(np.median([x for r in rows for x in r["words"]])),
+                   "words_per_turn_mean": round(float(np.mean([x for r in rows for x in r["words"]])), 2),
+                   "turn_cap_per_game": round(sum(r["caps"] for r in rows) / len(rows), 3),
+                   "games_with_turn_cap": round(sum(r["caps"] > 0 for r in rows) / len(rows), 3),
                    "gen_sec": round(time.time() - t0, 1)}
+            for name, lo, hi in (("turns_1_6", 1, 6), ("turns_7_12", 7, 12)):
+                ps = [(c, o) for r in rows for (i, c, o) in r["pos"] if lo <= i <= hi]
+                rec[name] = {"n": len(ps), "valid": round(sum(c == "valid" for c, _ in ps) / len(ps), 4),
+                             "repeat": round(sum(c == "repeat" for c, _ in ps) / len(ps), 4),
+                             "overlap": round(sum(o for _, o in ps) / len(ps), 4)}
             archive_run(vdir, res_dir / f"val_step_{step:03d}")
             asr_out = res_dir / f"val_step_{step:03d}_asr.json"
             try:
@@ -434,9 +449,10 @@ def main() -> None:
         # ---------------- metrics (all ranks -> rank 0)
         reps = [r for sc in scores for r in sc["replies"] if r["scored"]]
         caps = sum(1 for r in results for e in r["summary"]["events"] if "turn cap" in e.get("why", ""))
-        words = [len(r["text"].split()) for r in reps]
+        words = [len(r["word_t"]) for r in reps]
         mine = {"n": len(reps), "cnt": {c: sum(r["cls"] == c for r in reps) for c in CLASSES},
                 "echo": sum(r["echo"] for r in reps), "overlap": sum(r["overlap"] for r in reps),
+                "counted_overlap": sum(counted_overlap(r, cfg["reward"]) for r in reps),
                 "lat": [r["latency"] for r in reps if r["cls"] == "valid"], "rew": [x for rw in rewards for x in rw],
                 "fruits_per_turn": float(np.mean([len(r["fruits"]) for r in reps])), "words": words,
                 "caps": caps, "game_sec": float(np.mean([r["summary"]["end_time"] for r in results])),
@@ -454,8 +470,10 @@ def main() -> None:
                    **{f"{c}_rate": round(cnt[c] / n, 4) for c in CLASSES},
                    "echo_rate": round(sum(m["echo"] for m in allm) / n, 4),
                    "overlap_rate": round(sum(m["overlap"] for m in allm) / n, 4),
+                   "counted_overlap_rate": round(sum(m["counted_overlap"] for m in allm) / n, 4),
                    "latency_median": round(float(np.median(lat)), 3) if lat else None,
                    "latency_mean": round(float(np.mean(lat)), 3) if lat else None,
+                   "words_per_turn_median": float(np.median([w for m in allm for w in m["words"]])),
                    "kl_text": round(sum(m["kl_t"] for m in allm) / max(nt, 1), 6),
                    "kl_audio": round(sum(m["kl_a"] for m in allm) / max(na, 1), 6),
                    "clipfrac_text": round(sum(m["clip_t"] for m in allm) / max(nt, 1), 4),

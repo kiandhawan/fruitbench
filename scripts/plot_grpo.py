@@ -1,4 +1,4 @@
-"""Plot GRPO curves: results/grpo/<run>/{metrics,val}.jsonl -> results/plots/grpo_*.png.
+"""Plot GRPO curves: results/grpo/<run>/{metrics,val}.jsonl -> results/plots/<run>/grpo_*.png.
 Runs in .venv-asr (has matplotlib):  .venv-asr/bin/python scripts/plot_grpo.py results/grpo/<run>"""
 import json
 import sys
@@ -18,7 +18,7 @@ def load(p):
 def main():
     d = Path(sys.argv[1])
     tr, va = load(d / "metrics.jsonl"), load(d / "val.jsonl")
-    out = ROOT / "results" / "plots"
+    out = ROOT / "results" / "plots" / d.name  # one folder per run, e.g. results/plots/grpo_smoke2/
     out.mkdir(parents=True, exist_ok=True)
     s = [r["step"] for r in tr]
     vs = [r["step"] for r in va]

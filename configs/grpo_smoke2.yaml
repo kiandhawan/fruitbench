@@ -1,0 +1,62 @@
+# GRPO on fruit-bench: second smoke run (20 steps, same seed/settings as grpo_smoke; reward v2). Every value here is logged with the run.
+run_name: grpo_smoke2
+seed: 1
+steps: 20
+
+model:
+  hf_repo: kyutai/moshiko-pytorch-bf16
+  lora_rank: 64
+  lora_scaling: 2.0          # moshi-finetune default; LoRA B starts at zero -> step 0 == base Moshi
+  gradient_checkpointing: true
+
+rollout:
+  starts_per_step: 4         # one start (group) per GPU
+  group_size: 16             # games per start
+  n_user_fruits: 6           # training games; evaluation stays at 12
+  split: train
+  # Sampling: Moshi defaults (temp 0.8 audio / 0.7 text, top-k 250 / 25). Raise only if the
+  # within-group spread collapses.
+  temp: null
+  temp_text: null
+  save_audio_every: 10       # keep WAVs of the training games every N steps (for listening)
+
+reward:                      # per scored Moshi turn (reward v2, see results/LOG.md)
+  valid: 1.0
+  fast_bonus: 0.2            # added to valid if fast_latency_min <= latency <= fast_latency
+  fast_latency_min: 0.0      # v2: no bonus when Moshi starts before the user finished
+  fast_latency: 1.0
+  filler: -0.3
+  silent: -0.3
+  repeat: -0.5               # includes echoing the user's fruit (unchanged)
+  non_fruit: -0.3
+  multi_new: 0.0             # v2: was +0.25 (more than one fruit, at least one new)
+  multi_no_new: -0.3
+  overlap: -0.8              # v2: was -0.3; Moshi speech during the user's line
+  overlap_grace: 0.2         # v2: ignore Moshi words starting in the last 0.2 s of a user line
+  valid_overlap_cap: 0.2     # v2: a valid fruit with counted overlap is capped at +0.2 total
+  long_turn_free_words: 3    # v2: -0.05 per word beyond 3 words in the turn ...
+  long_turn_per_word: -0.05
+  long_turn_cap: -0.5        # ... at most -0.5
+
+update:
+  adv_eps: 1.0e-4            # advantage = (r - mean_turn_index) / (std_turn_index + eps)
+  clip: 0.2
+  minibatches: 4             # one pass over the step's games, split into 4 optimizer steps
+  micro_batch: 4             # games per forward/backward
+  kl_beta: 0.04              # k3 KL to the reference = same model with LoRA disabled
+  text_weight: 1.0           # loss = text_weight * mean(text tokens) + audio_weight * mean(audio tokens)
+  audio_weight: 1.0
+  logprob_temperature: true  # score tokens with the sampling temperatures (text 0.7, audio 0.8)
+  lr: 1.0e-5
+  weight_decay: 0.0
+  betas: [0.9, 0.95]
+  grad_clip: 1.0
+
+checkpoint_every: 10
+val:
+  every: 20                  # also at step 0 (= base Moshi on the val set)
+  n_games: 100
+  n_user_fruits: 12
+  seed: 7
+  whisper_games: 10
+  whisper_min_agreement: 0.90

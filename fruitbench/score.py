@@ -179,11 +179,14 @@ class Reply:
     fuzzy: list[str] = field(default_factory=list)
     reward: float = 0.0
     multi_new: bool = False   # multi reply that contains at least one new fruit
+    user_spans: list = field(default_factory=list)  # (start, speech_end) of this and the next user line
 
     def as_dict(self) -> dict:
         d = {k: getattr(self, k) for k in ("turn", "kind", "scored", "user_text", "user_fruit", "user_end", "text",
                                             "cls", "fruits", "fruit", "latency", "overlap", "echo", "fuzzy", "reward", "multi_new")}
         d["first_word_t"] = self.words[0]["t"] if self.words else None
+        d["word_t"] = [w["t"] for w in self.words]          # for reward terms (word count, overlap grace)
+        d["user_spans"] = [list(x) for x in self.user_spans]
         return d
 
 
@@ -223,6 +226,7 @@ def score_game(game: dict) -> dict:
         distinct = list(dict.fromkeys(m["fruit"] for m in mentions))
         r.fruits = distinct
         talk_over = speech[k:k + 2]
+        r.user_spans = talk_over
         r.overlap = any(a <= w["t"] < b for w in ws for a, b in talk_over)
         if not ws:
             r.cls = "silent"

@@ -1,5 +1,26 @@
 # LOG (newest first)
 
+## 2026-11-24 — Reward v2 (`configs/grpo_smoke2.yaml`) after the first smoke run's hacks
+Changes vs `configs/grpo_smoke.yaml` (requested by the user after smoke run 1 showed talking over the
+user, fruit lists and long turns); `fruitbench/rewards.py` implements them, older configs keep their
+old meaning (missing keys -> v1 behaviour, e.g. v1 fast bonus stays `latency < 1.0`):
+1. Fast bonus (+0.2) only for latency in **[0, 1.0] s**; none when Moshi's fruit starts before the
+   user finished (v1 paid it for negative latencies too).
+2. Overlap penalty **-0.8** (was -0.3). Overlap is counted from Moshi's word start times inside a user
+   line (this reply's user line or the next one, as in the scorer), **ignoring words that start in the
+   last 0.2 s of the line** (overlap shorter than 0.2 s at the end of the user's line). A valid fruit
+   with counted overlap is **capped at +0.2** total.
+3. Multi-fruit turn that adds a new fruit: **0.0** (was +0.25; no new fruit stays -0.3).
+4. Long turns: **-0.05 per word beyond 3** words in the turn, at most -0.5 ("Apple." +1.2 beats "First
+   one is an apple" +1.1; 30-word chatter -0.3 - 0.5).
+5. Repeat/echo unchanged at -0.5; filler/silent/non-fruit -0.3; everything else (seed, sampling,
+   4 optimizer steps per batch, KL, lr) as in smoke run 1.
+- The scorer's classes are unchanged; its reply dicts now also carry `word_t` (word start times) and
+  `user_spans` so the reward can apply the 0.2 s grace and the word count.
+- Rescoring smoke run 1's step-20 validation games under v2: mean turn reward -0.04 -> -0.36.
+- Validation now also reports % valid / repeat / overlap for user turns 1-6 vs 7-12, median words per
+  turn, the 10 s turn-cap rate, and the overlap rate as counted by the reward (with the grace).
+
 ## 2026-11-24 — GRPO implementation and 20-step smoke run (`configs/grpo_smoke.yaml`)
 - **Code**: `scripts/grpo_train.py` (torchrun, 4 ranks, DDP), `fruitbench/rewards.py` (per-turn reward
   from the unchanged scorer classes + config weights), `scripts/plot_grpo.py` -> `results/plots/grpo_*.png`.
