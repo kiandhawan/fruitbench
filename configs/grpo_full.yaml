@@ -1,4 +1,5 @@
-# GRPO on fruit-bench: full run (~200 steps; longer only if validation still improves). Every value here is logged with the run.
+# GRPO on fruit-bench: FULL run (200 steps) = smoke 4 config + credit-window fix, exact audio KL, advantage std floor,
+# 0.16 s overlap grace, sentence stepping stone, ordinary-conversation check, stop conditions. Logged with the run.
 run_name: grpo_full
 seed: 1
 steps: 200
@@ -12,7 +13,7 @@ model:
 rollout:
   starts_per_step: 4         # one start (group) per GPU
   group_size: 16             # games per start
-  n_user_fruits: 6           # training games; evaluation stays at 12
+  n_user_fruits: 12         # v3: training games have 12 user turns, like evaluation
   split: train
   # Sampling: Moshi defaults (temp 0.8 audio / 0.7 text, top-k 250 / 25). Raise only if the
   # within-group spread collapses.
@@ -20,26 +21,41 @@ rollout:
   temp_text: null
   save_audio_every: 10       # keep WAVs of the training games every N steps (for listening)
 
-reward:                      # per scored Moshi turn
+reward:                      # per scored Moshi turn (reward v3, see results/LOG.md); validation uses the same
+  scorer: v3                 # valid = bare fruit name only ("Mango.", "A mango!", "Dragon fruit."); any other
+                             # reply with one new fruit is "sentence"; common-sense fruit list
   valid: 1.0
-  fast_bonus: 0.2            # added to valid if latency < fast_latency
+  fast_bonus: 0.2            # added to valid if fast_latency_min <= latency <= fast_latency
+  fast_latency_min: 0.0
   fast_latency: 1.0
+  sentence: -0.1             # v3: one new fruit inside other words ("I'll go with mango", "Um, mango")
+  sentence_stepping_stone: true  # full: a sentence with no counted overlap gets no long-turn penalty (stays at -0.1, above silence)
   filler: -0.3
   silent: -0.3
   repeat: -0.5               # includes echoing the user's fruit
   non_fruit: -0.3
-  multi_new: 0.0             # more than one fruit, at least one new (was +0.25 in the smoke run)
+  multi_new: -0.1            # v3: was 0.0 (more than one fruit, at least one new)
   multi_no_new: -0.3
-  overlap: -0.3              # added if Moshi's speech overlaps the user's line
+  overlap: -1.0              # v4: was -0.8; Moshi speech during the user's line
+  overlap_grace: 0.16        # full: 2 frames (smoke 4: 0.1, smoke 3: 0.2); ignore Moshi words starting in the last 0.16 s of a user line
+  valid_overlap_cap: 0.0     # v4: was +0.2; a valid fruit with counted overlap is capped at 0.0 total
+  long_turn_free_words: 3    # -0.05 per word beyond 3 words in the turn, all classes ...
+  long_turn_per_word: -0.05
+  long_turn_cap: -0.5        # ... at most -0.5
 
 update:
-  adv_eps: 1.0e-4            # advantage = (r - mean_turn_index) / (std_turn_index + eps)
+  adv_eps: 1.0e-4            # (unused when adv_std_floor is set)
+  adv_std_floor: 0.3         # full: advantage = (r - mean_turn_index) / max(std_turn_index, 0.3)
+  credit_windows: v2         # full: reply k = [start of user line k, start of line k+1) + carry-over (fruitbench/credit.py)
   clip: 0.2
   minibatches: 4             # one pass over the step's games, split into 4 optimizer steps
   micro_batch: 4             # games per forward/backward
-  kl_beta: 0.04              # k3 KL to the reference = same model with LoRA disabled
-  text_weight: 1.0           # loss = text_weight * mean(text tokens) + audio_weight * mean(audio tokens)
-  audio_weight: 1.0
+  kl_beta: 0.04              # k3 KL to the reference = same model with LoRA disabled (fallback)
+  kl_beta_text: 0.04         # v4: KL on text tokens
+  kl_beta_audio: 0.2         # v4: KL on audio tokens (stronger: keep Moshi's voice close to base)
+  kl_audio_exact: true       # full: exact KL over the full 2048-way audio distribution (text keeps the k3 estimate)
+  text_weight: 1.0           # policy-gradient weight on text tokens
+  audio_weight: 0.0          # v4: no policy gradient on audio tokens (KL only)
   logprob_temperature: true  # score tokens with the sampling temperatures (text 0.7, audio 0.8)
   lr: 1.0e-5
   weight_decay: 0.0
@@ -48,9 +64,24 @@ update:
 
 checkpoint_every: 10
 val:
-  every: 20                  # also at step 0 (= base Moshi on the val set)
+  every: 10                  # v4: steps 0, 10, 20
+  padded_whisper: false      # not needed (user)
+  chat: true                 # full: 20 ordinary conversations, % of Moshi replies with a fruit (flag > 10%)
+  best_metric: mean_reward   # final checkpoint = highest validation mean reward per turn (the trained objective)
   n_games: 100
   n_user_fruits: 12
   seed: 7
   whisper_games: 10
   whisper_min_agreement: 0.90
+
+stop:                        # the trainer stops (after saving a checkpoint) and prints [STOP] if any of these hold
+  val_valid_min_at_step_20: 0.429   # bare valid on validation at step 20 below smoke 4's step-20 value
+  val_silent_max_at_step_30: 0.5    # silence on validation still > 50% at step 30
+  val_valid_drops_in_a_row: 2       # validation bare-valid % drops at two validations in a row
+  audio_kl_max: 0.03                # training audio KL (exact) above this
+  chat_fruit_max: 0.10              # ordinary conversations: > 10% of Moshi replies contain a fruit
+
+upload:
+  release: checkpoints       # GitHub DRAFT release (only people with write access can see drafts): latest + best LoRA
+  every_validation: true
+commit_after_validation: true  # git commit + push metrics.jsonl, val.jsonl, validation archives, plots

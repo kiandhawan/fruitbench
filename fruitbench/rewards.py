@@ -9,6 +9,8 @@ Terms (all from config['reward']; keys missing in older configs fall back to the
                 ignored (overlap shorter than g at the end of the user's line).
   long turn:    + long_turn_per_word per word beyond long_turn_free_words, floored at long_turn_cap
   valid + counted overlap: the turn total is capped at valid_overlap_cap
+  sentence_stepping_stone: a "sentence" (one new fruit inside other words) with no counted overlap
+                gets no long-turn penalty, so it stays at `sentence` (-0.1), above silence (-0.3)
 """
 
 from __future__ import annotations
@@ -38,7 +40,8 @@ def turn_reward(r: dict, w: dict) -> float:
     ov = counted_overlap(r, w)
     if ov:
         x += w["overlap"]
-    if w.get("long_turn_per_word"):
+    stepping_stone = c == "sentence" and not ov and w.get("sentence_stepping_stone", False)
+    if w.get("long_turn_per_word") and not stepping_stone:
         extra = max(0, len(r.get("word_t", [])) - w["long_turn_free_words"])
         x += max(w["long_turn_cap"], w["long_turn_per_word"] * extra)
     if c == "valid" and ov and w.get("valid_overlap_cap") is not None:

@@ -1,5 +1,32 @@
 # LOG (newest first)
 
+## 2026-11-24 — Full GRPO run setup (`configs/grpo_full.yaml`, 200 steps)
+Smoke 4 config plus (user):
+1. **Credit windows fixed** (`fruitbench/credit.py`, `credit_windows: v2`): reply k's frames are
+   [start of user line k, start of line k+1), the scorer's own window; an utterance of reply k-1 still
+   going at line k's start keeps its frames (to its last word + 0.5 s) in window k-1. Smoke 1-4 used
+   [end of line k, end of line k+1), so an early "Mango." said over the end of line k was trained with
+   the PREVIOUS reply's advantage - likely why counted overlap did not drop in smoke 4.
+   `tests/test_credit.py`: the early "Mango." (10.2 s, frame 126) is in its own reply's window (new)
+   and was in the previous reply's window (legacy); carry-over test passes.
+2. **Audio KL**: exact KL(policy || LoRA-off) over the full 2048-way audio distribution (reference
+   log-softmax cached in bf16 from the reference pass), beta 0.2; text keeps k3, beta 0.04. The KL term
+   is added regardless of the policy-gradient weight: tok = (pg_w * pg + beta * kl) * mask, with
+   audio pg_w = audio_weight = 0.
+3. Advantage (r - mean) / max(std, 0.3). 4. Overlap grace 0.16 s; audio talk-over rate (>= 2 Moshi speech
+   frames > -45 dBFS inside the user's clip) logged in training and validation. 5. Stepping stone: a
+   sentence with a new fruit and no counted overlap = -0.1 with no long-turn penalty. 6. Per step: % of
+   (group, turn position) slots with at least one bare valid. 7. `--resume <ckpt dir>` (LoRA fp32 master +
+   AdamW state + step; tested); after every validation the latest and best LoRA go to the DRAFT release
+   `checkpoints` (the repo is public; drafts are visible only to people with write access). Best =
+   highest validation mean reward per turn (tie: bare valid). 8. Every validation: 20 ordinary
+   conversations (`fruitbench/chat.py`, 60 Fish lines, ~$0.03): % of Moshi replies with a fruit.
+- Stop conditions (trainer, prints [STOP]): val bare valid < 42.9% at step 20; val silence > 50% at
+  step 30; val bare valid drops two validations in a row; training audio KL > 0.03; chat > 10%.
+- Validation every 10 steps; after each one the trainer commits + pushes results/grpo/grpo_full and
+  results/plots. Launched in tmux window `train` (session `fruit`), log runs/grpo/grpo_full.log.
+- Trial (2 steps, 8-game validations) and resume test passed; base Moshi: 0/60 ordinary replies with a fruit.
+
 ## 2026-11-24 — Smoke run 4 (`configs/grpo_smoke4.yaml`) and comparison with smoke 3
 - Changes vs smoke 3 (user): policy gradient on text tokens only (audio_weight 0); k3 KL on both with
   beta text 0.04 / audio 0.2 (`kl_beta_text`, `kl_beta_audio`; logged separately); overlap -1.0 (was

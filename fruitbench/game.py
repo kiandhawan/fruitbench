@@ -71,6 +71,7 @@ class GameSpec:
     gaps: list[float]
     backup_order: list[str] = field(default_factory=list)  # used only if fruit_order runs out
     n_user_fruits: int = N_USER_FRUITS                      # 12 for evaluation; GRPO training uses 6
+    script: list[str] = field(default_factory=list)         # ordinary conversation: clip keys (kind "chat") said in order
 
     def to_dict(self) -> dict:
         return self.__dict__.copy()
@@ -194,7 +195,13 @@ class GameRunner:
     # ---------------------------------------------------------------- per-game state machine
     def _start_clip(self, g: GameState, frame: int, now: float) -> None:
         sp = g.spec
-        if not g.instructions_done:
+        if sp.script:  # ordinary conversation: the next scripted line (no instructions, no fruits)
+            key = sp.script[len(g.user_turns)]
+            row = self.clips[(sp.voice, "chat", key)]
+            turn = {"kind": "chat", "text": row["text"], "fruit": None}
+            g.n_fruits_said += 1
+            why = f"chat line {g.n_fruits_said}/{len(sp.script)}"
+        elif not g.instructions_done:
             row = self.clips[(sp.voice, "phrasing", sp.phrasing)]
             turn = {"kind": "instructions", "text": sp.phrasing, "fruit": None}
             g.instructions_done = True
@@ -216,7 +223,7 @@ class GameRunner:
         turn.update({"start": round(start, 3), "speech_end": round(start + row["duration"], 3),
                      "clip": row["path"], "voice": sp.voice, "frame": frame, "reason": why})
         g.user_turns.append(turn)
-        g.clip_tokens = self.clip_tokens[row["path"]]
+        g.clip_tokens = self.clip_tokens.get(row["path"])  # pre-encoded tokens (only used in "tokens" mode)
         g.clip_frame0 = frame
         g.turn_start = turn["speech_end"]
         g.last_speech, g.speech_frames = None, 0

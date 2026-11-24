@@ -41,6 +41,8 @@ import torch.distributed as dist  # noqa: E402
 import torch.nn.functional as F  # noqa: E402
 
 from fruitbench.game import FRAME_SEC, GameRunner, GameSpec, make_specs, save_game  # noqa: E402
+from fruitbench.chat import chat_fruit_rate, chat_specs  # noqa: E402
+from fruitbench.credit import credit_windows, talkover_flags  # noqa: E402
 from fruitbench.rewards import counted_overlap, game_rewards  # noqa: E402
 from fruitbench.score import CLASSES, score_game  # noqa: E402
 
@@ -142,7 +144,8 @@ def check_alignment(summary: dict, codes: np.ndarray) -> int:
     return bad
 
 
-def group_advantages(rewards: list[list[float]], eps: float) -> tuple[list[list[float]], dict]:
+def group_advantages(rewards: list[list[float]], eps: float, std_floor: float | None = None) -> tuple[list[list[float]], dict]:
+    """Per turn index j: (r - mean_j) / (std_j + eps), or / max(std_j, std_floor) when std_floor is set."""
     L = max(len(r) for r in rewards)
     adv = [[0.0] * len(r) for r in rewards]
     vary_pos = 0
@@ -152,7 +155,7 @@ def group_advantages(rewards: list[list[float]], eps: float) -> tuple[list[list[
         mu, sd = x.mean(), x.std()
         vary_pos += sd > 0
         for g, v in vals:
-            adv[g][j] = float((v - mu) / (sd + eps))
+            adv[g][j] = float((v - mu) / (max(sd, std_floor) if std_floor else sd + eps))
     tot = [sum(r) for r in rewards]
     return adv, {"group_spread": float(np.std(tot)), "group_varies": bool(np.std(tot) > 0),
                  "turn_pos_vary": vary_pos / L}
@@ -200,6 +203,7 @@ def main() -> None:
     ap.add_argument("--steps", type=int, help="override config steps")
     ap.add_argument("--no-val", action="store_true", help="skip validation (quick trials)")
     ap.add_argument("--run-name", help="override run_name")
+    ap.add_argument("--resume", type=Path, help="checkpoint dir runs/grpo/<run>/ckpt/step_XXX: LoRA + optimizer + step")
     args = ap.parse_args()
     cfg = yaml.safe_load(args.config.read_text())
     if args.steps:
@@ -222,8 +226,9 @@ def main() -> None:
         res_dir.mkdir(parents=True, exist_ok=True)
         run_dir.mkdir(parents=True, exist_ok=True)
         (res_dir / "config.yaml").write_text(yaml.safe_dump(cfg, sort_keys=False))
-        for f in ("metrics.jsonl", "val.jsonl"):
-            (res_dir / f).unlink(missing_ok=True)
+        if not args.resume:  # a resumed run appends to its logs
+            for f in ("metrics.jsonl", "val.jsonl"):
+                (res_dir / f).unlink(missing_ok=True)
     dist.barrier()
 
     from finetune.mixed_precision import downcast_mixed_precision, upcast_mixed_precision
@@ -231,10 +236,29 @@ def main() -> None:
     mimi, tok, lm, gen_cfg, nparams = load_policy(cfg)
     log0(f"[setup] world={world} LoRA layers={nparams['lora_layers']} trainable={nparams['trainable']:,} "
          f"of {nparams['total']:,} params; sampling {gen_cfg}")
-    model = torch.nn.parallel.DistributedDataParallel(lm, device_ids=[local], find_unused_parameters=False)
     params = [p for p in lm.parameters() if p.requires_grad]
     u = cfg["update"]
     opt = torch.optim.AdamW(params, lr=u["lr"], betas=tuple(u["betas"]), weight_decay=u["weight_decay"])
+    start_step = 1
+    if args.resume:
+        from safetensors.torch import load_file
+        sd = load_file(str(args.resume / "lora.safetensors"), device=f"cuda:{local}")
+        with torch.no_grad():
+            for name, p in lm.named_parameters():
+                if p.requires_grad:
+                    p._mp_param.copy_(sd[name])
+                    p.data.copy_(sd[name].to(p.dtype))
+        # Optimizer.load_state_dict casts state to each param's dtype: load it while params point at the
+        # fp32 master copies, so Adam moments stay fp32.
+        saved = [p.data for p in params]
+        for p in params:
+            p.data = p._mp_param
+        opt.load_state_dict(torch.load(args.resume / "optimizer.pt", map_location=f"cuda:{local}"))
+        for p, d in zip(params, saved):
+            p.data = d
+        start_step = int(args.resume.name.split("_")[-1]) + 1
+        log0(f"[resume] loaded {args.resume} -> continuing at step {start_step}")
+    model = torch.nn.parallel.DistributedDataParallel(lm, device_ids=[local], find_unused_parameters=False)
     runner = GameRunner(cfg["rollout"]["group_size"], decode_audio=True, models=(mimi, tok, lm, gen_cfg),
                         record_codes=True)
     temps = (gen_cfg["temp_text"], gen_cfg["temp"]) if u["logprob_temperature"] else (1.0, 1.0)
@@ -262,7 +286,8 @@ def main() -> None:
                 (vdir / f"{res['summary']['game_id']}.score.json").write_text(json.dumps(sc, ensure_ascii=False))
                 sr = [r for r in sc["replies"] if r["scored"]]
                 fr = [r for r in sc["replies"] if r["kind"] == "fruit"]  # user fruit turns 1..12 in order
-                rows.append({"counts": sc["counts"], "rewards": game_rewards(sc, cfg["reward"]),
+                rows.append({"talkover": sum(talkover_flags(res["summary"], sc)),
+                             "counts": sc["counts"], "rewards": game_rewards(sc, cfg["reward"]),
                              "lat": [r["latency"] for r in sr if r["cls"] == "valid"],
                              "lat_all": [r["latency"] for r in sr if r["latency"] is not None],
                              "overlaps": sc["overlaps"], "n": sc["n_scored"],
@@ -270,6 +295,19 @@ def main() -> None:
                              "echo": sum(r["echo"] for r in sr), "words": [len(r["word_t"]) for r in sr],
                              "caps": sum(1 for e in res["summary"]["events"] if "turn cap" in e.get("why", "")),
                              "pos": [(i + 1, r["cls"], bool(r["overlap"])) for i, r in enumerate(fr)]})
+        chat_games = []
+        if v.get("chat", False):  # (8) ordinary conversations: does Moshi still talk normally?
+            cs = chat_specs()
+            cper = math.ceil(len(cs) / world)
+            cmine = cs[rank * cper:(rank + 1) * cper]
+            if cmine:
+                cdir = run_dir / "val" / f"step_{step:03d}_chat"
+                for res in runner.run(cmine, v["seed"] * 1000 + 500 + rank):
+                    res.pop("codes", None)
+                    save_game(res, cdir)
+                    chat_games.append(res["summary"])
+        allchat = [None] * world
+        dist.all_gather_object(allchat, chat_games)
         allrows = [None] * world
         dist.all_gather_object(allrows, rows)
         if rank == 0:
@@ -289,7 +327,11 @@ def main() -> None:
                    "words_per_turn_mean": round(float(np.mean([x for r in rows for x in r["words"]])), 2),
                    "turn_cap_per_game": round(sum(r["caps"] for r in rows) / len(rows), 3),
                    "games_with_turn_cap": round(sum(r["caps"] > 0 for r in rows) / len(rows), 3),
+                   "talkover_audio_rate": round(sum(r["talkover"] for r in rows) / n, 4),
                    "gen_sec": round(time.time() - t0, 1)}
+            if v.get("chat", False):
+                rec["chat"] = chat_fruit_rate([gm for cc in allchat for gm in cc])
+                archive_run(run_dir / "val" / f"step_{step:03d}_chat", res_dir / f"val_step_{step:03d}_chat")
             lat_all = [x for r in rows for x in r["lat_all"]]
             rec["latency_dist"] = {
                 "valid_n": len(lat), "valid_before_user_ends": round(float(np.mean([x < 0 for x in lat])), 4) if lat else None,
@@ -334,6 +376,9 @@ def main() -> None:
             if rec.get("asr_flag"):
                 log0(f"[val step {step}] FLAG: Whisper heard only {rec['asr_fruit_agreement']:.0%} of the text "
                      f"stream's fruits (< {v['whisper_min_agreement']:.0%}): possible reward hacking")
+            if "chat" in rec:
+                log0(f"[val step {step}] ordinary conversations: {rec['chat']['with_fruit']}/{rec['chat']['replies']} "
+                     f"Moshi replies mention a fruit ({rec['chat']['rate']:.1%})")
         dist.barrier()
 
     def save_ckpt(step: int) -> None:
@@ -348,9 +393,87 @@ def main() -> None:
             log0(f"[ckpt] saved {d}")
         dist.barrier()
 
-    if not args.no_val:
+    def val_history() -> list[dict]:
+        f = res_dir / "val.jsonl"
+        return [json.loads(l) for l in f.read_text().splitlines()] if f.exists() else []
+
+    def check_stop_after_val(step: int) -> str | None:
+        sc_ = cfg.get("stop", {})
+        h = [x for x in val_history() if x["step"] <= step]
+        last = h[-1]
+        if step == 20 and "val_valid_min_at_step_20" in sc_ and last["valid_rate"] < sc_["val_valid_min_at_step_20"]:
+            return f"validation bare valid {last['valid_rate']:.1%} at step 20 < {sc_['val_valid_min_at_step_20']:.1%}"
+        if step == 30 and "val_silent_max_at_step_30" in sc_ and last["silent_rate"] > sc_["val_silent_max_at_step_30"]:
+            return f"validation silence {last['silent_rate']:.1%} at step 30 > {sc_['val_silent_max_at_step_30']:.0%}"
+        n = sc_.get("val_valid_drops_in_a_row")
+        if n and len(h) >= n + 1:
+            v_ = [x["valid_rate"] for x in h[-(n + 1):]]
+            if all(v_[i + 1] < v_[i] for i in range(n)):
+                return f"validation bare valid dropped {n} validations in a row: {' -> '.join(f'{x:.1%}' for x in v_)}"
+        if "chat_fruit_max" in sc_ and "chat" in last and last["chat"]["rate"] > sc_["chat_fruit_max"]:
+            return f"ordinary conversations: {last['chat']['rate']:.1%} of replies mention a fruit (> {sc_['chat_fruit_max']:.0%})"
+        return None
+
+    upload_proc = [None]
+
+    def after_validation(step: int) -> None:
+        """rank 0: best checkpoint, async upload to the draft release, commit + push the run's results."""
+        h = val_history()
+        bm = cfg["val"].get("best_metric", "mean_reward")
+        cands = [x for x in h if x["step"] > 0 and (run_dir / "ckpt" / f"step_{x['step']:03d}" / "lora.safetensors").exists()]
+        if cands:
+            best = max(cands, key=lambda x: (x[bm], x["valid_rate"]))
+            (res_dir / "best.json").write_text(json.dumps({"best_metric": bm, "step": best["step"], bm: best[bm],
+                                                           "valid_rate": best["valid_rate"]}, indent=1))
+            up = cfg.get("upload", {})
+            if up.get("every_validation") and up.get("release"):
+                if upload_proc[0] is not None:
+                    upload_proc[0].wait()
+                ud = run_dir / "upload"
+                shutil.rmtree(ud, ignore_errors=True)
+                ud.mkdir(parents=True)
+                os.link(run_dir / "ckpt" / f"step_{step:03d}" / "lora.safetensors", ud / "lora_latest.safetensors")
+                os.link(run_dir / "ckpt" / f"step_{best['step']:03d}" / "lora.safetensors", ud / "lora_best.safetensors")
+                (ud / "checkpoints.json").write_text(json.dumps(
+                    {"run": run, "latest_step": step, "best_step": best["step"], "best_metric": bm,
+                     "best_value": best[bm], "best_valid_rate": best["valid_rate"],
+                     "format": "fp32 LoRA (rank 64) safetensors for kyutai/moshiko-pytorch-bf16"}, indent=1))
+                upload_proc[0] = subprocess.Popen(
+                    ["gh", "release", "upload", up["release"], str(ud / "lora_latest.safetensors"),
+                     str(ud / "lora_best.safetensors"), str(ud / "checkpoints.json"), "--clobber"],
+                    cwd=ROOT, stdout=open(run_dir / "upload.log", "a"), stderr=subprocess.STDOUT)
+        if cfg.get("commit_after_validation"):
+            last = h[-1]
+            paths = [str(res_dir.relative_to(ROOT)), "results/plots"]
+            subprocess.run(["git", "add", *paths], cwd=ROOT, check=False)
+            staged = subprocess.run(["git", "diff", "--cached", "--name-only"], cwd=ROOT, capture_output=True,
+                                    text=True).stdout.split()
+            bad = [f for f in staged if f.endswith((".wav", ".mp3", ".npy", ".pt", ".safetensors", ".tar.gz"))
+                   or "key" in f.lower() or ".env" in f]
+            if bad:
+                subprocess.run(["git", "reset", "-q", *bad], cwd=ROOT)
+                log0(f"[commit] refused to commit {bad}")
+            msg = (f"{run}: validation step {step} (bare valid {last['valid_rate']:.1%}, mean reward "
+                   f"{last['mean_reward']:+.3f})\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>")
+            r = subprocess.run(["git", "-c", "user.name=kiandhawan", "-c", "user.email=kiandhawan@gmail.com",
+                                "commit", "-q", "-m", msg], cwd=ROOT, capture_output=True, text=True)
+            if r.returncode == 0:
+                subprocess.run(["git", "push", "-q"], cwd=ROOT, capture_output=True)
+                log0(f"[commit] pushed validation step {step}")
+
+    def stop_all(reason: str | None) -> bool:
+        flag = [reason]
+        dist.broadcast_object_list(flag, src=0)
+        if flag[0]:
+            log0(f"[STOP] {flag[0]}")
+        return bool(flag[0])
+
+    if not args.no_val and start_step == 1:
         validate(0)
-    for step in range(1, cfg["steps"] + 1):
+        if rank == 0:
+            after_validation(0)
+    stopped = False
+    for step in range(start_step, cfg["steps"] + 1):
         t_step = time.time()
         torch.cuda.reset_peak_memory_stats()
         # ---------------- rollouts (this rank's group)
@@ -364,13 +487,18 @@ def main() -> None:
         gen_sec = time.time() - t0
         scores = [score_game(r["summary"], RULES) for r in results]
         rewards = [game_rewards(s, cfg["reward"]) for s in scores]
-        adv, gstats = group_advantages(rewards, u["adv_eps"])
+        adv, gstats = group_advantages(rewards, u["adv_eps"], u.get("adv_std_floor"))
+        win_fn = credit_windows if u.get("credit_windows") == "v2" else turn_windows
+        # (6) (group, turn position) slots with at least one bare valid fruit among the 16 games
+        cls_by_pos = [[r["cls"] for r in sc["replies"] if r["scored"]] for sc in scores]
+        L = max(len(c) for c in cls_by_pos)
+        slots_valid = sum(any(j < len(c) and c[j] == "valid" for c in cls_by_pos) for j in range(L))
         items, misaligned = [], 0
         for res, sc, a in zip(results, scores, adv):
             codes = res["codes"]
             misaligned += check_alignment(res["summary"], codes)
             fa = np.full(codes.shape[1], np.nan, dtype=np.float32)
-            for j, lo, hi in turn_windows(res["summary"], sc, codes.shape[1]):
+            for j, lo, hi in win_fn(res["summary"], sc, codes.shape[1]):
                 fa[lo:hi] = a[j]
             items.append({"codes": codes, "frame_adv": fa})
         save_audio = ro["save_audio_every"] and step % ro["save_audio_every"] == 0
@@ -395,11 +523,15 @@ def main() -> None:
                 codes, _ = batch_codes(chunk)
                 lp_t, lp_a, *_ = token_logps(lm, codes, temps)
                 with lora_disabled(lm):
-                    rf_t, rf_a, *_ = token_logps(lm, codes, temps)
+                    rf_t, rf_a, _, _, _, rf_al = token_logps(lm, codes, temps)
+                rf_full = torch.log_softmax(rf_al, -1).to(torch.bfloat16) if u.get("kl_audio_exact") else None
                 for k, it in enumerate(chunk):
                     t_own = it["codes"].shape[1]
                     it["old_t"], it["old_a"] = lp_t[k][:, :t_own], lp_a[k][:, :t_own]
                     it["ref_t"], it["ref_a"] = rf_t[k][:, :t_own], rf_a[k][:, :t_own]
+                    if rf_full is not None:
+                        it["ref_a_full"] = rf_full[k][:, :t_own]  # (8, T, 2048) reference log-probs
+                del rf_full
         # sanity: sampled tokens must be inside the sampler's top-k under teacher forcing (step 1 only)
         topk_ok = None
         if step == 1:
@@ -433,21 +565,28 @@ def main() -> None:
                 old_a = torch.stack([F.pad(it["old_a"], (0, Tm - it["old_a"].shape[-1])) for it in ch])
                 ref_t = torch.stack([F.pad(it["ref_t"], (0, Tm - it["ref_t"].shape[-1])) for it in ch])
                 ref_a = torch.stack([F.pad(it["ref_a"], (0, Tm - it["ref_a"].shape[-1])) for it in ch])
+                ref_full = (torch.stack([F.pad(it["ref_a_full"], (0, 0, 0, Tm - it["ref_a_full"].shape[1]))
+                                         for it in ch]).float() if u.get("kl_audio_exact") else None)
                 sync = k == len(micro) - 1
                 ctx = model.no_sync() if not sync else torch.enable_grad()
                 with ctx:
-                    lp_t, lp_a, tm, am, _, _ = token_logps(model, codes, temps)
+                    lp_t, lp_a, tm, am, _, al = token_logps(model, codes, temps)
                     fmask = torch.isfinite(advt)
                     A = torch.nan_to_num(advt, nan=0.0)
                     mt = tm & fmask[:, None]
                     ma = am & fmask[:, None]
 
-                    def part(lp, old, ref, mask, pg_w, beta):
+                    def part(lp, old, ref, mask, pg_w, beta, kl_exact=None):
                         ratio = torch.exp(lp - old)
                         Ae = A[:, None].expand_as(lp)
                         pg = -torch.minimum(ratio * Ae, ratio.clamp(1 - u["clip"], 1 + u["clip"]) * Ae)
-                        d = ref - lp
-                        kl = torch.exp(d) - d - 1
+                        if kl_exact is None:  # k3 estimate on the sampled token
+                            d = ref - lp
+                            kl = torch.exp(d) - d - 1
+                        else:                 # exact KL(policy || reference) over the full vocabulary
+                            kl = kl_exact
+                        # the KL term is added whatever pg_w is: with audio_weight = 0 the audio tokens
+                        # still get beta_audio * KL (and no policy gradient)
                         tok = (pg_w * pg + beta * kl) * mask
                         clipped = ((ratio - 1).abs() > u["clip"]) & mask
                         return tok.sum(), (kl * mask).sum().detach(), clipped.sum().detach()
@@ -457,7 +596,11 @@ def main() -> None:
                     bt = u.get("kl_beta_text", u["kl_beta"])
                     ba = u.get("kl_beta_audio", u["kl_beta"])
                     lt, klt, ct = part(lp_t, old_t, ref_t, mt, u["text_weight"], bt)
-                    la, kla, ca = part(lp_a, old_a, ref_a, ma, u["audio_weight"], ba)
+                    kl_ex = None
+                    if ref_full is not None:
+                        lpf = torch.log_softmax(al, -1)                       # (B, 8, T, 2048) policy
+                        kl_ex = (lpf.exp() * (lpf - ref_full)).sum(-1)        # (B, 8, T) exact KL per token
+                    la, kla, ca = part(lp_a, old_a, ref_a, ma, u["audio_weight"], ba, kl_ex)
                     loss = lt / max(n_t, 1) + la / max(n_a, 1)
                     loss.backward()
                 st["kl_t"] += float(klt)
@@ -479,7 +622,9 @@ def main() -> None:
         reps = [r for sc in scores for r in sc["replies"] if r["scored"]]
         caps = sum(1 for r in results for e in r["summary"]["events"] if "turn cap" in e.get("why", ""))
         words = [len(r["word_t"]) for r in reps]
+        talk = sum(sum(talkover_flags(r["summary"], sc)) for r, sc in zip(results, scores))
         mine = {"n": len(reps), "cnt": {c: sum(r["cls"] == c for r in reps) for c in CLASSES},
+                "talkover": talk, "slots_valid": slots_valid, "slots": L,
                 "echo": sum(r["echo"] for r in reps), "overlap": sum(r["overlap"] for r in reps),
                 "counted_overlap": sum(counted_overlap(r, cfg["reward"]) for r in reps),
                 "lat": [r["latency"] for r in reps if r["cls"] == "valid"], "rew": [x for rw in rewards for x in rw],
@@ -500,6 +645,8 @@ def main() -> None:
                    "echo_rate": round(sum(m["echo"] for m in allm) / n, 4),
                    "overlap_rate": round(sum(m["overlap"] for m in allm) / n, 4),
                    "counted_overlap_rate": round(sum(m["counted_overlap"] for m in allm) / n, 4),
+                   "talkover_audio_rate": round(sum(m["talkover"] for m in allm) / n, 4),
+                   "slots_with_valid": round(sum(m["slots_valid"] for m in allm) / max(sum(m["slots"] for m in allm), 1), 4),
                    "latency_median": round(float(np.median(lat)), 3) if lat else None,
                    "latency_mean": round(float(np.mean(lat)), 3) if lat else None,
                    "words_per_turn_median": float(np.median([w for m in allm for w in m["words"]])),
@@ -527,7 +674,9 @@ def main() -> None:
                 f.write(json.dumps(rec) + "\n")
             print(f"[step {step}] reward {rec['mean_reward']:+.3f} valid {rec['valid_rate']:.1%} filler "
                   f"{rec['filler_rate']:.1%} silent {rec['silent_rate']:.1%} repeat {rec['repeat_rate']:.1%} "
-                  f"multi {rec['multi_rate']:.1%} overlap {rec['overlap_rate']:.1%} KL t/a {rec['kl_text']:.4f}/"
+                  f"multi {rec['multi_rate']:.1%} sentence {rec['sentence_rate']:.1%} overlap {rec['overlap_rate']:.1%} "
+                  f"(counted {rec['counted_overlap_rate']:.1%}, audio talk-over {rec['talkover_audio_rate']:.1%}) "
+                  f"valid-slots {rec['slots_with_valid']:.0%} KL t/a {rec['kl_text']:.4f}/"
                   f"{rec['kl_audio']:.4f} spread {rec['groups_with_spread']:.0%} step {rec['step_sec']}s "
                   f"(gen {rec['gen_sec']} logp {rec['logp_sec']} train {rec['train_sec']}) mem {rec['peak_mem_gb']}GB"
                   + (f" topk {rec['alignment_topk_check']}" if "alignment_topk_check" in rec else ""), flush=True)
@@ -539,15 +688,29 @@ def main() -> None:
             # only the step's metrics row (metrics.jsonl) is committed.
             tar_step(rdir)
         dist.barrier()
-        if step % cfg["checkpoint_every"] == 0:
+        kl_reason = None
+        if rank == 0 and "audio_kl_max" in cfg.get("stop", {}) and rec["kl_audio"] > cfg["stop"]["audio_kl_max"]:
+            kl_reason = f"training audio KL {rec['kl_audio']:.4f} > {cfg['stop']['audio_kl_max']}"
+        if step % cfg["checkpoint_every"] == 0 or kl_reason:
             save_ckpt(step)
+        if stop_all(kl_reason):
+            stopped = True
+            break
         if step % cfg["val"]["every"] == 0:
             validate(step)
+            reason = None
             if rank == 0:
                 subprocess.run([str(ASR_PY), str(ROOT / "scripts" / "plot_grpo.py"), str(res_dir)],
                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                after_validation(step)
+                reason = check_stop_after_val(step)
+            if stop_all(reason):
+                stopped = True
+                break
     if rank == 0:
-        log0("[done]")
+        if upload_proc[0] is not None:
+            upload_proc[0].wait()
+        log0("[stopped]" if stopped else "[done]")
     dist.barrier()
     dist.destroy_process_group()
 

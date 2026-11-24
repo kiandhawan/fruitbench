@@ -11,5 +11,14 @@
   "note": "Fish bills with a delay of minutes; re-check the credit later (scripts/fish_credit.py).",
   "credit_after_later": 58.849805,
   "credit_delta_later": 0.2269
+ },
+ {
+  "date": "2026-11-24 06:48",
+  "what": "ordinary-conversation lines",
+  "clips_rendered": 60,
+  "bytes_sent": 1987,
+  "estimated_usd": 0.0298,
+  "credit_before": 58.849805,
+  "credit_after_5s": 58.849805
  }
 ]
