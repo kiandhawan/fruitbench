@@ -1,0 +1,290 @@
+{
+ "game_id": "train_s1_0014_r06",
+ "starter": "moshi",
+ "greeting": "Hello, what's up?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": true,
+   "user_text": "Fruit game! You say one, then me, then you. Start now.",
+   "user_fruit": null,
+   "user_end": 7.37,
+   "text": "No, that's not correct.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 9.6
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mango.",
+   "user_fruit": "mango",
+   "user_end": 13.16,
+   "text": "Mango is a type of fruit, not a game. It not a game.",
+   "cls": "repeat",
+   "fruits": [
+    "mango"
+   ],
+   "fruit": "mango",
+   "latency": 0.04,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 13.2
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Rambutan.",
+   "user_fruit": "rambutan",
+   "user_end": 19.46,
+   "text": "Rambutan is a type of fruit. It's a tropical fruit. It's a popular fruit in Southeast Asia and it's often used in desserts and other dishes.",
+   "cls": "repeat",
+   "fruits": [
+    "rambutan"
+   ],
+   "fruit": "rambutan",
+   "latency": 0.06,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 19.52
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Huckleberry.",
+   "user_fruit": "huckleberry",
+   "user_end": 28.9,
+   "text": "Huckleberry is a type of wild berry that grows in the United States and Canada. It's often used in jams, preserves, and other culinary dishes.",
+   "cls": "repeat",
+   "fruits": [
+    "huckleberry"
+   ],
+   "fruit": "huckleberry",
+   "latency": 0.06,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 28.96
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Satsuma.",
+   "user_fruit": "satsuma",
+   "user_end": 38.11,
+   "text": "Sashimi is a Japanese dish made of raw fish sliced very thinly. It's often served with soy sauce, wasabi, and grated radish.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 38.24
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Passion fruit.",
+   "user_fruit": "passion fruit",
+   "user_end": 47.44,
+   "text": "Passion fruit is a tropical fruit native to South America. It's often used in desserts, smoothies, and juices.",
+   "cls": "repeat",
+   "fruits": [
+    "passion fruit"
+   ],
+   "fruit": "passion fruit",
+   "latency": -0.08,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 47.36
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mandarin.",
+   "user_fruit": "mandarin",
+   "user_end": 54.62,
+   "text": "Mandarin is a type of orange. It's sweeter and has a thicker rind than other types of oranges.",
+   "cls": "multi",
+   "fruits": [
+    "mandarin",
+    "orange"
+   ],
+   "fruit": null,
+   "latency": 0.02,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 54.64
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Plantain.",
+   "user_fruit": "plantain",
+   "user_end": 61.62,
+   "text": "plantain is a starchy fruit that's commonly found in Latin American and Caribbean cuisine. It's often used in savory dishes, such as fried or roasted, and can also be used as a sweetener in desserts.",
+   "cls": "repeat",
+   "fruits": [
+    "plantain"
+   ],
+   "fruit": "plantain",
+   "latency": 0.14,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 61.76
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cherimoya.",
+   "user_fruit": "cherimoya",
+   "user_end": 73.11,
+   "text": "Cherimoya is a tropical fruit native to South America. It has a sweet, creamy flesh and is often used in desserts and juices.",
+   "cls": "repeat",
+   "fruits": [
+    "cherimoya"
+   ],
+   "fruit": "cherimoya",
+   "latency": 0.09,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 73.2
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Persimmon.",
+   "user_fruit": "persimmon",
+   "user_end": 81.18,
+   "text": "Persimmon is a type of fruit that comes from a tree. It's sweet and can be eaten raw or used in baking.",
+   "cls": "repeat",
+   "fruits": [
+    "persimmon"
+   ],
+   "fruit": "persimmon",
+   "latency": 0.1,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 81.28
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Bilberry.",
+   "user_fruit": "bilberry",
+   "user_end": 87.98,
+   "text": "Bilberry is a type of fruit that's native to Europe. It's often used in culinary applications and is also known to have medicinal properties.",
+   "cls": "repeat",
+   "fruits": [
+    "bilberry"
+   ],
+   "fruit": "bilberry",
+   "latency": 0.02,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 88.0
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Grape.",
+   "user_fruit": "grape",
+   "user_end": 96.3,
+   "text": "",
+   "cls": "silent",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": null
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Jujube.",
+   "user_fruit": "jujube",
+   "user_end": 100.27,
+   "text": "Grape is a type of fruit that comes from a grapevine. It's often used in wine, juice, and other beverages.",
+   "cls": "repeat",
+   "fruits": [
+    "grape"
+   ],
+   "fruit": "grape",
+   "latency": -0.59,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [
+    "grapevine.->grape"
+   ],
+   "reward": 0.0,
+   "first_word_t": 99.68
+  }
+ ],
+ "n_scored": 13,
+ "counts": {
+  "valid": 0,
+  "repeat": 9,
+  "non_fruit": 0,
+  "filler": 2,
+  "silent": 1,
+  "multi": 1
+ },
+ "overlaps": 2,
+ "total_reward": 0.0192,
+ "turn_rewards": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.25,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ]
+}

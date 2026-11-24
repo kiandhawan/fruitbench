@@ -1,0 +1,293 @@
+{
+ "game_id": "test_s1_0191",
+ "starter": "user",
+ "greeting": "Hi, how can I help you?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": false,
+   "user_text": "Name a fruit right after I do, and we keep going. I'll start.",
+   "user_fruit": null,
+   "user_end": 7.68,
+   "text": "I sorry, but I can't help you with that. Okay, I'll start. A fruit that comes after I do is an apple. It a small, round, and red fruit that comes from a tree.",
+   "cls": "valid",
+   "fruits": [
+    "apple"
+   ],
+   "fruit": "apple",
+   "latency": 4.48,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 5.92
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Strawberry.",
+   "user_fruit": "strawberry",
+   "user_end": 18.69,
+   "text": "Yes, a strawberry is another fruit that comes after I do. It a pink, juicy fruit that comes from a plant.",
+   "cls": "repeat",
+   "fruits": [
+    "strawberry"
+   ],
+   "fruit": "strawberry",
+   "latency": 0.75,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 18.72
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lingonberry.",
+   "user_fruit": "lingonberry",
+   "user_end": 27.22,
+   "text": "Yes, a lychee is a fruit that comes after I do. It a small, round, and green fruit that comes from a tree.",
+   "cls": "valid",
+   "fruits": [
+    "lychee"
+   ],
+   "fruit": "lychee",
+   "latency": 0.3,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.64,
+   "first_word_t": 26.96
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lemon.",
+   "user_fruit": "lemon",
+   "user_end": 34.895,
+   "text": "Yes, a lemon is a fruit that comes after I do. It's a small, round, and yellow fruit that comes from a tree.",
+   "cls": "repeat",
+   "fruits": [
+    "lemon"
+   ],
+   "fruit": "lemon",
+   "latency": 0.625,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 34.96
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Crab apple.",
+   "user_fruit": "crab apple",
+   "user_end": 43.03,
+   "text": "Yes, a crabapple is a fruit that comes after I do. It' a small, round, and red fruit that comes from a tree.",
+   "cls": "repeat",
+   "fruits": [
+    "crab apple"
+   ],
+   "fruit": "crab apple",
+   "latency": 0.17,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 42.72
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Pomegranate.",
+   "user_fruit": "pomegranate",
+   "user_end": 50.82,
+   "text": "Yes, a pomegranate is a fruit that comes after I do. It' a small, round, and red fruit that comes from a tree.",
+   "cls": "repeat",
+   "fruits": [
+    "pomegranate"
+   ],
+   "fruit": "pomegranate",
+   "latency": 0.46,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 50.88
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Prickly pear.",
+   "user_fruit": "prickly pear",
+   "user_end": 58.75,
+   "text": "Yes, a prickly pear is a fruit that comes after I do. It' a small, round, and green fruit that comes from a plant.",
+   "cls": "repeat",
+   "fruits": [
+    "prickly pear"
+   ],
+   "fruit": "prickly pear",
+   "latency": 0.45,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 58.72
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Clementine.",
+   "user_fruit": "clementine",
+   "user_end": 67.17,
+   "text": "Yes, a tangerine is a fruit that comes after I do. It' a small, round, and orange fruit that comes from a tree.",
+   "cls": "multi",
+   "fruits": [
+    "tangerine",
+    "orange"
+   ],
+   "fruit": null,
+   "latency": 0.59,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 67.28
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Blueberry.",
+   "user_fruit": "blueberry",
+   "user_end": 75.04,
+   "text": "Yes, a blueberry is a fruit that comes after I do. It's a small, round, and blue fruit that comes from a plant.",
+   "cls": "repeat",
+   "fruits": [
+    "blueberry"
+   ],
+   "fruit": "blueberry",
+   "latency": 0.48,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 75.12
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Granny smith.",
+   "user_fruit": "granny smith",
+   "user_end": 83.23,
+   "text": "Yes, a granny smith is a fruit that comes after I do. It' a small, round, and green fruit that comes from a tree.",
+   "cls": "repeat",
+   "fruits": [
+    "granny smith"
+   ],
+   "fruit": "granny smith",
+   "latency": 0.45,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 83.28
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Durian.",
+   "user_fruit": "durian",
+   "user_end": 91.161,
+   "text": "Yes, a durian is a fruit that comes after I do. It a small, round, and green fruit that comes from a tree.",
+   "cls": "repeat",
+   "fruits": [
+    "durian"
+   ],
+   "fruit": "durian",
+   "latency": 0.439,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 91.28
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Kumquat.",
+   "user_fruit": "kumquat",
+   "user_end": 98.668,
+   "text": "Yes, a kumquat is a fruit that comes after I do. It' a small, round, and yellow fruit that comes from a plant.",
+   "cls": "repeat",
+   "fruits": [
+    "kumquat"
+   ],
+   "fruit": "kumquat",
+   "latency": 0.452,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 98.72
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mulberry.",
+   "user_fruit": "mulberry",
+   "user_end": 106.73,
+   "text": "Yes, a mulberry is a fruit that comes after I do. It a small, round, and green fruit that comes from a tree.",
+   "cls": "repeat",
+   "fruits": [
+    "mulberry"
+   ],
+   "fruit": "mulberry",
+   "latency": 0.47,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 106.8
+  }
+ ],
+ "n_scored": 12,
+ "counts": {
+  "valid": 1,
+  "repeat": 10,
+  "non_fruit": 0,
+  "filler": 0,
+  "silent": 0,
+  "multi": 1
+ },
+ "overlaps": 3,
+ "total_reward": 0.0742,
+ "turn_rewards": [
+  0.0,
+  0.64,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.25,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ]
+}

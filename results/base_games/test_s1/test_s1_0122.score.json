@@ -1,0 +1,291 @@
+{
+ "game_id": "test_s1_0122",
+ "starter": "moshi",
+ "greeting": "Hey there, how is it going?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": true,
+   "user_text": "We take turns saying fruits, fast. Your turn first.",
+   "user_fruit": null,
+   "user_end": 6.76,
+   "text": "Okay, I have an apple. It's a red fruit that's sweet and yummy. It's perfect for a snack on the go.",
+   "cls": "valid",
+   "fruits": [
+    "apple"
+   ],
+   "fruit": "apple",
+   "latency": 1.8,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.64,
+   "first_word_t": 6.88
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cantaloupe.",
+   "user_fruit": "cantaloupe",
+   "user_end": 16.37,
+   "text": "7? A cantaloupe is a really yummy fruit too. It' a sweet, juicy and fragrant fruit. It's perfect for a snack or a dessert.",
+   "cls": "repeat",
+   "fruits": [
+    "cantaloupe"
+   ],
+   "fruit": "cantaloupe",
+   "latency": 0.51,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 16.08
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Crab apple.",
+   "user_fruit": "crab apple",
+   "user_end": 27.67,
+   "text": "A karate is a type of juicy fruit. It's a purple fruit that's really tasty. It's perfect for a snack or dessert.",
+   "cls": "repeat",
+   "fruits": [
+    "apple"
+   ],
+   "fruit": "apple",
+   "latency": 3.21,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [
+    "purple->apple"
+   ],
+   "reward": 0.0,
+   "first_word_t": 27.36
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mulberry.",
+   "user_fruit": "mulberry",
+   "user_end": 37.69,
+   "text": "A mulberry is a really yummy fruit. It's a sweet and crispy fruit. It's perfect for a snack or a dessert.",
+   "cls": "repeat",
+   "fruits": [
+    "mulberry"
+   ],
+   "fruit": "mulberry",
+   "latency": 0.23,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 37.76
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Orange.",
+   "user_fruit": "orange",
+   "user_end": 46.53,
+   "text": "An orange is a really yummy fruit. It's sweet and full of vitamins. It's perfect for a snack or a dessert.",
+   "cls": "repeat",
+   "fruits": [
+    "orange"
+   ],
+   "fruit": "orange",
+   "latency": 0.19,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 46.56
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lemon.",
+   "user_fruit": "lemon",
+   "user_end": 55.215,
+   "text": "A lemon is a yummy fruit. It's sour and full of vitamin C. It's perfect for a snack or a dessert.",
+   "cls": "repeat",
+   "fruits": [
+    "lemon"
+   ],
+   "fruit": "lemon",
+   "latency": 0.225,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 55.36
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Prickly pear.",
+   "user_fruit": "prickly pear",
+   "user_end": 64.51,
+   "text": "A prickly pear is a really yummy fruit. It's a sweet and fruity fruit. It's perfect for a snack or a dessert.",
+   "cls": "repeat",
+   "fruits": [
+    "prickly pear"
+   ],
+   "fruit": "prickly pear",
+   "latency": 0.21,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 64.56
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Kumquat.",
+   "user_fruit": "kumquat",
+   "user_end": 74.508,
+   "text": "A comfrey fruit is a very yummy fruit. It's sweet and bubbly. It's perfect for a snack or a dessert.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 74.56
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Clementine.",
+   "user_fruit": "clementine",
+   "user_end": 83.01,
+   "text": "A lemon time is a very yummy fruit. It's sweet and full of antioxidants. It's perfect for a snack or a dessert.",
+   "cls": "repeat",
+   "fruits": [
+    "lemon"
+   ],
+   "fruit": "lemon",
+   "latency": 0.27,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 83.12
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Strawberry.",
+   "user_fruit": "strawberry",
+   "user_end": 92.05,
+   "text": "A strawberry is a really yummy fruit. It's red and juicy. It's perfect for a snack or a dessert.",
+   "cls": "repeat",
+   "fruits": [
+    "strawberry"
+   ],
+   "fruit": "strawberry",
+   "latency": 0.19,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 92.08
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Durian.",
+   "user_fruit": "durian",
+   "user_end": 100.761,
+   "text": "A geranium is a really yummy fruit. It's a sweet and fruity fruit. It's perfect for a snack or a dessert.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 100.88
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lingonberry.",
+   "user_fruit": "lingonberry",
+   "user_end": 110.58,
+   "text": "A lingonberry is a really yummy fruit. It's a sweet and berry fruit. It's perfect for a snack or a dessert.",
+   "cls": "repeat",
+   "fruits": [
+    "lingonberry"
+   ],
+   "fruit": "lingonberry",
+   "latency": 0.22,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 110.64
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Jackfruit.",
+   "user_fruit": "jackfruit",
+   "user_end": 119.5,
+   "text": "A jackfruit is a really yummy fruit. It's red and juicy. It's perfect for a snack or a dessert.",
+   "cls": "repeat",
+   "fruits": [
+    "jackfruit"
+   ],
+   "fruit": "jackfruit",
+   "latency": 0.18,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 119.52
+  }
+ ],
+ "n_scored": 13,
+ "counts": {
+  "valid": 1,
+  "repeat": 10,
+  "non_fruit": 0,
+  "filler": 2,
+  "silent": 0,
+  "multi": 0
+ },
+ "overlaps": 2,
+ "total_reward": 0.0492,
+ "turn_rewards": [
+  0.64,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ]
+}

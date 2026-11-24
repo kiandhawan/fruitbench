@@ -1,5 +1,12 @@
 # LOG (newest first)
 
+## 2026-11-24 — Per-game outputs are kept in git
+- The base runs' per-game JSONs (summaries with Moshi's timed text tokens, per-turn scores; no audio,
+  no .npy tokens) are in `results/base_games/{test_s1,grpo_check,timing32}` (7 + 15 + 1 MB).
+- From now on `scripts/run_games.py` archives every run automatically to `results/games/<out name>/`
+  (`fruitbench/archive.py`; one .tar.gz instead if the kept files exceed 20 MB) once all workers
+  exit 0, so every evaluation can be rescored later without re-running Moshi. Commit it with the run.
+
 ## 2026-11-24 — Step 4/5: base fruit-bench, GRPO readiness, timing (no training)
 - Runs: 200 test games seed 1 (4 GPUs, batch 50, 118 s); GRPO check 25 train starts x 16 (`--repeat
   16`, batch 50, 214 s); timing 32 test games seed 2 on 1 GPU at batch 32. Report:

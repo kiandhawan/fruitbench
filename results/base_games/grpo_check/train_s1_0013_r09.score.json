@@ -1,0 +1,290 @@
+{
+ "game_id": "train_s1_0013_r09",
+ "starter": "user",
+ "greeting": "Hi there, how can I help you?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": false,
+   "user_text": "Quick, let's trade fruit names back and forth. Me first.",
+   "user_fruit": null,
+   "user_end": 7.08,
+   "text": "Sure, I'm up for that. Let's start with the apple.",
+   "cls": "valid",
+   "fruits": [
+    "apple"
+   ],
+   "fruit": "apple",
+   "latency": 2.92,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 7.04
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cherry.",
+   "user_fruit": "cherry",
+   "user_end": 12.428,
+   "text": "Okay, I'll take the cherry.",
+   "cls": "repeat",
+   "fruits": [
+    "cherry"
+   ],
+   "fruit": "cherry",
+   "latency": 1.092,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 12.48
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cranberry.",
+   "user_fruit": "cranberry",
+   "user_end": 16.15,
+   "text": "Oh, I'll take the cranberry.",
+   "cls": "repeat",
+   "fruits": [
+    "cranberry"
+   ],
+   "fruit": "cranberry",
+   "latency": 0.73,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 16.08
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Persimmon.",
+   "user_fruit": "persimmon",
+   "user_end": 19.6,
+   "text": "I'll take the persimmon.",
+   "cls": "repeat",
+   "fruits": [
+    "persimmon"
+   ],
+   "fruit": "persimmon",
+   "latency": 0.72,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 19.6
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Banana.",
+   "user_fruit": "banana",
+   "user_end": 22.748,
+   "text": "I'll take the banana.",
+   "cls": "repeat",
+   "fruits": [
+    "banana"
+   ],
+   "fruit": "banana",
+   "latency": 0.772,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 22.8
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Damson.",
+   "user_fruit": "damson",
+   "user_end": 25.98,
+   "text": "I'll take the damson.",
+   "cls": "repeat",
+   "fruits": [
+    "damson"
+   ],
+   "fruit": "damson",
+   "latency": 0.66,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 26.0
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Elderberry.",
+   "user_fruit": "elderberry",
+   "user_end": 29.13,
+   "text": "I'll take the elderberry.",
+   "cls": "repeat",
+   "fruits": [
+    "elderberry"
+   ],
+   "fruit": "elderberry",
+   "latency": 0.55,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 29.04
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mango.",
+   "user_fruit": "mango",
+   "user_end": 32.074,
+   "text": "I' take the mango.",
+   "cls": "repeat",
+   "fruits": [
+    "mango"
+   ],
+   "fruit": "mango",
+   "latency": 0.726,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 32.16
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lime.",
+   "user_fruit": "lime",
+   "user_end": 35.17,
+   "text": "I'll take the lime.",
+   "cls": "repeat",
+   "fruits": [
+    "lime"
+   ],
+   "fruit": "lime",
+   "latency": 0.67,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 35.28
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Yuzu.",
+   "user_fruit": "yuzu",
+   "user_end": 38.188,
+   "text": "I' take the yuzu.",
+   "cls": "repeat",
+   "fruits": [
+    "yuzu"
+   ],
+   "fruit": "yuzu",
+   "latency": 0.692,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 38.32
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Nashi pear.",
+   "user_fruit": "nashi pear",
+   "user_end": 41.54,
+   "text": "I' take the nasturtium.",
+   "cls": "non_fruit",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 41.68
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Satsuma.",
+   "user_fruit": "satsuma",
+   "user_end": 45.41,
+   "text": "I'll take the setsumo.",
+   "cls": "repeat",
+   "fruits": [
+    "satsuma"
+   ],
+   "fruit": "satsuma",
+   "latency": 0.75,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [
+    "setsumo.->satsuma"
+   ],
+   "reward": 0.0,
+   "first_word_t": 45.44
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Coconut.",
+   "user_fruit": "coconut",
+   "user_end": 48.72,
+   "text": "I'll take the kukuna.",
+   "cls": "non_fruit",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 48.72
+  }
+ ],
+ "n_scored": 12,
+ "counts": {
+  "valid": 0,
+  "repeat": 10,
+  "non_fruit": 2,
+  "filler": 0,
+  "silent": 0,
+  "multi": 0
+ },
+ "overlaps": 2,
+ "total_reward": 0.0,
+ "turn_rewards": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ]
+}

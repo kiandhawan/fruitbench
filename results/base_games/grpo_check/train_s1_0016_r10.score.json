@@ -1,0 +1,289 @@
+{
+ "game_id": "train_s1_0016_r10",
+ "starter": "user",
+ "greeting": "Hello, what's up?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": false,
+   "user_text": "Here's a game: each of us names a fruit in turn, as quickly as we can.",
+   "user_fruit": null,
+   "user_end": 7.66,
+   "text": "",
+   "cls": "silent",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": null
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Tamarind.",
+   "user_fruit": "tamarind",
+   "user_end": 11.63,
+   "text": "Okay,",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 11.68
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Bilberry.",
+   "user_fruit": "bilberry",
+   "user_end": 14.14,
+   "text": "I'll start. The first fruit I can think of is a watermelon.",
+   "cls": "valid",
+   "fruits": [
+    "watermelon"
+   ],
+   "fruit": "watermelon",
+   "latency": 3.94,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.5,
+   "first_word_t": 14.16
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Honeydew.",
+   "user_fruit": "honeydew",
+   "user_end": 20.8,
+   "text": "That's right. A watermelon.",
+   "cls": "repeat",
+   "fruits": [
+    "watermelon"
+   ],
+   "fruit": "watermelon",
+   "latency": 1.76,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 20.88
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cherry.",
+   "user_fruit": "cherry",
+   "user_end": 25.25,
+   "text": "A cherries. That's a classic.",
+   "cls": "repeat",
+   "fruits": [
+    "cherry"
+   ],
+   "fruit": "cherry",
+   "latency": 0.19,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 25.36
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Plantain.",
+   "user_fruit": "plantain",
+   "user_end": 29.94,
+   "text": "Oh, I think I'm going to say a banana.",
+   "cls": "valid",
+   "fruits": [
+    "banana"
+   ],
+   "fruit": "banana",
+   "latency": 2.06,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.588,
+   "first_word_t": 30.08
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mango.",
+   "user_fruit": "mango",
+   "user_end": 34.44,
+   "text": "Mango. That's a good one.",
+   "cls": "repeat",
+   "fruits": [
+    "mango"
+   ],
+   "fruit": "mango",
+   "latency": 0.04,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 34.48
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Coconut.",
+   "user_fruit": "coconut",
+   "user_end": 38.8,
+   "text": "Oh, I know this one. A coconut. That's a classic.",
+   "cls": "repeat",
+   "fruits": [
+    "coconut"
+   ],
+   "fruit": "coconut",
+   "latency": 2.8,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 38.88
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Currant.",
+   "user_fruit": "currant",
+   "user_end": 45.3,
+   "text": "Oh, I think I'm going to say a cucumber. A cucumber.",
+   "cls": "valid",
+   "fruits": [
+    "cucumber"
+   ],
+   "fruit": "cucumber",
+   "latency": 2.22,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.556,
+   "first_word_t": 45.44
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Goji berry.",
+   "user_fruit": "goji berry",
+   "user_end": 52.28,
+   "text": "A goji berry. That's a little more exotic. A goji berry.",
+   "cls": "repeat",
+   "fruits": [
+    "goji berry"
+   ],
+   "fruit": "goji berry",
+   "latency": 0.2,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 52.32
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Rambutan.",
+   "user_fruit": "rambutan",
+   "user_end": 59.62,
+   "text": "Rambotan. I've never heard of that one. A rambotan.",
+   "cls": "repeat",
+   "fruits": [
+    "rambutan"
+   ],
+   "fruit": "rambutan",
+   "latency": 0.06,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [
+    "Rambotan.->rambutan",
+    "rambotan.->rambutan"
+   ],
+   "reward": 0.0,
+   "first_word_t": 59.68
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Persimmon.",
+   "user_fruit": "persimmon",
+   "user_end": 66.38,
+   "text": "I'm... A pomecymmon. That's a fun one. A pomecymmon.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 65.76
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Guava.",
+   "user_fruit": "guava",
+   "user_end": 72.98,
+   "text": "A guava.",
+   "cls": "repeat",
+   "fruits": [
+    "guava"
+   ],
+   "fruit": "guava",
+   "latency": 0.22,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 73.04
+  }
+ ],
+ "n_scored": 12,
+ "counts": {
+  "valid": 3,
+  "repeat": 7,
+  "non_fruit": 0,
+  "filler": 2,
+  "silent": 0,
+  "multi": 0
+ },
+ "overlaps": 1,
+ "total_reward": 0.137,
+ "turn_rewards": [
+  0.0,
+  0.5,
+  0.0,
+  0.0,
+  0.588,
+  0.0,
+  0.0,
+  0.556,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ]
+}

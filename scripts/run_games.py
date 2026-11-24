@@ -8,7 +8,10 @@
   python scripts/run_games.py --split val --smoke --seed 1 --gpus 0 --batch 4 --out runs/smoke
 
 Each game writes <out>/<game_id>.json (game summary) and .score.json; audio <game_id>.wav (left =
-Moshi, right = user) unless --no-audio. Sampling seed of batch j of worker w: seed*100000 + w*1000 + j.
+Moshi, right = user) unless --no-audio. When all workers succeed, the per-game JSONs (summaries
+with Moshi's timed text tokens, and per-turn scores; no audio or tokens) are archived to
+results/games/<out name>/ (or a .tar.gz if > 20 MB; see fruitbench/archive.py) for committing;
+--archive-dir overrides the destination, --no-archive skips it. Sampling seed of batch j of worker w: seed*100000 + w*1000 + j.
 """
 
 import argparse
@@ -79,6 +82,8 @@ def main() -> None:
     p.add_argument("--user-audio", default="live", choices=["live", "tokens"],
                    help="live: stream-encode the user PCM with Mimi each frame (default, exact); "
                         "tokens: splice pre-encoded clip tokens (faster, inexact).")
+    p.add_argument("--archive-dir", type=Path, help="Where to archive per-game JSONs (default results/games/<out name>).")
+    p.add_argument("--no-archive", action="store_true")
     p.add_argument("--worker-specs")
     p.add_argument("--worker-gpu", type=int)
     p.add_argument("--worker-index", type=int)
@@ -111,6 +116,9 @@ def main() -> None:
     print(f"done in {time.time() - t0:.0f}s; worker exit codes {codes}")
     if any(codes):
         sys.exit(1)
+    if not args.no_archive:
+        from fruitbench.archive import archive_run
+        archive_run(args.out, args.archive_dir or ROOT / "results" / "games" / args.out.name)
 
 
 if __name__ == "__main__":

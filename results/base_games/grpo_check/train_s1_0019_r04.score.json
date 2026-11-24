@@ -1,0 +1,293 @@
+{
+ "game_id": "train_s1_0019_r04",
+ "starter": "moshi",
+ "greeting": "Hello, how is it going?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": true,
+   "user_text": "Let's see how many fruits we can name, taking turns. You're up first.",
+   "user_fruit": null,
+   "user_end": 8.01,
+   "text": "Alright, I'm ready.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 8.16
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Coconut.",
+   "user_fruit": "coconut",
+   "user_end": 11.51,
+   "text": "A coca nut. Oh, I know this one. It's a fruit of the coca plant, which is used as a stimulant and as a source of cocaine.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 11.6
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Greengage.",
+   "user_fruit": "greengage",
+   "user_end": 22.99,
+   "text": "Green gauge? Oh, I know this one. It's a fruit that's green when unripe, it turns yellow when it's ripe. It's used in a variety of dishes and desserts.",
+   "cls": "repeat",
+   "fruits": [
+    "greengage"
+   ],
+   "fruit": "greengage",
+   "latency": -0.03,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [
+    "Green->greengage",
+    "green->greengage"
+   ],
+   "reward": 0.0,
+   "first_word_t": 22.96
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Soursop.",
+   "user_fruit": "soursop",
+   "user_end": 34.43,
+   "text": "Saucersop? Oh, I know this one. It's a fruit that's often used in salads and desserts.",
+   "cls": "repeat",
+   "fruits": [
+    "soursop"
+   ],
+   "fruit": "soursop",
+   "latency": 1.57,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [
+    "Saucersop?->soursop"
+   ],
+   "reward": 0.0,
+   "first_word_t": 36.0
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Meyer lemon.",
+   "user_fruit": "meyer lemon",
+   "user_end": 43.97,
+   "text": "Meyer lemon? Oh, I know this one too. It' a hybrid citrus fruit that's sweeter and less acidic than a normal lemon.",
+   "cls": "multi",
+   "fruits": [
+    "meyer lemon",
+    "lemon"
+   ],
+   "fruit": null,
+   "latency": 0.11,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 44.08
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Tamarind.",
+   "user_fruit": "tamarind",
+   "user_end": 52.73,
+   "text": "Tamarind? Oh, I know this one too. It's a fruit that's often used in Indian and Asian dishes.",
+   "cls": "repeat",
+   "fruits": [
+    "tamarind"
+   ],
+   "fruit": "tamarind",
+   "latency": 0.07,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 52.8
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mango.",
+   "user_fruit": "mango",
+   "user_end": 59.85,
+   "text": "Mango? Oh, I know this one too. It's a popular fruit that's rich in vitamins and minerals.",
+   "cls": "repeat",
+   "fruits": [
+    "mango"
+   ],
+   "fruit": "mango",
+   "latency": 1.43,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 61.28
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lime.",
+   "user_fruit": "lime",
+   "user_end": 67.66,
+   "text": "Lime? Oh, I know this one too. It's a fruit that's used in beverages and desserts.",
+   "cls": "repeat",
+   "fruits": [
+    "lime"
+   ],
+   "fruit": "lime",
+   "latency": 0.1,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 67.76
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Plum.",
+   "user_fruit": "plum",
+   "user_end": 74.5,
+   "text": "Plum? Oh, I know this one too. It's a fruit that's usually blue or purple.",
+   "cls": "repeat",
+   "fruits": [
+    "plum"
+   ],
+   "fruit": "plum",
+   "latency": 0.14,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 74.64
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Grape.",
+   "user_fruit": "grape",
+   "user_end": 80.348,
+   "text": "Grape? Oh, I know this one too. It's a fruit that's usually purple or black.",
+   "cls": "repeat",
+   "fruits": [
+    "grape"
+   ],
+   "fruit": "grape",
+   "latency": 0.132,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 80.48
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Key lime.",
+   "user_fruit": "key lime",
+   "user_end": 86.88,
+   "text": "Kiwi? Oh, I know this one too. It's a fruit that's often used in smoothies and salads.",
+   "cls": "valid",
+   "fruits": [
+    "kiwi"
+   ],
+   "fruit": "kiwi",
+   "latency": 0.08,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.984,
+   "first_word_t": 86.96
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Papaya.",
+   "user_fruit": "papaya",
+   "user_end": 93.55,
+   "text": "Papaya? Oh, I know this one too. It's a fruit that's sweet and juicy.",
+   "cls": "repeat",
+   "fruits": [
+    "papaya"
+   ],
+   "fruit": "papaya",
+   "latency": 0.13,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 93.68
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Pear.",
+   "user_fruit": "pear",
+   "user_end": 99.32,
+   "text": "Pea? Oh, I know this one too. It's a fruit that's sometimes eaten raw or cooked.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 99.44
+  }
+ ],
+ "n_scored": 13,
+ "counts": {
+  "valid": 1,
+  "repeat": 8,
+  "non_fruit": 0,
+  "filler": 3,
+  "silent": 0,
+  "multi": 1
+ },
+ "overlaps": 1,
+ "total_reward": 0.0949,
+ "turn_rewards": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.25,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.984,
+  0.0,
+  0.0
+ ]
+}

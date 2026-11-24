@@ -1,0 +1,293 @@
+{
+ "game_id": "train_s1_0010_r06",
+ "starter": "moshi",
+ "greeting": "Hello, how are you today?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": true,
+   "user_text": "Let's take turns naming fruits as fast as we can. You start.",
+   "user_fruit": null,
+   "user_end": 7.61,
+   "text": "I'll go first. The first one that comes to mind is apple.",
+   "cls": "valid",
+   "fruits": [
+    "apple"
+   ],
+   "fruit": "apple",
+   "latency": 3.59,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.5,
+   "first_word_t": 7.68
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Blackberry.",
+   "user_fruit": "blackberry",
+   "user_end": 14.03,
+   "text": "Next, there's orange.",
+   "cls": "valid",
+   "fruits": [
+    "orange"
+   ],
+   "fruit": "orange",
+   "latency": 1.17,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.766,
+   "first_word_t": 14.16
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Honeycrisp.",
+   "user_fruit": "honeycrisp",
+   "user_end": 18.06,
+   "text": "And strawberry, ginseng.",
+   "cls": "valid",
+   "fruits": [
+    "strawberry"
+   ],
+   "fruit": "strawberry",
+   "latency": 0.02,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.696,
+   "first_word_t": 18.0
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Navel orange.",
+   "user_fruit": "navel orange",
+   "user_end": 22.61,
+   "text": "And finally, mango.",
+   "cls": "valid",
+   "fruits": [
+    "mango"
+   ],
+   "fruit": "mango",
+   "latency": 0.99,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.502,
+   "first_word_t": 22.56
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cranberry.",
+   "user_fruit": "cranberry",
+   "user_end": 25.85,
+   "text": "Wow, that was fast. I didn' think I could name as many fruits as you. You know a lot of fruits.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 26.0
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cherimoya.",
+   "user_fruit": "cherimoya",
+   "user_end": 34.01,
+   "text": "",
+   "cls": "silent",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": null
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Soursop.",
+   "user_fruit": "soursop",
+   "user_end": 38.19,
+   "text": "Sure, how about banana? Pear? Pineapple? Guava? Kiwi? Watermelon?",
+   "cls": "multi",
+   "fruits": [
+    "banana",
+    "pear",
+    "feijoa",
+    "kiwi",
+    "watermelon"
+   ],
+   "fruit": null,
+   "latency": 1.33,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 38.32
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Avocado.",
+   "user_fruit": "avocado",
+   "user_end": 49.51,
+   "text": "Melon? And finally, vege.",
+   "cls": "valid",
+   "fruits": [
+    "melon"
+   ],
+   "fruit": "melon",
+   "latency": -0.71,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.7,
+   "first_word_t": 48.8
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Satsuma.",
+   "user_fruit": "satsuma",
+   "user_end": 52.67,
+   "text": "Satsuma. Yeah, I think I named them all. It was a lot of fun.",
+   "cls": "repeat",
+   "fruits": [
+    "satsuma"
+   ],
+   "fruit": "satsuma",
+   "latency": 0.13,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 52.8
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Yuzu.",
+   "user_fruit": "yuzu",
+   "user_end": 59.65,
+   "text": "I'm.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 59.76
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Greengage.",
+   "user_fruit": "greengage",
+   "user_end": 62.75,
+   "text": "Green gauge.",
+   "cls": "repeat",
+   "fruits": [
+    "greengage"
+   ],
+   "fruit": "greengage",
+   "latency": 0.05,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [
+    "Green->greengage"
+   ],
+   "reward": 0.0,
+   "first_word_t": 62.8
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Key lime.",
+   "user_fruit": "key lime",
+   "user_end": 65.68,
+   "text": "Key lime. Citrus.",
+   "cls": "repeat",
+   "fruits": [
+    "key lime"
+   ],
+   "fruit": "key lime",
+   "latency": 0.08,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 65.76
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Tamarind.",
+   "user_fruit": "tamarind",
+   "user_end": 70.25,
+   "text": "Tamarind.",
+   "cls": "repeat",
+   "fruits": [
+    "tamarind"
+   ],
+   "fruit": "tamarind",
+   "latency": 0.07,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 70.32
+  }
+ ],
+ "n_scored": 13,
+ "counts": {
+  "valid": 5,
+  "repeat": 4,
+  "non_fruit": 0,
+  "filler": 2,
+  "silent": 1,
+  "multi": 1
+ },
+ "overlaps": 3,
+ "total_reward": 0.2626,
+ "turn_rewards": [
+  0.5,
+  0.766,
+  0.696,
+  0.502,
+  0.0,
+  0.0,
+  0.25,
+  0.7,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ]
+}

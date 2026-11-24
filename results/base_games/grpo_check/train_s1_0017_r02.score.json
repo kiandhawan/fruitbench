@@ -1,0 +1,288 @@
+{
+ "game_id": "train_s1_0017_r02",
+ "starter": "user",
+ "greeting": "Hi, how are you doing?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": false,
+   "user_text": "Okay, quick game. We alternate naming fruits. I'll go first.",
+   "user_fruit": null,
+   "user_end": 7.24,
+   "text": "Okay, let's do it.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 7.36
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Passion fruit.",
+   "user_fruit": "passion fruit",
+   "user_end": 10.22,
+   "text": "Okay, I'm going to say the same thing right now.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 10.16
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Yuzu.",
+   "user_fruit": "yuzu",
+   "user_end": 15.308,
+   "text": "I'm going to say passionfruit. I think I'm going to say passionfruit.",
+   "cls": "repeat",
+   "fruits": [
+    "passion fruit"
+   ],
+   "fruit": "passion fruit",
+   "latency": 0.932,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 15.44
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Honeydew.",
+   "user_fruit": "honeydew",
+   "user_end": 22.06,
+   "text": "I'm going to say honeydew. I' going to say honeydew.",
+   "cls": "repeat",
+   "fruits": [
+    "honeydew"
+   ],
+   "fruit": "honeydew",
+   "latency": 0.74,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 22.16
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Date.",
+   "user_fruit": "date",
+   "user_end": 27.35,
+   "text": "I' going to say date. I' going to say date. I' going to say date.",
+   "cls": "repeat",
+   "fruits": [
+    "date"
+   ],
+   "fruit": "date",
+   "latency": 0.65,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 27.28
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Plantain.",
+   "user_fruit": "plantain",
+   "user_end": 34.92,
+   "text": "I' going to say plantain. I' going to say plantain. I'm going to say plantain. I'm going to say plantain.",
+   "cls": "repeat",
+   "fruits": [
+    "plantain"
+   ],
+   "fruit": "plantain",
+   "latency": 0.76,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 34.96
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Gooseberry.",
+   "user_fruit": "gooseberry",
+   "user_end": 45.56,
+   "text": "I'm going to say gooseberry.",
+   "cls": "repeat",
+   "fruits": [
+    "gooseberry"
+   ],
+   "fruit": "gooseberry",
+   "latency": 0.2,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 44.88
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Concord grape.",
+   "user_fruit": "concord grape",
+   "user_end": 48.28,
+   "text": "I' going to say concor. I'm going to say congrats. I' going to say congrats.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 48.16
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Rambutan.",
+   "user_fruit": "rambutan",
+   "user_end": 56.7,
+   "text": "I' going to say rambutan. I' going to say rambutan. I' going to say rambutan. I' going to say rambutan.",
+   "cls": "repeat",
+   "fruits": [
+    "rambutan"
+   ],
+   "fruit": "rambutan",
+   "latency": 0.74,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 56.8
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mandarin.",
+   "user_fruit": "mandarin",
+   "user_end": 67.57,
+   "text": "I' going to say mandarin. I' going to say mandarin. I' going to say mandarin. I'm going to say mandarin. I' going to say mandarin.",
+   "cls": "repeat",
+   "fruits": [
+    "mandarin"
+   ],
+   "fruit": "mandarin",
+   "latency": 0.51,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 67.36
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Pear.",
+   "user_fruit": "pear",
+   "user_end": 78.72,
+   "text": "I'm going to say pear.",
+   "cls": "repeat",
+   "fruits": [
+    "pear"
+   ],
+   "fruit": "pear",
+   "latency": 0.8,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 78.8
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Greengage.",
+   "user_fruit": "greengage",
+   "user_end": 82.43,
+   "text": "I going to say green egg.",
+   "cls": "repeat",
+   "fruits": [
+    "greengage"
+   ],
+   "fruit": "greengage",
+   "latency": -0.19,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [
+    "green->greengage"
+   ],
+   "reward": 0.0,
+   "first_word_t": 81.68
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Papaya.",
+   "user_fruit": "papaya",
+   "user_end": 84.61,
+   "text": "I'm going to say papaya.",
+   "cls": "repeat",
+   "fruits": [
+    "papaya"
+   ],
+   "fruit": "papaya",
+   "latency": 0.19,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 84.0
+  }
+ ],
+ "n_scored": 12,
+ "counts": {
+  "valid": 0,
+  "repeat": 10,
+  "non_fruit": 0,
+  "filler": 2,
+  "silent": 0,
+  "multi": 0
+ },
+ "overlaps": 7,
+ "total_reward": 0.0,
+ "turn_rewards": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ]
+}

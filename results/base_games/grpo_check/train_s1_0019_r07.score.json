@@ -1,0 +1,289 @@
+{
+ "game_id": "train_s1_0019_r07",
+ "starter": "moshi",
+ "greeting": "Hi, how is it going?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": true,
+   "user_text": "Let's see how many fruits we can name, taking turns. You're up first.",
+   "user_fruit": null,
+   "user_end": 8.09,
+   "text": "Okay, I'll start. The first fruit I can name is an apple.",
+   "cls": "valid",
+   "fruits": [
+    "apple"
+   ],
+   "fruit": "apple",
+   "latency": 1.91,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.318,
+   "first_word_t": 6.56
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Coconut.",
+   "user_fruit": "coconut",
+   "user_end": 12.31,
+   "text": "next fruit is a banana.",
+   "cls": "valid",
+   "fruits": [
+    "banana"
+   ],
+   "fruit": "banana",
+   "latency": 0.97,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.806,
+   "first_word_t": 12.48
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Greengage.",
+   "user_fruit": "greengage",
+   "user_end": 16.27,
+   "text": "next fruit is a strawberry.",
+   "cls": "valid",
+   "fruits": [
+    "strawberry"
+   ],
+   "fruit": "strawberry",
+   "latency": 0.13,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.674,
+   "first_word_t": 15.6
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Soursop.",
+   "user_fruit": "soursop",
+   "user_end": 19.15,
+   "text": "",
+   "cls": "silent",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": null
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Meyer lemon.",
+   "user_fruit": "meyer lemon",
+   "user_end": 23.09,
+   "text": "",
+   "cls": "silent",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": null
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Tamarind.",
+   "user_fruit": "tamarind",
+   "user_end": 26.97,
+   "text": "The next fruit is a peach.",
+   "cls": "valid",
+   "fruits": [
+    "peach"
+   ],
+   "fruit": "peach",
+   "latency": 1.03,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.794,
+   "first_word_t": 27.04
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mango.",
+   "user_fruit": "mango",
+   "user_end": 30.41,
+   "text": "The next fruit is a banana.",
+   "cls": "repeat",
+   "fruits": [
+    "banana"
+   ],
+   "fruit": "banana",
+   "latency": 0.87,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 30.4
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lime.",
+   "user_fruit": "lime",
+   "user_end": 33.58,
+   "text": "The next fruit is a strawberry.",
+   "cls": "repeat",
+   "fruits": [
+    "strawberry"
+   ],
+   "fruit": "strawberry",
+   "latency": 0.98,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 33.68
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Plum.",
+   "user_fruit": "plum",
+   "user_end": 37.3,
+   "text": "The next fruit is an apple.",
+   "cls": "repeat",
+   "fruits": [
+    "apple"
+   ],
+   "fruit": "apple",
+   "latency": 0.94,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 37.36
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Grape.",
+   "user_fruit": "grape",
+   "user_end": 40.348,
+   "text": "The next fruit is a watermelon.",
+   "cls": "valid",
+   "fruits": [
+    "watermelon"
+   ],
+   "fruit": "watermelon",
+   "latency": 3.492,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.5,
+   "first_word_t": 42.96
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Key lime.",
+   "user_fruit": "key lime",
+   "user_end": 46.56,
+   "text": "The next fruit is a tomato.",
+   "cls": "valid",
+   "fruits": [
+    "tomato"
+   ],
+   "fruit": "tomato",
+   "latency": 0.96,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.808,
+   "first_word_t": 46.64
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Papaya.",
+   "user_fruit": "papaya",
+   "user_end": 50.27,
+   "text": "The next fruit is a grape.",
+   "cls": "repeat",
+   "fruits": [
+    "grape"
+   ],
+   "fruit": "grape",
+   "latency": 0.93,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 50.32
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Pear.",
+   "user_fruit": "pear",
+   "user_end": 53.24,
+   "text": "The next fruit is a lemon.",
+   "cls": "valid",
+   "fruits": [
+    "lemon"
+   ],
+   "fruit": "lemon",
+   "latency": 1.08,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.784,
+   "first_word_t": 53.36
+  }
+ ],
+ "n_scored": 13,
+ "counts": {
+  "valid": 7,
+  "repeat": 4,
+  "non_fruit": 0,
+  "filler": 0,
+  "silent": 2,
+  "multi": 0
+ },
+ "overlaps": 3,
+ "total_reward": 0.3603,
+ "turn_rewards": [
+  0.318,
+  0.806,
+  0.674,
+  0.0,
+  0.0,
+  0.794,
+  0.0,
+  0.0,
+  0.0,
+  0.5,
+  0.808,
+  0.0,
+  0.784
+ ]
+}

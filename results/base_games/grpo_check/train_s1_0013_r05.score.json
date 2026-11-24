@@ -1,0 +1,301 @@
+{
+ "game_id": "train_s1_0013_r05",
+ "starter": "user",
+ "greeting": "Hey, how are you doing?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": false,
+   "user_text": "Quick, let's trade fruit names back and forth. Me first.",
+   "user_fruit": null,
+   "user_end": 6.52,
+   "text": "Sure, I'll start. What should we trade?",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 6.56
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cherry.",
+   "user_fruit": "cherry",
+   "user_end": 10.348,
+   "text": "Okay, I'll trade you a cherry for a blueberry.",
+   "cls": "multi",
+   "fruits": [
+    "cherry",
+    "blueberry"
+   ],
+   "fruit": null,
+   "latency": 1.252,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 10.4
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cranberry.",
+   "user_fruit": "cranberry",
+   "user_end": 14.87,
+   "text": "Okay, I'll trade you a cranberry for a plum.",
+   "cls": "multi",
+   "fruits": [
+    "cranberry",
+    "plum"
+   ],
+   "fruit": null,
+   "latency": 1.05,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 14.88
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Persimmon.",
+   "user_fruit": "persimmon",
+   "user_end": 19.04,
+   "text": "Okay, I'll trade you a persimmon for an avocado.",
+   "cls": "multi",
+   "fruits": [
+    "persimmon",
+    "avocado"
+   ],
+   "fruit": null,
+   "latency": 1.12,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 19.12
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Banana.",
+   "user_fruit": "banana",
+   "user_end": 23.388,
+   "text": "Okay, I'll trade you a banana for an apple.",
+   "cls": "multi",
+   "fruits": [
+    "banana",
+    "apple"
+   ],
+   "fruit": null,
+   "latency": 1.012,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 23.36
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Damson.",
+   "user_fruit": "damson",
+   "user_end": 27.26,
+   "text": "Okay, I'll trade you a damson for an orange.",
+   "cls": "multi",
+   "fruits": [
+    "damson",
+    "orange"
+   ],
+   "fruit": null,
+   "latency": 1.22,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 27.36
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Elderberry.",
+   "user_fruit": "elderberry",
+   "user_end": 31.53,
+   "text": "Okay, I'll trade you an elderberry for a grape.",
+   "cls": "multi",
+   "fruits": [
+    "elderberry",
+    "grape"
+   ],
+   "fruit": null,
+   "latency": 0.95,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 31.52
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mango.",
+   "user_fruit": "mango",
+   "user_end": 35.354,
+   "text": "Okay, I'll trade you a mango for a peach.",
+   "cls": "multi",
+   "fruits": [
+    "mango",
+    "peach"
+   ],
+   "fruit": null,
+   "latency": 1.046,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 35.44
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lime.",
+   "user_fruit": "lime",
+   "user_end": 39.17,
+   "text": "Okay, I'll trade you a lime for a lemon.",
+   "cls": "multi",
+   "fruits": [
+    "lime",
+    "lemon"
+   ],
+   "fruit": null,
+   "latency": 1.07,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 39.28
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Yuzu.",
+   "user_fruit": "yuzu",
+   "user_end": 42.908,
+   "text": "Okay, I'll trade you a yuzume for a pear.",
+   "cls": "valid",
+   "fruits": [
+    "pear"
+   ],
+   "fruit": "pear",
+   "latency": 1.892,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.6216,
+   "first_word_t": 42.96
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Nashi pear.",
+   "user_fruit": "nashi pear",
+   "user_end": 47.38,
+   "text": "Okay, I'll trade you a nasi pear for a plum.",
+   "cls": "multi",
+   "fruits": [
+    "pear",
+    "plum"
+   ],
+   "fruit": null,
+   "latency": 1.1,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 47.36
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Satsuma.",
+   "user_fruit": "satsuma",
+   "user_end": 51.81,
+   "text": "Okay, I'll trade you a satsuma for an orange.",
+   "cls": "multi",
+   "fruits": [
+    "satsuma",
+    "orange"
+   ],
+   "fruit": null,
+   "latency": 0.99,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 51.84
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Coconut.",
+   "user_fruit": "coconut",
+   "user_end": 55.6,
+   "text": "Okay, I'll trade you a coconut for a fig.",
+   "cls": "multi",
+   "fruits": [
+    "coconut",
+    "fig"
+   ],
+   "fruit": null,
+   "latency": 0.96,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.25,
+   "first_word_t": 55.6
+  }
+ ],
+ "n_scored": 12,
+ "counts": {
+  "valid": 1,
+  "repeat": 0,
+  "non_fruit": 0,
+  "filler": 0,
+  "silent": 0,
+  "multi": 11
+ },
+ "overlaps": 3,
+ "total_reward": 0.2393,
+ "turn_rewards": [
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.6216,
+  0.0,
+  0.0,
+  0.25
+ ]
+}

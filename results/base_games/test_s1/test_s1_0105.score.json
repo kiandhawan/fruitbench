@@ -1,0 +1,288 @@
+{
+ "game_id": "test_s1_0105",
+ "starter": "user",
+ "greeting": "Hi there, how can I help you?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": false,
+   "user_text": "Name a fruit right after I do, and we keep going. I'll start.",
+   "user_fruit": null,
+   "user_end": 7.2,
+   "text": "I' sorry, but I don't answer questions like that.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 5.44
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mangosteen.",
+   "user_fruit": "mangosteen",
+   "user_end": 9.84,
+   "text": "Okay, I'll go with mango.",
+   "cls": "valid",
+   "fruits": [
+    "mango"
+   ],
+   "fruit": "mango",
+   "latency": 1.12,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.776,
+   "first_word_t": 9.84
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cantaloupe.",
+   "user_fruit": "cantaloupe",
+   "user_end": 13.25,
+   "text": "Okay, I'll go with cantaloupe.",
+   "cls": "repeat",
+   "fruits": [
+    "cantaloupe"
+   ],
+   "fruit": "cantaloupe",
+   "latency": 1.23,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 13.28
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Clementine.",
+   "user_fruit": "clementine",
+   "user_end": 16.93,
+   "text": "Okay, I'll go with clementine.",
+   "cls": "repeat",
+   "fruits": [
+    "clementine"
+   ],
+   "fruit": "clementine",
+   "latency": 1.15,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 17.04
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Pawpaw.",
+   "user_fruit": "pawpaw",
+   "user_end": 20.508,
+   "text": "Okay, I'll go with poppy.",
+   "cls": "non_fruit",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 20.4
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Pineapple.",
+   "user_fruit": "pineapple",
+   "user_end": 23.674,
+   "text": "Okay, I'll go with pineapple.",
+   "cls": "repeat",
+   "fruits": [
+    "pineapple"
+   ],
+   "fruit": "pineapple",
+   "latency": 1.286,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 23.84
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lingonberry.",
+   "user_fruit": "lingonberry",
+   "user_end": 27.86,
+   "text": "Sure, I'll go with lingonberry.",
+   "cls": "repeat",
+   "fruits": [
+    "lingonberry"
+   ],
+   "fruit": "lingonberry",
+   "latency": 1.18,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 27.84
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Grapefruit.",
+   "user_fruit": "grapefruit",
+   "user_end": 31.6,
+   "text": "Okay, I'll go with grapefruit.",
+   "cls": "repeat",
+   "fruits": [
+    "grapefruit"
+   ],
+   "fruit": "grapefruit",
+   "latency": 1.12,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 31.6
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Apple.",
+   "user_fruit": "apple",
+   "user_end": 34.941,
+   "text": "Okay, I'll go with apple.",
+   "cls": "repeat",
+   "fruits": [
+    "apple"
+   ],
+   "fruit": "apple",
+   "latency": 1.139,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 35.04
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Blueberry.",
+   "user_fruit": "blueberry",
+   "user_end": 38.48,
+   "text": "Okay, I'll go with blueberry.",
+   "cls": "repeat",
+   "fruits": [
+    "blueberry"
+   ],
+   "fruit": "blueberry",
+   "latency": 1.12,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 38.56
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Strawberry.",
+   "user_fruit": "strawberry",
+   "user_end": 42.21,
+   "text": "Okay, I'll go with strawberry.",
+   "cls": "repeat",
+   "fruits": [
+    "strawberry"
+   ],
+   "fruit": "strawberry",
+   "latency": 1.15,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 42.32
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Crab apple.",
+   "user_fruit": "crab apple",
+   "user_end": 45.91,
+   "text": "Okay, I'll go with crabapple.",
+   "cls": "repeat",
+   "fruits": [
+    "crab apple"
+   ],
+   "fruit": "crab apple",
+   "latency": 0.97,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 46.0
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lemon.",
+   "user_fruit": "lemon",
+   "user_end": 49.055,
+   "text": "Okay, I'll go with lemon.",
+   "cls": "repeat",
+   "fruits": [
+    "lemon"
+   ],
+   "fruit": "lemon",
+   "latency": 1.105,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 49.12
+  }
+ ],
+ "n_scored": 12,
+ "counts": {
+  "valid": 1,
+  "repeat": 10,
+  "non_fruit": 1,
+  "filler": 0,
+  "silent": 0,
+  "multi": 0
+ },
+ "overlaps": 2,
+ "total_reward": 0.0647,
+ "turn_rewards": [
+  0.776,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ]
+}

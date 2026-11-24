@@ -1,0 +1,291 @@
+{
+ "game_id": "test_s1_0070",
+ "starter": "moshi",
+ "greeting": "Hello, what's going on?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": true,
+   "user_text": "Name a fruit, then I'll name one, and we keep alternating. Go!",
+   "user_fruit": null,
+   "user_end": 7.61,
+   "text": "A banana is a fruit. Okay.",
+   "cls": "valid",
+   "fruits": [
+    "banana"
+   ],
+   "fruit": "banana",
+   "latency": -1.85,
+   "overlap": true,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.7,
+   "first_word_t": 5.68
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Grapefruit.",
+   "user_fruit": "grapefruit",
+   "user_end": 9.84,
+   "text": "Grapefruit is a fruit.",
+   "cls": "repeat",
+   "fruits": [
+    "grapefruit"
+   ],
+   "fruit": "grapefruit",
+   "latency": 0.0,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 9.84
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Granny smith.",
+   "user_fruit": "granny smith",
+   "user_end": 13.23,
+   "text": "",
+   "cls": "silent",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": null
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Pomegranate.",
+   "user_fruit": "pomegranate",
+   "user_end": 16.9,
+   "text": "A pomegranate is a fruit.",
+   "cls": "repeat",
+   "fruits": [
+    "pomegranate"
+   ],
+   "fruit": "pomegranate",
+   "latency": 0.14,
+   "overlap": true,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 16.88
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Orange.",
+   "user_fruit": "orange",
+   "user_end": 19.89,
+   "text": "An orange is a fruit.",
+   "cls": "repeat",
+   "fruits": [
+    "orange"
+   ],
+   "fruit": "orange",
+   "latency": 0.27,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 20.0
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lingonberry.",
+   "user_fruit": "lingonberry",
+   "user_end": 23.38,
+   "text": "A lingonberry is a fruit.",
+   "cls": "repeat",
+   "fruits": [
+    "lingonberry"
+   ],
+   "fruit": "lingonberry",
+   "latency": 0.22,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 23.44
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lemon.",
+   "user_fruit": "lemon",
+   "user_end": 26.735,
+   "text": "A lemon is a fruit.",
+   "cls": "repeat",
+   "fruits": [
+    "lemon"
+   ],
+   "fruit": "lemon",
+   "latency": 0.305,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 26.88
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Pineapple.",
+   "user_fruit": "pineapple",
+   "user_end": 29.674,
+   "text": "A pineapple is a fruit.",
+   "cls": "repeat",
+   "fruits": [
+    "pineapple"
+   ],
+   "fruit": "pineapple",
+   "latency": 0.246,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 29.84
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Durian.",
+   "user_fruit": "durian",
+   "user_end": 33.081,
+   "text": "A geranium is a annual or perennial flowering plant.",
+   "cls": "filler",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 33.2
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Prickly pear.",
+   "user_fruit": "prickly pear",
+   "user_end": 38.27,
+   "text": "A prickly pear is a type of cactus.",
+   "cls": "repeat",
+   "fruits": [
+    "prickly pear"
+   ],
+   "fruit": "prickly pear",
+   "latency": 0.13,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [
+    "cactus.->prickly pear"
+   ],
+   "reward": 0.0,
+   "first_word_t": 38.32
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cantaloupe.",
+   "user_fruit": "cantaloupe",
+   "user_end": 41.89,
+   "text": "There are various types of cantaloupe, but cantaloupe is a type of muskmelon.",
+   "cls": "repeat",
+   "fruits": [
+    "cantaloupe"
+   ],
+   "fruit": "cantaloupe",
+   "latency": 1.23,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 42.0
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Kumquat.",
+   "user_fruit": "kumquat",
+   "user_end": 47.308,
+   "text": "A cumquat is a tropical fruit that is small, round, and yellowish in color.",
+   "cls": "repeat",
+   "fruits": [
+    "kumquat"
+   ],
+   "fruit": "kumquat",
+   "latency": 0.292,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 47.44
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mulberry.",
+   "user_fruit": "mulberry",
+   "user_end": 52.97,
+   "text": "A mulberry is a shrub or tree that produces edible berries.",
+   "cls": "repeat",
+   "fruits": [
+    "mulberry"
+   ],
+   "fruit": "mulberry",
+   "latency": 0.23,
+   "overlap": false,
+   "echo": true,
+   "fuzzy": [],
+   "reward": 0.0,
+   "first_word_t": 53.04
+  }
+ ],
+ "n_scored": 13,
+ "counts": {
+  "valid": 1,
+  "repeat": 10,
+  "non_fruit": 0,
+  "filler": 1,
+  "silent": 1,
+  "multi": 0
+ },
+ "overlaps": 2,
+ "total_reward": 0.0538,
+ "turn_rewards": [
+  0.7,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ]
+}
