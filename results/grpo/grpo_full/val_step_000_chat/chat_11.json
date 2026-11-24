@@ -355,7 +355,7 @@
   }
  ],
  "batch_size": 5,
- "batch_wall_sec": 11.6,
+ "batch_wall_sec": 11.54,
  "batch_frames": 321,
  "peak_mem_gb": 25.48,
  "user_audio": "live"

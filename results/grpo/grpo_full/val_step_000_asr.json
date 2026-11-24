@@ -2,22 +2,22 @@
  "games": 10,
  "fruit_mentions_game_level": {
   "fruit_mentions_text": 72,
-  "fruit_mentions_asr": 48,
-  "matched": 47,
-  "mentions_heard_in_audio": 0.653,
+  "fruit_mentions_asr": 66,
+  "matched": 64,
+  "mentions_heard_in_audio": 0.889,
   "distinct_fruits_text": 43,
-  "distinct_fruits_asr": 35,
-  "distinct_matched": 35,
-  "text_mentions_heard_in_audio": 0.814,
+  "distinct_fruits_asr": 38,
+  "distinct_matched": 38,
+  "text_mentions_heard_in_audio": 0.884,
   "asr_mentions_in_text": 1.0
  },
  "scored_turns": 122,
- "agree_class": 0.861,
- "agree_class_and_fruit": 0.852,
+ "agree_class": 0.877,
+ "agree_class_and_fruit": 0.869,
  "per_text_class": {
   "filler": {
    "n": 37,
-   "agree": 0.919
+   "agree": 0.973
   },
   "multi": {
    "n": 2,
@@ -45,16 +45,16 @@
   }
  },
  "disagreements": {
+  "repeat->multi": 3,
   "repeat->non_fruit": 3,
-  "filler->silent": 3,
-  "repeat->silent": 3,
   "repeat->filler": 2,
   "silent->filler": 1,
-  "repeat->multi": 1,
   "sentence->filler": 1,
   "repeat->sentence": 1,
+  "filler->silent": 1,
   "multi->sentence": 1,
-  "multi->silent": 1
+  "multi->non_fruit": 1,
+  "repeat->silent": 1
  },
  "turns": [
   {
@@ -649,7 +649,7 @@
    "text_fruit": null,
    "asr_fruit": null,
    "text": "Ah, okay, so we just said it. We'll do the same for the third one.",
-   "asr": "Uh, okay, so we just said it. We'll do the same for the third one."
+   "asr": "Okay, so we just said it. We'll do the same for the third one."
   },
   {
    "game": "val_s7_0051",
@@ -671,29 +671,29 @@
    "text_fruit": null,
    "asr_fruit": null,
    "text": "two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five,",
-   "asr": "8, 9. Okay, so the third one."
+   "asr": "8, 9. okay so the third one one two three four five six seven eight nine ten one two 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5,"
   },
   {
    "game": "val_s7_0051",
    "turn": 7,
    "user": "Nectarine.",
    "text_cls": "filler",
-   "asr_cls": "silent",
+   "asr_cls": "filler",
    "text_fruit": null,
    "asr_fruit": null,
    "text": "six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight,",
-   "asr": ""
+   "asr": "6, 7, 8,"
   },
   {
    "game": "val_s7_0051",
    "turn": 8,
    "user": "Cloudberry.",
    "text_cls": "filler",
-   "asr_cls": "silent",
+   "asr_cls": "filler",
    "text_fruit": null,
    "asr_fruit": null,
    "text": "ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight,",
-   "asr": ""
+   "asr": "9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7,"
   },
   {
    "game": "val_s7_0051",
@@ -704,7 +704,7 @@
    "text_fruit": null,
    "asr_fruit": null,
    "text": "nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, ten, one,",
-   "asr": "Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five"
+   "asr": "8, 9, 10, 1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1,"
   },
   {
    "game": "val_s7_0051",
@@ -715,7 +715,7 @@
    "text_fruit": null,
    "asr_fruit": null,
    "text": "two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten,",
-   "asr": "six seven eight ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One"
+   "asr": "2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1,"
   },
   {
    "game": "val_s7_0051",
@@ -726,7 +726,7 @@
    "text_fruit": null,
    "asr_fruit": null,
    "text": "one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one,",
-   "asr": "Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1,"
+   "asr": "2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1,"
   },
   {
    "game": "val_s7_0051",
@@ -737,7 +737,7 @@
    "text_fruit": null,
    "asr_fruit": null,
    "text": "two, three, four, five, six, seven, eight, nine, ten, one, two, three, four,",
-   "asr": "2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3."
+   "asr": "2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3."
   },
   {
    "game": "val_s7_0053",
@@ -1206,66 +1206,66 @@
    "turn": 7,
    "user": "Cloudberry.",
    "text_cls": "multi",
-   "asr_cls": "silent",
+   "asr_cls": "non_fruit",
    "text_fruit": null,
    "asr_fruit": null,
    "text": "orange cloudberry",
-   "asr": ""
+   "asr": "Cogberry."
   },
   {
    "game": "val_s7_0065",
    "turn": 8,
    "user": "Breadfruit.",
    "text_cls": "repeat",
-   "asr_cls": "silent",
+   "asr_cls": "repeat",
    "text_fruit": "breadfruit",
-   "asr_fruit": null,
+   "asr_fruit": "breadfruit",
    "text": "breadfruit breadfruit breadfruit breadfruit",
-   "asr": ""
+   "asr": "Breadfruit. Breadfruit. Breadfruit. Red fruit."
   },
   {
    "game": "val_s7_0065",
    "turn": 9,
    "user": "Raspberry.",
    "text_cls": "repeat",
-   "asr_cls": "silent",
+   "asr_cls": "repeat",
    "text_fruit": "raspberry",
-   "asr_fruit": null,
+   "asr_fruit": "raspberry",
    "text": "raspberry raspberry raspberry raspberry",
-   "asr": ""
+   "asr": "Raspberry. Raspberry. Raspberry. Raspberry. raspberry"
   },
   {
    "game": "val_s7_0065",
    "turn": 10,
    "user": "Lychee.",
    "text_cls": "repeat",
-   "asr_cls": "silent",
+   "asr_cls": "multi",
    "text_fruit": "lychee",
    "asr_fruit": null,
    "text": "lychee lychee lychee lychee lychee",
-   "asr": ""
+   "asr": "lychee lychee lychee lychee lychee fig"
   },
   {
    "game": "val_s7_0065",
    "turn": 11,
    "user": "Fig.",
    "text_cls": "repeat",
-   "asr_cls": "repeat",
+   "asr_cls": "multi",
    "text_fruit": "fig",
-   "asr_fruit": "fig",
+   "asr_fruit": null,
    "text": "fig fig fig fig fig fig fig",
-   "asr": "Fig, fig,"
+   "asr": "fig fig fig fig fig fig starfruit"
   },
   {
    "game": "val_s7_0065",
    "turn": 12,
    "user": "Starfruit.",
    "text_cls": "repeat",
-   "asr_cls": "repeat",
+   "asr_cls": "silent",
    "text_fruit": "starfruit",
-   "asr_fruit": "starfruit",
+   "asr_fruit": null,
    "text": "starfruit",
-   "asr": "starfruit."
+   "asr": ""
   },
   {
    "game": "val_s7_0097",
@@ -1423,7 +1423,7 @@
   },
   {
    "game": "val_s7_0051",
-   "asr_text": "Hello, how are you today? Okay, okay, so we'll start with the first one. Do we have to repeat any? No, we don't have to repeat any. So we can just start with the second one. Okay, so we're just going to say it as quickly as possible. We'll start with the first one. 1, 2, 3, 4, 5, 6, 7, 9, 10. 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Okay, so we just said it. We'll do the same for the second one. Okay, so the second one, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Uh, okay, so we just said it. We'll do the same for the third one. Okay, so the third one, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9. Okay, so the third one. Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five six seven eight nine ten One Two Three Four five 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3.",
+   "asr_text": "Hello, how are you today? Okay, okay, so we'll start with the first one. Do we have to repeat any? No, we don't have to repeat any. So we can just start with the second one. Okay, so we're just going to say it as quickly as possible. We'll start with the first one. 1, 2, 3, 4, 5, 6, 7, 9, 10. 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Okay, so we just said it. We'll do the same for the second one. Okay, so the second one, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Okay, so we just said it. We'll do the same for the third one. Okay, so the third one, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9. okay so the third one one two three four five six seven eight nine ten one two 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3.",
    "moshi_text": "Hello, how are you today? Okay. Okay, so we'll start with the first one. Do we have to repeat any? No, we don't have to repeat any, so we can just start with the second one. Okay, so we're just going to say it as quickly as possible. We'll start with the first one. One, two, three, four, five, six, seven, eight, nine, ten. One, two, three, four, five, six, seven, eight, nine, ten. Okay, so we just said it. We'll do the same for the second one. Okay, so the second one, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten. Ah, okay, so we just said it. We'll do the same for the third one. Okay, so the third one, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten. Okay, so the third one, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four, five, six, seven, eight, nine, ten, one, two, three, four,"
   },
   {
@@ -1443,7 +1443,7 @@
   },
   {
    "game": "val_s7_0065",
-   "asr_text": "hi there how can I help you okay I won't repeat peach peachy peachy dragon fruit watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon orange orange Fig, fig, starfruit.",
+   "asr_text": "hi there how can I help you okay I won't repeat peach peachy peachy dragon fruit watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon orange orange Cogberry. Breadfruit. Breadfruit. Breadfruit. Red fruit. Raspberry. Raspberry. Raspberry. Raspberry. raspberry lychee lychee lychee lychee lychee fig fig fig fig fig fig fig starfruit",
    "moshi_text": "Hi there, how can I help you? okay i won't repeat peach peach you peach you dragon fruit watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon watermelon orange orange cloudberry breadfruit breadfruit breadfruit breadfruit raspberry raspberry raspberry raspberry lychee lychee lychee lychee lychee fig fig fig fig fig fig fig starfruit"
   },
   {

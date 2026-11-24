@@ -65,6 +65,7 @@ val:
   seed: 7
   whisper_games: 10
   whisper_min_agreement: 0.9
+stop_mode: flag_only
 stop:
   val_valid_min_at_step_20: 0.429
   val_silent_max_at_step_30: 0.5
