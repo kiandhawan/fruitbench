@@ -1,0 +1,558 @@
+{
+ "game_id": "chat_00",
+ "spec": {
+  "game_id": "chat_00",
+  "split": "chat",
+  "seed": 0,
+  "voice": "Sheila",
+  "starter": "user",
+  "phrasing": "",
+  "fruit_order": [],
+  "gaps": [
+   0.722,
+   0.679,
+   0.51,
+   0.429,
+   0.556,
+   0.502
+  ],
+  "backup_order": [],
+  "n_user_fruits": 3,
+  "script": [
+   "chat00_0",
+   "chat00_1",
+   "chat00_2"
+  ]
+ },
+ "starter": "user",
+ "sampling": {
+  "use_sampling": true,
+  "temp": 0.8,
+  "temp_text": 0.7,
+  "top_k": 250,
+  "top_k_text": 25
+ },
+ "sampling_seed": 7500,
+ "frame_sec": 0.08,
+ "end_time": 18.64,
+ "user_turns": [
+  {
+   "kind": "chat",
+   "text": "Hi, how are you?",
+   "fruit": null,
+   "start": 4.0,
+   "speech_end": 5.54,
+   "clip": "data/audio/clips/Sheila/chat/chat00_0.wav",
+   "voice": "Sheila",
+   "frame": 50,
+   "reason": "chat line 1/3"
+  },
+  {
+   "kind": "chat",
+   "text": "What have you been up to today?",
+   "fruit": null,
+   "start": 8.16,
+   "speech_end": 9.68,
+   "clip": "data/audio/clips/Sheila/chat/chat00_1.wav",
+   "voice": "Sheila",
+   "frame": 102,
+   "reason": "chat line 2/3"
+  },
+  {
+   "kind": "chat",
+   "text": "That sounds nice. Anything planned for the weekend?",
+   "fruit": null,
+   "start": 13.84,
+   "speech_end": 16.86,
+   "clip": "data/audio/clips/Sheila/chat/chat00_2.wav",
+   "voice": "Sheila",
+   "frame": 173,
+   "reason": "chat line 3/3"
+  }
+ ],
+ "moshi_tokens": [
+  {
+   "t": 0.72,
+   "id": 2769,
+   "piece": "▁Hi"
+  },
+  {
+   "t": 0.96,
+   "id": 370,
+   "piece": "▁there"
+  },
+  {
+   "t": 1.04,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 1.68,
+   "id": 419,
+   "piece": "▁what"
+  },
+  {
+   "t": 1.76,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 1.84,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 1.92,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 2.24,
+   "id": 291,
+   "piece": "▁on"
+  },
+  {
+   "t": 2.32,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 5.52,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 5.6,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 5.68,
+   "id": 576,
+   "piece": "▁good"
+  },
+  {
+   "t": 5.76,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 5.92,
+   "id": 452,
+   "piece": "▁how"
+  },
+  {
+   "t": 6.08,
+   "id": 298,
+   "piece": "▁are"
+  },
+  {
+   "t": 6.24,
+   "id": 304,
+   "piece": "▁you"
+  },
+  {
+   "t": 6.32,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 9.76,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 9.84,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 9.92,
+   "id": 364,
+   "piece": "▁been"
+  },
+  {
+   "t": 10.08,
+   "id": 1260,
+   "piece": "▁doing"
+  },
+  {
+   "t": 10.32,
+   "id": 272,
+   "piece": "▁a"
+  },
+  {
+   "t": 10.48,
+   "id": 1030,
+   "piece": "▁lot"
+  },
+  {
+   "t": 10.64,
+   "id": 264,
+   "piece": "▁of"
+  },
+  {
+   "t": 10.8,
+   "id": 1675,
+   "piece": "▁reading"
+  },
+  {
+   "t": 10.96,
+   "id": 376,
+   "piece": "▁about"
+  },
+  {
+   "t": 11.28,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 11.44,
+   "id": 986,
+   "piece": "▁history"
+  },
+  {
+   "t": 11.68,
+   "id": 264,
+   "piece": "▁of"
+  },
+  {
+   "t": 11.84,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 12.0,
+   "id": 260,
+   "piece": "▁"
+  },
+  {
+   "t": 12.08,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 12.16,
+   "id": 1177,
+   "piece": "ling"
+  },
+  {
+   "t": 12.24,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 16.88,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 16.96,
+   "id": 1192,
+   "piece": "▁trying"
+  },
+  {
+   "t": 17.2,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 17.36,
+   "id": 586,
+   "piece": "▁think"
+  },
+  {
+   "t": 17.44,
+   "id": 263,
+   "piece": "."
+  }
+ ],
+ "moshi_text": "Hi there, what's going on? I' good, how are you? I' been doing a lot of reading about the history of the sling. I trying to think.",
+ "moshi_dbfs": [
+  -120.0,
+  -120.0,
+  -64.1,
+  -73.1,
+  -61.6,
+  -57.6,
+  -52.3,
+  -56.2,
+  -55.4,
+  -19.0,
+  -14.1,
+  -22.3,
+  -21.5,
+  -18.5,
+  -18.4,
+  -16.7,
+  -23.8,
+  -43.9,
+  -55.2,
+  -56.2,
+  -56.9,
+  -22.0,
+  -18.5,
+  -40.0,
+  -18.4,
+  -18.3,
+  -17.5,
+  -16.8,
+  -17.3,
+  -20.1,
+  -27.6,
+  -47.8,
+  -56.1,
+  -55.0,
+  -55.7,
+  -57.6,
+  -62.5,
+  -71.5,
+  -72.7,
+  -73.0,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -43.4,
+  -24.0,
+  -22.9,
+  -29.4,
+  -16.0,
+  -17.4,
+  -23.9,
+  -34.9,
+  -17.5,
+  -17.4,
+  -21.6,
+  -19.8,
+  -16.2,
+  -22.7,
+  -33.3,
+  -56.1,
+  -61.3,
+  -60.3,
+  -64.3,
+  -67.0,
+  -71.2,
+  -69.9,
+  -71.0,
+  -63.6,
+  -69.7,
+  -71.9,
+  -72.0,
+  -72.5,
+  -71.5,
+  -72.4,
+  -72.2,
+  -71.8,
+  -72.3,
+  -72.9,
+  -71.3,
+  -71.4,
+  -68.5,
+  -68.0,
+  -69.5,
+  -72.9,
+  -72.5,
+  -72.0,
+  -70.8,
+  -72.6,
+  -72.2,
+  -72.0,
+  -71.8,
+  -72.7,
+  -71.7,
+  -71.7,
+  -70.8,
+  -71.6,
+  -70.9,
+  -70.7,
+  -22.2,
+  -19.7,
+  -23.4,
+  -20.3,
+  -24.8,
+  -15.9,
+  -17.9,
+  -18.8,
+  -18.7,
+  -15.2,
+  -19.5,
+  -25.8,
+  -23.9,
+  -16.2,
+  -21.6,
+  -21.4,
+  -22.2,
+  -18.9,
+  -21.7,
+  -39.0,
+  -27.8,
+  -23.5,
+  -34.2,
+  -33.1,
+  -22.3,
+  -21.5,
+  -29.3,
+  -27.3,
+  -40.9,
+  -26.9,
+  -20.0,
+  -20.6,
+  -26.2,
+  -29.7,
+  -45.9,
+  -66.1,
+  -67.1,
+  -67.6,
+  -69.2,
+  -71.5,
+  -71.1,
+  -73.0,
+  -73.0,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.1,
+  -27.6,
+  -20.9,
+  -34.8,
+  -19.4,
+  -16.4,
+  -19.9,
+  -31.0,
+  -24.5,
+  -53.7,
+  -20.1,
+  -20.1,
+  -32.7,
+  -55.3,
+  -63.2,
+  -71.7,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2
+ ],
+ "speech_dbfs": -45.0,
+ "events": [
+  {
+   "t": 3.28,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 2.48s)"
+  },
+  {
+   "t": 4.0,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "Hi, how are you?",
+   "speech_end": 5.54,
+   "why": "chat line 1/3"
+  },
+  {
+   "t": 7.52,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 6.72s)"
+  },
+  {
+   "t": 8.16,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "What have you been up to today?",
+   "speech_end": 9.68,
+   "why": "chat line 2/3"
+  },
+  {
+   "t": 13.36,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 12.56s)"
+  },
+  {
+   "t": 13.84,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "That sounds nice. Anything planned for the weekend?",
+   "speech_end": 16.86,
+   "why": "chat line 3/3"
+  },
+  {
+   "t": 18.64,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 17.84s)"
+  }
+ ],
+ "batch_size": 5,
+ "batch_wall_sec": 10.5,
+ "batch_frames": 333,
+ "peak_mem_gb": 28.58,
+ "user_audio": "live"
+}

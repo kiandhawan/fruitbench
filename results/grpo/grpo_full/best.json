@@ -1,0 +1,6 @@
+{
+ "best_metric": "mean_reward",
+ "step": 10,
+ "mean_reward": -0.133,
+ "valid_rate": 0.1882
+}
