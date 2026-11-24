@@ -1,0 +1,686 @@
+{
+ "game_id": "chat_09",
+ "spec": {
+  "game_id": "chat_09",
+  "split": "chat",
+  "seed": 0,
+  "voice": "Megan",
+  "starter": "user",
+  "phrasing": "",
+  "fruit_order": [],
+  "gaps": [
+   0.554,
+   0.766,
+   0.355,
+   0.576,
+   0.653,
+   0.574
+  ],
+  "backup_order": [],
+  "n_user_fruits": 3,
+  "script": [
+   "chat09_0",
+   "chat09_1",
+   "chat09_2"
+  ]
+ },
+ "starter": "user",
+ "sampling": {
+  "use_sampling": true,
+  "temp": 0.8,
+  "temp_text": 0.7,
+  "top_k": 250,
+  "top_k_text": 25
+ },
+ "sampling_seed": 7501,
+ "frame_sec": 0.08,
+ "end_time": 23.28,
+ "user_turns": [
+  {
+   "kind": "chat",
+   "text": "What's the best way to save money?",
+   "fruit": null,
+   "start": 3.28,
+   "speech_end": 5.25,
+   "clip": "data/audio/clips/Megan/chat/chat09_0.wav",
+   "voice": "Megan",
+   "frame": 41,
+   "reason": "chat line 1/3"
+  },
+  {
+   "kind": "chat",
+   "text": "I always spend too much on takeaway.",
+   "fruit": null,
+   "start": 9.92,
+   "speech_end": 11.99,
+   "clip": "data/audio/clips/Megan/chat/chat09_1.wav",
+   "voice": "Megan",
+   "frame": 124,
+   "reason": "chat line 2/3"
+  },
+  {
+   "kind": "chat",
+   "text": "Do budgeting apps actually help?",
+   "fruit": null,
+   "start": 17.28,
+   "speech_end": 19.34,
+   "clip": "data/audio/clips/Megan/chat/chat09_2.wav",
+   "voice": "Megan",
+   "frame": 216,
+   "reason": "chat line 3/3"
+  }
+ ],
+ "moshi_tokens": [
+  {
+   "t": 0.48,
+   "id": 11725,
+   "piece": "▁Hello"
+  },
+  {
+   "t": 0.56,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 1.04,
+   "id": 452,
+   "piece": "▁how"
+  },
+  {
+   "t": 1.28,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 1.36,
+   "id": 296,
+   "piece": "▁it"
+  },
+  {
+   "t": 1.52,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 1.6,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 5.36,
+   "id": 8169,
+   "piece": "▁saving"
+  },
+  {
+   "t": 5.6,
+   "id": 1397,
+   "piece": "▁money"
+  },
+  {
+   "t": 5.68,
+   "id": 314,
+   "piece": "▁can"
+  },
+  {
+   "t": 5.92,
+   "id": 297,
+   "piece": "▁be"
+  },
+  {
+   "t": 6.08,
+   "id": 5983,
+   "piece": "▁challenging"
+  },
+  {
+   "t": 6.16,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 6.72,
+   "id": 327,
+   "piece": "▁but"
+  },
+  {
+   "t": 6.88,
+   "id": 370,
+   "piece": "▁there"
+  },
+  {
+   "t": 7.04,
+   "id": 298,
+   "piece": "▁are"
+  },
+  {
+   "t": 7.2,
+   "id": 858,
+   "piece": "▁various"
+  },
+  {
+   "t": 7.44,
+   "id": 1833,
+   "piece": "▁ways"
+  },
+  {
+   "t": 7.68,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 7.84,
+   "id": 2062,
+   "piece": "▁achieve"
+  },
+  {
+   "t": 8.08,
+   "id": 296,
+   "piece": "▁it"
+  },
+  {
+   "t": 8.16,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 12.08,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 12.16,
+   "id": 1029,
+   "piece": "▁understand"
+  },
+  {
+   "t": 12.24,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 12.72,
+   "id": 745,
+   "piece": "▁One"
+  },
+  {
+   "t": 12.96,
+   "id": 870,
+   "piece": "▁approach"
+  },
+  {
+   "t": 13.2,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 13.36,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 13.52,
+   "id": 1768,
+   "piece": "▁track"
+  },
+  {
+   "t": 13.76,
+   "id": 354,
+   "piece": "▁your"
+  },
+  {
+   "t": 13.92,
+   "id": 6224,
+   "piece": "▁spending"
+  },
+  {
+   "t": 14.32,
+   "id": 13303,
+   "piece": "▁habits"
+  },
+  {
+   "t": 14.4,
+   "id": 267,
+   "piece": "▁and"
+  },
+  {
+   "t": 14.8,
+   "id": 22844,
+   "piece": "▁prioritize"
+  },
+  {
+   "t": 15.2,
+   "id": 354,
+   "piece": "▁your"
+  },
+  {
+   "t": 15.52,
+   "id": 11017,
+   "piece": "▁expenses"
+  },
+  {
+   "t": 15.6,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 19.44,
+   "id": 18137,
+   "piece": "▁Budget"
+  },
+  {
+   "t": 19.52,
+   "id": 311,
+   "piece": "ing"
+  },
+  {
+   "t": 19.76,
+   "id": 7116,
+   "piece": "▁apps"
+  },
+  {
+   "t": 19.92,
+   "id": 314,
+   "piece": "▁can"
+  },
+  {
+   "t": 20.08,
+   "id": 297,
+   "piece": "▁be"
+  },
+  {
+   "t": 20.24,
+   "id": 3850,
+   "piece": "▁helpful"
+  },
+  {
+   "t": 20.32,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 20.64,
+   "id": 327,
+   "piece": "▁but"
+  },
+  {
+   "t": 20.96,
+   "id": 356,
+   "piece": "▁they"
+  },
+  {
+   "t": 21.12,
+   "id": 298,
+   "piece": "▁are"
+  },
+  {
+   "t": 21.28,
+   "id": 309,
+   "piece": "▁not"
+  },
+  {
+   "t": 21.44,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 21.52,
+   "id": 378,
+   "piece": "▁only"
+  },
+  {
+   "t": 21.76,
+   "id": 799,
+   "piece": "▁solution"
+  },
+  {
+   "t": 21.84,
+   "id": 263,
+   "piece": "."
+  }
+ ],
+ "moshi_text": "Hello, how is it going? saving money can be challenging, but there are various ways to achieve it. I understand. One approach is to track your spending habits and prioritize your expenses. Budgeting apps can be helpful, but they are not the only solution.",
+ "moshi_dbfs": [
+  -120.0,
+  -120.0,
+  -64.1,
+  -73.1,
+  -62.6,
+  -33.8,
+  -18.6,
+  -15.7,
+  -16.8,
+  -17.0,
+  -21.8,
+  -58.3,
+  -60.8,
+  -48.1,
+  -20.9,
+  -18.2,
+  -20.9,
+  -26.7,
+  -28.7,
+  -18.0,
+  -19.2,
+  -24.0,
+  -35.7,
+  -39.2,
+  -60.3,
+  -57.3,
+  -58.1,
+  -55.0,
+  -58.3,
+  -70.8,
+  -72.8,
+  -73.0,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.0,
+  -73.1,
+  -44.1,
+  -30.0,
+  -17.2,
+  -18.8,
+  -19.5,
+  -21.4,
+  -19.4,
+  -24.0,
+  -26.2,
+  -23.8,
+  -37.2,
+  -24.8,
+  -19.2,
+  -22.8,
+  -24.9,
+  -25.1,
+  -25.1,
+  -28.8,
+  -34.6,
+  -28.9,
+  -29.0,
+  -18.9,
+  -20.3,
+  -31.4,
+  -16.3,
+  -19.6,
+  -22.9,
+  -41.1,
+  -26.8,
+  -20.4,
+  -38.1,
+  -30.9,
+  -42.9,
+  -32.0,
+  -22.7,
+  -35.6,
+  -42.2,
+  -70.2,
+  -67.2,
+  -65.0,
+  -65.2,
+  -65.2,
+  -65.5,
+  -66.2,
+  -64.9,
+  -63.5,
+  -65.9,
+  -67.2,
+  -67.4,
+  -68.0,
+  -66.8,
+  -67.8,
+  -67.6,
+  -67.8,
+  -67.5,
+  -68.1,
+  -68.2,
+  -68.3,
+  -67.8,
+  -68.6,
+  -67.3,
+  -68.9,
+  -70.7,
+  -72.3,
+  -72.6,
+  -73.0,
+  -73.0,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -23.1,
+  -21.1,
+  -21.0,
+  -23.8,
+  -42.5,
+  -20.9,
+  -21.2,
+  -26.7,
+  -41.5,
+  -64.1,
+  -26.4,
+  -22.3,
+  -26.4,
+  -31.5,
+  -19.0,
+  -42.6,
+  -30.1,
+  -35.2,
+  -40.3,
+  -42.6,
+  -20.6,
+  -21.0,
+  -41.1,
+  -26.2,
+  -38.9,
+  -58.2,
+  -23.1,
+  -25.2,
+  -27.2,
+  -27.7,
+  -24.0,
+  -28.8,
+  -44.6,
+  -30.7,
+  -31.6,
+  -56.2,
+  -25.7,
+  -26.1,
+  -24.6,
+  -28.3,
+  -33.2,
+  -29.4,
+  -34.5,
+  -32.8,
+  -51.4,
+  -33.5,
+  -27.0,
+  -33.7,
+  -33.0,
+  -35.1,
+  -56.7,
+  -70.0,
+  -68.8,
+  -69.3,
+  -71.4,
+  -72.2,
+  -71.8,
+  -72.9,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -17.7,
+  -23.6,
+  -20.3,
+  -21.7,
+  -25.7,
+  -22.5,
+  -44.1,
+  -51.1,
+  -24.2,
+  -25.4,
+  -28.3,
+  -20.4,
+  -23.5,
+  -55.2,
+  -31.2,
+  -26.8,
+  -42.9,
+  -72.5,
+  -73.0,
+  -27.5,
+  -31.3,
+  -21.5,
+  -22.6,
+  -25.8,
+  -22.2,
+  -29.8,
+  -25.4,
+  -22.4,
+  -25.0,
+  -27.7,
+  -44.1,
+  -26.4,
+  -21.1,
+  -32.5,
+  -37.4,
+  -33.0,
+  -42.3,
+  -70.3,
+  -72.6,
+  -73.2,
+  -73.1,
+  -73.2,
+  -71.6,
+  -70.6,
+  -70.0,
+  -70.2,
+  -72.9
+ ],
+ "speech_dbfs": -45.0,
+ "events": [
+  {
+   "t": 2.72,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 1.92s)"
+  },
+  {
+   "t": 3.28,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "What's the best way to save money?",
+   "speech_end": 5.25,
+   "why": "chat line 1/3"
+  },
+  {
+   "t": 9.12,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 8.32s)"
+  },
+  {
+   "t": 9.92,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "I always spend too much on takeaway.",
+   "speech_end": 11.99,
+   "why": "chat line 2/3"
+  },
+  {
+   "t": 16.96,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 16.16s)"
+  },
+  {
+   "t": 17.28,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "Do budgeting apps actually help?",
+   "speech_end": 19.34,
+   "why": "chat line 3/3"
+  },
+  {
+   "t": 23.28,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 22.48s)"
+  }
+ ],
+ "batch_size": 5,
+ "batch_wall_sec": 9.05,
+ "batch_frames": 290,
+ "peak_mem_gb": 28.66,
+ "user_audio": "live"
+}
