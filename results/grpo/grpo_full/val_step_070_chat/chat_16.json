@@ -1,0 +1,588 @@
+{
+ "game_id": "chat_16",
+ "spec": {
+  "game_id": "chat_16",
+  "split": "chat",
+  "seed": 0,
+  "voice": "Sheila",
+  "starter": "user",
+  "phrasing": "",
+  "fruit_order": [],
+  "gaps": [
+   0.697,
+   0.341,
+   0.606,
+   0.543,
+   0.615,
+   0.723
+  ],
+  "backup_order": [],
+  "n_user_fruits": 3,
+  "script": [
+   "chat16_0",
+   "chat16_1",
+   "chat16_2"
+  ]
+ },
+ "starter": "user",
+ "sampling": {
+  "use_sampling": true,
+  "temp": 0.8,
+  "temp_text": 0.7,
+  "top_k": 250,
+  "top_k_text": 25
+ },
+ "sampling_seed": 7503,
+ "frame_sec": 0.08,
+ "end_time": 20.64,
+ "user_turns": [
+  {
+   "kind": "chat",
+   "text": "What's a good hobby to pick up in winter?",
+   "fruit": null,
+   "start": 4.0,
+   "speech_end": 6.37,
+   "clip": "data/audio/clips/Sheila/chat/chat16_0.wav",
+   "voice": "Sheila",
+   "frame": 50,
+   "reason": "chat line 1/3"
+  },
+  {
+   "kind": "chat",
+   "text": "Something I can do indoors.",
+   "fruit": null,
+   "start": 10.24,
+   "speech_end": 12.11,
+   "clip": "data/audio/clips/Sheila/chat/chat16_1.wav",
+   "voice": "Sheila",
+   "frame": 128,
+   "reason": "chat line 2/3"
+  },
+  {
+   "kind": "chat",
+   "text": "How much would it cost to start?",
+   "fruit": null,
+   "start": 16.32,
+   "speech_end": 18.34,
+   "clip": "data/audio/clips/Sheila/chat/chat16_2.wav",
+   "voice": "Sheila",
+   "frame": 204,
+   "reason": "chat line 3/3"
+  }
+ ],
+ "moshi_tokens": [
+  {
+   "t": 0.64,
+   "id": 2295,
+   "piece": "▁Good"
+  },
+  {
+   "t": 0.88,
+   "id": 667,
+   "piece": "▁day"
+  },
+  {
+   "t": 0.96,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 1.68,
+   "id": 452,
+   "piece": "▁how"
+  },
+  {
+   "t": 1.84,
+   "id": 275,
+   "piece": "▁is"
+  },
+  {
+   "t": 2.0,
+   "id": 296,
+   "piece": "▁it"
+  },
+  {
+   "t": 2.16,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 2.24,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 6.48,
+   "id": 367,
+   "piece": "▁would"
+  },
+  {
+   "t": 6.64,
+   "id": 1612,
+   "piece": "▁suggest"
+  },
+  {
+   "t": 7.04,
+   "id": 1130,
+   "piece": "▁learning"
+  },
+  {
+   "t": 7.52,
+   "id": 272,
+   "piece": "▁a"
+  },
+  {
+   "t": 7.76,
+   "id": 421,
+   "piece": "▁new"
+  },
+  {
+   "t": 7.92,
+   "id": 5238,
+   "piece": "▁instrument"
+  },
+  {
+   "t": 8.0,
+   "id": 307,
+   "piece": "▁or"
+  },
+  {
+   "t": 8.56,
+   "id": 1119,
+   "piece": "▁language"
+  },
+  {
+   "t": 8.64,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 12.16,
+   "id": 1925,
+   "piece": "▁Yes"
+  },
+  {
+   "t": 12.24,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 12.4,
+   "id": 304,
+   "piece": "▁you"
+  },
+  {
+   "t": 12.56,
+   "id": 314,
+   "piece": "▁can"
+  },
+  {
+   "t": 12.72,
+   "id": 1694,
+   "piece": "▁learn"
+  },
+  {
+   "t": 12.96,
+   "id": 272,
+   "piece": "▁a"
+  },
+  {
+   "t": 13.12,
+   "id": 421,
+   "piece": "▁new"
+  },
+  {
+   "t": 13.28,
+   "id": 1119,
+   "piece": "▁language"
+  },
+  {
+   "t": 13.6,
+   "id": 307,
+   "piece": "▁or"
+  },
+  {
+   "t": 13.84,
+   "id": 2800,
+   "piece": "▁pick"
+  },
+  {
+   "t": 14.0,
+   "id": 397,
+   "piece": "▁up"
+  },
+  {
+   "t": 14.16,
+   "id": 306,
+   "piece": "▁an"
+  },
+  {
+   "t": 14.32,
+   "id": 5238,
+   "piece": "▁instrument"
+  },
+  {
+   "t": 14.4,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 18.4,
+   "id": 351,
+   "piece": "▁It"
+  },
+  {
+   "t": 18.48,
+   "id": 2460,
+   "piece": "▁depends"
+  },
+  {
+   "t": 18.72,
+   "id": 291,
+   "piece": "▁on"
+  },
+  {
+   "t": 18.88,
+   "id": 419,
+   "piece": "▁what"
+  },
+  {
+   "t": 19.04,
+   "id": 304,
+   "piece": "▁you"
+  },
+  {
+   "t": 19.2,
+   "id": 565,
+   "piece": "▁want"
+  },
+  {
+   "t": 19.36,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 19.52,
+   "id": 1694,
+   "piece": "▁learn"
+  },
+  {
+   "t": 19.6,
+   "id": 263,
+   "piece": "."
+  }
+ ],
+ "moshi_text": "Good day, how is it going? would suggest learning a new instrument or language. Yes, you can learn a new language or pick up an instrument. It depends on what you want to learn.",
+ "moshi_dbfs": [
+  -120.0,
+  -120.0,
+  -64.1,
+  -73.1,
+  -57.1,
+  -49.9,
+  -53.5,
+  -44.8,
+  -21.6,
+  -17.3,
+  -32.6,
+  -16.2,
+  -16.3,
+  -19.6,
+  -24.9,
+  -37.1,
+  -54.5,
+  -56.5,
+  -52.1,
+  -52.3,
+  -55.6,
+  -21.8,
+  -19.0,
+  -21.3,
+  -22.3,
+  -37.0,
+  -24.3,
+  -19.5,
+  -25.2,
+  -32.4,
+  -32.8,
+  -48.2,
+  -56.9,
+  -57.4,
+  -57.2,
+  -58.7,
+  -65.8,
+  -72.2,
+  -72.9,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.0,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -30.7,
+  -24.4,
+  -22.3,
+  -40.5,
+  -24.7,
+  -30.7,
+  -20.0,
+  -19.7,
+  -37.2,
+  -40.7,
+  -71.3,
+  -61.8,
+  -23.5,
+  -18.3,
+  -24.0,
+  -24.9,
+  -23.5,
+  -22.2,
+  -23.5,
+  -22.1,
+  -28.9,
+  -47.4,
+  -27.6,
+  -26.0,
+  -33.3,
+  -61.9,
+  -29.1,
+  -26.3,
+  -30.5,
+  -26.0,
+  -26.7,
+  -37.3,
+  -41.1,
+  -60.6,
+  -55.6,
+  -57.4,
+  -70.5,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.0,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -28.3,
+  -22.3,
+  -36.4,
+  -36.2,
+  -44.9,
+  -33.1,
+  -22.5,
+  -50.8,
+  -25.7,
+  -25.4,
+  -19.5,
+  -20.8,
+  -23.7,
+  -25.0,
+  -22.9,
+  -25.3,
+  -21.5,
+  -23.1,
+  -27.2,
+  -21.5,
+  -36.1,
+  -28.0,
+  -27.6,
+  -34.2,
+  -27.2,
+  -25.0,
+  -29.5,
+  -30.8,
+  -28.4,
+  -35.8,
+  -43.9,
+  -38.4,
+  -37.3,
+  -43.0,
+  -71.1,
+  -72.7,
+  -73.3,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -33.2,
+  -27.9,
+  -26.6,
+  -30.3,
+  -19.5,
+  -22.7,
+  -20.9,
+  -21.8,
+  -22.7,
+  -25.7,
+  -34.5,
+  -26.0,
+  -24.9,
+  -25.8,
+  -29.0,
+  -27.5,
+  -31.9,
+  -44.5,
+  -50.7,
+  -72.5,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2
+ ],
+ "speech_dbfs": -45.0,
+ "events": [
+  {
+   "t": 3.28,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 2.48s)"
+  },
+  {
+   "t": 4.0,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "What's a good hobby to pick up in winter?",
+   "speech_end": 6.37,
+   "why": "chat line 1/3"
+  },
+  {
+   "t": 9.92,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 9.12s)"
+  },
+  {
+   "t": 10.24,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "Something I can do indoors.",
+   "speech_end": 12.11,
+   "why": "chat line 2/3"
+  },
+  {
+   "t": 15.68,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 14.88s)"
+  },
+  {
+   "t": 16.32,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "How much would it cost to start?",
+   "speech_end": 18.34,
+   "why": "chat line 3/3"
+  },
+  {
+   "t": 20.64,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 19.84s)"
+  }
+ ],
+ "batch_size": 5,
+ "batch_wall_sec": 11.45,
+ "batch_frames": 366,
+ "peak_mem_gb": 28.4,
+ "user_audio": "live"
+}
