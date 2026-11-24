@@ -1,0 +1,469 @@
+{
+ "game_id": "test_s1_0020",
+ "starter": "user",
+ "greeting": "Hi, how are you doing?",
+ "replies": [
+  {
+   "turn": 0,
+   "kind": "instructions",
+   "scored": false,
+   "user_text": "Let's take turns naming fruits as fast as we can.",
+   "user_fruit": null,
+   "user_end": 5.96,
+   "text": "Apple.",
+   "cls": "valid",
+   "fruits": [
+    "apple"
+   ],
+   "fruit": "apple",
+   "latency": 2.68,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "multi_new": false,
+   "first_word_t": 8.64,
+   "word_t": [
+    8.64
+   ],
+   "user_spans": [
+    [
+     3.36,
+     5.96
+    ],
+    [
+     10.48,
+     11.31
+    ]
+   ]
+  },
+  {
+   "turn": 1,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Granny smith.",
+   "user_fruit": "granny smith",
+   "user_end": 11.31,
+   "text": "Strawberry.",
+   "cls": "valid",
+   "fruits": [
+    "strawberry"
+   ],
+   "fruit": "strawberry",
+   "latency": 0.13,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.974,
+   "multi_new": false,
+   "first_word_t": 11.44,
+   "word_t": [
+    11.44
+   ],
+   "user_spans": [
+    [
+     10.48,
+     11.31
+    ],
+    [
+     13.6,
+     14.43
+    ]
+   ]
+  },
+  {
+   "turn": 2,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Prickly pear.",
+   "user_fruit": "prickly pear",
+   "user_end": 14.43,
+   "text": "Orange.",
+   "cls": "valid",
+   "fruits": [
+    "orange"
+   ],
+   "fruit": "orange",
+   "latency": 0.13,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.974,
+   "multi_new": false,
+   "first_word_t": 14.56,
+   "word_t": [
+    14.56
+   ],
+   "user_spans": [
+    [
+     13.6,
+     14.43
+    ],
+    [
+     16.56,
+     16.975
+    ]
+   ]
+  },
+  {
+   "turn": 3,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lemon.",
+   "user_fruit": "lemon",
+   "user_end": 16.975,
+   "text": "Pineapple.",
+   "cls": "valid",
+   "fruits": [
+    "pineapple"
+   ],
+   "fruit": "pineapple",
+   "latency": 0.145,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.971,
+   "multi_new": false,
+   "first_word_t": 17.12,
+   "word_t": [
+    17.12
+   ],
+   "user_spans": [
+    [
+     16.56,
+     16.975
+    ],
+    [
+     19.12,
+     19.94
+    ]
+   ]
+  },
+  {
+   "turn": 4,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Lingonberry.",
+   "user_fruit": "lingonberry",
+   "user_end": 19.94,
+   "text": "Melon.",
+   "cls": "valid",
+   "fruits": [
+    "melon"
+   ],
+   "fruit": "melon",
+   "latency": 0.06,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.988,
+   "multi_new": false,
+   "first_word_t": 20.0,
+   "word_t": [
+    20.0
+   ],
+   "user_spans": [
+    [
+     19.12,
+     19.94
+    ],
+    [
+     22.16,
+     22.87
+    ]
+   ]
+  },
+  {
+   "turn": 5,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Crab apple.",
+   "user_fruit": "crab apple",
+   "user_end": 22.87,
+   "text": "Blackberry.",
+   "cls": "valid",
+   "fruits": [
+    "blackberry"
+   ],
+   "fruit": "blackberry",
+   "latency": 0.09,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.982,
+   "multi_new": false,
+   "first_word_t": 22.96,
+   "word_t": [
+    22.96
+   ],
+   "user_spans": [
+    [
+     22.16,
+     22.87
+    ],
+    [
+     25.04,
+     25.78
+    ]
+   ]
+  },
+  {
+   "turn": 6,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Pomegranate.",
+   "user_fruit": "pomegranate",
+   "user_end": 25.78,
+   "text": "Blueberry.",
+   "cls": "valid",
+   "fruits": [
+    "blueberry"
+   ],
+   "fruit": "blueberry",
+   "latency": 0.06,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.988,
+   "multi_new": false,
+   "first_word_t": 25.84,
+   "word_t": [
+    25.84
+   ],
+   "user_spans": [
+    [
+     25.04,
+     25.78
+    ],
+    [
+     27.84,
+     28.45
+    ]
+   ]
+  },
+  {
+   "turn": 7,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Cantaloupe.",
+   "user_fruit": "cantaloupe",
+   "user_end": 28.45,
+   "text": "Avocado.",
+   "cls": "valid",
+   "fruits": [
+    "avocado"
+   ],
+   "fruit": "avocado",
+   "latency": 0.11,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.978,
+   "multi_new": false,
+   "first_word_t": 28.56,
+   "word_t": [
+    28.56
+   ],
+   "user_spans": [
+    [
+     27.84,
+     28.45
+    ],
+    [
+     30.88,
+     31.76
+    ]
+   ]
+  },
+  {
+   "turn": 8,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mangosteen.",
+   "user_fruit": "mangosteen",
+   "user_end": 31.76,
+   "text": "Pomegranate.",
+   "cls": "repeat",
+   "fruits": [
+    "pomegranate"
+   ],
+   "fruit": "pomegranate",
+   "latency": 0.08,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "multi_new": false,
+   "first_word_t": 31.84,
+   "word_t": [
+    31.84
+   ],
+   "user_spans": [
+    [
+     30.88,
+     31.76
+    ],
+    [
+     33.92,
+     34.521
+    ]
+   ]
+  },
+  {
+   "turn": 9,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Durian.",
+   "user_fruit": "durian",
+   "user_end": 34.521,
+   "text": "Kiwi.",
+   "cls": "valid",
+   "fruits": [
+    "kiwi"
+   ],
+   "fruit": "kiwi",
+   "latency": 0.199,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.9602,
+   "multi_new": false,
+   "first_word_t": 34.72,
+   "word_t": [
+    34.72
+   ],
+   "user_spans": [
+    [
+     33.92,
+     34.521
+    ],
+    [
+     36.8,
+     37.308
+    ]
+   ]
+  },
+  {
+   "turn": 10,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Pawpaw.",
+   "user_fruit": "pawpaw",
+   "user_end": 37.308,
+   "text": "Fig.",
+   "cls": "valid",
+   "fruits": [
+    "fig"
+   ],
+   "fruit": "fig",
+   "latency": 0.132,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.9736,
+   "multi_new": false,
+   "first_word_t": 37.44,
+   "word_t": [
+    37.44
+   ],
+   "user_spans": [
+    [
+     36.8,
+     37.308
+    ],
+    [
+     38.96,
+     39.68
+    ]
+   ]
+  },
+  {
+   "turn": 11,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Grapefruit.",
+   "user_fruit": "grapefruit",
+   "user_end": 39.68,
+   "text": "Mangosteen.",
+   "cls": "repeat",
+   "fruits": [
+    "mangosteen"
+   ],
+   "fruit": "mangosteen",
+   "latency": 0.08,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "multi_new": false,
+   "first_word_t": 39.76,
+   "word_t": [
+    39.76
+   ],
+   "user_spans": [
+    [
+     38.96,
+     39.68
+    ],
+    [
+     41.6,
+     42.25
+    ]
+   ]
+  },
+  {
+   "turn": 12,
+   "kind": "fruit",
+   "scored": true,
+   "user_text": "Mulberry.",
+   "user_fruit": "mulberry",
+   "user_end": 42.25,
+   "text": "Blue.",
+   "cls": "non_fruit",
+   "fruits": [],
+   "fruit": null,
+   "latency": null,
+   "overlap": false,
+   "echo": false,
+   "fuzzy": [],
+   "reward": 0.0,
+   "multi_new": false,
+   "first_word_t": 42.4,
+   "word_t": [
+    42.4
+   ],
+   "user_spans": [
+    [
+     41.6,
+     42.25
+    ]
+   ]
+  }
+ ],
+ "n_scored": 12,
+ "counts": {
+  "valid": 9,
+  "sentence": 0,
+  "repeat": 2,
+  "non_fruit": 1,
+  "filler": 0,
+  "silent": 0,
+  "multi": 0
+ },
+ "overlaps": 0,
+ "total_reward": 0.7324,
+ "turn_rewards": [
+  0.974,
+  0.974,
+  0.971,
+  0.988,
+  0.982,
+  0.988,
+  0.978,
+  0.0,
+  0.9602,
+  0.9736,
+  0.0,
+  0.0
+ ]
+}

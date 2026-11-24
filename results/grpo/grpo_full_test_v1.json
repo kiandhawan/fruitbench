@@ -1,0 +1,82 @@
+{
+ "config": "configs/grpo_smoke.yaml",
+ "rules": "v1",
+ "runs": {
+  "base": {
+   "games": 200,
+   "turns": 2467,
+   "mean_reward": -0.2627,
+   "valid_rate": 0.0604,
+   "sentence_rate": 0.0,
+   "repeat_rate": 0.1885,
+   "non_fruit_rate": 0.0458,
+   "filler_rate": 0.3437,
+   "silent_rate": 0.2862,
+   "multi_rate": 0.0754,
+   "echo_rate": 0.1488,
+   "overlap_rate": 0.124,
+   "counted_overlap_rate": 0.124,
+   "latency_median": 0.132,
+   "words_per_turn_median": 1.0,
+   "words_per_turn_mean": 4.55,
+   "turn_cap_per_game": 0.435,
+   "valid_before_user_ends": 0.1141,
+   "valid_lat_p10_p50_p90": [
+    -0.03,
+    0.13,
+    2.73
+   ],
+   "fruit_before_user_ends": 0.1212,
+   "turns_1_6": {
+    "valid": 0.0625,
+    "sentence": 0.0,
+    "repeat": 0.155,
+    "overlap": 0.1383
+   },
+   "turns_7_12": {
+    "valid": 0.0533,
+    "sentence": 0.0,
+    "repeat": 0.2325,
+    "overlap": 0.0958
+   }
+  },
+  "final_step120": {
+   "games": 200,
+   "turns": 2467,
+   "mean_reward": 1.0046,
+   "valid_rate": 0.8833,
+   "sentence_rate": 0.0,
+   "repeat_rate": 0.0944,
+   "non_fruit_rate": 0.0134,
+   "filler_rate": 0.0,
+   "silent_rate": 0.0012,
+   "multi_rate": 0.0077,
+   "echo_rate": 0.0113,
+   "overlap_rate": 0.0138,
+   "counted_overlap_rate": 0.0138,
+   "latency_median": 0.119,
+   "words_per_turn_median": 1.0,
+   "words_per_turn_mean": 1.02,
+   "turn_cap_per_game": 0.005,
+   "valid_before_user_ends": 0.0092,
+   "valid_lat_p10_p50_p90": [
+    0.06,
+    0.12,
+    0.21
+   ],
+   "fruit_before_user_ends": 0.014,
+   "turns_1_6": {
+    "valid": 0.9675,
+    "sentence": 0.0,
+    "repeat": 0.0208,
+    "overlap": 0.0158
+   },
+   "turns_7_12": {
+    "valid": 0.8025,
+    "sentence": 0.0,
+    "repeat": 0.1733,
+    "overlap": 0.0025
+   }
+  }
+ }
+}
