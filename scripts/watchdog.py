@@ -70,6 +70,34 @@ def check(cfg: dict, val: list[dict], met: list[dict]) -> str | None:
     return None
 
 
+def early_stop_reason(cfg: dict, val: list[dict]) -> str | None:
+    """Best validation mean reward (trained checkpoints, step > 0) not improved for `patience` validations."""
+    pat = cfg.get("early_stop", {}).get("patience_validations")
+    h = [x for x in val if x["step"] > 0]
+    if not pat or len(h) <= pat:
+        return None
+    best_i = max(range(len(h)), key=lambda i: h[i]["mean_reward"])  # first index of the best value
+    since = len(h) - 1 - best_i
+    if since >= pat:
+        b = h[best_i]
+        return (f"best validation mean reward {b['mean_reward']:+.3f} (step {b['step']}) not improved for {since} "
+                f"validations (last: step {h[-1]['step']}, {h[-1]['mean_reward']:+.3f})")
+    return None
+
+
+def stop_trainer(config: str) -> None:
+    for sig in (signal.SIGINT, signal.SIGTERM, signal.SIGKILL):
+        for pid in trainer_pids(config):
+            try:
+                os.kill(pid, sig)
+            except ProcessLookupError:
+                pass
+        for _ in range(12):
+            if not trainer_pids(config):
+                return
+            time.sleep(5)
+
+
 def upload_final(cfg: dict, run_dir: Path, res_dir: Path, logfile: Path) -> None:
     rel = cfg.get("upload", {}).get("release")
     ck = sorted((run_dir / "ckpt").glob("step_*/lora.safetensors"))
@@ -112,6 +140,7 @@ def main() -> None:
     log(logfile, f"started for {run}: checks every {POLL}s, grace {GRACE}s, stop rules {cfg.get('stop', {})}")
     seen_running = False
     first_hit: dict[str, float] = {}
+    early = None
     while True:
         pids = trainer_pids(a.config)
         if pids:
@@ -121,6 +150,21 @@ def main() -> None:
                 first_hit[reason] = time.time()
                 if cfg.get("stop_mode") == "flag_only":
                     log(logfile, f"FLAG: {reason} (logged only; the run continues)")
+            val = jsonl(res_dir / "val.jsonl")
+            es = early_stop_reason(cfg, val)
+            if es and early is None:
+                # end the run normally once this validation's commit/push is done (checkpoint already saved)
+                step = val[-1]["step"]
+                deadline = time.time() + 900
+                while time.time() < deadline and f"[commit] pushed validation step {step}" not in \
+                        (trainer_log.read_text(errors="ignore")[-50000:] if trainer_log.exists() else ""):
+                    time.sleep(10)
+                early = es
+                log(logfile, f"EARLY STOP: {es}; ending the run (checkpoints kept; finalization runs next)")
+                with open(res_dir / "early_stop.json", "w") as f:
+                    json.dump({"reason": es, "at_validation_step": step, "time": time.strftime("%Y-%m-%d %H:%M")}, f)
+                stop_trainer(a.config)
+                continue
             if reason and cfg.get("stop_mode") != "flag_only" and time.time() - first_hit[reason] > GRACE:
                 log(logfile, f"STOP condition holds and the trainer is still running: {reason}; stopping it")
                 for sig in (signal.SIGINT, signal.SIGTERM):
@@ -132,7 +176,8 @@ def main() -> None:
                     time.sleep(60)
         elif seen_running:
             text = trainer_log.read_text(errors="ignore")[-20000:] if trainer_log.exists() else ""
-            how = ("stopped by a stop condition" if "[STOP]" in text or "watchdog" in text and "stopping it" in text
+            how = (f"early stop: {early}" if early else
+                   "stopped by a stop condition" if "[STOP]" in text
                    else "finished" if "[done]" in text else "exited without [done] (crash?)")
             log(logfile, f"trainer is no longer running ({how})")
             upload_final(cfg, run_dir, res_dir, logfile)

@@ -73,7 +73,9 @@ def main() -> None:
             time.sleep(60)
         time.sleep(90)  # let the trainer's last commit/upload and the watchdog finish
     tlog = (ROOT / "runs" / "grpo" / f"{run}.log").read_text(errors="ignore") if (ROOT / "runs" / "grpo" / f"{run}.log").exists() else ""
-    ended = ("finished all steps" if "[done]" in tlog[-5000:] else
+    es_file = res_dir / "early_stop.json"
+    ended = ("ended by early stopping (watchdog): " + json.loads(es_file.read_text())["reason"] if es_file.exists() else
+             "finished all steps" if "[done]" in tlog[-5000:] else
              "stopped: " + (re.findall(r"\[STOP\] (.*)", tlog) or ["?"])[-1] if "[STOP]" in tlog else
              "exited without [done] (crash?)")
     log(f"trainer {ended}")

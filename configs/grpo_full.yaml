@@ -87,3 +87,7 @@ upload:
   release: checkpoints       # GitHub DRAFT release (only people with write access can see drafts): latest + best LoRA
   every_validation: true
 commit_after_validation: true  # git commit + push metrics.jsonl, val.jsonl, validation archives, plots
+
+early_stop:                  # watchdog only (added during the run; the trainer was not restarted)
+  patience_validations: 4    # end the run if the best validation mean reward (steps > 0) has not improved
+                             # for 4 validations in a row (40 steps); checkpoints kept, finalization runs

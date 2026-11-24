@@ -1,5 +1,14 @@
 # LOG (newest first)
 
+## 2026-11-24 — Early stopping for the full run (watchdog only, trainer not restarted)
+- `configs/grpo_full.yaml` `early_stop.patience_validations: 4`: if the best validation mean reward
+  (trained checkpoints, step > 0; ties do not count as improvement) has not improved for 4 validations
+  in a row (40 steps), the watchdog waits for that validation's commit/push, writes "EARLY STOP: ..." to
+  runs/grpo/grpo_full_watchdog.log and results/grpo/grpo_full/early_stop.json, stops the trainer,
+  uploads latest + best LoRA; the finalization script then runs as planned (its summary reports the
+  early stop). The running trainer read its config at start, so this key only affects the watchdog and
+  the finalization; both were restarted, the trainer was not.
+
 ## 2026-11-24 — Night plan for the full run (user): flags only, unattended finalization
 - Restarted the full run from scratch (it was at step 4 with no checkpoint yet; the aborted log is
   runs/grpo/grpo_full_aborted.log). `stop_mode: flag_only`: every performance rule (step-20 valid,
