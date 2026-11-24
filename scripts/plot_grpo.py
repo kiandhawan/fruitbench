@@ -48,8 +48,10 @@ def main():
     fig("latency", [("valid-fruit latency (s)", [("train median", s, g(tr, "latency_median"), "-o"),
                                                  ("train mean", s, g(tr, "latency_mean"), "-"),
                                                  ("val median", vs, g(va, "latency_median"), "s--")])])
-    fig("kl", [("KL to reference (k3, per token)", [("text", s, [None if r["step"] in drop else r.get("kl_text") for r in tr], "-o"),
-                                                       ("audio", s, g(tr, "kl_audio"), "-o")]),
+    kt = [r for r in tr if r["step"] not in drop][::3]  # every 3rd step, for a readable line
+    ks = [r["step"] for r in kt]
+    fig("kl", [("text KL to reference (k3, per token)", [("text", ks, g(kt, "kl_text"), "-o")]),
+               ("audio KL to reference (exact, per token)", [("audio", ks, g(kt, "kl_audio"), "-o")]),
                ("clip fraction", [("text", s, g(tr, "clipfrac_text"), "-"), ("audio", s, g(tr, "clipfrac_audio"), "-")])])
     fig("spread", [("groups with nonzero spread", [("groups", s, g(tr, "groups_with_spread"), "-o"),
                                                    ("turn positions", s, g(tr, "turn_positions_with_spread"), "-")]),
