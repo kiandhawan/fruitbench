@@ -1,5 +1,24 @@
 # LOG (newest first)
 
+## 2026-11-24 — Step 3: text-stream scorer vs Whisper on Moshi's audio
+- `scripts/asr_check.py` (separate `.venv-asr`: faster-whisper 1.1.1, large-v3, fp16, VAD on, beam 5,
+  English) transcribes Moshi's channel of 20 randomly chosen (seed 0) base test games, turns Whisper's
+  words into a pseudo text stream (one word token at each word's start) and scores it with the same
+  scorer. Output: `results/asr_check.json`.
+- **Per-turn class agreement: 85.8%** of 247 scored turns (85.0% same class and same fruit). By text
+  class: silent 94%, repeat 84%, filler 78%, valid 78%, multi 78%, non_fruit 45%.
+- **Timing-free check: 95.6%** of the 183 fruit mentions in the text stream are also in the Whisper
+  transcript of the same game (96.7% the other way round).
+- Reading the disagreements, most are not text/audio mismatches: (a) Whisper's word timestamps sit
+  later than the text tokens, so a word near a turn boundary moves into the next reply window and
+  shifts a chain of turns (text "Grapefruit | Jackfruit | Lemon" vs ASR "Jackfruit | Lemon | Orange");
+  (b) Whisper drops or mishears short isolated words ("Vec", "zing", "Kiwi." -> nothing, "Prickly pear"
+  -> "High quit pair"); (c) a few genuine text/audio differences ("A comfrey fruit" vs audio "A kumquat
+  fruit"; "durian" vs "gruyere"). non_fruit is the weakest class because it is mostly one-word
+  nonsense replies that Whisper hears differently. Decision: keep the text stream as the reward source
+  (frame-exact, no ASR noise); re-check agreement on trained checkpoints, since training could push the
+  text and audio streams apart.
+
 ## 2026-11-24 — Step 2 revision (user feedback after checkpoint B)
 - **Turn end now listens to Moshi's audio, for every Moshi turn.** The 0.5 s text rule cut Moshi off
   mid-sentence (text comes ~1 token per word with 0.5-0.8 s gaps inside sentences): with the
