@@ -141,7 +141,8 @@ class GameRunner:
     way `LMModel.forward` expects it (for teacher-forced log-probs)."""
 
     def __init__(self, batch: int, decode_audio: bool = True, user_audio: str = "live",
-                 models: tuple | None = None, record_codes: bool = False):
+                 models: tuple | None = None, record_codes: bool = False, lora: str | None = None,
+                 lora_rank: int = 64, lora_scaling: float = 2.0):
         import torch
         from moshi.models import LMGen, loaders
         self.torch = torch
@@ -152,7 +153,19 @@ class GameRunner:
             info = loaders.CheckpointInfo.from_hf_repo("kyutai/moshiko-pytorch-bf16")
             self.mimi = info.get_mimi(device="cuda")
             self.tok = info.get_text_tokenizer()
-            self.lm = info.get_moshi(device="cuda", dtype=torch.bfloat16)
+            if lora:  # evaluation of a trained LoRA (fp32 safetensors from grpo_train.py) on base moshiko
+                from safetensors.torch import load_file
+                self.lm = info.get_moshi(device="cuda", dtype=torch.bfloat16, lm_kwargs_overrides={
+                    "lora": True, "lora_rank": lora_rank, "lora_scaling": lora_scaling})
+                sd = load_file(lora, device="cuda")
+                named = dict(self.lm.named_parameters())
+                missing = [k for k in sd if k not in named]
+                assert not missing, missing[:5]
+                for k, v in sd.items():
+                    named[k].data.copy_(v.to(named[k].dtype))
+                self.lm.eval()
+            else:
+                self.lm = info.get_moshi(device="cuda", dtype=torch.bfloat16)
             gen_cfg = info.lm_gen_config
         else:
             self.mimi, self.tok, self.lm, gen_cfg = models

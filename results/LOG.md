@@ -1,5 +1,21 @@
 # LOG (newest first)
 
+## 2026-11-24 — Night plan for the full run (user): flags only, unattended finalization
+- Restarted the full run from scratch (it was at step 4 with no checkpoint yet; the aborted log is
+  runs/grpo/grpo_full_aborted.log). `stop_mode: flag_only`: every performance rule (step-20 valid,
+  step-30 silence, valid drops, chat > 10%, audio KL > 0.03) is written to the log as "[FLAG] ..." and
+  never stops the run. The only automatic stop is a non-finite loss or gradient norm (checked on all
+  ranks before every optimizer step; the update is skipped and the run stops, last good checkpoint kept)
+  or a crash. The watchdog (own log: runs/grpo/grpo_full_watchdog.log, since tee would overwrite lines
+  appended to the trainer log) only logs flags and uploads the latest checkpoint when the trainer exits.
+- `scripts/finalize_full.py` (tmux window `finalize`) waits for the trainer, then: final checkpoint =
+  best validation mean reward among checkpoints with chat <= 10% and training audio KL < 0.03 (overall
+  best reported, and whether it differs); 200 TEST games with it (`run_games.py --lora`, same specs as
+  the base benchmark); base vs final rescored (v3 + run reward, and v1); before/after MP3s of 6 test
+  games -> release `grpo-final`; lora_final + lora_best -> draft release `checkpoints`;
+  results/full_run_summary.md; commit + push. Dry-run on smoke-4 data (8 test games) passed.
+  `run_games.py --lora` tested with the smoke-4 LoRA. The pod is left running.
+
 ## 2026-11-24 — Watchdog for the full run (`scripts/watchdog.py`, tmux window `watchdog`)
 - The trainer itself checks the stop rules (after every validation; audio KL after every step), writes
   "[STOP] <reason>" to the log, uploads latest + best LoRA (validation stops) and exits.

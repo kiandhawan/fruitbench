@@ -45,7 +45,7 @@ def worker(args) -> None:
     from fruitbench.game import GameRunner, GameSpec, save_game
     from fruitbench.score import score_game
     specs = [GameSpec(**d) for d in json.loads(Path(args.worker_specs).read_text())]
-    runner = GameRunner(args.batch, decode_audio=not args.no_audio, user_audio=args.user_audio)
+    runner = GameRunner(args.batch, decode_audio=not args.no_audio, user_audio=args.user_audio, lora=args.lora)
     out = Path(args.out)
     timing = []
     for j in range(0, len(specs), args.batch):
@@ -84,6 +84,7 @@ def main() -> None:
                         "tokens: splice pre-encoded clip tokens (faster, inexact).")
     p.add_argument("--archive-dir", type=Path, help="Where to archive per-game JSONs (default results/games/<out name>).")
     p.add_argument("--no-archive", action="store_true")
+    p.add_argument("--lora", help="LoRA safetensors (from grpo_train.py) to evaluate instead of base Moshi")
     p.add_argument("--worker-specs")
     p.add_argument("--worker-gpu", type=int)
     p.add_argument("--worker-index", type=int)
@@ -111,6 +112,7 @@ def main() -> None:
         cmd += ["--no-audio"] if args.no_audio else []
         cmd += ["--overwrite"] if args.overwrite else []
         cmd += ["--user-audio", args.user_audio]
+        cmd += ["--lora", args.lora] if args.lora else []
         procs.append(subprocess.Popen(cmd))
     codes = [pr.wait() for pr in procs]
     print(f"done in {time.time() - t0:.0f}s; worker exit codes {codes}")

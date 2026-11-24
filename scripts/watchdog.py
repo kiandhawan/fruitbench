@@ -9,7 +9,8 @@ conditions (the same rules the trainer checks itself):
   - validation bare valid dropping val_valid_drops_in_a_row validations in a row
   - ordinary conversations: share of Moshi replies with a fruit above chat_fruit_max
   - training audio KL above audio_kl_max
-If a condition holds and the trainer is still running GRACE seconds later (it should have stopped by
+With `stop_mode: flag_only` (night run) a condition is only logged once as "FLAG: <reason>".
+Otherwise: if a condition holds and the trainer is still running GRACE seconds later (it should have stopped by
 itself), the watchdog writes "[watchdog STOP] <reason>" to the run log and stops the trainer (SIGINT,
 then SIGTERM). Whenever the trainer is no longer running (stopped, crashed or done), it uploads the
 latest checkpoint (and the best one, from best.json) to the draft release, writes a line to the log
@@ -105,7 +106,9 @@ def main() -> None:
     cfg = yaml.safe_load((ROOT / a.config).read_text())
     run = cfg["run_name"]
     res_dir, run_dir = ROOT / "results" / "grpo" / run, ROOT / "runs" / "grpo" / run
-    logfile = ROOT / "runs" / "grpo" / f"{run}.log"
+    # own log file: the trainer log is written by tee at its own offset and would overwrite appended lines
+    logfile = ROOT / "runs" / "grpo" / f"{run}_watchdog.log"
+    trainer_log = ROOT / "runs" / "grpo" / f"{run}.log"
     log(logfile, f"started for {run}: checks every {POLL}s, grace {GRACE}s, stop rules {cfg.get('stop', {})}")
     seen_running = False
     first_hit: dict[str, float] = {}
@@ -114,19 +117,21 @@ def main() -> None:
         if pids:
             seen_running = True
             reason = check(cfg, jsonl(res_dir / "val.jsonl"), jsonl(res_dir / "metrics.jsonl"))
-            if reason:
-                t0 = first_hit.setdefault(reason, time.time())
-                if time.time() - t0 > GRACE:
-                    log(logfile, f"STOP condition holds and the trainer is still running: {reason}; stopping it")
-                    for sig in (signal.SIGINT, signal.SIGTERM):
-                        for pid in trainer_pids(a.config):
-                            try:
-                                os.kill(pid, sig)
-                            except ProcessLookupError:
-                                pass
-                        time.sleep(60)
+            if reason and reason not in first_hit:
+                first_hit[reason] = time.time()
+                if cfg.get("stop_mode") == "flag_only":
+                    log(logfile, f"FLAG: {reason} (logged only; the run continues)")
+            if reason and cfg.get("stop_mode") != "flag_only" and time.time() - first_hit[reason] > GRACE:
+                log(logfile, f"STOP condition holds and the trainer is still running: {reason}; stopping it")
+                for sig in (signal.SIGINT, signal.SIGTERM):
+                    for pid in trainer_pids(a.config):
+                        try:
+                            os.kill(pid, sig)
+                        except ProcessLookupError:
+                            pass
+                    time.sleep(60)
         elif seen_running:
-            text = logfile.read_text(errors="ignore")[-20000:] if logfile.exists() else ""
+            text = trainer_log.read_text(errors="ignore")[-20000:] if trainer_log.exists() else ""
             how = ("stopped by a stop condition" if "[STOP]" in text or "watchdog" in text and "stopping it" in text
                    else "finished" if "[done]" in text else "exited without [done] (crash?)")
             log(logfile, f"trainer is no longer running ({how})")

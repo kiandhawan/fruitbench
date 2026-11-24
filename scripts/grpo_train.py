@@ -461,9 +461,15 @@ def main() -> None:
                 subprocess.run(["git", "push", "-q"], cwd=ROOT, capture_output=True)
                 log0(f"[commit] pushed validation step {step}")
 
+    flag_only = cfg.get("stop_mode") == "flag_only"
+
     def stop_all(reason: str | None) -> bool:
+        """Performance rules: with stop_mode flag_only they are logged as [FLAG] and never stop the run."""
         flag = [reason]
         dist.broadcast_object_list(flag, src=0)
+        if flag[0] and flag_only:
+            log0(f"[FLAG] {flag[0]} (logged only; the run continues)")
+            return False
         if flag[0]:
             log0(f"[STOP] {flag[0]}")
         return bool(flag[0])
@@ -552,7 +558,9 @@ def main() -> None:
         n_mb = u["minibatches"]
         per_mb = math.ceil(len(items) / n_mb)
         st = {"kl_t": 0.0, "kl_a": 0.0, "n_t": 0, "n_a": 0, "clip_t": 0.0, "clip_a": 0.0, "loss": 0.0, "gnorm": []}
+        nonfinite = None
         for m in range(n_mb):
+            mb_loss = 0.0
             idx = order[m * per_mb:(m + 1) * per_mb]
             mb_items = [items[i] for i in idx]
             n_t = sum(int(np.isfinite(it["frame_adv"]).sum()) for it in mb_items)
@@ -610,13 +618,26 @@ def main() -> None:
                 st["n_t"] += int(mt.sum())
                 st["n_a"] += int(ma.sum())
                 st["loss"] += float(loss.detach())
+                mb_loss += float(loss.detach())
             upcast_mixed_precision(params, torch.float32)
             gn = torch.nn.utils.clip_grad_norm_(params, u["grad_clip"])
+            # NaN/inf guard (the only automatic stop): any rank with a non-finite loss or gradient norm
+            bad = torch.tensor([0.0 if (math.isfinite(mb_loss) and math.isfinite(float(gn))) else 1.0], device="cuda")
+            dist.all_reduce(bad, op=dist.ReduceOp.MAX)
+            if bad.item() > 0:
+                downcast_mixed_precision(params, torch.bfloat16)
+                opt.zero_grad(set_to_none=True)
+                nonfinite = f"non-finite loss or gradient at step {step}, minibatch {m} (rank {rank} loss {mb_loss}, grad norm {float(gn)}); update skipped"
+                break
             opt.step()
             downcast_mixed_precision(params, torch.bfloat16)
             opt.zero_grad(set_to_none=True)
             st["gnorm"].append(float(gn))
         train_sec = time.time() - t2
+        if nonfinite:
+            log0(f"[STOP] {nonfinite}; last good checkpoint kept")
+            stopped = True
+            break
 
         # ---------------- metrics (all ranks -> rank 0)
         reps = [r for sc in scores for r in sc["replies"] if r["scored"]]
@@ -691,7 +712,7 @@ def main() -> None:
         kl_reason = None
         if rank == 0 and "audio_kl_max" in cfg.get("stop", {}) and rec["kl_audio"] > cfg["stop"]["audio_kl_max"]:
             kl_reason = f"training audio KL {rec['kl_audio']:.4f} > {cfg['stop']['audio_kl_max']}"
-        if step % cfg["checkpoint_every"] == 0 or kl_reason:
+        if step % cfg["checkpoint_every"] == 0 or (kl_reason and not flag_only):
             save_ckpt(step)
         if stop_all(kl_reason):
             stopped = True

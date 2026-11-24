@@ -74,7 +74,9 @@ val:
   whisper_games: 10
   whisper_min_agreement: 0.90
 
-stop:                        # the trainer stops (after saving a checkpoint) and prints [STOP] if any of these hold
+stop_mode: flag_only         # user (night run): these rules are logged as [FLAG] only and never stop the run;
+                             # the only automatic stop is a NaN/inf loss or gradient (or a crash)
+stop:                        # performance rules, checked after every validation (audio KL after every step)
   val_valid_min_at_step_20: 0.429   # bare valid on validation at step 20 below smoke 4's step-20 value
   val_silent_max_at_step_30: 0.5    # silence on validation still > 50% at step 30
   val_valid_drops_in_a_row: 2       # validation bare-valid % drops at two validations in a row
