@@ -1,0 +1,594 @@
+{
+ "game_id": "chat_00",
+ "spec": {
+  "game_id": "chat_00",
+  "split": "chat",
+  "seed": 0,
+  "voice": "Sheila",
+  "starter": "user",
+  "phrasing": "",
+  "fruit_order": [],
+  "gaps": [
+   0.722,
+   0.679,
+   0.51,
+   0.429,
+   0.556,
+   0.502
+  ],
+  "backup_order": [],
+  "n_user_fruits": 3,
+  "script": [
+   "chat00_0",
+   "chat00_1",
+   "chat00_2"
+  ]
+ },
+ "starter": "user",
+ "sampling": {
+  "use_sampling": true,
+  "temp": 0.8,
+  "temp_text": 0.7,
+  "top_k": 250,
+  "top_k_text": 25
+ },
+ "sampling_seed": 7500,
+ "frame_sec": 0.08,
+ "end_time": 20.32,
+ "user_turns": [
+  {
+   "kind": "chat",
+   "text": "Hi, how are you?",
+   "fruit": null,
+   "start": 3.84,
+   "speech_end": 5.38,
+   "clip": "data/audio/clips/Sheila/chat/chat00_0.wav",
+   "voice": "Sheila",
+   "frame": 48,
+   "reason": "chat line 1/3"
+  },
+  {
+   "kind": "chat",
+   "text": "What have you been up to today?",
+   "fruit": null,
+   "start": 9.2,
+   "speech_end": 10.72,
+   "clip": "data/audio/clips/Sheila/chat/chat00_1.wav",
+   "voice": "Sheila",
+   "frame": 115,
+   "reason": "chat line 2/3"
+  },
+  {
+   "kind": "chat",
+   "text": "That sounds nice. Anything planned for the weekend?",
+   "fruit": null,
+   "start": 14.8,
+   "speech_end": 17.82,
+   "clip": "data/audio/clips/Sheila/chat/chat00_2.wav",
+   "voice": "Sheila",
+   "frame": 185,
+   "reason": "chat line 3/3"
+  }
+ ],
+ "moshi_tokens": [
+  {
+   "t": 0.64,
+   "id": 2769,
+   "piece": "▁Hi"
+  },
+  {
+   "t": 0.72,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 1.44,
+   "id": 419,
+   "piece": "▁what"
+  },
+  {
+   "t": 1.52,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 1.6,
+   "id": 266,
+   "piece": "s"
+  },
+  {
+   "t": 1.76,
+   "id": 860,
+   "piece": "▁going"
+  },
+  {
+   "t": 2.08,
+   "id": 291,
+   "piece": "▁on"
+  },
+  {
+   "t": 2.16,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 6.16,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 6.24,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 6.32,
+   "id": 1260,
+   "piece": "▁doing"
+  },
+  {
+   "t": 6.48,
+   "id": 435,
+   "piece": "▁well"
+  },
+  {
+   "t": 6.56,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 6.8,
+   "id": 705,
+   "piece": "▁How"
+  },
+  {
+   "t": 6.96,
+   "id": 376,
+   "piece": "▁about"
+  },
+  {
+   "t": 7.12,
+   "id": 3183,
+   "piece": "▁yourself"
+  },
+  {
+   "t": 7.2,
+   "id": 330,
+   "piece": "?"
+  },
+  {
+   "t": 10.8,
+   "id": 2657,
+   "piece": "▁Well"
+  },
+  {
+   "t": 10.88,
+   "id": 261,
+   "piece": ","
+  },
+  {
+   "t": 10.96,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 11.04,
+   "id": 286,
+   "piece": "'"
+  },
+  {
+   "t": 11.12,
+   "id": 518,
+   "piece": "ve"
+  },
+  {
+   "t": 11.28,
+   "id": 364,
+   "piece": "▁been"
+  },
+  {
+   "t": 11.44,
+   "id": 1260,
+   "piece": "▁doing"
+  },
+  {
+   "t": 11.6,
+   "id": 386,
+   "piece": "▁some"
+  },
+  {
+   "t": 11.76,
+   "id": 676,
+   "piece": "▁research"
+  },
+  {
+   "t": 12.08,
+   "id": 291,
+   "piece": "▁on"
+  },
+  {
+   "t": 12.32,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 12.48,
+   "id": 986,
+   "piece": "▁history"
+  },
+  {
+   "t": 12.64,
+   "id": 264,
+   "piece": "▁of"
+  },
+  {
+   "t": 12.88,
+   "id": 262,
+   "piece": "▁the"
+  },
+  {
+   "t": 13.04,
+   "id": 897,
+   "piece": "▁city"
+  },
+  {
+   "t": 13.12,
+   "id": 263,
+   "piece": "."
+  },
+  {
+   "t": 17.92,
+   "id": 293,
+   "piece": "▁I"
+  },
+  {
+   "t": 18.0,
+   "id": 2731,
+   "piece": "▁planning"
+  },
+  {
+   "t": 18.16,
+   "id": 291,
+   "piece": "▁on"
+  },
+  {
+   "t": 18.32,
+   "id": 1348,
+   "piece": "▁taking"
+  },
+  {
+   "t": 18.48,
+   "id": 272,
+   "piece": "▁a"
+  },
+  {
+   "t": 18.64,
+   "id": 4132,
+   "piece": "▁trip"
+  },
+  {
+   "t": 18.8,
+   "id": 269,
+   "piece": "▁to"
+  },
+  {
+   "t": 18.96,
+   "id": 2849,
+   "piece": "▁Paris"
+  },
+  {
+   "t": 19.04,
+   "id": 263,
+   "piece": "."
+  }
+ ],
+ "moshi_text": "Hi, what's going on? I' doing well. How about yourself? Well, I've been doing some research on the history of the city. I planning on taking a trip to Paris.",
+ "moshi_dbfs": [
+  -120.0,
+  -120.0,
+  -64.1,
+  -73.1,
+  -53.0,
+  -56.4,
+  -57.6,
+  -58.8,
+  -49.6,
+  -17.9,
+  -14.9,
+  -14.9,
+  -20.7,
+  -24.8,
+  -32.9,
+  -51.2,
+  -59.0,
+  -55.6,
+  -59.0,
+  -23.7,
+  -26.1,
+  -46.7,
+  -18.6,
+  -19.2,
+  -20.0,
+  -18.1,
+  -17.8,
+  -21.2,
+  -27.3,
+  -48.4,
+  -57.6,
+  -53.9,
+  -47.4,
+  -53.5,
+  -68.9,
+  -72.7,
+  -72.9,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.0,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.0,
+  -73.2,
+  -73.0,
+  -73.1,
+  -73.0,
+  -73.1,
+  -38.4,
+  -23.3,
+  -22.1,
+  -23.1,
+  -22.5,
+  -25.6,
+  -24.8,
+  -18.2,
+  -20.3,
+  -30.2,
+  -47.4,
+  -25.8,
+  -21.7,
+  -28.0,
+  -34.9,
+  -33.3,
+  -41.9,
+  -23.4,
+  -27.4,
+  -44.3,
+  -67.9,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.1,
+  -73.2,
+  -73.1,
+  -73.2,
+  -36.5,
+  -16.5,
+  -15.7,
+  -16.8,
+  -22.1,
+  -49.4,
+  -35.4,
+  -22.9,
+  -25.7,
+  -26.5,
+  -25.2,
+  -23.7,
+  -30.2,
+  -29.4,
+  -25.2,
+  -22.7,
+  -27.3,
+  -35.2,
+  -29.5,
+  -27.5,
+  -24.5,
+  -28.2,
+  -33.1,
+  -25.9,
+  -45.1,
+  -31.6,
+  -23.2,
+  -29.6,
+  -29.4,
+  -43.3,
+  -25.4,
+  -23.8,
+  -26.8,
+  -39.0,
+  -73.4,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -38.3,
+  -23.3,
+  -39.5,
+  -19.3,
+  -20.3,
+  -21.6,
+  -23.4,
+  -24.0,
+  -25.7,
+  -26.2,
+  -27.1,
+  -28.2,
+  -24.5,
+  -41.2,
+  -30.5,
+  -25.7,
+  -19.3,
+  -19.5,
+  -25.9,
+  -42.4,
+  -47.5,
+  -69.4,
+  -73.3,
+  -73.3,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.2,
+  -73.3
+ ],
+ "speech_dbfs": -45.0,
+ "events": [
+  {
+   "t": 3.12,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 2.32s)"
+  },
+  {
+   "t": 3.84,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "Hi, how are you?",
+   "speech_end": 5.38,
+   "why": "chat line 1/3"
+  },
+  {
+   "t": 8.56,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 7.76s)"
+  },
+  {
+   "t": 9.2,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "What have you been up to today?",
+   "speech_end": 10.72,
+   "why": "chat line 2/3"
+  },
+  {
+   "t": 14.32,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 13.52s)"
+  },
+  {
+   "t": 14.8,
+   "event": "user_clip",
+   "kind": "chat",
+   "text": "That sounds nice. Anything planned for the weekend?",
+   "speech_end": 17.82,
+   "why": "chat line 3/3"
+  },
+  {
+   "t": 20.32,
+   "event": "moshi_turn_end",
+   "why": "Moshi audio quiet 0.8s after speaking (speech until 19.52s)"
+  }
+ ],
+ "batch_size": 5,
+ "batch_wall_sec": 11.89,
+ "batch_frames": 381,
+ "peak_mem_gb": 28.52,
+ "user_audio": "live"
+}
